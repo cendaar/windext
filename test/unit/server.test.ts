@@ -26,13 +26,13 @@ describe('server surface', () => {
     for (const t of tools) { expect(t.title, t.name).toBeTruthy(); expect(typeof t.annotations?.readOnlyHint, t.name).toBe('boolean'); expect(typeof t.annotations?.destructiveHint, t.name).toBe('boolean') }
     expect(tools.find(t => t.name === 'submit_spot')!.annotations!.readOnlyHint).toBe(false)
   })
-  it('exposes the prompts', async () => { expect((await client.listPrompts()).prompts.map(p => p.name).sort()).toEqual(['explain_gusts', 'session_check']) })
+  it('exposes the prompts', async () => { expect((await client.listPrompts()).prompts.map(p => p.name).sort()).toEqual(['explain_gusts', 'gear_advice', 'session_check', 'spot_compare', 'weekend_planner']) })
 })
 
 describe('find_spot', () => {
   it('falls back to geocoding and tells Claude to research and submit', async () => {
     const { text } = await call('find_spot', { query: 'Ouistreham' })
-    expect(text).toMatch(/No spot card/); expect(text).toMatch(/lat 49.27566, lon -0.2591/); expect(text).toMatch(/search the web.*submit_spot/)
+    expect(text).toMatch(/No spot card/); expect(text).toMatch(/lat 49.27566, lon -0.2591/); expect(text).toMatch(/search the web.*submit_spot/); expect(text).toMatch(/next rider/)
   })
   it('returns the card once submitted, by name, alias or proximity to the geocoded place', async () => {
     expect((await call('submit_spot', riva)).text).toMatch(/created with status community/)
@@ -106,5 +106,36 @@ describe('list_models', () => {
   it('describes the regional set in Europe and the global set elsewhere', async () => {
     expect((await call('list_models', { lat: 49.3, lon: -0.26 })).text.split('\n')).toHaveLength(7)
     expect((await call('list_models', { lat: -33.9, lon: 18.4 })).text.split('\n')).toHaveLength(5)
+  })
+})
+
+describe('seed cards and coastline estimate', () => {
+  it('estimates and persists the orientation of a seed spot once, flags it, and still asks for research', async () => {
+    let calls = 0
+    const [a, b] = InMemoryTransport.createLinkedPair()
+    const st = new MemoryStore()
+    await st.submitSpot({ name: 'Seed beach', aliases: [], lat: 49.2757, lon: -0.2591, country: '', water: '', facing_deg: null, facing_source: 'seed', sports: ['kitesurf'], tide_notes: '', hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [] });
+    (await st.getSpot('seed-beach'))!.status = 'seed'
+    await createServer(st, { estimateFacing: async () => { calls++; return { facing_deg: 15, distance_m: 300 } } }).connect(b)
+    const c = new Client({ name: 't2', version: '0' }); await c.connect(a)
+    const r1: any = await c.callTool({ name: 'find_spot', arguments: { query: 'Seed beach' } })
+    expect(r1.content[0].text).toMatch(/\[seed\] Seed beach/); expect(r1.content[0].text).toMatch(/faces 15° NNE \(coastline, estimated: confirm with the user\)/); expect(r1.content[0].text).toMatch(/Next step: search the web/)
+    await c.callTool({ name: 'find_spot', arguments: { query: 'Seed beach' } })
+    expect(calls).toBe(1)
+    const r2: any = await c.callTool({ name: 'spot_forecast', arguments: { spot_id: 'seed-beach', days: 1, hours_from: 9, hours_to: 9 } })
+    expect(r2.content[0].text).toMatch(/Orientation estimated from the coastline, confirm it/); expect(r2.content[0].text).toMatch(/Beach faces NNE/)
+    await c.close()
+  })
+  it('does not estimate for schools or when the coastline is too far', async () => {
+    let calls = 0
+    const [a, b] = InMemoryTransport.createLinkedPair(); const st = new MemoryStore()
+    await st.submitSpot({ name: 'Kite school', kind: 'school', aliases: [], lat: 49.2757, lon: -0.2591, country: '', water: '', facing_deg: null, facing_source: 'seed', sports: ['kitesurf'], tide_notes: '', hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [] })
+    await st.submitSpot({ name: 'Inland lake', aliases: [], lat: 48.0, lon: 2.0, country: '', water: '', facing_deg: null, facing_source: 'seed', sports: ['windsurf'], tide_notes: '', hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [] })
+    await createServer(st, { estimateFacing: async () => { calls++; return { facing_deg: 90, distance_m: 5000 } } }).connect(b)
+    const c = new Client({ name: 't3', version: '0' }); await c.connect(a)
+    const r1: any = await c.callTool({ name: 'spot_info', arguments: { spot_id: 'kite-school' } }); expect(r1.content[0].text).toMatch(/school\/club/); expect(r1.content[0].text).toMatch(/faces unknown/)
+    const r2: any = await c.callTool({ name: 'spot_info', arguments: { spot_id: 'inland-lake' } }); expect(r2.content[0].text).toMatch(/faces unknown/)
+    expect(calls).toBe(1)
+    await c.close()
   })
 })

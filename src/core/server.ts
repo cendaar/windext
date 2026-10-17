@@ -4,22 +4,23 @@ import { fetchForecast, geocode, MODEL_LABELS, defaultModels } from './openmeteo
 import { summarizeHour, findWindows, gustDiagnostics, renderTable, compass, COMPASS } from './analysis.js'
 import type { Store, SpotCard, WindQuality } from './store.js'
 
-export const INSTRUCTIONS = `windext gives wind-sport forecasts (kitesurf, windsurf, wingfoil, sailing) by reading several weather models at once for a spot, and keeps an open, community-built database of spots.
+export const INSTRUCTIONS = `windext: multi-model wind forecasts for wind sports (kitesurf, windsurf, wingfoil, sailing) plus an open, community-built database of spots. Every question a rider asks makes the next answer better: forecasts are archived, spot cards are shared, and session reports will score the models spot by spot.
 
-Workflow:
-1. find_spot with the place name. It returns known spot cards (status seed/community/verified) or plain geocoding results.
-2. If a card exists, pass its spot_id to spot_forecast / ride_windows: the forecast is then read against the beach orientation and the spot's known good and forbidden wind directions.
-3. If NO card exists (geocoding only): search the web yourself for the spot guide (orientation of the beach, launch area, which wind directions work, hazards, tide, local rules). Summarise the facts, ask the user to confirm or correct them (locals know better than guides), then call submit_spot with the confirmed card and the source URLs. Then run the forecast with the new spot_id. Never skip the user's confirmation.
-4. Treat 'community' and 'seed' cards as useful but unverified; say so when safety depends on them. If the user corrects a card, call submit_spot again with the fix.
+WORKFLOW
+1. find_spot with the place or spot name. It returns known cards (status seed, community or verified; kind spot or school) and geocoding results.
+2. Pass the card's spot_id to spot_forecast and ride_windows. The forecast is then read against the beach orientation and the spot's known good and forbidden wind sectors.
+3. A 'seed' card comes from OpenStreetMap: position and sports only, orientation possibly estimated from the coastline. A 'school' card is a club, school or shop, not the launch itself. In both cases, and whenever no card exists: search the web yourself for the spot guide (beach orientation, launch area, working and forbidden wind directions, hazards, tide, rules, season). Summarise the facts, ask the user to confirm or correct them (locals know better than guides), then call submit_spot with the confirmed card and the source URLs. Never skip the confirmation. Do this gently, once per spot, as a favour to the next rider, not as a chore.
+4. Treat 'seed' and 'community' cards as useful but unverified; say so whenever safety depends on them. A coastline-estimated orientation is a guess: confirm it with the user before relying on it for offshore warnings.
+5. If the user mentions having ridden a spot ("I was there yesterday, it was 20 knots"), thank them and note that session reports will soon be recorded to score the models.
 
-Reading the table as a rider:
-- MEAN is the model consensus, SPREAD the disagreement in knots: <= 4 reliable, 4-8 confirm on the morning run, > 8 do not plan on it. AGREE summarises this.
-- Prefer the fine regional model (AROME HD in France/W-Europe, ICON-D2 in Germany/Alps, UKMO in the UK, HRRR in the US) within 48 h; ECMWF beyond 3 days; GFS is the coarsest, a tie-breaker.
-- Gust factor (gust/mean): < 1.3 steady, 1.3-1.6 normal, 1.6-1.9 tiring, >= 1.9 unsafe for beginners even if the mean looks fine.
-- Offshore wind is dangerous for kite and wing without rescue cover: say it explicitly. Side-off is for experts. Side and side-on are ideal. Onshore with waves is hard to launch.
-- A spot card's 'forbidden' sectors override everything: if the forecast wind is in a forbidden sector, say the spot does not work that day.
-- Units are knots; think in kite/wing/sail sizes for the rider's weight, as orders of magnitude.
-- Answer in the user's language.`
+READING THE TABLE AS A RIDER
+- MEAN is the model consensus. SPREAD is the disagreement in knots: <= 4 reliable, 4-8 confirm on the morning run, > 8 do not plan on it. AGREE summarises both speed and direction agreement.
+- By lead time: within 48 h trust the fine regional model (AROME HD in France and W-Europe, ICON-D2 in Germany and the Alps, UKMO in the UK, KNMI/DMI on the North Sea, HRRR in the US); 2 to 5 days ECMWF; beyond, only the trend. GFS is the coarsest, a tie-breaker.
+- Gust factor (gust / mean): < 1.3 steady, 1.3-1.6 normal, 1.6-1.9 tiring, >= 1.9 unsafe for beginners even if the mean looks fine. The diagnosis lines explain the cause (sea warmer than air, showers, shear, model disagreement).
+- Shore relation: offshore is dangerous for kite and wing without rescue cover, say it explicitly; side-off is for experts; side and side-on are ideal; onshore with waves is hard to launch. A card's 'forbidden' sector overrides everything: the spot does not work that day.
+- Tide: when the card has tide notes, apply them; on the Atlantic and Channel coasts a falling tide plus offshore wind is the worst combination.
+- Gear, as orders of magnitude for a 75 kg rider, scaled by weight: kite 12 kn 12-14 m, 16 kn 10-12 m, 20 kn 8-9 m, 25 kn 7 m; wing 12 kn 6 m, 18 kn 4.5-5 m, 25 kn 3.5-4 m; windsurf 15 kn 6.5-7 m2, 20 kn 5.5 m2, 25 kn 4.7 m2. Ask the weight if unknown.
+- Units are knots. Answer in the user's language.`
 
 const Lat = z.number().min(-90).max(90), Lon = z.number().min(-180).max(180)
 const SpotId = z.string().min(1).optional().describe('Spot id from find_spot (preferred over raw coordinates: enables orientation and direction knowledge)')
@@ -27,8 +28,8 @@ const SpotId = z.string().min(1).optional().describe('Spot id from find_spot (pr
 const fmtCard = (s: SpotCard & { distance_km?: number }) => {
   const wind = s.wind.length ? s.wind.map(w => `${w.sector}:${w.quality}${w.note ? ` (${w.note})` : ''}`).join(', ') : 'unknown'
   const lines = [
-    `[${s.status}] ${s.name} (id: ${s.id}) lat ${s.lat} lon ${s.lon}${s.country ? `, ${s.country}` : ''}${s.distance_km != null ? `, ${s.distance_km} km away` : ''}`,
-    `  water: ${s.water || '?'} | faces ${s.facing_deg != null ? `${Math.round(s.facing_deg)}° ${compass(s.facing_deg)} (${s.facing_source})` : 'unknown'} | sports: ${s.sports.join(', ') || '?'}`,
+    `[${s.status}${s.kind === 'school' ? ', school/club' : ''}] ${s.name} (id: ${s.id}) lat ${s.lat} lon ${s.lon}${s.country ? `, ${s.country}` : ''}${s.distance_km != null ? `, ${s.distance_km} km away` : ''}`,
+    `  water: ${s.water || '?'} | faces ${s.facing_deg != null ? `${Math.round(s.facing_deg)}° ${compass(s.facing_deg)} (${s.facing_source}${s.facing_source === 'coastline' ? ', estimated: confirm with the user' : ''})` : 'unknown'} | sports: ${s.sports.join(', ') || '?'}`,
     `  wind sectors: ${wind}`,
   ]
   if (s.launch_notes) lines.push(`  launch: ${s.launch_notes}`)
@@ -42,8 +43,24 @@ const fmtCard = (s: SpotCard & { distance_km?: number }) => {
 
 const sectorQuality = (card: SpotCard | null, dir: number): WindQuality | undefined => card?.wind.find(w => w.sector === compass(dir))?.quality
 
-export function createServer(store: Store): McpServer {
-  const server = new McpServer({ name: 'windext', version: '0.2.0' }, { instructions: INSTRUCTIONS })
+export interface ServerOptions { estimateFacing?: (lat: number, lon: number) => Promise<{ facing_deg: number; distance_m: number } | null> }
+
+export function createServer(store: Store, options: ServerOptions = {}): McpServer {
+  const server = new McpServer({ name: 'windext', version: '0.3.0' }, { instructions: INSTRUCTIONS })
+
+  /** Fills a missing orientation from the coastline, once, and persists it. Best effort, never blocks a reply for long. */
+  const withFacing = async (cards: SpotCard[]): Promise<SpotCard[]> => {
+    if (!options.estimateFacing) return cards
+    return Promise.all(cards.map(async c => {
+      if (c.facing_deg != null || c.kind !== 'spot') return c
+      try {
+        const est = await options.estimateFacing!(c.lat, c.lon)
+        if (!est || est.distance_m > 1200) return c
+        await store.setFacing(c.id, est.facing_deg, 'coastline')
+        return { ...c, facing_deg: est.facing_deg, facing_source: 'coastline' }
+      } catch { return c }
+    }))
+  }
 
   const resolve = async (a: { spot_id?: string; lat?: number; lon?: number }) => {
     const card = a.spot_id ? await store.getSpot(a.spot_id) : null
@@ -62,12 +79,12 @@ export function createServer(store: Store): McpServer {
     const known = await store.searchSpots(query)
     const geo = await geocode(query).catch(() => [])
     const nearKnown = geo[0] ? await store.nearbySpots(geo[0].lat, geo[0].lon, 15, 5) : []
-    const cards = [...known, ...nearKnown.filter(n => !known.some(k => k.id === n.id))]
+    const cards = await withFacing([...known, ...nearKnown.filter(n => !known.some(k => k.id === n.id))])
     const out: string[] = []
     if (cards.length) out.push(`Known spots:\n${cards.map(fmtCard).join('\n')}`)
     else out.push('No spot card in the database for this query.')
     if (geo.length) out.push(`Geocoding:\n${geo.map(p => `${p.name}, ${p.admin}, ${p.country}: lat ${p.lat}, lon ${p.lon}`).join('\n')}`)
-    if (!cards.length) out.push('Next step: search the web for this spot\'s guide (beach orientation, launch, working wind directions, hazards, tide, rules), confirm the facts with the user, then call submit_spot.')
+    if (!cards.some(c => c.status !== 'seed' && c.kind === 'spot')) out.push('Next step: search the web for this spot\'s guide (beach orientation, launch, working wind directions, hazards, tide, rules), confirm the facts with the user, then call submit_spot. This is what makes the next rider\'s forecast better.')
     return { content: [{ type: 'text', text: out.join('\n\n') }] }
   })
 
@@ -77,10 +94,11 @@ export function createServer(store: Store): McpServer {
     description: 'Full card of a known spot, or the spots known within a radius of a point.',
     inputSchema: { spot_id: SpotId, lat: Lat.optional(), lon: Lon.optional(), radius_km: z.number().min(1).max(200).default(30) },
   }, async (a) => {
-    if (a.spot_id) { const c = await store.getSpot(a.spot_id); return { content: [{ type: 'text', text: c ? fmtCard(c) : `Unknown spot_id ${a.spot_id}` }] } }
+    if (a.spot_id) { const c = await store.getSpot(a.spot_id); const [f] = c ? await withFacing([c]) : [null]; return { content: [{ type: 'text', text: f ? fmtCard(f) : `Unknown spot_id ${a.spot_id}` }] } }
     if (a.lat == null || a.lon == null) return { content: [{ type: 'text', text: 'Give spot_id or lat+lon.' }] }
     const near = await store.nearbySpots(a.lat, a.lon, a.radius_km, 15)
-    return { content: [{ type: 'text', text: near.length ? near.map(fmtCard).join('\n') : `No known spot within ${a.radius_km} km.` }] }
+    const cards = await withFacing(near)
+    return { content: [{ type: 'text', text: cards.length ? cards.map((c, i) => fmtCard({ ...c, distance_km: near[i].distance_km })).join('\n') : `No known spot within ${a.radius_km} km.` }] }
   })
 
   server.registerTool('submit_spot', {
@@ -94,6 +112,7 @@ export function createServer(store: Store): McpServer {
       facing_deg: z.number().min(0).max(360).optional().describe('Direction the launch beach faces, towards the water'),
       facing_source: z.enum(['guide', 'user', 'coastline', 'seed']).default('guide'),
       sports: z.array(z.enum(['kitesurf', 'windsurf', 'wingfoil', 'sailing'])).default([]),
+      kind: z.enum(['spot', 'school']).default('spot').describe('spot = a place to launch and ride; school = club, school or shop'),
       wind: z.array(z.object({ sector: z.enum(COMPASS as [string, ...string[]]), quality: z.enum(['best', 'ok', 'marginal', 'forbidden']), note: z.string().default('') })).default([]).describe('Which wind directions work. Use 16-point sectors.'),
       launch_notes: z.string().default(''), tide_notes: z.string().default(''), hazards: z.string().default(''), rules: z.string().default(''), season: z.string().default(''),
       sources: z.array(z.string().url()).default([]).describe('URLs of the guides used'),
@@ -119,7 +138,8 @@ export function createServer(store: Store): McpServer {
     },
   }, async (a) => {
     const { card, lat, lon } = await resolve(a)
-    const facing = a.facing_deg ?? card?.facing_deg ?? undefined
+    const [c2] = card ? await withFacing([card]) : [null]
+    const facing = a.facing_deg ?? c2?.facing_deg ?? undefined
     const fc = await fetchForecast({ lat, lon, days: a.days, models: a.models, startDate: a.start_date })
     const hours = fc.hours.map(h => summarizeHour(h, facing)).filter((x): x is NonNullable<typeof x> => x != null)
     const table = renderTable(fc, hours, { from: a.hours_from, to: a.hours_to })
@@ -140,7 +160,7 @@ export function createServer(store: Store): McpServer {
         await store.archiveForecast(rows)
       }
     } catch { /* statistics must never break a forecast */ }
-    const head = `${card ? `Spot: ${card.name} [${card.status}]. ` : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
+    const head = `${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
     return { content: [{ type: 'text', text: `${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}` }] }
   })
 
@@ -193,6 +213,24 @@ export function createServer(store: Store): McpServer {
   }, ({ spot, sport, day }) => ({
     messages: [{ role: 'user', content: { type: 'text', text: `I ride ${sport ?? 'kitesurf'}. Should I go to ${spot} ${day ?? 'tomorrow'}? Use find_spot, then spot_forecast with the spot_id (if the spot is unknown, research it, confirm with me and submit it first). Compare the models, give me the best window, a gear size for my weight (ask if unknown), the safety points (offshore, gusts, tide, forbidden directions) and how much to trust the forecast.` } }],
   }))
+
+  server.registerPrompt('spot_compare', {
+    title: 'Compare two spots',
+    description: 'Which of two spots to choose on a given day.',
+    argsSchema: { spot_a: z.string(), spot_b: z.string(), day: z.string().optional(), sport: z.string().optional() },
+  }, ({ spot_a, spot_b, day, sport }) => ({ messages: [{ role: 'user', content: { type: 'text', text: `${sport ?? 'Kitesurf'}, ${day ?? 'tomorrow'}: ${spot_a} or ${spot_b}? Run find_spot and spot_forecast for both, compare wind, gusts, direction against each spot's orientation and sectors, and pick one with a clear reason. Mention the drive-worthiness given the model agreement.` } }] }))
+
+  server.registerPrompt('weekend_planner', {
+    title: 'Weekend planner',
+    description: 'Best session of the coming weekend among the spots near a place.',
+    argsSchema: { near: z.string().describe('Town or region'), sport: z.string().optional(), radius_km: z.string().optional() },
+  }, ({ near, sport, radius_km }) => ({ messages: [{ role: 'user', content: { type: 'text', text: `Plan my ${sport ?? 'kitesurf'} weekend around ${near}. Use find_spot on ${near}, then spot_info with lat/lon and radius ${radius_km ?? '60'} km to list known spots, then ride_windows (days 3) on the best candidates. Give me the top two windows with spot, time, expected wind, direction vs the spot, and confidence.` } }] }))
+
+  server.registerPrompt('gear_advice', {
+    title: 'Which size to bring',
+    description: 'Gear size for a rider at a spot on a day.',
+    argsSchema: { spot: z.string(), sport: z.string().optional(), weight_kg: z.string().optional(), day: z.string().optional(), level: z.string().optional() },
+  }, ({ spot, sport, weight_kg, day, level }) => ({ messages: [{ role: 'user', content: { type: 'text', text: `I ride ${sport ?? 'kitesurf'}, ${weight_kg ?? '75'} kg, level ${level ?? 'intermediate'}. What should I bring to ${spot} ${day ?? 'tomorrow'}? Use find_spot and spot_forecast, then give one size for the main window and a second if the range of models or gusts calls for it.` } }] }))
 
   server.registerPrompt('explain_gusts', {
     title: 'Why is it gusty?',

@@ -21,6 +21,12 @@ describe('MemoryStore', () => {
     expect(r).toEqual({ id: 'ouistreham-riva-bella', action: 'updated', status: 'community' })
     expect((await s.getSpot('ouistreham-riva-bella'))!.submissions).toBe(2)
   })
+  it('never merges a launch spot into a nearby school, or the reverse', async () => {
+    const s = new MemoryStore()
+    await s.submitSpot(card({ name: 'Kite school', kind: 'school' }))
+    expect(await s.submitSpot(card())).toMatchObject({ id: 'ouistreham-riva-bella', action: 'created' })
+    expect(await s.submitSpot(card({ name: 'Other school', kind: 'school', lat: 49.2866 }))).toMatchObject({ id: 'kite-school', action: 'updated' })
+  })
   it('keeps two spots 3 km apart separate and finds them by name, alias and distance', async () => {
     const s = new MemoryStore()
     await s.submitSpot(card()); await s.submitSpot(card({ name: 'Merville-Franceville', aliases: [], lat: 49.285, lon: -0.20 }))
