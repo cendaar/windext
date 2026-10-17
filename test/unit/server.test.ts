@@ -109,7 +109,7 @@ describe('tides', () => {
     const { text } = await call('tides', { spot_id: 'ouistreham-riva-bella', days: 1 })
     expect(text).toMatch(/Ouistreham Riva-Bella\. Local time/); expect(text).toMatch(/HW 03:00 \(\+2 m\)/); expect(text).toMatch(/LW 09:1\d \(-2 m\)/); expect(text).toMatch(/Spot note: ride 2h around HW/)
     const f = await call('spot_forecast', { spot_id: 'ouistreham-riva-bella', days: 1, hours_from: 9, hours_to: 9 })
-    expect(f.text).toMatch(/Tides \(model tide, uncalibrated.*spot note: ride 2h around HW\):\n2026-10-18: HW 03:00/)
+    expect(f.text).toMatch(/Tides \(MODEL TIDE, UNCALIBRATED.*spot note: ride 2h around HW\):\n2026-10-18: HW 03:00/)
   })
   it('applies and reports a submitted tide calibration', async () => {
     await call('submit_spot', { ...riva, tide_offset_min: 50 })
