@@ -75,7 +75,7 @@ export function createServer(): McpServer {
     const notes: Record<string, string> = {
       meteofrance_seamless: 'AROME 1.3 km over France/W-Europe (48 h), then ARPEGE; best for French spots',
       icon_seamless: 'ICON-D2 2 km over Central Europe, ICON-EU 7 km, ICON global 11 km',
-      ecmwf_ifs025: 'ECMWF IFS 25 km global; best medium range (3-10 days)',
+      ecmwf_ifs: 'ECMWF IFS 9 km global; best medium range (3-10 days)',
       gfs_seamless: 'NOAA GFS 25 km global, HRRR 3 km over the US; coarsest in Europe',
       ukmo_seamless: 'UK Met Office 2 km over the UK, 10 km global',
       knmi_seamless: 'KNMI Harmonie 2 km over Benelux/North Sea',

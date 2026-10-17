@@ -3,7 +3,8 @@
 export const MODEL_LABELS: Record<string, string> = {
   meteofrance_seamless: 'AROME/ARPEGE',
   icon_seamless: 'ICON',
-  ecmwf_ifs025: 'ECMWF',
+  ecmwf_ifs: 'ECMWF 9km',
+  ecmwf_ifs025: 'ECMWF 25km',
   gfs_seamless: 'GFS',
   ukmo_seamless: 'UKMO',
   knmi_seamless: 'KNMI',
@@ -13,7 +14,7 @@ export const MODEL_LABELS: Record<string, string> = {
   bom_access_global: 'BOM',
 }
 
-const GLOBAL_MODELS = ['meteofrance_seamless', 'icon_seamless', 'ecmwf_ifs025', 'gfs_seamless', 'ukmo_seamless']
+const GLOBAL_MODELS = ['meteofrance_seamless', 'icon_seamless', 'ecmwf_ifs', 'gfs_seamless', 'ukmo_seamless']
 const EUROPE_EXTRA = ['knmi_seamless', 'dmi_seamless']
 
 export function defaultModels(lat: number, lon: number): string[] {
