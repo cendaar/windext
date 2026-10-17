@@ -1,4 +1,9 @@
 /** Open-Meteo access layer. Free, no API key, non-commercial use. https://open-meteo.com */
+import { type Cache, noCache } from './cache.js'
+
+let cache: Cache = noCache
+export const setCache = (c: Cache) => { cache = c }
+const CACHE_TTL = 1800
 
 export const MODEL_LABELS: Record<string, string> = {
   meteofrance_seamless: 'AROME/ARPEGE',
@@ -43,14 +48,18 @@ export interface Forecast {
 }
 
 async function getJson(url: string): Promise<any> {
+  const hit = await cache.get(url)
+  if (hit) return hit
   const res = await fetch(url, { headers: { 'User-Agent': 'windext-mcp (https://github.com/baptisterousseau/windext)' } })
   if (!res.ok) throw new Error(`Open-Meteo HTTP ${res.status}: ${await res.text()}`)
-  return res.json()
+  const data = await res.json()
+  await cache.put(url, data, CACHE_TTL)
+  return data
 }
 
 export async function fetchForecast(opts: { lat: number; lon: number; days: number; models?: string[]; startDate?: string }): Promise<Forecast> {
   const models = opts.models?.length ? opts.models : defaultModels(opts.lat, opts.lon)
-  const base = { latitude: String(opts.lat), longitude: String(opts.lon), timezone: 'auto', wind_speed_unit: 'kn' }
+  const base = { latitude: opts.lat.toFixed(3), longitude: opts.lon.toFixed(3), timezone: 'auto', wind_speed_unit: 'kn' }
   const range: Record<string, string> = opts.startDate
     ? { start_date: opts.startDate, end_date: addDays(opts.startDate, opts.days - 1) }
     : { forecast_days: String(opts.days) }

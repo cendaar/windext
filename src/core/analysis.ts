@@ -38,7 +38,8 @@ export function summarizeHour(h: Hour, facing?: number): HourSummary | null {
   const speed = mean(speeds), gust = gusts.length ? mean(gusts) : speed, dir = dirs.length ? circMean(dirs) : 0
   const spread = Math.max(...speeds) - Math.min(...speeds)
   const dirSpread = dirs.length ? Math.max(...dirs.map(d => angDiff(d, dir))) : 0
-  const agreement = spread <= 4 && dirSpread <= 30 ? 'high' : spread <= 8 && dirSpread <= 60 ? 'medium' : 'low'
+  // dirSpread is the largest deviation from the mean direction: 20° means models sit within a 40° fan.
+  const agreement = spread <= 4 && dirSpread <= 20 ? 'high' : spread <= 8 && dirSpread <= 40 ? 'medium' : 'low'
   return { time: h.time, speed: r1(speed), gust: r1(gust), dir: Math.round(dir), spread: r1(spread), gustFactor: r1(speed > 0 ? gust / speed : 0), agreement, shore: facing == null ? undefined : shoreRelation(dir, facing) }
 }
 
@@ -59,7 +60,11 @@ export function findWindows(hours: HourSummary[], min: number, max: number, opts
     }
     run = []
   }
-  for (const h of hours) { if (ok(h)) run.push(h); else flush() }
+  const consecutive = (prev: HourSummary | undefined, h: HourSummary) => !prev || new Date(h.time).getTime() - new Date(prev.time).getTime() === 3.6e6
+  for (const h of hours) {
+    if (!consecutive(run[run.length - 1], h)) flush()   // a gap (night, filtered hour) ends the run
+    if (ok(h)) run.push(h); else flush()
+  }
   flush()
   return out
 }

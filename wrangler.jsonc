@@ -5,5 +5,7 @@
   "compatibility_date": "2025-10-01",
   "compatibility_flags": ["nodejs_compat"],
   "routes": [{ "pattern": "wind.oooooooo.dev", "custom_domain": true }],
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  "d1_databases": [{ "binding": "DB", "database_name": "windext", "database_id": "3ae5977b-4d2a-4a41-ae84-5f696017c111", "migrations_dir": "migrations" }],
+  "kv_namespaces": [{ "binding": "CACHE", "id": "3de245c1983442a097dac9c0e2a65172" }]
 }

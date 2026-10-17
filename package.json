@@ -4,15 +4,31 @@
   "description": "MCP server for wind sports: multi-model wind forecasts, gust analysis and rideable windows for kitesurf, windsurf, wingfoil and sailing.",
   "type": "module",
   "license": "MIT",
-  "bin": { "windext-mcp": "dist/stdio.js" },
-  "files": ["dist"],
-  "keywords": ["mcp", "model-context-protocol", "claude", "wind", "kitesurf", "windsurf", "wingfoil", "forecast", "open-meteo"],
+  "bin": {
+    "windext-mcp": "dist/stdio.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "wind",
+    "kitesurf",
+    "windsurf",
+    "wingfoil",
+    "forecast",
+    "open-meteo"
+  ],
   "scripts": {
     "build": "tsc",
     "dev:stdio": "tsx src/stdio.ts",
     "dev:worker": "wrangler dev",
     "deploy": "wrangler deploy",
-    "test": "tsx test/smoke.ts"
+    "test": "vitest run",
+    "test:smoke": "tsx test/smoke.ts",
+    "test:integration": "tsx test/integration.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",
@@ -23,6 +39,7 @@
     "@types/node": "^22.0.0",
     "tsx": "^4.0.0",
     "typescript": "^5.7.0",
+    "vitest": "^3.2.7",
     "wrangler": "^4.151.1"
   }
 }
