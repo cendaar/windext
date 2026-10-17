@@ -1,0 +1,44 @@
+{
+  "id": "brouwersdam-wing",
+  "q": "Morgen wingen op de Brouwersdam? 82 kg, wings 4,5 en 6 m. Welke kant (Noordzee of Grevelingen), welk tijdstip en welke maat?",
+  "sans": "Ik heb het KNMI-model via Open-Meteo bekeken voor zondag 18 oktober.\n\n**Samengevat: ga vroeg, kies de Grevelingen-kant en neem de 6 m.**\n\n### De wind morgen\n| Tijd | Wind | Vlagen | Richting |\n|---|---|---|---|\n| 07–10 u | 12–13 kn | 20–21 kn | NNO → NO |\n| 11 u | 10,5 kn | 21 kn | NO |\n| 12–14 u | 6–8 kn | 14–17 kn | ONO |\n| middag | 4–6 kn | — | O, valt weg |\n| 20–21 u | 11 kn | 17–19 kn | O (wordt donker, regen) |\n\n### Tijdstip: 08:30 tot ongeveer 11:00\n- De zon komt rond 08:15 op, dus vroeger heeft weinig zin.\n- Na 11 uur zakt de wind snel onder de 10 knopen. Dan blijf je alleen met een groot foil-front nog op het water. Plan dus maximaal twee à tweeënhalf uur.\n\n### Kant: Grevelingen\n- De dam loopt ongeveer NNO–ZZW. Een NNO-wind staat dus aan beide kanten vrijwel recht sideshore. Als de wind tegen 10 uur naar NO draait, wordt hij aan de Grevelingen-kant side-onshore. Aan de Noordzee-kant wordt hij dan side-offshore, en dat wil je niet bij wind die afneemt.\n- Op de Noordzee staat 1,5 m deining uit het noorden met een korte periode van ongeveer 6 seconden. Met dwarse wind wordt dat rommelig water. De Grevelingen is vlak en heeft geen getij.\n\n### Maat: 6 m\n- Met 82 kg en een gemiddelde van 12–13 knopen heb je de 6 m nodig. Met de 4,5 m kom je bij die gemiddelde wind te weinig vooruit.\n- Het verschil tussen de gemiddelde wind en de vlagen is groot (13 tegen 21 knopen), dus het wordt vlagerig. Neem je grootste foil-front, want je moet door de gaten heen kunnen pompen.\n- De 4,5 m wordt pas interessant als je ter plekke ziet dat de wind constant boven de 17–18 knopen zit. Dat verwacht dit model niet.\n\n### Let op\n- Dit komt uit één model. Kijk vanavond en morgenvroeg nog even op Windguru of Windfinder, of naar de live meting bij de Brouwersdam. Als het zo blijft, is het een korte ochtendsessie.\n- De lucht is 11–12 °C en het water ongeveer 14 °C. Trek een 4/3 of 5/4 aan met schoentjes.\n- Rond 11–12 uur kan er een lichte bui vallen.\n\nGoede sessie! 🪁\n\nBron: [Open-Meteo, KNMI-model](https://open-meteo.com) en de [Open-Meteo Marine API](https://open-meteo.com/en/docs/marine-weather-api)",
+  "avec": "**Morgen (zondag 18/10) is geen goede wingdag: 1/10.** Gemiddeld 10–13 knopen uit NO tot ONO met vlagen tot 18. Dat is te weinig voor jouw 6 m bij 82 kg. Alleen tussen ongeveer 10:00 en 11:00 komt het gemiddelde rond de 13 knopen.\n\n**Waarom niet:**\n- Het grootste deel van de dag waait het 9–12 knopen. Na 14:00 zakt het naar 8–9 knopen.\n- De wind komt over land en is vlagerig (vlaagfactor 1,5). Je hebt dus gaten van 9 knopen tussen vlagen van 18.\n- De weermodellen verschillen veel (ECMWF zegt 8–9 knopen, UKMO 14–17). Het kan meevallen, maar ook helemaal niets worden.\n\n**Als je toch gaat:**\n- **Kant: Grevelingen.** Op de Noordzeekant is de wind vanaf ongeveer 10:00 side-off en later aflandig, en dan wordt die kant afgeraden. Aan de Grevelingenkant is NO/ONO side tot side-on, en je hebt vlak water zonder getij.\n- **Tijd: 09:00–12:00**, met de beste kans rond 10:00–11:00.\n- **Maat: 6 m.** Met 4,5 m kom je morgen niet vooruit. Neem je grootste frontfoil en board, want je moet in de gaten tussen de vlagen kunnen blijven foilen.\n\n**Beslisregel voor 's ochtends:** kijk rond 08:30 op een live windmeter in de buurt (bijvoorbeeld Brouwersdam of Stavenisse). Waait het constant 13 knopen of meer uit NO/ONO, dan is het het rijden waard. Onder de 12 knopen kun je beter thuisblijven.\n\n**Veiligheid:**\n- Ga bij deze windrichting niet het water op aan de Noordzeekant, want de wind blaast je de zee op.\n- Het water is ongeveer 16 °C. Neem een wetsuit van 4/3 of dikker mee.\n- Wat in de database over de Grevelingenkant staat, is nog niet geverifieerd. Rijd daar alleen waar het toegestaan is en blijf uit de buurt van de dam en zwemmers.\n\nKlopt het spotprofiel van de Brouwersdam volgens jou (Noordzeekant op WNW, kitezone tot De Kous, met E/ESE/SE als aflandig)? Als je dat bevestigt of verbetert, kan ik het opslaan in de database.",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 3,
+      "uncertainty": 3,
+      "actionability": 5,
+      "local_knowledge": 4,
+      "concision": 4,
+      "errors": [
+        "The dates and sunrise are right. 18 October 2026 is a Sunday. Daylight saving time (CEST) lasts until 25 October, so sunrise at Ouddorp is about 08:12, which matches A's '~08:15'.",
+        "A relies on one model (KNMI via Open-Meteo). It does say so and tells the rider to check Windguru, Windfinder or the live reading. But it does not mention how far other models disagree, so the rider gets no sense of the risk that the wind fails completely.",
+        "A gives no clear no-go threshold for the morning. Something like 'under ~12 kn steady, stay home' is missing, even though the gust factor is high (13 vs 21 kn).",
+        "The safety advice on the North Sea side is soft. A only says side-offshore is 'not what you want'. It should say plainly not to launch there in NE/ENE wind, especially as the wind drops and turns east (offshore on the WNW-facing beach).",
+        "A does not mention where riding is allowed on the Grevelingen side (designated zones, staying clear of the dam, swimmers and harbours). It also misses the local alternative in NE/E wind: Bruinisse on the Grevelingen, which local schools use in these conditions.",
+        "A cites the data source (Open-Meteo), which is acceptable and not distracting."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 5,
+      "actionability": 3,
+      "local_knowledge": 3,
+      "concision": 2,
+      "errors": [
+        "The 16 °C water temperature is probably too warm for mid-to-late October in the Delta/North Sea. About 14–15 °C is more realistic. The 4/3-or-thicker advice is still right.",
+        "The '1/10' verdict is too harsh and clashes with the rest of the answer. B itself names a 10–11 h window at about 13 kn and a usable plan with the 6 m. That is a marginal but rideable morning for 82 kg with a big front foil, not a 1/10 day.",
+        "The time window is 09:00–12:00, but B's own data puts the usable wind at 10–11 h. A's start after sunrise (~08:15) makes better use of the early wind.",
+        "Stavenisse is a KNMI station on the Oosterschelde, about 25 km away. It is a weak proxy. The Rijkswaterstaat or Windguru station at the Brouwersdam itself is the right one to check.",
+        "There is internal tool talk the rider does not need. 'Wat in de database over de Grevelingenkant staat, is nog niet geverifieerd' and the closing question asking the user to confirm the spot profile so it can be stored in the database are developer-facing, not rider-facing.",
+        "Like A, B misses the local Bruinisse alternative for NE/E wind and gives no concrete zones on the Grevelingen side.",
+        "The facts B gets right: the dam runs about NNE–SSW, so the North Sea beach faces WNW and NE→ENE wind turns side-off and then offshore there. The Grevelingen side is then side to side-on, with no tide. The decision rule (≥13 kn steady at 08:30, otherwise stay home) and the model spread (ECMWF 8–9 vs UKMO 14–17) are useful."
+      ]
+    },
+    "winner": "sans",
+    "why": "Both pick the same side and size, and both reason correctly about the dam's orientation. A gives a clean, consistent, rider-focused plan with an earlier, better-used window. B's useful uncertainty handling is outweighed by a contradictory 1/10 verdict, a probably-high water temperature and leaked database/tool talk."
+  },
+  "seconds": 104
+}

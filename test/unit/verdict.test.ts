@@ -196,3 +196,15 @@ describe('gear in gusty wind', () => {
     expect(v.gear!.size).toBe(10)
   })
 })
+
+describe('gear calibration cases from the bench', () => {
+  const k = (w: number, sizes: number[]) => ({ sport: 'kitesurf' as const, weightKg: w, sizes, level: 'intermediate' as const })
+  it('Dakhla: 65 kg in 17-18 kn steady keeps the 9', () => { expect(V(fc(() => ({ s: 17.5, g: 22 })), {}, k(65, [7, 9])).gear!.size).toBe(9) })
+  it('Maui: 75 kg in 15 kn gusting 24 takes the 10', () => { expect(V(fc(() => ({ s: 15, g: 24 })), {}, k(75, [8, 10, 12])).gear!.size).toBe(10) })
+  it('80 kg in 17 kn steady does not take the 12', () => { expect(V(fc(() => ({ s: 17 })), {}, k(80, [9, 12])).gear!.size).toBe(9) })
+  it('80 kg in 13.5 kn takes the 12', () => { expect(V(fc(() => ({ s: 13.5 })), {}, k(80, [9, 12])).gear!.size).toBe(12) })
+  it('a near miss is a maybe, not a flat zero', () => {
+    const v = V(fc(h => ({ s: h === 10 ? 12.5 : 9 })), {}, k(80, [9, 12]))
+    expect(v.status).toBe('check'); expect(v.score).toBeGreaterThan(0)
+  })
+})

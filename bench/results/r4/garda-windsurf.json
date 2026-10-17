@@ -1,0 +1,43 @@
+{
+  "id": "garda-windsurf",
+  "q": "Lohnt sich morgen Windsurfen in Torbole am Gardasee? 80 kg, Segel 5,3 und 6,5. Wann Pelèr, wann Ora, welches Segel?",
+  "sans": "**Kurz gesagt: Morgen (So, 18.10.) lohnt es sich eher nicht.** Beide Modelle, die ich abgefragt habe, sehen für Torbole praktisch keinen Wind.\n\n**Prognose für Torbole, Sonntag:**\n\n| Zeit | Open-Meteo | Windfinder |\n|---|---|---|\n| 05–08 Uhr (Pelèr-Fenster) | 3–4 kn, Böen bis ~6 kn, aus Ost | 3–4 kn, NNO |\n| 11–12 Uhr (Wechsel zur Ora) | 2–3 kn | 2 kn |\n| 13–17 Uhr (Ora-Fenster) | ~3 kn, Böen ~6 kn, aus Nord statt Süd | 2–3 kn, S/SSO |\n| Bewölkung | tagsüber meist 90–100 % | bedeckt |\n\n**Pelèr:** Die Nacht ist bis etwa 3 Uhr bedeckt. Danach reißt es auf, aber ein Nordgradient ist nicht in Sicht. Mehr als ein schwacher Hauch bis etwa 9 Uhr ist kaum zu erwarten. Ein normaler Pelèr-Tag würde 15–25 kn von ca. 5 bis 11 Uhr bringen.\n\n**Ora:** Die Ora braucht Sonne, damit sich das Land aufheizt. Bei fast geschlossener Wolkendecke und der schwachen Oktobersonne wird sie wahrscheinlich ausfallen oder höchstens mit 8–10 kn kommen. Normalerweise weht sie etwa von 12:30 bis 17 Uhr.\n\nGlobale Modelle unterschätzen den Gardasee-Wind oft. Bei diesen Wolken spricht aber nichts für eine positive Überraschung.\n\n**Welches Segel bei 80 kg (falls doch Wind kommt):**\n- **6,5:** von ca. 12 bis 18 kn. Das wäre morgen das einzig sinnvolle, und auch nur, wenn die Ora doch durchkommt. Unter ca. 11–12 kn wirst du mit 6,5 und einem normalen Board kaum gleiten.\n- **5,3:** ab ca. 18 bis 26 kn, also für einen kräftigen Pelèr oder eine starke Sommer-Ora. Das kommt morgen nicht vor.\n\n**Was du tun kannst:**\n- Morgen früh die Webcam und die Windstation in Torbole prüfen, zum Beispiel bei Windfinder (Station Torbole) oder in den Live-Daten der Surfschulen Vasco Renna und Conca d'Oro.\n- Sind es um 7 Uhr unter 8 kn und ist es grau, kannst du ausschlafen.\n- Reißt es bis Mittag auf und siehst du gegen 12:30 die dunkle Windlinie im Süden, dann nimm das 6,5.\n- Für einen Pelèr-Tag lohnt es sich, nach einem Tag mit Nordföhn oder nach einer Kaltfront Ausschau zu halten. Eine klare, kalte Nacht davor ist das beste Zeichen.\n\nQuellen: [Open-Meteo API](https://api.open-meteo.com/v1/forecast?latitude=45.87&longitude=10.875), [Windfinder Torbole](https://www.windfinder.com/forecast/torbole)",
+  "avec": "# Morgen (So, 18.10.) in Torbole: lohnt sich nicht, 0/10\n\n**Es kommt praktisch kein Wind.** Alle 7 Wettermodelle sagen den ganzen Tag nur 2–3 kn voraus, in Böen höchstens 6–7 kn. Das reicht für keines deiner Segel, auch nicht für das 6,5er.\n\n- **Pelèr (morgens, Nordwind):** Es baut sich keiner auf. Bis etwa 11 Uhr gibt es nur ein schwaches Lüftchen aus NE/E. Das weht in Torbole ablandig.\n- **Ora (nachmittags, Südwind):** Sie fällt aus. Mitte Oktober ist die Ora ohnehin schon schwach, und morgen sieht kein Modell eine Südkomponente.\n- **Unsicherheit:** Die Modelle widersprechen sich zwar bei der Richtung. Bei so wenig Wind spielt das aber keine Rolle, denn kein einziges Modell kommt auch nur in die Nähe von Gleitwind.\n\n**Welches Segel bei 80 kg, als Faustregel für einen besseren Tag:**\n- **6,5 m²:** bei Ora mit etwa 15–22 kn, das ist der typische Nachmittag.\n- **5,3 m²:** bei kräftigem Pelèr oder starker Ora ab etwa 22–28 kn.\n- Pelèr kommt meist frühmorgens bis etwa 10–11 Uhr. Die Ora setzt an sonnigen Tagen ab 12–13 Uhr ein und hält bis zum späten Nachmittag.\n\n**Sicherheit:** Ab dem 10. Oktober ist die Hauptsaison vorbei, also gibt es weniger Betrieb und weniger Rettungsboote auf dem Wasser. Bei ablandigem Wind solltest du ohne Rettungsdienst grundsätzlich nicht rausfahren.\n\nWenn du willst, schaue ich die nächsten Tage durch, ob noch ein Pelèr- oder Ora-Tag kommt. Zu den Spot-Daten: Sie sind noch nicht bestätigt. Laut Spot-Eintrag zeigt der Strand an der Conca d'Oro nach Südwesten (225°). Kannst du das bestätigen?",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 2,
+      "uncertainty": 5,
+      "actionability": 5,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "The Open-Meteo figures match what I fetched: 3–4 kn from E early on, about 2–3 kn from NNE in the afternoon, gusts of about 6 kn, cloud 90–100 %. The weekday is correct. The overcast-sky reason for the Ora failing is sound.",
+        "The statement that the night is overcast until about 3 h and then clears doesn't quite match. Cloud is about 46 % at 05 h and only 2–4 % at 06–07 h, then thickens again from 08 h. This is minor and doesn't change the decision.",
+        "Safety is almost missing. It says nothing about cold water and air in mid-October (wetsuit), that the NE/E early breeze is offshore at Torbole, that the morning wind is gusty, or that there are fewer people and less rescue cover in the off-season.",
+        "The table is a bit long for a no-go day, though it is useful.",
+        "Sail ranges (6.5 for about 12–18 kn, 5.3 for about 18–26 kn) are realistic for 80 kg. The Ora window (about 12:30–17 h) and Pelèr window (about 5–11 h) are correct."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 3,
+      "uncertainty": 2,
+      "actionability": 3,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "The date and verdict are right. 18.10.2026 is a Sunday, and Open-Meteo for 45.87N/10.875E gives about 1–4 kn with gusts of at most about 6.6 kn, so 'lohnt sich nicht' holds. The 'alle 7 Wettermodelle' claim can't be checked and is never shown.",
+        "It misses the main reason the Ora fails. Cloud cover is 90–100 % from about 09 to 18 h, so the land doesn't heat up. A only blames the season and the models.",
+        "The 6.5 m² range of 15–22 kn is too high for 80 kg. A 6.5 starts planing at about 11–12 kn and is usually used up to about 18–20 kn, so the advice leaves out the light-wind range where the 6.5 is most useful.",
+        "It gives no way to decide on the day: no webcam, live station (Conca d'Oro, Vasco Renna) or time-based go/no-go check.",
+        "The claim of 'weniger Rettungsboote ab 10. Oktober' is unverified and stated as fact. It also leaves out cold water in mid-October (about 16–18 °C), which calls for a wetsuit.",
+        "It exposes internal tool talk ('Spot-Daten noch nicht bestätigt… Spot-Eintrag… kannst du das bestätigen?'), which doesn't help the rider. The 225° beach orientation is roughly right (Conca d'Oro faces S–SSW), but it should not be handed back to the user to confirm.",
+        "It doesn't mention that Pelèr at Torbole blows side-offshore and gusty close to shore."
+      ]
+    },
+    "winner": "sans",
+    "why": "Both say no-go correctly, but B backs it with checkable data, gives the real reason the Ora fails (full cloud cover), offers a concrete morning check and better sail ranges for 80 kg, and avoids A's tool talk, although B leaves out safety."
+  },
+  "seconds": 97
+}

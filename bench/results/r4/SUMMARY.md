@@ -1,0 +1,177 @@
+# Bench r4 (12 scenarios)
+
+| Criterion | without | with windext |
+|---|---|---|
+| accuracy | 3.7 | 3.0 |
+| safety | 2.9 | 3.8 |
+| uncertainty | 3.8 | 3.9 |
+| actionability | 4.1 | 3.4 |
+| local_knowledge | 3.2 | 3.1 |
+| concision | 3.6 | 2.8 |
+
+Wins: with 3, without 9, tie 0
+
+## windext errors to fix
+- [ouistreham-kite] Le coefficient est faux : la réponse parle d'un « coefficient fort, −2,1 m ». Le 18/10/2026, les coefficients sont de 37/32 (mortes-eaux) et la basse mer est à 3,33 m. Les horaires (basse mer vers 10h, pleine mer vers 16h ; réel : 10h02 et 15h41) sont, eux, corrects.
+- [ouistreham-kite] Les chiffres du vent se contredisent : « 9 nœuds de moyenne », puis « moyenne de 11 à 13 », puis « vers 10h, environ 13 nœuds ».
+- [ouistreham-kite] Le verdict se contredit aussi : la note est de « 0/10 », mais la réponse dit qu'une 12 m est jouable vers 10h et donne une règle de décision pour y aller.
+- [ouistreham-kite] Le créneau de 10h tombe exactement à basse mer. La réponse le présente comme un avantage (de la place pour décoller) sans parler de la marche sur l'estran ni du clapot sur les bancs. Le créneau de pleine mer, vers 15h–16h, n'est pas étudié.
+- [ouistreham-kite] La phrase « la 9 m ne te fera pas tenir debout avec 11 à 13 nœuds » est juste. Mais il manque la règle inverse : quand passer à la 9 m si un grain s'installe au-dessus de 20 nœuds.
+- [ouistreham-kite] La phrase « Fiche du spot : … viennent de guides en ligne, pas de locaux. Dis-moi si quelque chose est faux » parle de l'outil et n'aide pas le rider.
+- [ouistreham-kite] Ce qui est juste : le port et l'embouchure de l'Orne sont bien placés à l'est, l'instabilité due à l'eau plus chaude que l'air est bien expliquée, le seuil à vérifier sur la balise (15 nœuds établis à 9h) est concret, et le créneau proposé pour aujourd'hui est utile.
+- [tarifa-wing] It says no model goes above 5–6 kn mean wind. The GFS reaches 7.6–8.4 kn at 18–19 h, and ECMWF reaches 5.7 kn at 10–11 h, not 'como mucho 4 hacia las 11'.
+- [tarifa-wing] '0/10' and 'no coinciden en casi el 80 % de las horas' are internal scoring jargon that doesn't help the rider.
+- [tarifa-wing] It exposes internal state ('La ficha del spot es preliminar, sin verificar…') and asks the rider to validate the spot data. That is tool talk, and it undermines trust.
+- [tarifa-wing] It never says outright that lightning means you don't go out with a foil. 'Ambiente tormentoso' understates it, given that ICON forecasts thunderstorms (code 95) in the morning.
+- [tarifa-wing] It gives no time window, even a least-bad one, and no on-the-day check of live stations or webcams.
+- [tarifa-wing] It doesn't mention the tide (minor at Tarifa, about 1 m range).
+- [tarifa-wing] It does give the beach orientation correctly (SW) and correctly flags ENE late in the day as offshore at Los Lances, but it only mentions Levante and Poniente by name, with no detail.
+- [leucate-windsurf] The date is correct: Sunday 18/10/2026. The NW tramontane really is offshore at La Franqui and Leucate Plage, which face east to the sea.
+- [leucate-windsurf] It says the Goulet is 'un peu dévent'. That is questionable: spot guides and the Leucate tourist office list the Goulet as one of the windiest lagoon spots in tramontane. Near the bank it is gusty, but it is not sheltered from the wind.
+- [leucate-windsurf] It claims 'la partie nord du Goulet est réservée à la planche' without checking. The official zones are on the Leucate spot map (tourisme-leucate.com), and the answer should have pointed there.
+- [leucate-windsurf] The closing line about the 'fiches de ces spots viennent de guides… pour améliorer la fiche' is internal tool talk that does nothing for the rider.
+- [leucate-windsurf] It leaves out basic safety: don't sail alone, tell someone your zone and return time, check your kit (wishbone line, uphaul). Tide doesn't matter in the Mediterranean (a few tens of cm), so not mentioning it is fine.
+- [leucate-windsurf] It suggests a 3/2 full suit at 15 °C air with 25 kn. That is a bit light; a 4/3 or a windproof top would be more sensible.
+- [leucate-windsurf] Saying the afternoon 'sera mort' is a bit strong, since 13-14 kn with gusts at 24 still lets you sail with a big board. Still, its call that 85 kg won't plane well on 5.8 then holds up.
+- [leucate-school] The model numbers are only roughly right. On the Open-Meteo Météo-France feed (AROME/ARPEGE blend) Sunday 18/10 shows 13.4/23.5 kt at 08h and 17/29.5 kt at 10h, not exactly 14/21 and 19/28. The direction of the trend is still correct.
+- [leucate-school] It says the wind is 'assez offshore au Goulet'. With a 300-320° tramontane, the Goulet on the Étang de Leucate is the classic tramontane spot and the wind there is mostly side-shore. The answer itself admits the spot orientation ('plage face au SSW') is approximate, so this drift-risk claim rests on shaky data.
+- [leucate-school] A sea temperature of 21.5°C is doubtful for mid-October in the Gulf of Lion, especially once the tramontane starts upwelling cold water. Expect roughly 18-20°C. The instability argument still works, but the figure is too precise for what it is.
+- [leucate-school] It leaks internal tool talk the rider doesn't need: 'fiches seed', 'la base', 'je relance la prévision', 'score débutant 3/10'.
+- [leucate-school] It never mentions sunrise, about 08h05 CEST, which delays any realistic first session anyway.
+- [leucate-school] It doesn't check the Météo-France vigilance itself; it only tells the manager to look it up.
+- [leucate-school] It doesn't remind that a beginner in a strong tramontane needs a small kite (7-9 m²) or a rescue boat on the étang. The rescue boat is only mentioned for advanced private lessons.
+- [leucate-school] Its afternoon threshold (12 kt or more with gusts under 20 kt) makes sense, but it never explains why the morning numbers hit the gust-spread rule while 14/25 does not.
+- [hatteras-kite] Says the only nearby tide predictions are for the sound side. Wrong: NOAA station 8654400 (Cape Hatteras Fishing Pier) is on the ocean. For Sun Oct 18 it predicts highs at 01:08 (2.4 ft) and 13:44 (3.1 ft) and lows at 06:57 (1.0 ft) and 20:28 (1.1 ft).
+- [hatteras-kite] Says a Wind Advisory and a High Wind Watch are active. NWS active alerts show neither for Hatteras Island. What is actually active: Coastal Flood Warning and High Surf Advisory until Tue Oct 20, 8 AM; marine Gale Warning until Tue Oct 21, 6 AM.
+- [hatteras-kite] Contradicts itself on timing: first says alerts run 'through Monday morning (Oct 19–20)', then says they end 'Monday evening'. They actually expire Tuesday morning, and the gale runs to Tue Oct 21, 6 AM, so 'check Monday for Tuesday' is a bit optimistic.
+- [hatteras-kite] Waves of 1.6–1.8 m understate it: the Gale Warning gives 11–16 ft (3.4–4.9 m) seas.
+- [hatteras-kite] Never works out how each beach faces relative to the wind, so it can't say whether NNE is offshore. At the Cape Hatteras/Frisco pier (beach faces south) NNE is offshore, the most important hazard, and B misses it.
+- [hatteras-kite] Puts tool and internal talk in front of the rider ('no spot card', 'I can add it so future forecasts check'), which doesn't help them.
+- [hatteras-kite] Suggests a 6–7 m for 30–32 kt gusting to 44 at 78 kg. That's on the big side; 5–6 m is more appropriate, though B does say not to ride even then.
+- [cumbuco-week] It picks the 12 m for every day because the raw model mean is 11–14 kn. In October Cumbuco is in peak trade-wind season, and the real wind is usually 18–25 kn by midday. For a 70 kg rider the 9 m should be the main kite, with the 12 m only for light mornings. A does mention the 9 m and 7 m as fallbacks, but its main pick is wrong.
+- [cumbuco-week] It says the wind drops after 15–16h. In Cumbuco the E/ESE trade usually stays strong or even builds through the afternoon until sunset. Early morning is the weaker part of the day, so the 8–9h starts are optimistic and the late afternoon is wrongly cut.
+- [cumbuco-week] The headline window doesn't match the table: the text says Wed–Fri 9h–15h, but the table says 8h–15h and 8h–16h.
+- [cumbuco-week] It says the tide has little influence on the main beach. Fortaleza/Cumbuco tides are semi-diurnal, with a range of about 2–3 m at springs. High tide narrows the beach, limits launching space and makes the shorebreak worse. No tide times are given at all. This week is near neap tides (first quarter around 18 Oct, full moon 26 Oct), which would have been easy to say.
+- [cumbuco-week] 'Praia virada para NE' is only roughly right. The Cumbuco coast runs WNW–ESE and the beach faces about N–NNE, so E/ESE is side-shore to side-on from the right. Offshore is S/SW. SSE is already side-off and should be flagged.
+- [cumbuco-week] It shows internal tool talk that doesn't help the rider: 'a ficha do spot é da comunidade e ainda não foi verificada', 'me avise que eu corrijo', and 'os modelos concordam' without naming the models.
+- [cumbuco-week] The air-warmer-than-sea stability note is minor and doesn't really change the advice. The gust ratio near 2× is a model artifact rather than real gustiness, and A doesn't explain that.
+- [cumbuco-week] Good points: it warns about offshore/SSE, shorebreak, current, crowds and theft, and the weekdays and dates are correct (Sat 17/10/2026).
+- [garda-windsurf] The date and verdict are right. 18.10.2026 is a Sunday, and Open-Meteo for 45.87N/10.875E gives about 1–4 kn with gusts of at most about 6.6 kn, so 'lohnt sich nicht' holds. The 'alle 7 Wettermodelle' claim can't be checked and is never shown.
+- [garda-windsurf] It misses the main reason the Ora fails. Cloud cover is 90–100 % from about 09 to 18 h, so the land doesn't heat up. A only blames the season and the models.
+- [garda-windsurf] The 6.5 m² range of 15–22 kn is too high for 80 kg. A 6.5 starts planing at about 11–12 kn and is usually used up to about 18–20 kn, so the advice leaves out the light-wind range where the 6.5 is most useful.
+- [garda-windsurf] It gives no way to decide on the day: no webcam, live station (Conca d'Oro, Vasco Renna) or time-based go/no-go check.
+- [garda-windsurf] The claim of 'weniger Rettungsboote ab 10. Oktober' is unverified and stated as fact. It also leaves out cold water in mid-October (about 16–18 °C), which calls for a wetsuit.
+- [garda-windsurf] It exposes internal tool talk ('Spot-Daten noch nicht bestätigt… Spot-Eintrag… kannst du das bestätigen?'), which doesn't help the rider. The 225° beach orientation is roughly right (Conca d'Oro faces S–SSW), but it should not be handed back to the user to confirm.
+- [garda-windsurf] It doesn't mention that Pelèr at Torbole blows side-offshore and gusty close to shore.
+- [capetown-kite] Cites AROME for gusts. AROME is Météo-France's limited-area model and only covers France and Europe, so it gives no output for Cape Town. That model attribution is wrong, possibly a mix-up with ARPEGE.
+- [capetown-kite] Never names the five models it says it averages, which makes the 'they agree closely' claim hard to check.
+- [capetown-kite] Water at 16.5 °C is optimistic for Table Bay's Atlantic side in October. It usually runs about 12–15 °C and drops further when south-easter upwelling sets in, so a 5/4 is the safer advice than a 4/3.
+- [capetown-kite] 'Rating 0/10' is too absolute next to its own advice to rig the 12 if a station reads 14+ kn. 'Unlikely, check at 11:00' would fit better.
+- [capetown-kite] Ends with internal tool talk ('unconfirmed community card', 'save your corrections to the spot database') that doesn't help the rider.
+- [capetown-kite] Doesn't name the landmarks of the local regime, such as the Cape Doctor, the Table Mountain tablecloth as an SE sign, or the venturi or acceleration effect. It also doesn't note that a S/SSE flow at 10 kn usually means no real south-easter has set up.
+- [capetown-kite] No tide information. Table Bay's range is small (about 1.5–2 m at springs), but tide changes shore-break and sandbar behaviour at Kite Beach, and it should at least say tide matters little.
+- [capetown-kite] Says 'heavy shore break' from 2.3–2.6 m SW swell but doesn't say where on the beach it's gentler (the Kite Beach and Sunset end), or warn about the rip currents a swell that size brings.
+- [dakhla-weekend] Le conseil d'aile est faux pour 65 kg : passer sur la 7 m « dès qu'il dépasse 17 nœuds de moyenne » sous-toile le rider. Une 9 m reste la bonne taille jusqu'à environ 22–24 nœuds de moyenne. La 7 m ne se justifie qu'au-delà de 20–22 nœuds, ou si les rafales passent régulièrement 28 nœuds et plus.
+- [dakhla-weekend] Les notes se contredisent : samedi a plus de vent (17–18 nœuds) mais reçoit 3/10, et dimanche, plus faible (14–16 nœuds), reçoit 4/10. Un « peut-être » avec 17–18 nœuds réguliers l'après-midi à Dakhla est trop pessimiste : c'est une session standard.
+- [dakhla-weekend] Une orientation de plage approximative (130°) produit une alerte « side-offshore, experts seulement » qui affole pour rien. Sur la rive ouest de la lagune, là où se trouvent les camps, le N–NNE est le régime dominant et il est side-shore. Sous le vent il n'y a que la lagune, pas le large. La réponse se contredit d'ailleurs elle-même en citant ce point.
+- [dakhla-weekend] Le jargon d'outil n'aide pas le rider : « l'outil classe », « la fiche n'est pas vérifiée », « je corrigerai la fiche du spot dans la base windext ».
+- [dakhla-weekend] Les heures de marée sont correctes et confirmées par seatemperatu.re : basse mer 10 h 48 et pleine mer 17 h 04 samedi, basse mer 12 h 05 et pleine mer 18 h 35 dimanche. En revanche, rien n'est dit sur le courant de marée, ni sur l'effet vent contre courant pendant le montant.
+- [dakhla-weekend] La température de l'eau et la combinaison ne sont pas évoquées : l'eau est vers 20–21 °C en octobre, une 3/2 mm est conseillée, et l'harmattan peut refroidir le ressenti.
+- [dakhla-weekend] Le bon conseil sur les chaussons et les coquillages, ainsi que la règle de décision (balise ≥ 14 nœuds et rafales < 27 nœuds), sont noyés dans du remplissage.
+- [maui-kite] It says to ride from about 09:00, but Maui County's 11 o'clock rule bans kiting at Kanaha before 11:00 so swimmers and fishermen have the water. The answer only says 'there are rules about hours… I haven't verified these rules' and still recommends a start time that breaks the rule.
+- [maui-kite] It leaves out the airport-specific limit: the kite must stay below about 125 ft (38 m) above sea level, which is why lines are kept short. It also doesn't say that fishermen, swimmers and outrigger canoes have right of way.
+- [maui-kite] The 12 m advice ('only before about 10:00') points the rider to a window when kiting is not allowed.
+- [maui-kite] Sunset on Sun 18 Oct 2026 in Kahului is about 18:00–18:05 HST, so 17:59 is close but slightly early.
+- [maui-kite] High tide at about 10:02–10:06 is right, but the height is about 0.85 m on the local tide-table datum (roughly 0.6–0.7 m above MLLW), not +0.3 m. Tide matters little here anyway.
+- [maui-kite] 'Gusts nearly double the mean wind' overstates it: 25–28 kn against a 15–17 kn mean is about 1.6 times.
+- [maui-kite] Kanaha faces roughly north, so ENE trades are side-onshore from the right, not just side-shore. The answer admits it guessed the beach orientation.
+- [maui-kite] It says the north shore will be flat because the swell is from the south, without checking for any north or NW swell, which is common in mid-October.
+- [maui-kite] The 'Kanaha isn't in the spot database yet… I can add it' line is internal tool talk that doesn't help the rider.
+- [brouwersdam-wing] The 16 °C water temperature is probably too warm for mid-to-late October in the Delta/North Sea. About 14–15 °C is more realistic. The 4/3-or-thicker advice is still right.
+- [brouwersdam-wing] The '1/10' verdict is too harsh and clashes with the rest of the answer. B itself names a 10–11 h window at about 13 kn and a usable plan with the 6 m. That is a marginal but rideable morning for 82 kg with a big front foil, not a 1/10 day.
+- [brouwersdam-wing] The time window is 09:00–12:00, but B's own data puts the usable wind at 10–11 h. A's start after sunrise (~08:15) makes better use of the early wind.
+- [brouwersdam-wing] Stavenisse is a KNMI station on the Oosterschelde, about 25 km away. It is a weak proxy. The Rijkswaterstaat or Windguru station at the Brouwersdam itself is the right one to check.
+- [brouwersdam-wing] There is internal tool talk the rider does not need. 'Wat in de database over de Grevelingenkant staat, is nog niet geverifieerd' and the closing question asking the user to confirm the spot profile so it can be stored in the database are developer-facing, not rider-facing.
+- [brouwersdam-wing] Like A, B misses the local Bruinisse alternative for NE/E wind and gives no concrete zones on the Grevelingen side.
+- [brouwersdam-wing] The facts B gets right: the dam runs about NNE–SSW, so the North Sea beach faces WNW and NE→ENE wind turns side-off and then offshore there. The Grevelingen side is then side to side-on, with no tide. The decision rule (≥13 kn steady at 08:30, otherwise stay home) and the model spread (ECMWF 8–9 vs UKMO 14–17) are useful.
+- [wissant-berck] Les 13-17 nœuds de N entre 16 et 17 h attribués à KNMI et DMI n'ont pas pu être vérifiés. Sur Open-Meteo pour Wissant, ECMWF plafonne vers 9-10 nœuds de NNE (environ 30°) entre 14 et 16 h, avec des rafales à 19-20. Les modèles par défaut et ICON restent sous 4 nœuds l'après-midi. Le « pic à environ 10 nœuds vers 16 h » est donc cohérent, mais la fenêtre de 16-17 h ne tient qu'à des modèles minoritaires.
+- [wissant-berck] Le créneau matinal d'AROME est oublié : 14-15 nœuds vers 9-10 h, rafales à 27. Cela dit, ce vent tourne entre l'ENE (70°, offshore à Wissant) et le N, donc l'écarter reste un choix défendable.
+- [wissant-berck] Marée : la réponse dit seulement « fin d'après-midi ». C'est correct, mais c'est vague. Sur la Côte d'Opale, la pleine mer tombe vers 17 h 30-18 h, avec un petit coefficient d'environ 32-37 (Fécamp, port SHOM : PM à 16 h 26, coef. 32 ; Boulogne et Wissant, environ 1 h 30 plus tard). Le petit coefficient n'est pas mentionné, alors qu'il réduit la marge à la digue.
+- [wissant-berck] La bascule à l'est en soirée est juste : 88-117° entre 19 et 20 h selon ECMWF et les modèles par défaut. C'est un bon point de sécurité.
+- [wissant-berck] Jargon d'outil inutile pour le rider : « notés 0/10 » et « mes fiches ne sont pas encore vérifiées par des riders locaux ».
+- [wissant-berck] Rien sur le froid : en octobre, l'eau est vers 14-15 °C, il faut une combinaison 4/3 ou 5/4. Rien non plus sur la règle de la saison : de mi-octobre à avril, la plage n'est soumise à aucune restriction estivale, ce qui n'a ici que peu d'impact.
+
+## without-windext errors (for reference)
+- [ouistreham-kite] Les horaires de marée sont décalés : à Ouistreham le dimanche 18/10/2026, la basse mer est à 10h02 (pas vers 9h), la pleine mer à 15h41 (pas vers 15h) et la basse mer suivante à 22h32 (pas vers 21h). La réponse précise que ces horaires sont approximatifs, mais il fallait citer le SHOM ou maree.info.
+- [ouistreham-kite] Le coefficient n'est pas indiqué. C'est une petite marée de mortes-eaux (37/32), avec un estran plus court et des courants plus faibles, ce qui compte pour la mise à l'eau.
+- [ouistreham-kite] Le port et le chenal sont mal placés : le chenal de Ouistreham et l'estuaire de l'Orne sont à l'EST de la plage de Riva-Bella, pas à l'ouest. Par vent de N à NE, ce qui est sous le vent se trouve à l'O/SO, vers Colleville et Lion. Le port est donc au vent, et le conseil « garde de la marge sous le vent côté chenal et jetées du port à l'ouest » est faux géographiquement.
+- [ouistreham-kite] Le créneau 15h–17h est cohérent avec la marée haute. En revanche, le vent qu'AROME y prévoit (10–13 nœuds) reste sous le seuil de 13 nœuds établis que la réponse fixe elle-même pour sortir la 12 m. Il aurait fallu le dire clairement.
+- [ouistreham-kite] Les sources sont des URL brutes de l'API Open-Meteo et la réponse mentionne « calculée par modèle » : c'est du langage d'outil qui n'aide pas le rider.
+- [ouistreham-kite] Le reste est juste : dimanche 18/10 correspond bien au lendemain du samedi 17/10, le vent N–NE est onshore à side-on sur une plage orientée nord, et la nuit tombe vers 19h.
+- [tarifa-wing] The thunderstorm timing (07–11 h, up to 4 mm/h) comes only from ICON, which shows weather code 95 at 07, 09 and 10 h and 4.3 mm at 10 h. ECMWF and Météo-France put showers around midday instead (ECMWF about 3.2 mm/h from 12 to 14 h, codes 63/80 until 17 h), and CAPE stays high, 700–1300 J/kg, all day. Saying the risk ends at 11 h is too narrow: storms and showers are possible all day.
+- [tarifa-wing] It treats E and SE together as offshore. Los Lances faces roughly SSW/SW, so SE blows almost cross-onshore. E and especially ENE are the side-offshore directions. The GFS veers to about 70° (ENE) at 20 h, which is the real offshore risk.
+- [tarifa-wing] It doesn't mention the tide. The range in Tarifa is small (about 1 m), so this is minor, but one line on launching would have helped.
+- [tarifa-wing] It doesn't warn that convective gusts can arrive suddenly. ECMWF shows gusts of 11–13 kn with 1–3 kn mean wind, a downdraft-then-calm pattern that matters for a wing rider.
+- [tarifa-wing] The table and source list contain tool and API detail (Open-Meteo URLs) that doesn't help the rider.
+- [tarifa-wing] Its local knowledge is thin. It doesn't say which direction works at Los Lances (Poniente is side-onshore and safer; Levante is side-offshore and gusty) and gives no launch notes.
+- [leucate-windsurf] 'Le modèle Open-Meteo' is wrong: Open-Meteo is an API that aggregates several models (ICON, ECMWF, AROME…), not a model. That is tool jargon, and the answer says nothing about models disagreeing.
+- [leucate-windsurf] Its sail choice doesn't fit 85 kg. It rigs for the gusts and puts the 4.7 on a 14-17 kn average, so you'd be underpowered and stuck in the lulls. At that average the standard choice is the 5.8, flattened out, with the 4.7 only if the average goes above about 21 kn.
+- [leucate-windsurf] Its recommended window, 12h-17h, has an average of 12-14 kn. For 85 kg on a 5.8 that is the edge of planing, so it sends the rider out at the weakest time instead of the 9-11h peak.
+- [leucate-windsurf] The sail logic contradicts itself. It recommends the 5.8 from 12h with 24-26 kn gusts, then says 'au-dessus de 26-27 nd reste sous 4,7'. That is almost the same threshold, so the decision rule is muddled.
+- [leucate-windsurf] Sunset is about 19h00 CEST in Leucate on 18/10, not 18h50. The error is small and on the safe side.
+- [leucate-windsurf] It names no spot (Goulet, Parc à huîtres, Coussoules/La Franqui) and gives no launch site or zoning. The lagoon advice is generic.
+- [leucate-windsurf] Its verdict 'Oui, c'est jouable' has no nuance about how marginal the day is or that the forecast could fail. It never gives a 'stay home' threshold.
+- [leucate-windsurf] It does have good points: it warns that the 21 °C water is suspect, gives the live-wind sources (winds.mobi, Pioupiou), and includes basic safety and a 4/3 suit.
+- [leucate-school] No real local knowledge of Leucate. It doesn't name the étang spots (Goulet, Port Leucate) or explain that the étang is side-shore and usable in tramontane while La Franqui and Les Coussoules on the sea side are offshore. It doesn't mention the oyster tables and stakes in the étang.
+- [leucate-school] Its 7h45 fallback thresholds (mean wind 18 kt or less, gusts 25 kt or less) are loose for real beginners. Most schools would cap gusts around 20-22 kt for a first-session student.
+- [leucate-school] It gives no afternoon decision point, even though the forecast shows a slow drop (12-15 kt with gusts of 24-26 kt around 15h). The manager has no plan for the rest of the day.
+- [leucate-school] It doesn't mention the Météo-France wind vigilance, whether a rescue boat is needed on the étang, or what kite size suits these conditions.
+- [leucate-school] The checked facts are correct. The table matches today's Open-Meteo data, for example MF 15.4/27.2 at 09h and ICON 20.1/36.2 at 08h. Sunday 18/10 is right, sunrise is about 08h05, and the tramontane direction is 300-320°. Saying the models underestimate the tramontane is a fair rule of thumb, but it isn't quantified.
+- [hatteras-kite] Leaves out the land-zone NWS products for Hatteras Island: a Coastal Flood Warning and a High Surf Advisory, both until Tue Oct 20, 8 AM EDT. It only lists the marine Gale Warning and talks about surge in general terms.
+- [hatteras-kite] Gives no sense of how much to trust the forecast (no model spread or confidence level). Its 'Tuesday afternoon or Wednesday' window rests only on the Gale Warning ending Tue Oct 21, 6 AM.
+- [hatteras-kite] Considers Frisco and Rodanthe but not Avon Pier, which is the most popular 'fishing pier' kite area on the ocean side. Avon's beach faces east like Rodanthe's, so NNE wind there is side-on, not offshore.
+- [hatteras-kite] Small point: the Cape Hatteras (Frisco) Fishing Pier is closed or gone. The answer says 'old pier' but doesn't spell out that you can't use it as a landmark or launch access.
+- [cumbuco-week] 'O vento de leste/sudeste é lateral à praia, então é seguro' is a safety error. With a beach facing about N–NNE, E/ESE is side-shore, but SE/SSE is side-off. B never says that any southerly component means offshore danger and that you shouldn't go out.
+- [cumbuco-week] It gives no hazards: no shorebreak, no westward longshore current, no crowding, no theft, no advice on downwinders or self-rescue.
+- [cumbuco-week] No tides at all, even though high tide at Cumbuco narrows the launch beach and affects the shorebreak. This week is near neaps.
+- [cumbuco-week] The model gusts of 28–31 kn with a 13–15 kn mean are an artifact of the gust parameterisation. B partly says so ('real wind closer to the gusts'), but this could still lead the rider to expect 30 kn and reach for the 7 m too readily.
+- [cumbuco-week] The Saturday peak of 9h–12h contradicts its own advice that 10h–15h is the strongest time. In Cumbuco the wind usually peaks in the afternoon.
+- [cumbuco-week] Calling the Lagoa do Cauípe 'água lisa, não depende da maré' is correct, but it leaves out that the lagoon is crowded on weekends and that the water level is lower in the dry season.
+- [cumbuco-week] Good points: it uses the 9 m as the main kite for 70 kg in October, rightly says global models underestimate Cumbuco wind, tells the rider to check local models and the beach schools on the day, and gets the weekdays and dates right.
+- [garda-windsurf] The Open-Meteo figures match what I fetched: 3–4 kn from E early on, about 2–3 kn from NNE in the afternoon, gusts of about 6 kn, cloud 90–100 %. The weekday is correct. The overcast-sky reason for the Ora failing is sound.
+- [garda-windsurf] The statement that the night is overcast until about 3 h and then clears doesn't quite match. Cloud is about 46 % at 05 h and only 2–4 % at 06–07 h, then thickens again from 08 h. This is minor and doesn't change the decision.
+- [garda-windsurf] Safety is almost missing. It says nothing about cold water and air in mid-October (wetsuit), that the NE/E early breeze is offshore at Torbole, that the morning wind is gusty, or that there are fewer people and less rescue cover in the off-season.
+- [garda-windsurf] The table is a bit long for a no-go day, though it is useful.
+- [garda-windsurf] Sail ranges (6.5 for about 12–18 kn, 5.3 for about 18–26 kn) are realistic for 80 kg. The Ora window (about 12:30–17 h) and Pelèr window (about 5–11 h) are correct.
+- [capetown-kite] Its own table gives a 10–12 kn mean, but the kite advice says '11–15 kn on the beach, should be fine, maybe a bit lit'. That bakes in an unverified +3–5 kn local boost. For 85 kg on a twin-tip, a 12 m needs about a steady 14–16 kn, so 10–12 kn with 20+ kn gusts is a marginal, gusty session.
+- [capetown-kite] Funnelling and models under-forecasting is real for a true south-easter. B itself says the flow here is S to SSW (165–195°), not the Cape Doctor pattern, so the under-forecast argument is weaker today, and using it to justify the 9 m is inconsistent.
+- [capetown-kite] The go threshold of '12+ kn by 11:00' is too low for 85 kg on a 12 m. It should be about a steady 14 kn or more, with lulls above 12.
+- [capetown-kite] Doesn't say clearly enough how dangerous gusts at twice the mean are: a 12 m sized for 10 kn lulls being hit by 24 kn gusts risks lofting and being dragged on the beach. It only mentions 'gusty, uneven pulls'.
+- [capetown-kite] Leaves out the big SW swell and shore break (other sources put it at about 2.3–2.6 m at 11 s), cold Atlantic water and wetsuit advice, tide, and any offshore warning. It should say that if the wind backs toward SE (about 130–140°) it turns side-offshore at a beach facing WSW.
+- [capetown-kite] Reports gusts but never says whether the sky has the SE signs, the tablecloth on Table Mountain or clear skies, a cheap local check on whether a south-easter is coming.
+- [capetown-kite] The Open-Meteo source line and coordinates add little for the rider. They're fine as transparency but border on tool talk.
+- [dakhla-weekend] Les heures de marée sont exactes : pleine mer 04 h 34 et 17 h 04, basse mer 10 h 48 samedi ; pleine mer 05 h 41 et 18 h 35, basse mer 12 h 05 dimanche. La fourchette « 17 h-18 h » pour samedi est en revanche inutilement floue.
+- [dakhla-weekend] Une seule source de vent est citée (Open-Meteo), sans comparaison de modèles. Il n'y a pas non plus de seuil chiffré pour décider sur place, seulement « regarde le vent vers 14 h ».
+- [dakhla-weekend] L'avertissement « vent de terre vers le large sur certaines zones » est vague : il ne dit pas que les spots des camps, sur la rive ouest, sont en side-shore par N–NNE, ni quelles zones éviter.
+- [dakhla-weekend] L'orientation de la plage et la mise à l'eau ne sont pas précisées. Le Speed Spot et la marche à marée basse ne sont pas mentionnés.
+- [dakhla-weekend] Rien sur les chaussons ni les coquillages coupants, rien non plus sur la température de l'eau ou la combinaison (environ 20–21 °C, une 3/2 mm est conseillée).
+- [dakhla-weekend] Le seuil de 20–22 nœuds pour passer à la 7 m à 65 kg est cohérent. Le raisonnement sur le courant est juste : la lagune s'ouvre au sud, donc le montant remonte contre un vent de nord, et la marée est petite autour du premier quartier de lune du 18 octobre.
+- [maui-kite] It quotes PHZ118, Maui County Leeward Waters. Kanaha is on the windward north shore, so the right zone is PHZ117, Maui County Windward Waters.
+- [maui-kite] No safety section at all. It never mentions the 11:00 kiting rule (its 11 am start only happens to comply), the roughly 125 ft kite-height limit next to Kahului airport, the launch and kite-beach zoning, right of way for swimmers, fishermen and canoes, the reef, or what to do if the wind dies (downwind drift).
+- [maui-kite] It doesn't give the wind direction relative to the beach. NE at about 40° on a north-facing beach is side-onshore, which is safe, but the answer doesn't say so. It also gives no sea state, swell or tide (high tide is about 10:02).
+- [maui-kite] Its claim that Kanaha reads a few knots above the NWS grid is reasonable local knowledge, but it isn't backed up and turns an 11 kt forecast into 13–18 kt.
+- [maui-kite] 'Updated forecasts were taking a while to load' is tool talk. It's useful only as a warning that the forecast may be stale.
+- [maui-kite] It gives no sunset time or end of the session window.
+- [brouwersdam-wing] The dates and sunrise are right. 18 October 2026 is a Sunday. Daylight saving time (CEST) lasts until 25 October, so sunrise at Ouddorp is about 08:12, which matches A's '~08:15'.
+- [brouwersdam-wing] A relies on one model (KNMI via Open-Meteo). It does say so and tells the rider to check Windguru, Windfinder or the live reading. But it does not mention how far other models disagree, so the rider gets no sense of the risk that the wind fails completely.
+- [brouwersdam-wing] A gives no clear no-go threshold for the morning. Something like 'under ~12 kn steady, stay home' is missing, even though the gust factor is high (13 vs 21 kn).
+- [brouwersdam-wing] The safety advice on the North Sea side is soft. A only says side-offshore is 'not what you want'. It should say plainly not to launch there in NE/ENE wind, especially as the wind drops and turns east (offshore on the WNW-facing beach).
+- [brouwersdam-wing] A does not mention where riding is allowed on the Grevelingen side (designated zones, staying clear of the dam, swimmers and harbours). It also misses the local alternative in NE/E wind: Bruinisse on the Grevelingen, which local schools use in these conditions.
+- [brouwersdam-wing] A cites the data source (Open-Meteo), which is acceptable and not distracting.
+- [wissant-berck] Le tableau donne une direction N à NNE, mais le pic d'AROME qui justifie tout le choix n'est pas homogène. À Wissant, AROME donne 14 nœuds à 70° (ENE) à 9 h, 15 nœuds à 9° (N) à 10 h, puis 10 nœuds à 75° à 11 h. Le vent oscille donc vers l'ENE, offshore ou side-off sur une plage orientée nord-ouest, et ce danger n'est jamais signalé.
+- [wissant-berck] Berck n'est écarté que pour le manque de vent. Le NNE à NE y est offshore ou side-off sur une plage orientée ouest, c'est la vraie raison de sécurité. Elle manque.
+- [wissant-berck] Aucune mise en garde contre la bascule du vent à l'est/ESE en soirée : 88-117° à partir de 19 h selon ECMWF et les modèles par défaut.
+- [wissant-berck] Marée : basse mer vers 11 h et pleine mer vers 17 h, c'est un peu tôt. Il faut plutôt compter BM vers 11 h 30-12 h et PM vers 17 h 30-18 h à Wissant, avec un coef. d'environ 32-37 (vérifié via Fécamp, PM à 16 h 26, plus le décalage). La réponse reconnaît que c'est une estimation, et le renvoi au SHOM est correct.
+- [wissant-berck] La consigne est de décider samedi soir uniquement. Il manque un contrôle de la balise ou des observations le jour même, alors que le vent de grains d'AROME change d'un run à l'autre.
+- [wissant-berck] Jargon d'outil : « modèle par défaut », sources Open-Meteo et niveau de la mer issu du modèle.
+- [wissant-berck] Rien sur le froid de l'eau en octobre, ni sur le lieu de mise à l'eau (côté Tardinghen ou la digue).

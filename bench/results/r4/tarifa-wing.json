@@ -1,0 +1,44 @@
+{
+  "id": "tarifa-wing",
+  "q": "¿Merece la pena salir con el wing en Tarifa (Los Lances) mañana? Peso 72 kg, tengo un ala de 4 y una de 5,5 m. Horario, tamaño y seguridad.",
+  "sans": "**No merece la pena mañana (domingo 18/10).** Prácticamente no habrá viento en Los Lances y por la mañana hay tormentas.\n\n**Viento previsto, 10–19 h**\n\n| Modelo | Viento medio | Rachas | Dirección |\n|---|---|---|---|\n| ECMWF | 1–6 kn | ≤13 kn | ESE flojo |\n| GFS | 3–8 kn (sube algo a última hora) | ≤8 kn | E–SE |\n| ICON | 2–5 kn | ≤10 kn | W |\n| Météo-France | 0–4 kn | ≤11 kn | SE |\n\nLos cuatro modelos coinciden en calma. No hay ni levante ni poniente montado, solo restos variables.\n\n**Tamaño:** con 72 kg, el ala de 5,5 m necesita unos 12–15 kn sostenidos para despegar y mantener el foil, según la tabla y el foil que uses. La de 4 m necesita bastante más. Con 4–8 kn ninguna de las dos te sirve. Si saliera algo inesperado, coge la **5,5 m** sin duda.\n\n**Horario:** no hay ninguna franja buena. Lo \"menos malo\" sería a última hora de la tarde (17–19 h), cuando el GFS sube hasta unos 8 kn, pero sigue siendo insuficiente.\n\n**Seguridad**\n- ⚡ **Hay tormentas eléctricas previstas entre las 7 y las 11 h**, con lluvia de hasta 4 mm/h. Con un ala y un foil en el agua no se sale con riesgo de rayos.\n- Con tan poco viento y rachas sueltas te puedes quedar sin viento lejos de la orilla y tener que volver remando o nadando. Si el viento sopla de tierra (componente E/SE), te va empujando mar adentro, cosa que en Tarifa hay que tener muy en cuenta.\n- Mar tranquilo: unos 0,7 m de mar de fondo del oeste, con periodo de 8–10 s. Habrá algo de rompiente en la orilla, pero nada serio.\n\n**Lo que haría yo:** mañana temprano revisa Windguru o Windy y las estaciones en tiempo real (la de Valdevaqueros o la del puerto de Tarifa). En el Estrecho los modelos a veces se quedan cortos con los efectos locales, pero aquí sería raro que se equivocaran tanto. Es mejor día para hacer pumping o SUP foil, si tienes, o para descansar.\n\nFuente: datos de previsión de Open-Meteo con los modelos ECMWF, GFS, ICON y Météo-France, y su previsión de oleaje.\n- https://api.open-meteo.com/v1/forecast\n- https://marine-api.open-meteo.com/v1/marine",
+  "avec": "**No merece la pena salir mañana, domingo 18 de octubre (0/10).** No hay ningún tramo del día con viento suficiente, y ni con el ala de 5,5 m te levantas.\n\n**Por qué:**\n- Los modelos dan unos 3 nudos de media durante todo el día y como mucho 4 hacia las 11:00. A 72 kg, con 5,5 m necesitas unos 12–14 nudos para empezar a volar.\n- La dirección no se aclara: va rolando entre SE, S y W, sin Levante ni Poniente asentado.\n- Los modelos no coinciden en casi el 80 % de las horas. Aun así, ninguno pasa de 5–6 nudos de media, así que el \"no\" está bastante claro.\n\n**Seguridad:**\n- Hay ambiente tormentoso, con chubascos y bastante energía convectiva. Un chubasco puede traer una racha fuerte de golpe y después una calma total. Si ves nubes de tormenta cerca, no entres al agua aunque de repente sople.\n- Mar de fondo de unos 0,7 m del WNW cada 9 s: algo de rompiente en la orilla, nada grave.\n- Al final del día el poco viento que haya se pone de tierra (E/ENE). En Los Lances eso te aleja de la playa.\n- La ficha del spot es preliminar, sin verificar por riders locales. Si conoces bien Los Lances, dime si la orientación (SW) y las direcciones buenas (Levante y Poniente) son correctas y la actualizo.\n\nSi quieres, miro los próximos días para buscar una ventana con Levante o Poniente.",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 4,
+      "uncertainty": 4,
+      "actionability": 5,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "The thunderstorm timing (07–11 h, up to 4 mm/h) comes only from ICON, which shows weather code 95 at 07, 09 and 10 h and 4.3 mm at 10 h. ECMWF and Météo-France put showers around midday instead (ECMWF about 3.2 mm/h from 12 to 14 h, codes 63/80 until 17 h), and CAPE stays high, 700–1300 J/kg, all day. Saying the risk ends at 11 h is too narrow: storms and showers are possible all day.",
+        "It treats E and SE together as offshore. Los Lances faces roughly SSW/SW, so SE blows almost cross-onshore. E and especially ENE are the side-offshore directions. The GFS veers to about 70° (ENE) at 20 h, which is the real offshore risk.",
+        "It doesn't mention the tide. The range in Tarifa is small (about 1 m), so this is minor, but one line on launching would have helped.",
+        "It doesn't warn that convective gusts can arrive suddenly. ECMWF shows gusts of 11–13 kn with 1–3 kn mean wind, a downdraft-then-calm pattern that matters for a wing rider.",
+        "The table and source list contain tool and API detail (Open-Meteo URLs) that doesn't help the rider.",
+        "Its local knowledge is thin. It doesn't say which direction works at Los Lances (Poniente is side-onshore and safer; Levante is side-offshore and gusty) and gives no launch notes."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 3,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "It says no model goes above 5–6 kn mean wind. The GFS reaches 7.6–8.4 kn at 18–19 h, and ECMWF reaches 5.7 kn at 10–11 h, not 'como mucho 4 hacia las 11'.",
+        "'0/10' and 'no coinciden en casi el 80 % de las horas' are internal scoring jargon that doesn't help the rider.",
+        "It exposes internal state ('La ficha del spot es preliminar, sin verificar…') and asks the rider to validate the spot data. That is tool talk, and it undermines trust.",
+        "It never says outright that lightning means you don't go out with a foil. 'Ambiente tormentoso' understates it, given that ICON forecasts thunderstorms (code 95) in the morning.",
+        "It gives no time window, even a least-bad one, and no on-the-day check of live stations or webcams.",
+        "It doesn't mention the tide (minor at Tarifa, about 1 m range).",
+        "It does give the beach orientation correctly (SW) and correctly flags ENE late in the day as offshore at Los Lances, but it only mentions Levante and Poniente by name, with no detail."
+      ]
+    },
+    "winner": "sans",
+    "why": "Both answers correctly say no for Sunday 18 October, but A has more accurate model figures, says explicitly not to ride with lightning around, gives a sail choice and a least-bad window, and suggests checking live stations, while B includes a wrong wind maximum and internal tool talk."
+  },
+  "seconds": 111
+}

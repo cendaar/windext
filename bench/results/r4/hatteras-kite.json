@@ -1,0 +1,42 @@
+{
+  "id": "hatteras-kite",
+  "q": "Kiting at Cape Hatteras tomorrow, ocean side near the fishing pier: worth it? 78 kg, 9 and 12 m kites. Best window, size, tide and safety.",
+  "sans": "**No, don't kite tomorrow.** A nor'easter is hitting Hatteras and the wind is about twice what a 9 or 12 m kite can safely handle at 78 kg.\n\n**Forecast for Sunday, Oct 18** (National Weather Service, issued this morning):\n- **Wind:** north to northeast at about 37–38 mph (around 32–33 knots) all day, with gusts up to 52 mph (about 45 knots). It stays that strong from dawn to dusk, so there's no lighter window.\n- **Weather:** high in the mid-60s °F, 30–50% chance of rain showers most of the day.\n- **Gale Warning:** in effect for coastal waters from Oregon Inlet to Ocracoke Inlet until **Tue Oct 21, 6 AM**, with seas of 11–16 ft.\n\n**Kite size:** at 78 kg, a 9 m is about right for 18–25 knots and a 12 m for 14–20. In steady 32 knots you'd want a 5–6 m, and gusts of 45 knots can drag or lift even an expert on a small kite. Your kites are far too big for this.\n\n**Direction:** I assumed the old Cape Hatteras Fishing Pier in Frisco (its tide station shares the name). That beach faces roughly south, so north to northeast wind is **offshore** there: it blows you away from land, and in 11–16 ft seas a rescue is unlikely. If you meant the Rodanthe pier, the beach faces east, so the wind is side-on rather than offshore, but you'd get the same gale, surf and rip currents.\n\n**Tide (Cape Hatteras Fishing Pier station, feet):** high 1:08 AM (2.4 ft) and 1:44 PM (3.1 ft); low 6:57 AM (1.0 ft) and 8:28 PM (1.1 ft). With storm surge on top, expect very little beach around midday and possible flooding on NC-12 (the island's only road) near Rodanthe and Buxton.\n\n**Safety:** strong rip currents, heavy shorebreak, debris in the water, cold rain, and gusts big enough to lift you onto the beach or the pier. The sound side is gale-force too, so it isn't a safe alternative.\n\n**When to go instead:** wait until the gale eases, probably Tuesday afternoon or Wednesday. When north to northeast winds drop to about 18–25 knots, the 9 m will fit, and the 12 m will once they're down to about 14–20. Check the forecast again Monday night, and look at rip current risk and NC-12 road status before you drive down.\n\nSources:\n- [NWS hourly forecast (MHX 95,86)](https://api.weather.gov/gridpoints/MHX/95,86/forecast/hourly)\n- [NWS forecast](https://api.weather.gov/gridpoints/MHX/95,86/forecast)\n- [NWS active alerts](https://api.weather.gov/alerts/active?point=35.2236,-75.6340)\n- [NOAA tide predictions, station 8654400](https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&begin_date=20261018&end_date=20261018&datum=MLLW&station=8654400&time_zone=lst_ldt&units=english&interval=hilo&format=json)",
+  "avec": "**No, skip tomorrow (Sun Oct 18). Rating 1/10. Neither of your kites fits these conditions.**\n\nI didn't know which pier you meant, so I checked both Avon and Rodanthe. They show the same picture.\n\n**Why**\n- The wind is forecast at about **30–32 knots with gusts of 41–44**, from the NNE, all day. At 78 kg that's too much even for your 9 m. You'd want a 6–7 m, and with these gusts I wouldn't go out on that either.\n- The National Weather Service has a **Wind Advisory, High Wind Watch, High Surf Advisory and Coastal Flood Warning** active, most of them through Monday morning (Oct 19–20).\n- Waves are 1.6–1.8 m from the NE with a short 6–8 s period. That means a messy, steep shore break and a strong southward current along the beach.\n- The weather models disagree by about 10 knots, but even the lowest one (UKMO) has about 22–25 knots gusting into the high 30s. Even the best case is no good.\n\n**Safety, if you're tempted anyway**\n- With NNE wind at a pier, the current and your downwind drift both push you **straight toward the pilings** on the south side. That's the worst setup a pier can give you.\n- Coastal flooding means Route 12 and the beach may be overwashed, and the launch area could be underwater. Check NCDOT before you drive.\n- Gusts above 40 knots with flood debris on the beach can drag or lift you during launch or landing.\n\n**Tide**\nTide barely matters tomorrow. The only nearby predictions are for the sound side (low around 10–11am, high around 5–6pm, very small range). The ocean side runs on a different schedule, and the storm surge will outweigh the normal tide anyway.\n\n**Better bet:** The wind is supposed to ease after the advisory ends Monday evening. Check again Monday for Tuesday. A 12 m session on the sound side once it drops to 15–20 knots is much more likely.\n\nThere's no spot card for either pier yet. If you tell me which one you ride and which direction the beach faces, I can add it so future forecasts check for offshore wind properly.",
+  "judged": {
+    "sans": {
+      "accuracy": 5,
+      "safety": 5,
+      "uncertainty": 3,
+      "actionability": 5,
+      "local_knowledge": 5,
+      "concision": 4,
+      "errors": [
+        "Leaves out the land-zone NWS products for Hatteras Island: a Coastal Flood Warning and a High Surf Advisory, both until Tue Oct 20, 8 AM EDT. It only lists the marine Gale Warning and talks about surge in general terms.",
+        "Gives no sense of how much to trust the forecast (no model spread or confidence level). Its 'Tuesday afternoon or Wednesday' window rests only on the Gale Warning ending Tue Oct 21, 6 AM.",
+        "Considers Frisco and Rodanthe but not Avon Pier, which is the most popular 'fishing pier' kite area on the ocean side. Avon's beach faces east like Rodanthe's, so NNE wind there is side-on, not offshore.",
+        "Small point: the Cape Hatteras (Frisco) Fishing Pier is closed or gone. The answer says 'old pier' but doesn't spell out that you can't use it as a landmark or launch access."
+      ]
+    },
+    "avec": {
+      "accuracy": 2,
+      "safety": 4,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 2,
+      "concision": 3,
+      "errors": [
+        "Says the only nearby tide predictions are for the sound side. Wrong: NOAA station 8654400 (Cape Hatteras Fishing Pier) is on the ocean. For Sun Oct 18 it predicts highs at 01:08 (2.4 ft) and 13:44 (3.1 ft) and lows at 06:57 (1.0 ft) and 20:28 (1.1 ft).",
+        "Says a Wind Advisory and a High Wind Watch are active. NWS active alerts show neither for Hatteras Island. What is actually active: Coastal Flood Warning and High Surf Advisory until Tue Oct 20, 8 AM; marine Gale Warning until Tue Oct 21, 6 AM.",
+        "Contradicts itself on timing: first says alerts run 'through Monday morning (Oct 19–20)', then says they end 'Monday evening'. They actually expire Tuesday morning, and the gale runs to Tue Oct 21, 6 AM, so 'check Monday for Tuesday' is a bit optimistic.",
+        "Waves of 1.6–1.8 m understate it: the Gale Warning gives 11–16 ft (3.4–4.9 m) seas.",
+        "Never works out how each beach faces relative to the wind, so it can't say whether NNE is offshore. At the Cape Hatteras/Frisco pier (beach faces south) NNE is offshore, the most important hazard, and B misses it.",
+        "Puts tool and internal talk in front of the rider ('no spot card', 'I can add it so future forecasts check'), which doesn't help them.",
+        "Suggests a 6–7 m for 30–32 kt gusting to 44 at 78 kg. That's on the big side; 5–6 m is more appropriate, though B does say not to ride even then."
+      ]
+    },
+    "winner": "sans",
+    "why": "A's numbers match the official NOAA tide table and the NWS forecast and Gale Warning exactly, and it correctly flags that NNE wind is offshore at the south-facing Frisco pier beach. B gets the tide data wrong, cites wind alerts that aren't active, and never works out whether the wind is offshore."
+  },
+  "seconds": 105
+}

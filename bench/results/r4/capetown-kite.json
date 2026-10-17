@@ -1,0 +1,46 @@
+{
+  "id": "capetown-kite",
+  "q": "Kiting at Bloubergstrand, Cape Town tomorrow. 85 kg, 7, 9 and 12 m. Will the south-easter blow, when, and what size?",
+  "sans": "Probably a light-to-moderate day rather than a proper south-easter. Expect wind that's usable but gusty in the afternoon, and plan on your 12 m.\n\n**Direction:** Every model has the wind coming from the south, around 165–195°, not the classic 130–150° south-easter. It swings a little toward south-southwest late in the afternoon. That angle works fine at Blouberg (roughly side-shore), but it isn't the Cape Doctor pattern that pushes up to 25+ knots.\n\n**Strength and timing (Sunday 18 Oct, SAST):**\n\n| Time | Mean wind | Gusts | Notes |\n|---|---|---|---|\n| Before 10:00 | 7–9 kn | 13–17 | Too light |\n| 10:00–12:00 | 9–11 kn | 19–22 | Building, marginal |\n| **13:00–17:00** | **10–12 kn** | **20–24** | **Best window** |\n| 17:00–19:00 | 8–11 kn | 16–22 | Fading. One model (ARPEGE) keeps ~12 kn until 19:00 |\n| After 19:30 | under 7 kn | | Gone |\n\nFive global models mostly agree: ECMWF, GFS, ICON, UKMO and ARPEGE. GFS is weakest at about 8–9 kn. ICON has the morning nearly flat, with wind arriving around 13:00.\n\n**Kite choice for 85 kg:**\n- **12 m:** your main kite. With 11–15 kn on the beach it should be fine, maybe a bit lit in the gusts.\n- **9 m:** bring it. These coarse global models often under-forecast wind at the Cape because they miss the local funnelling. If the mean wind reaches 18+ kn in the afternoon, switch to the 9.\n- **7 m:** leave it in the car unless a real south-easter shows up, which isn't forecast.\n\n**Caveats:**\n- The gusts are about double the mean wind, so expect gusty, uneven pulls.\n- These are 10–25 km global models, not a local Cape Town model, so the actual wind could easily be 3–5 kn stronger.\n- Check a live wind station or Windguru on Sunday morning before you drive out. If it's already blowing 12+ kn by 11:00, the afternoon should be good.\n\nSource: [Open-Meteo forecast API](https://open-meteo.com/) (ECMWF IFS, GFS, ICON, UKMO, ARPEGE), point near Bloubergstrand (−33.80, 18.46).",
+  "avec": "## No — tomorrow (Sun 18 Oct) doesn't look worth it. Rating 0/10.\n\n**Will the south-easter blow?** Only weakly. The wind sits S to SSE all day, but it's light: about 8–9 kn in the morning and 10 kn at best from **13:00–17:00**. It fades after 18:00.\n\n**Why:**\n- **It's too light, even for the 12 m.** At 85 kg you'd want a steady 14–15 kn or more on the 12. The five models average 9–10 kn, and they agree closely in the afternoon.\n- **It's very gusty.** Gusts run about double the mean, with 20–25 kn spikes, mainly in ECMWF and AROME. That means a 12 m stuck in the lulls and then yanked in the gusts. It's the worst combination, not a rideable session.\n- **The swell is big.** Waves are 2.3–2.6 m from the SW at 11 s, so expect a heavy shore break at the launch.\n\n**Morning rule:** check a live station like Windguru's Blouberg station or iKitesurf around 11:00. Go only if it reads a steady **14 kn or more** from S/SSE, not just gusts. If it does, rig the 12 and go between 13:00 and 16:00. The 7 and 9 stay in the car.\n\n**Safety, if you go anyway:**\n- With gusts this strong, a kite that's big enough for the lulls will overpower you in the spikes.\n- S is cross-shore here, but any SE in it turns cross-offshore. Know your downwind escape route.\n- The water is about 16.5 °C, so wear a 4/3.\n\nThe spot info (beach facing WSW, best in S/SSE wind) comes from an unconfirmed community card built from online guides. If you know Kite Beach well, tell me whether that's right and I'll save your corrections to the spot database. I can also check Monday and the rest of the week for a proper south-easter.",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 2,
+      "uncertainty": 4,
+      "actionability": 3,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "Its own table gives a 10–12 kn mean, but the kite advice says '11–15 kn on the beach, should be fine, maybe a bit lit'. That bakes in an unverified +3–5 kn local boost. For 85 kg on a twin-tip, a 12 m needs about a steady 14–16 kn, so 10–12 kn with 20+ kn gusts is a marginal, gusty session.",
+        "Funnelling and models under-forecasting is real for a true south-easter. B itself says the flow here is S to SSW (165–195°), not the Cape Doctor pattern, so the under-forecast argument is weaker today, and using it to justify the 9 m is inconsistent.",
+        "The go threshold of '12+ kn by 11:00' is too low for 85 kg on a 12 m. It should be about a steady 14 kn or more, with lulls above 12.",
+        "Doesn't say clearly enough how dangerous gusts at twice the mean are: a 12 m sized for 10 kn lulls being hit by 24 kn gusts risks lofting and being dragged on the beach. It only mentions 'gusty, uneven pulls'.",
+        "Leaves out the big SW swell and shore break (other sources put it at about 2.3–2.6 m at 11 s), cold Atlantic water and wetsuit advice, tide, and any offshore warning. It should say that if the wind backs toward SE (about 130–140°) it turns side-offshore at a beach facing WSW.",
+        "Reports gusts but never says whether the sky has the SE signs, the tablecloth on Table Mountain or clear skies, a cheap local check on whether a south-easter is coming.",
+        "The Open-Meteo source line and coordinates add little for the rider. They're fine as transparency but border on tool talk."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "Cites AROME for gusts. AROME is Météo-France's limited-area model and only covers France and Europe, so it gives no output for Cape Town. That model attribution is wrong, possibly a mix-up with ARPEGE.",
+        "Never names the five models it says it averages, which makes the 'they agree closely' claim hard to check.",
+        "Water at 16.5 °C is optimistic for Table Bay's Atlantic side in October. It usually runs about 12–15 °C and drops further when south-easter upwelling sets in, so a 5/4 is the safer advice than a 4/3.",
+        "'Rating 0/10' is too absolute next to its own advice to rig the 12 if a station reads 14+ kn. 'Unlikely, check at 11:00' would fit better.",
+        "Ends with internal tool talk ('unconfirmed community card', 'save your corrections to the spot database') that doesn't help the rider.",
+        "Doesn't name the landmarks of the local regime, such as the Cape Doctor, the Table Mountain tablecloth as an SE sign, or the venturi or acceleration effect. It also doesn't note that a S/SSE flow at 10 kn usually means no real south-easter has set up.",
+        "No tide information. Table Bay's range is small (about 1.5–2 m at springs), but tide changes shore-break and sandbar behaviour at Kite Beach, and it should at least say tide matters little.",
+        "Says 'heavy shore break' from 2.3–2.6 m SW swell but doesn't say where on the beach it's gentler (the Kite Beach and Sunset end), or warn about the rip currents a swell that size brings."
+      ]
+    },
+    "winner": "avec",
+    "why": "Both answers read the forecast about the same way, but A sets realistic thresholds for an 85 kg rider and covers more of the hazards (gusts, shore break, cold, offshore risk if the wind goes SE), while B talks up a 10–12 kn gusty forecast as 'should be fine' on the 12, despite A's AROME error and tool talk."
+  },
+  "seconds": 101
+}

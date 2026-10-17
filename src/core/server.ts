@@ -1,6 +1,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { z } from 'zod'
-import { fetchForecast, geocode, MODEL_LABELS, defaultModels } from './openmeteo.js'
+import { fetchForecast, geocode, MODEL_LABELS, defaultModels, modelLabel } from './openmeteo.js'
 import { summarizeHour, findWindows, gustDiagnostics, renderTable, compass, COMPASS, tideEvents, renderTides, renderSea, daylightMap, weekday, tideRange, significantTides } from './analysis.js'
 import { nearestStation, noaaTides } from './noaa.js'
 import { dayVerdict, type Rider } from './verdict.js'
@@ -14,14 +14,15 @@ export const INSTRUCTIONS = `windext: multi-model wind forecasts for wind sports
 WORKFLOW
 1. find_spot with the place or spot name. It returns known cards (status seed, community or verified; kind spot or school) and geocoding results.
 2. Pass the card's spot_id to spot_forecast and ride_windows. The forecast is then read against the beach orientation and the spot's known good and forbidden wind sectors.
-3. A 'seed' card comes from OpenStreetMap: position and sports only, orientation possibly estimated from the coastline. A 'school' card is a club, school or shop, not the launch itself. In both cases, and whenever no card exists: search the web yourself for the spot guide (beach orientation, launch area, working and forbidden wind directions, hazards, tide, rules, season). Summarise the facts, ask the user to confirm or correct them (locals know better than guides), then call submit_spot with the confirmed card and the source URLs. Never skip the confirmation.
-4. Treat 'seed' and 'community' cards as useful but unverified; say so whenever safety depends on them. A coastline-estimated orientation is a guess: confirm it with the user before relying on it for offshore warnings.
+3. When no card exists for the spot (or only a 'school' card): search the web for the spot guide (beach orientation, launch, working and forbidden directions, hazards, tide, rules) and use those facts in your answer. Call submit_spot only when the user shows local knowledge or confirms or corrects facts themselves; then submit what they confirmed with the source URLs.
+4. A coastline-estimated orientation is a guess: if an offshore warning depends on it, say the beach orientation should be checked on site, in plain words.
 5. If the user mentions having ridden a spot ("I was there yesterday, it was 20 knots"), thank them and note that session reports will soon be recorded to score the models.
 
 ANSWER FORMAT (riders read this on a phone in the car park)
 - Open with the ASSESSMENT of the day asked, as given by spot_forecast: yes / maybe / no, the window, the gear size, and the rating out of 10. Do not soften or contradict it unless you found an official warning or a hard fact it could not know.
 - Then 2 to 4 short lines on why (the verdict's reasons), then the decision rule for the morning when the verdict is maybe, then the safety points that apply to this spot. Under 250 words unless the user asks for detail. No per-model table unless asked.
-- If there is no spot card, ask at most ONE short sentence at the very end ("Do you know this spot? Tell me if the beach faces N and I will save it for the next riders."). Never add it for a professional or school question, and never more than once per conversation.
+- Never mention spot cards, databases, statuses, sources being unverified, or ask the rider to correct data. If a safety call hinges on an uncertain beach orientation, say so as a forecaster would ("check that the beach faces north").
+- A rating of 0-1 means do not go: never suggest a session or an "if you go anyway" window. With 2-4 (maybe), give the morning decision rule.
 - Official warnings (OFFICIAL WARNINGS line) override everything: say it first.
 - Speak as a forecaster, not as a tool: give the score as a plain rating ("5/10"), never mention spot-card statuses, percentages of hours, "the tool", "windext says" or how the verdict is computed. If the verdict is no, do not then offer a window "if you go anyway"; offer the alternative spot when the verdict names one.
 
@@ -117,7 +118,7 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
     if (cards.length) out.push(`Known spots:\n${cards.map(fmtCard).join('\n')}`)
     else out.push('No spot card in the database for this query.')
     if (geo.length) out.push(`Geocoding:\n${geo.map(p => `${p.name}, ${p.admin}, ${p.country}: lat ${p.lat}, lon ${p.lon}`).join('\n')}`)
-    if (!cards.some(c => c.status !== 'seed' && c.kind === 'spot')) out.push('Next step: search the web for this spot\'s guide (beach orientation, launch, working wind directions, hazards, tide, rules), confirm the facts with the user, then call submit_spot. Keep it to one sentence at the end of your answer.')
+    if (!cards.some(c => c.status !== 'seed' && c.kind === 'spot')) out.push('Next step: search the web for this spot\'s guide (beach orientation, launch, working wind directions, hazards, tide, rules), confirm the facts with the user, and use them in the answer.')
     return { content: [{ type: 'text', text: out.join('\n\n') }] }
   })
 
@@ -198,7 +199,8 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
         await store.archiveForecast(rows)
       }
     } catch { /* statistics must never break a forecast */ }
-    const head = `${fc.stale ? 'WARNING: the weather service is overloaded; this forecast is an older copy (up to 24 h). Say so.\n' : ''}Issued ${weekday(fc.issued)} ${fc.issued} local (${fc.timezone}); check the weekday the user named against the table headers.\n${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}${fc.dropped?.length ? ` (not available here: ${fc.dropped.map(m => MODEL_LABELS[m] ?? m).join(', ')})` : ''}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
+    const essentials = c2 ? [c2.rules && `Local rules: ${c2.rules}`, c2.hazards && `Hazards: ${c2.hazards}`, c2.launch_notes && `Launch: ${c2.launch_notes}`, c2.tide_notes && `Tide at this spot: ${c2.tide_notes}`].filter(Boolean).join('\n') : ''
+    const head = `${fc.stale ? 'WARNING: the weather service is overloaded; this forecast is an older copy (up to 24 h). Say so.\n' : ''}Issued ${weekday(fc.issued)} ${fc.issued} local (${fc.timezone}); check the weekday the user named against the table headers.\n${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => modelLabel(m, lat, lon)).join(', ')}${fc.dropped?.length ? ` (not available here: ${fc.dropped.map(m => modelLabel(m, lat, lon)).join(', ')})` : ''}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
     const tides = await tideText(c2, lat, lon, fc, a.days)
     const tideBlock = tides ? `\n\nTides${c2?.tide_notes ? ` (spot note: ${c2.tide_notes})` : ''}:\n${tides}` : ''
     const sea = renderSea(fc)
@@ -211,7 +213,7 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
       .filter(v => fc.hours.some(h => h.time.startsWith(v.date)))
     const verdictBlock = `ASSESSMENT for a ${rider.sport} rider${profileNote}. Rewrite it in your own words, in the user's language; do not quote these labels:\n${verdicts.map(v => `${v.day} ${v.date}: ${v.headline} Rating ${v.score}/10. ${v.reasons.join(' ')}`).join('\n')}`
     const alertBlock = alerts.length ? `OFFICIAL WARNINGS (US National Weather Service): ${alerts.map(x => `${x.event}${x.ends ? ` until ${x.ends.slice(0, 16).replace('T', ' ')}` : ''}`).join('; ')}\n` : ''
-    return { content: [{ type: 'text', text: `${alertBlock}${verdictBlock}\n\n${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}${sea ? `\n\nSea state (daytime):\n${sea}` : ''}${tideBlock}` }] }
+    return { content: [{ type: 'text', text: `${alertBlock}${verdictBlock}${essentials ? `\n\nSPOT FACTS (apply them: time bans, zones, hazards override the window):\n${essentials}` : ''}\n\n${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}${sea ? `\n\nSea state (daytime):\n${sea}` : ''}${tideBlock}` }] }
   })
 
   server.registerTool('ride_windows', {

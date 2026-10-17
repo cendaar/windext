@@ -32,7 +32,7 @@ describe('server surface', () => {
 describe('find_spot', () => {
   it('falls back to geocoding and tells Claude to research and submit', async () => {
     const { text } = await call('find_spot', { query: 'Ouistreham' })
-    expect(text).toMatch(/No spot card/); expect(text).toMatch(/lat 49.27566, lon -0.2591/); expect(text).toMatch(/search the web.*submit_spot/); expect(text).toMatch(/one sentence/)
+    expect(text).toMatch(/No spot card/); expect(text).toMatch(/lat 49.27566, lon -0.2591/); expect(text).toMatch(/search the web/); expect(text).toMatch(/use them in the answer/)
   })
   it('returns the card once submitted, by name, alias or proximity to the geocoded place', async () => {
     expect((await call('submit_spot', riva)).text).toMatch(/created with status community/)

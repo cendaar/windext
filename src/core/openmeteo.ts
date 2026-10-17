@@ -22,9 +22,18 @@ export const MODEL_LABELS: Record<string, string> = {
 const GLOBAL_MODELS = ['meteofrance_seamless', 'icon_seamless', 'ecmwf_ifs', 'gfs_seamless', 'ukmo_seamless']
 const EUROPE_EXTRA = ['knmi_seamless', 'dmi_seamless']
 
+export const inEuropeBox = (lat: number, lon: number) => lat > 34 && lat < 72 && lon > -25 && lon < 45
+
+/** Model label at a location: the Météo-France slot is AROME only over France and western Europe, ARPEGE elsewhere. */
+export function modelLabel(id: string, lat: number, lon: number): string {
+  if (id === 'meteofrance_seamless') return inEuropeBox(lat, lon) ? 'AROME/ARPEGE' : 'ARPEGE'
+  if (id === 'icon_seamless' && !inEuropeBox(lat, lon)) return 'ICON global'
+  if (id === 'ukmo_seamless' && !inEuropeBox(lat, lon)) return 'UKMO global'
+  return MODEL_LABELS[id] ?? id
+}
+
 export function defaultModels(lat: number, lon: number): string[] {
-  const inEurope = lat > 34 && lat < 72 && lon > -25 && lon < 45
-  return inEurope ? [...GLOBAL_MODELS, ...EUROPE_EXTRA] : GLOBAL_MODELS
+  return inEuropeBox(lat, lon) ? [...GLOBAL_MODELS, ...EUROPE_EXTRA] : GLOBAL_MODELS
 }
 
 export interface HourModel { speed: number | null; gust: number | null; dir: number | null }

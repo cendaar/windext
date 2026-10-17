@@ -1,0 +1,46 @@
+{
+  "id": "cumbuco-week",
+  "q": "Vou para Cumbuco esta semana para kitar. Quais os melhores dias e horários? Peso 70 kg, tenho 7, 9 e 12 m.",
+  "sans": "Esta semana deve ter vento todos os dias, como é normal em outubro. **O melhor do vento deve ser na quarta (21) e na quinta (22).**\n\n**Previsão de 17 a 23/10, das 8h às 18h**\n\n| Dia | Vento médio (kn) | Rajadas (kn) | Direção | Pico | Avaliação |\n|---|---|---|---|---|---|\n| Sáb 17 | 12–14 | 25–27 | E | 9h–12h | Bom |\n| Dom 18 | 11–12 | 23–25 | E | 10h–13h | Mais fraco |\n| Seg 19 | 9–12 | 22–26 | E | 11h–14h | Começa fraco, melhora depois das 11h |\n| Ter 20 | 12–14 | 26–28 | E | 10h–14h | Bom |\n| **Qua 21** | 13–14 | 28–29 | ESE | 10h–14h | **Muito bom** |\n| **Qui 22** | 14–15 | 29–31 | ESE | 10h–14h | **O dia mais forte** |\n| Sex 23 | 12–13 | 21–26 | ESE | 15h–18h | Vento cresce à tarde |\n\n**Os números de vento médio parecem baixos, mas é normal.** Modelos globais como esse (Open-Meteo) costumam subestimar o vento médio em Cumbuco. Na prática, o vento real fica mais perto das rajadas. Em outubro, o normal é 18 a 25 nós de tarde.\n\n**Melhores horários:** entre 10h e 15h o vento é mais forte e constante. De manhã cedo costuma ser mais fraco e irregular. Na sexta (23) é diferente: vale mais ir do meio da tarde até o pôr do sol.\n\n**Que pipa usar (70 kg)**\n- **9 m:** deve ser a sua pipa principal esta semana, para 18 a 24 nós.\n- **7 m:** leve para quarta e quinta, se passar de 25 nós no meio do dia.\n- **12 m:** para domingo, para manhãs fracas ou para o fim de tarde da segunda.\n\n**Dicas**\n- O vento de leste/sudeste é lateral à praia em Cumbuco, então é seguro.\n- Se o mar estiver muito picado, a Lagoa do Cauípe tem água lisa e não depende da maré.\n- Monte a pipa por volta das 10h e confira no local antes de escolher o tamanho. O Windguru/Windy com o modelo local e a leitura das escolas da praia são mais precisos que a previsão global.\n\nBons ventos! 🪁\n\nFonte: [Open-Meteo](https://open-meteo.com/) (previsão horária para Cumbuco, consultada em 17/10/2026)",
+  "avec": "**Hoje (sáb 17/10): sim, das 9h às 15h com a 12 m. Nota 5/10.** Os modelos concordam, mas o vento vai estar com rajadas: média de 12 nós e rajadas de 22.\n\n**Semana em Cumbuco (média/rajada, vento E–ESE, lateral a lateral-on):**\n\n| Dia | Melhor janela | Vento | Kite |\n|---|---|---|---|\n| Sáb 17 | 9h–15h | 12/22 kn | 12 m |\n| Dom 18 | 12h–14h | 11/21 kn | 12 m |\n| Seg 19 | 11h–15h | 11/21 kn | 12 m |\n| Ter 20 | 9h–16h | 12–13/23 kn | 12 m |\n| **Qua 21** | **8h–15h** | **13–14/25 kn** | **12 m** |\n| **Qui 22** | **8h–16h** | **13–14/24 kn** | **12 m** |\n| **Sex 23** | **8h–16h** | **13/23 kn** | **12 m** |\n\n**Os melhores dias são de quarta a sexta**, das 9h às 15h. O vento é um pouco mais forte e firme, e os modelos concordam bastante.\n\n**Por quê:**\n- É o alísio de E/ESE, a direção ideal do spot, sem nenhuma hora de vento terral (offshore) prevista.\n- As rajadas são quase o dobro da média, então espere buracos de vento e picos fortes.\n- O ar está mais quente que o mar, o que pode deixar o vento perto da praia um pouco abaixo do previsto.\n- O vento pega a partir das 8–9h e cai depois das 15–16h.\n\n**Que kite usar (70 kg):** a previsão aponta a **12 m** para todos os dias. Os modelos globais costumam subestimar o reforço térmico das dunas à tarde. Se na praia estiver firme em 18–22 nós, vá de **9 m**. Acima de 25 nós, use a **7 m**. Na dúvida, confira o que a galera está usando no spot.\n\n**Segurança:**\n- Tem shorebreak e chop, além de uma corrente de 1–2 nós.\n- Se o vento virar para S/SSE (terral), não entre no mar.\n- O spot fica lotado no fim de semana, principalmente na lagoa do Cauípe.\n- Há relatos de furto: não deixe nada à vista na praia.\n- As ondas ficam em torno de 1,0–1,5 m de ENE. A maré não tem muita influência na praia principal.\n\nA ficha do spot é da comunidade e ainda não foi verificada (praia virada para NE, zona de kite em frente ao Eco Paradise). Se você chegar lá e ver algo diferente, me avise que eu corrijo.",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 2,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "'O vento de leste/sudeste é lateral à praia, então é seguro' is a safety error. With a beach facing about N–NNE, E/ESE is side-shore, but SE/SSE is side-off. B never says that any southerly component means offshore danger and that you shouldn't go out.",
+        "It gives no hazards: no shorebreak, no westward longshore current, no crowding, no theft, no advice on downwinders or self-rescue.",
+        "No tides at all, even though high tide at Cumbuco narrows the launch beach and affects the shorebreak. This week is near neaps.",
+        "The model gusts of 28–31 kn with a 13–15 kn mean are an artifact of the gust parameterisation. B partly says so ('real wind closer to the gusts'), but this could still lead the rider to expect 30 kn and reach for the 7 m too readily.",
+        "The Saturday peak of 9h–12h contradicts its own advice that 10h–15h is the strongest time. In Cumbuco the wind usually peaks in the afternoon.",
+        "Calling the Lagoa do Cauípe 'água lisa, não depende da maré' is correct, but it leaves out that the lagoon is crowded on weekends and that the water level is lower in the dry season.",
+        "Good points: it uses the 9 m as the main kite for 70 kg in October, rightly says global models underestimate Cumbuco wind, tells the rider to check local models and the beach schools on the day, and gets the weekdays and dates right."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 3,
+      "actionability": 3,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "It picks the 12 m for every day because the raw model mean is 11–14 kn. In October Cumbuco is in peak trade-wind season, and the real wind is usually 18–25 kn by midday. For a 70 kg rider the 9 m should be the main kite, with the 12 m only for light mornings. A does mention the 9 m and 7 m as fallbacks, but its main pick is wrong.",
+        "It says the wind drops after 15–16h. In Cumbuco the E/ESE trade usually stays strong or even builds through the afternoon until sunset. Early morning is the weaker part of the day, so the 8–9h starts are optimistic and the late afternoon is wrongly cut.",
+        "The headline window doesn't match the table: the text says Wed–Fri 9h–15h, but the table says 8h–15h and 8h–16h.",
+        "It says the tide has little influence on the main beach. Fortaleza/Cumbuco tides are semi-diurnal, with a range of about 2–3 m at springs. High tide narrows the beach, limits launching space and makes the shorebreak worse. No tide times are given at all. This week is near neap tides (first quarter around 18 Oct, full moon 26 Oct), which would have been easy to say.",
+        "'Praia virada para NE' is only roughly right. The Cumbuco coast runs WNW–ESE and the beach faces about N–NNE, so E/ESE is side-shore to side-on from the right. Offshore is S/SW. SSE is already side-off and should be flagged.",
+        "It shows internal tool talk that doesn't help the rider: 'a ficha do spot é da comunidade e ainda não foi verificada', 'me avise que eu corrijo', and 'os modelos concordam' without naming the models.",
+        "The air-warmer-than-sea stability note is minor and doesn't really change the advice. The gust ratio near 2× is a model artifact rather than real gustiness, and A doesn't explain that.",
+        "Good points: it warns about offshore/SSE, shorebreak, current, crowds and theft, and the weekdays and dates are correct (Sat 17/10/2026)."
+      ]
+    },
+    "winner": "sans",
+    "why": "B gives the more realistic setup for a 70 kg rider in October Cumbuco: the 9 m as main kite, a midday-to-afternoon window, and an explicit warning that the global model underestimates the wind. A has stronger safety coverage, but its 12 m main pick, its claim that the wind dies after 15–16h, and its tool talk make it less useful, despite B's wrong claim that SE wind is safe."
+  },
+  "seconds": 74
+}

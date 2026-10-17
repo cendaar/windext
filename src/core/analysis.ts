@@ -1,5 +1,5 @@
 import type { Forecast, Hour } from './openmeteo.js'
-import { MODEL_LABELS } from './openmeteo.js'
+import { modelLabel } from './openmeteo.js'
 
 export const COMPASS = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
 export const compass = (deg: number) => COMPASS[Math.round(deg / 22.5) % 16]
@@ -106,7 +106,7 @@ export function gustDiagnostics(fc: Forecast, hours: HourSummary[]): string[] {
 /** Compact text rendering, built to cost few tokens. One line per hour, one column per model: speed/gust dir. */
 export function renderTable(fc: Forecast, hours: HourSummary[], opts: { from?: number; to?: number; fullDays?: number } = {}): string {
   const { from = 6, to = 21, fullDays = 3 } = opts   // per-model columns for the first days only; beyond, the fine regional models have expired and the consensus is what matters
-  const cols = fc.models.map(m => MODEL_LABELS[m] ?? m)
+  const cols = fc.models.map(m => modelLabel(m, fc.lat, fc.lon))
   const lines: string[] = []
   const nDays = new Set(fc.hours.map(h => h.time.slice(0, 10))).size
   lines.push(`Wind in knots, hourly, local time (${fc.timezone}). Cell = mean/gust dir. Last columns = model mean, spread between models, agreement.${nDays > fullDays ? ` From day ${fullDays + 1} only the consensus is shown.` : ''}`)

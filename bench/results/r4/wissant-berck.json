@@ -1,0 +1,44 @@
+{
+  "id": "wissant-berck",
+  "q": "Dimanche, kite à Wissant ou à Berck ? 75 kg, 9 et 12 m. Dis-moi lequel et pourquoi.",
+  "sans": "Je choisirais **Wissant, avec la 12 m**. Mais attention : dimanche s'annonce **très probablement pas navigable** sur les deux spots. Ne fais pas la route sans revérifier samedi soir.\n\n**Prévisions pour dimanche 18 octobre**\n\n| | Wissant | Berck |\n|---|---|---|\n| Vent moyen (modèle par défaut) | 2 à 8 nœuds, pic vers 10 h | 4 à 7 nœuds, pic vers 14 h |\n| Meilleur scénario (AROME) | **15 nœuds vers 10-11 h**, rafales à 27 | 10 nœuds vers 15 h |\n| ECMWF / ICON | 10 à 11 nœuds | 7 à 8 nœuds |\n| Direction | N à NNE | NNE |\n| Ciel | averses toute la journée | sec |\n| Vagues | environ 1,3 m | environ 0,7 m |\n| Marée (estimation du modèle, à vérifier) | basse vers 11 h, haute vers 17 h | basse vers 11 h, haute vers 17 h |\n\n**Pourquoi Wissant :**\n- **C'est le seul endroit où un modèle donne du vent utilisable.** À 75 kg, il te faut environ 14-15 nœuds établis pour la 12 m, et 18 nœuds ou plus pour la 9 m. Berck plafonne autour de 10 nœuds sur tous les modèles, donc c'est mort même avec la 12 m.\n- **Le nord-nord-est passe bien à Wissant.** Il est side/side-on dans la baie.\n\n**Pourquoi je reste réservé :**\n- Le pic d'AROME vient sans doute **des grains**. On aurait alors un vent irrégulier, de 5 à 27 nœuds, avec de la pluie : pas idéal sous une 12 m, et potentiellement dangereux si un grain passe.\n- Les autres modèles restent sous le seuil.\n- La fenêtre la plus probable (10-12 h) tombe à **marée basse**. Ça fait beaucoup de marche, mais un grand plan d'eau.\n\n**En pratique :**\n- Si samedi soir AROME donne toujours 14 nœuds ou plus en moyenne à Wissant en fin de matinée, vas-y avec la 12 m. La 9 m peut rester dans la voiture.\n- Sinon, garde ta journée.\n\nPour l'heure de la marée, fie-toi à l'annuaire du SHOM plutôt qu'au modèle.\n\nSources : [Open-Meteo, prévisions vent](https://open-meteo.com/) (modèles par défaut, AROME, ECMWF, ICON) et [Open-Meteo Marine](https://open-meteo.com/en/docs/marine-weather-api) (vagues et niveau de la mer)",
+  "avec": "**Dimanche 18 : je n'irais ni à Wissant ni à Berck.** Les deux spots sont notés 0/10 : il n'y a pas assez de vent et, à Berck, il vient du mauvais côté. Si tu tiens absolument à tenter, va à Wissant avec le 12 m, vers 16-17 h, et seulement si les balises confirment au matin.\n\n**Pourquoi Wissant plutôt que Berck**\n- **Berck, non :** vent de NNE à NE toute la journée, soit offshore ou side-off sur une plage orientée ouest. C'est le secteur à éviter là-bas, et il ne fait que 6-8 nœuds en moyenne. Même l'école locale part à Wissant par vent de NE.\n- **Wissant, très peu probable :** le vent est side-shore à side-on, donc l'orientation est correcte. Mais la moyenne reste autour de 8 nœuds, avec un pic d'environ 10 nœuds vers 16 h. À 75 kg, ton 12 m demande plutôt 13-14 nœuds réguliers.\n- **Seule possibilité :** deux modèles (KNMI et DMI) voient 13-17 nœuds de N entre 16 h et 17 h. Les autres restent à 3-12 nœuds, et les modèles ne s'accordent sur aucune heure de la journée.\n- **Rafales :** le temps est à averses, donc le vent sera irrégulier, avec une rafale sous chaque grain puis un trou.\n\n**Règle pour dimanche matin**\nRegarde la mise à jour des modèles et la balise de Wissant vers 11-12 h. Tu pars si le vent est d'au moins 13-14 nœuds établis, de secteur N à NNE. S'il tourne à l'est ou reste sous 12 nœuds, tu restes chez toi.\n\n**Si tu y vas**\n- La pleine mer est en fin d'après-midi, pile pendant la seule fenêtre de vent. La plage sera très étroite près de la digue, avec du shorebreak et une houle de 1,2-1,5 m de NNE. Mes horaires de marée sont approximatifs, vérifie-les sur maree.info.\n- Le vent bascule à l'est (offshore) à partir de 19-20 h. Sors de l'eau avant.\n- Mes fiches sur ces deux spots ne sont pas encore vérifiées par des riders locaux. Fie-toi aussi aux pratiquants sur place.",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 2,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 2,
+      "concision": 4,
+      "errors": [
+        "Le tableau donne une direction N à NNE, mais le pic d'AROME qui justifie tout le choix n'est pas homogène. À Wissant, AROME donne 14 nœuds à 70° (ENE) à 9 h, 15 nœuds à 9° (N) à 10 h, puis 10 nœuds à 75° à 11 h. Le vent oscille donc vers l'ENE, offshore ou side-off sur une plage orientée nord-ouest, et ce danger n'est jamais signalé.",
+        "Berck n'est écarté que pour le manque de vent. Le NNE à NE y est offshore ou side-off sur une plage orientée ouest, c'est la vraie raison de sécurité. Elle manque.",
+        "Aucune mise en garde contre la bascule du vent à l'est/ESE en soirée : 88-117° à partir de 19 h selon ECMWF et les modèles par défaut.",
+        "Marée : basse mer vers 11 h et pleine mer vers 17 h, c'est un peu tôt. Il faut plutôt compter BM vers 11 h 30-12 h et PM vers 17 h 30-18 h à Wissant, avec un coef. d'environ 32-37 (vérifié via Fécamp, PM à 16 h 26, plus le décalage). La réponse reconnaît que c'est une estimation, et le renvoi au SHOM est correct.",
+        "La consigne est de décider samedi soir uniquement. Il manque un contrôle de la balise ou des observations le jour même, alors que le vent de grains d'AROME change d'un run à l'autre.",
+        "Jargon d'outil : « modèle par défaut », sources Open-Meteo et niveau de la mer issu du modèle.",
+        "Rien sur le froid de l'eau en octobre, ni sur le lieu de mise à l'eau (côté Tardinghen ou la digue)."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 5,
+      "uncertainty": 5,
+      "actionability": 4,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "Les 13-17 nœuds de N entre 16 et 17 h attribués à KNMI et DMI n'ont pas pu être vérifiés. Sur Open-Meteo pour Wissant, ECMWF plafonne vers 9-10 nœuds de NNE (environ 30°) entre 14 et 16 h, avec des rafales à 19-20. Les modèles par défaut et ICON restent sous 4 nœuds l'après-midi. Le « pic à environ 10 nœuds vers 16 h » est donc cohérent, mais la fenêtre de 16-17 h ne tient qu'à des modèles minoritaires.",
+        "Le créneau matinal d'AROME est oublié : 14-15 nœuds vers 9-10 h, rafales à 27. Cela dit, ce vent tourne entre l'ENE (70°, offshore à Wissant) et le N, donc l'écarter reste un choix défendable.",
+        "Marée : la réponse dit seulement « fin d'après-midi ». C'est correct, mais c'est vague. Sur la Côte d'Opale, la pleine mer tombe vers 17 h 30-18 h, avec un petit coefficient d'environ 32-37 (Fécamp, port SHOM : PM à 16 h 26, coef. 32 ; Boulogne et Wissant, environ 1 h 30 plus tard). Le petit coefficient n'est pas mentionné, alors qu'il réduit la marge à la digue.",
+        "La bascule à l'est en soirée est juste : 88-117° entre 19 et 20 h selon ECMWF et les modèles par défaut. C'est un bon point de sécurité.",
+        "Jargon d'outil inutile pour le rider : « notés 0/10 » et « mes fiches ne sont pas encore vérifiées par des riders locaux ».",
+        "Rien sur le froid : en octobre, l'eau est vers 14-15 °C, il faut une combinaison 4/3 ou 5/4. Rien non plus sur la règle de la saison : de mi-octobre à avril, la plage n'est soumise à aucune restriction estivale, ce qui n'a ici que peu d'impact."
+      ]
+    },
+    "winner": "avec",
+    "why": "Les deux déconseillent la sortie et choisissent le 12 m à Wissant, mais A est la seule à repérer l'offshore de NE à Berck et la bascule à l'est en soirée, et elle exige une confirmation par la balise le jour même, alors que B base son choix sur un pic d'AROME en grains qui tourne en partie à l'ENE (offshore), sans le dire."
+  },
+  "seconds": 108
+}

@@ -167,7 +167,8 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
     if (best.length === 1) { codes.add('SHORT_WINDOW'); reasons.push({ code: 'SHORT_WINDOW', vars: { start: hm(best[0].s.time), end: `${String(hourOf(best[0].s.time) + 1).padStart(2, '0')}:00` } }) }
     const disagree = all.filter(s => s.agreement === 'low').length / all.length >= 0.5
     if (disagree && (main === 'TOO_LIGHT_FOR_GEAR' || main === 'TOO_STRONG')) { codes.add('MODELS_DISAGREE'); reasons.push({ code: 'MODELS_DISAGREE', vars: { spread: r0(mean(all.map(s => s.spread))) } }) }
-    const status: Status = disagree && (main === 'TOO_LIGHT_FOR_GEAR' || best.length === 1) ? 'check' : 'no'
+    const nearMiss = (main === 'TOO_LIGHT_FOR_GEAR' || main === 'TOO_LIGHT') && peak.speed >= range.min - 1
+    const status: Status = (disagree && (main === 'TOO_LIGHT_FOR_GEAR' || best.length === 1)) || best.length === 1 || nearMiss ? 'check' : 'no'
     if (status === 'check') { codes.add('CHECK_RULE'); reasons.push({ code: 'CHECK_RULE', vars: { min: r0(range.min), max: r0(range.max), checkTime: checkAt(best.length ? hourOf(best[0].s.time) : dl[0] + 1) } }) }
     const hard = ['STORM', 'OFFSHORE', 'FORBIDDEN', 'TOO_LIGHT'].includes(main)
     const score = status === 'check' ? 2 : hard ? 0 : 1   // a maybe is never scored 0
@@ -190,7 +191,9 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
   const effKn = avg.speed + (gf >= 1.5 ? 0.15 * (avg.gust - avg.speed) : 0)
   const target = idealSize(rider.sport, rider.weightKg, effKn)
   const sizes = [...rider.sizes].sort((a, b) => a - b)
-  const pick = sizes.reduce((a, b) => { const da = Math.abs(a - target), db = Math.abs(b - target); return db < da - 0.05 || (Math.abs(db - da) <= 0.05 && gf >= 1.5 ? b < a : false) ? b : a })
+  // Riders take the biggest gear that does not overpower them: a size is fine up to ~1/0.875 of its ideal wind
+  const k = sizeFactor(rider.sport)
+  const pick = [...sizes].reverse().find(sz => effKn <= (k * rider.weightKg) / (sz * 0.875)) ?? sizes[0]
   const gear = { size: pick, unit: unitFor(rider.sport) }
 
   const reasons: Reason[] = []
