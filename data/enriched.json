@@ -3403,5 +3403,443 @@
       "https://bahia.ws/en/guia-de-turismo-barra-grande-no-piaui/",
       "https://www.windfinder.com/windstatistics/barra_grande"
     ]
+  },
+  "Ouistreham Riva-Bella, Normandy, France": {
+    "name": "Ouistreham Riva-Bella",
+    "aliases": [
+      "Ouistreham - Colleville (Côte de Nacre)",
+      "Colleville / Ouistreham",
+      "Riva-Bella"
+    ],
+    "lat": 49.2921,
+    "lon": -0.2725,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 0,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Reference direction. Summer NE sea breeze builds in the afternoon to about 15-18 kn. Venturi effect off the Orne estuary often gives more wind than nearby spots."
+      },
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Reference direction with low-pressure systems. Brings waves only when it blows strong."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Onshore and usable."
+      },
+      {
+        "sector": "NNE",
+        "quality": "ok",
+        "note": "Usable."
+      },
+      {
+        "sector": "ENE",
+        "quality": "ok",
+        "note": "Usable."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "Usable. Listed as rideable by Let's kite."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Usable."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Usable."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Usable. Listed as rideable by Let's kite."
+      },
+      {
+        "sector": "ESE",
+        "quality": "marginal",
+        "note": "Rideable only in some conditions according to Let's kite. One guide says SE becomes sailable at low tide."
+      },
+      {
+        "sector": "WSW",
+        "quality": "marginal",
+        "note": "Rideable only in some conditions according to Let's kite."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore side. Let's kite says to avoid the southern sector. One guide reports SE as sailable at low tide only; treat with caution."
+      },
+      {
+        "sector": "SSE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "S",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SSW",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SW",
+        "quality": "forbidden",
+        "note": "Offshore side."
+      }
+    ],
+    "launch_notes": "Launch on the beach by the Ouistreham seawall near the SNSM station; access via avenue de Trouville. Parking, a grassy rigging area and beach showers. Never launch close to the seawall or houses (turbulence, injury risk). Use the marked buoyed channel to get in and out, and stay clear of swimming zones.",
+    "tide_notes": "Sources disagree. Let's kite says low tide only: at high tide the beach disappears and the seawall disturbs the wind. Another guide says it works best from mid-tide up, with very shallow water far out at low tide. At high tide water reaches the stone jetty and seawall, which is awkward with waves.",
+    "hazards": "Seawall and stone jetty on the beach. Wind turbulence near the seawall and houses at high tide. Shallow, choppy water and small waves in strong onshore wind. Heavy crowds of swimmers in summer. The Orne mouth and Ouistreham ferry port and channel are to the east; watch the currents near the estuary.",
+    "rules": "Kitesurf and other traction kites are covered by municipal beach police orders (arrêté of 9 March 2026, plus a temporary order setting the supervised bathing periods). Navigation in the 300 m band is governed by Préfecture maritime order 53-2013. In the supervised summer season, once the buoys are in place, kites are reportedly banned in the 300 m band except in the designated buoyed channel. Check the posted beach rules.",
+    "season": "April–September; July is the most consistent. Busy in summer, so riding outside the peak season is advised.",
+    "sources": [
+      "https://lets-kite.com/fr/spots/1100/ouistreham-colleville-cote-de-nacre",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/colleville-ouistreham-normandie-france.html",
+      "https://ouistreham-rivabella.fr/decouvrir/la-plage-et-la-station-balneaire/securite-a-la-plage/"
+    ]
+  },
+  "Les Sables-d'Olonne, Vendée, France": {
+    "name": "Les Sables-d'Olonne – Grande Plage",
+    "aliases": [
+      "Grande Plage des Sables-d'Olonne",
+      "Plage du Remblai"
+    ],
+    "lat": 46.49333,
+    "lon": -1.7925,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 180,
+    "sports": [
+      "windsurf",
+      "wingfoil",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Onshore on this south-facing bay; choppy, with waves in front of the jetty."
+      },
+      {
+        "sector": "SSW",
+        "quality": "ok",
+        "note": "Cross-onshore, inferred from the beach orientation."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Cross-onshore, inferred from the beach orientation."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Cross-shore, inferred from the beach orientation; the harbour mouth and La Chaume are upwind, so expect gusts."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "Cross-shore from the left, inferred from the beach orientation."
+      },
+      {
+        "sector": "NW",
+        "quality": "marginal",
+        "note": "Side-offshore over the town; wind is patchy near the Remblai, especially at high tide."
+      },
+      {
+        "sector": "NE",
+        "quality": "marginal",
+        "note": "Side-offshore over the town; patchy near the promenade."
+      },
+      {
+        "sector": "N",
+        "quality": "forbidden",
+        "note": "Offshore: blows from the town out to sea."
+      }
+    ],
+    "launch_notes": "Launch and come back only through the buoyed channel for non-motorised craft, on the west end of the beach next to the Petite Jetée: about 160 m wide at the shore and 180 m offshore. No stopping or anchoring in the channel. Sailing and foiling are banned in the buoyed swimming zone and in the surf zone at the east end.",
+    "tide_notes": "Low tide gives a wide beach, and with swell the waves line up in front of the jetty. High tide leaves only a narrow strip below the Remblai promenade and the wind gets patchy.",
+    "hazards": "Busy urban beach with lots of swimmers and surfers. Harbour mouth and boat traffic just west of the Petite Jetée. Wind shadow and gusts from the town and promenade. Swimming outside the patrolled zones is banned along much of the coast because of strong currents.",
+    "rules": "Municipal decree LSO-DSN-PL-2025-012: kitesurfing, land yachting and speed sail are banned on the whole Grande Plage and on Tanchet beach, unless a club affiliated to FFVoile, FFVL or FFCV gets an exemption. When buoyed, the 300 m swimming zone is closed to all craft, foils included. Use the non-motorised channel by the Petite Jetée. Traction kites are banned on patrolled beaches from 1 June to 30 September and during the spring and All Saints' school holidays. Paid teaching only through schools approved by the town. Motor craft limited to 5 knots in the 300 m band south of the swimming zone.",
+    "season": "",
+    "sources": [
+      "https://ville.lessablesdolonne.fr/media/lso-dsn-pl-2025-012-arrete-plage-reglementation-2025-signe-tpn.pdf",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/les-sables-d-olonne-pays-de-la-loire-france.html"
+    ]
+  },
+  "Sotavento, Fuerteventura, Spain": {
+    "name": "Sotavento",
+    "aliases": [
+      "Playa de Sotavento",
+      "Playa Barca",
+      "Sotavento Lagoon",
+      "René Egli Sotavento",
+      "Risco del Paso"
+    ],
+    "lat": 28.12043,
+    "lon": -14.21632,
+    "country": "Spain",
+    "water": "lagoon",
+    "facing_deg": 130,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Reference direction: NE trade wind, cross-offshore from the left, accelerated by a double venturi effect. Strongest May-Sept, often 25-30 kn and up to 40 kn in Jul-Aug; gusty."
+      },
+      {
+        "sector": "NNE",
+        "quality": "ok",
+        "note": "Trade-wind variant, more side-offshore. Gusty, and drift goes out to sea."
+      },
+      {
+        "sector": "ENE",
+        "quality": "ok",
+        "note": "Side-shore trade-wind variant."
+      },
+      {
+        "sector": "N",
+        "quality": "marginal",
+        "note": "N is listed among the working directions, but it blows side-offshore to offshore on this beach and is very gusty. Not for beginners without rescue cover."
+      },
+      {
+        "sector": "NW",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "NNW",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Very wide, long sandy beach. Two main access points: the René Egli centre at the north end of the lagoon and Risco del Paso at the south end (ION Club). Windsurf and kite areas are kept apart by a swimming zone. Ask the local centres about beach assistance and rescue.",
+    "tide_notes": "Tidal lagoon about 4 km long. It fills best around spring tides (full and new moon), with 35-85 cm of water for about 2 h either side of high tide. At low tide it can be very shallow or dry, so you may have to walk about 300 m or cross the sandbank to ride the open sea.",
+    "hazards": "Cross-offshore wind blows you out to sea, so use paid jet-ski rescue (about EUR 50 per rescue or EUR 90 per week). Strong, gusty summer wind and blowing sand. Very shallow water and sandbanks at low tide. Small shorebreak; wind chop outside the lagoon. Not ideal for unsupervised beginners.",
+    "rules": "Separate zones for windsurf, kite and swimming; the windsurf zone at sea is supervised. Keep to your zone.",
+    "season": "May-September (windiest, Jun-Aug peak); can be ridden year-round with less wind.",
+    "sources": [
+      "https://www.sportif.travel/events/70/18/Canary_Islands/Fuerteventura_-_Sotavento/Sotavento_Lagoon_Spot_Guide",
+      "https://locations.thekitespot.com/locations/kitesurf-fuerteventura-playa-sotavento-canary-islands",
+      "https://www.windsurf.co.uk/micro-guides-sotavento-fuerteventura-canary-islands/",
+      "https://wannakitesurf.com/spot/Europe/Spain/Canary_Islands/Fuerteventura/Sotavento/"
+    ]
+  },
+  "Cabarete Kite Beach, Dominican Republic": {
+    "name": "Cabarete Kite Beach",
+    "aliases": [
+      "Kite Beach",
+      "Playa Kite Beach",
+      "Cabarete Kitebeach"
+    ],
+    "lat": 19.76378,
+    "lon": -70.42264,
+    "country": "Dominican Republic",
+    "water": "sea",
+    "facing_deg": 30,
+    "sports": [
+      "kitesurf"
+    ],
+    "wind": [
+      {
+        "sector": "E",
+        "quality": "best",
+        "note": "Trade wind, side-onshore from the right ~99% of the time. Reference direction. Thermal effect strengthens it from about lunchtime until sunset."
+      },
+      {
+        "sector": "ENE",
+        "quality": "best",
+        "note": "Northeast/east trades, side-onshore from the right."
+      },
+      {
+        "sector": "NE",
+        "quality": "ok",
+        "note": "More onshore, so the inside gets choppier."
+      },
+      {
+        "sector": "ESE",
+        "quality": "ok",
+        "note": "More side-shore."
+      },
+      {
+        "sector": "SE",
+        "quality": "marginal",
+        "note": "Side-off at this beach orientation (estimate)."
+      },
+      {
+        "sector": "S",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SSW",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SW",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Launch and land only in front of the kite schools. Other areas only in an emergency. Beach is small and busy (4 schools). Use competent assistants and release only on the rider's signal. Don't ride straight in front of schools or hotels. More room near the Dare2Fly end. To avoid crowds, ride at lunchtime or in the evening.",
+    "tide_notes": "Generally works at any tide, but the reef is very shallow in places, especially at low tide.",
+    "hazards": "Outer reef about 300 m out with breaking waves up to mast high in winter. Shallow reef with fire coral, worst at the point; go wide on downwinders. Choppy inside when windy. Crowded water with mixed levels and many students. Swimmers and bystanders on the beach. No official rescue service; school boats are limited in strong conditions and can't cross the reef.",
+    "rules": "Certified training required. Teaching allowed only by official schools. Launching and landing only in the school zones. No swimming on windy days. Windsurfers usually use the main Cabarete Bay; Bozo Beach is a separate kite spot downwind in the bay.",
+    "season": "Trade winds blow almost all year. Most reliable April–September, strongest June–August (about 15–30 kn). December–January can also be good, with bigger waves in winter.",
+    "sources": [
+      "https://se.kiteforum.com/kitesurf/spot/cabarete_kitebeach",
+      "https://www.mackiteboarding.com/news/kiteboarding-travel-guide-cabarete-dominican-republic-destinations-ep-02/",
+      "https://www.iksurfmag.com/travel-guides/caribbean/dominican-republic/cabarete/",
+      "https://vvanat.fr/blog/cabarete-republique-dominicaine-kitesurf/"
+    ]
+  },
+  "Langebaan, South Africa": {
+    "name": "Langebaan",
+    "aliases": [
+      "Langebaan Main Beach",
+      "Langebaan Lagoon",
+      "Shark Bay (Langebaan)"
+    ],
+    "lat": -33.093,
+    "lon": 18.032,
+    "country": "South Africa",
+    "water": "lagoon",
+    "facing_deg": 270,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "S",
+        "quality": "best",
+        "note": "Summer thermal-enhanced southerly, cross to cross-onshore from the left; frequently 20+ kn Oct-Mar, gusty, up to ~35 kn Nov-Feb."
+      },
+      {
+        "sector": "SSW",
+        "quality": "best",
+        "note": "Cross-shore on the lagoon; flat to slightly choppy water."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Listed as working for Main Beach and Shark Bay."
+      },
+      {
+        "sector": "SSE",
+        "quality": "ok",
+        "note": "Workable but gustier; on outgoing tide the current makes it hard to stay upwind."
+      },
+      {
+        "sector": "SE",
+        "quality": "marginal",
+        "note": "Side-off and gusty at Main Beach; with ebb tide the current pushes riders away from the launch, very unpleasant. Shark Bay often more usable."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Mentioned as usable at Main Beach (winter frontal winds); less consistent."
+      }
+    ],
+    "launch_notes": "Two main launches 5-10 min apart: Main Beach (town centre, rig on the wide beach, restaurants, safety boat often on patrol, deeper water further out, favoured by foilers/advanced) and Shark Bay (park on the hill, walk down to rig on grass; small crowded beach, ~2 km of waist-deep clear water, beginner/school area). Wind can differ between both: check the other if one is off. Stay out of the downwind freestyle area where pros train; look before launching.",
+    "tide_notes": "Strong tidal currents in the lagoon. Main Beach: incoming tide gives easy riding; outgoing tide current makes upwind return hard, especially in SE. Shark Bay: shallow sandbars at low water, watch foil masts.",
+    "hazards": "Strong ebb current at Main Beach (drift away from launch); sandbars and shallow patches at Shark Bay (foils); heavy crowds and kite tangles in peak season, many accidents when beginners try upwind riding at Shark Bay; gusty venturi wind; lost boards carried off by the tide; theft of unattended gear.",
+    "rules": "Lagoon is part of West Coast National Park / Langebaan Lagoon MPA, split into zones: northern Controlled Zone (Zone A, multi-use incl. kiteboarding and power boats), Restricted Zone (Zone B, non-powered craft only, no fishing), southern Sanctuary/Wilderness Zone (Zone C, closed to all access). Respect zone boundaries; lessons only via licensed schools at crowded spots.",
+    "season": "October to March (best November-February).",
+    "sources": [
+      "https://www.mackiteboarding.com/news/kiteboarding-travel-guide-langebaan-south-africa-destinations-ep-17/",
+      "https://kitekahunas.com/kitesurfing_langebaan_main_beach.html",
+      "https://kitekahunas.com/kitesurfing_langebaan_shark_bay.html",
+      "https://en.wikipedia.org/wiki/Langebaan_Lagoon_Marine_Protected_Area"
+    ]
+  },
+  "Cape Town Kite Beach Bloubergstrand, South Africa": {
+    "name": "Kite Beach (Bloubergstrand)",
+    "aliases": [
+      "Kite Beach Blouberg",
+      "Blouberg Kite Beach",
+      "Bloubergstrand Beach"
+    ],
+    "lat": -33.82189,
+    "lon": 18.47611,
+    "country": "South Africa",
+    "water": "sea",
+    "facing_deg": 245,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "SSE",
+        "quality": "best",
+        "note": "Reference summer SE-SSE trade wind (Cape Doctor), roughly cross-shore, often 20-30 kn. Usually lighter here than at Sunset Beach. Most riders use a 10 m kite or smaller, with 5-7 m on windy days."
+      },
+      {
+        "sector": "S",
+        "quality": "best",
+        "note": "Inside the reference SE-S window (113-203°). Cross-shore."
+      },
+      {
+        "sector": "SE",
+        "quality": "ok",
+        "note": "Workable, but tends cross-offshore on this west-facing beach. Strong SE makes choppy, energetic water and brings very cold upwelling water."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Listed as working (SW-NW range). Onshore-side component."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Listed as working (SW-NW range). Onshore."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Listed as working (SW-NW range). Mostly frontal or winter wind."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore on a beach facing WSW."
+      }
+    ],
+    "launch_notes": "Wide sandy launch less than 60 m from the water, across Otto du Plessis Drive from the KFC (address listed as 2B Athens Rd). It lies halfway between Dolphin Beach and Table View and is the main base for kite schools and beginners. Parking is on the street next to the beach. In peak season, wrap your bar and don't leave lines across the beach. Beginners should ride with a school.",
+    "tide_notes": "",
+    "hazards": "Shore break and small to medium waves, with rocky patches in places. Cold Atlantic water (13-18 °C, sometimes under 10 °C after strong SE): wear a 4/3 mm wetsuit. Cross-offshore angle in SE wind, so plan a downwind escape route. Very crowded Dec-Feb, with swimmers on busy days and advanced riders jumping. Sharks reported.",
+    "rules": "",
+    "season": "Oct-Mar (peak Dec-Feb)",
+    "sources": [
+      "https://breeza.io/spots/south-africa/blouberg-kite-beach",
+      "https://locations.thekitespot.com/locations/kitesurf-blougbergstrand-cape-town-south-africa",
+      "https://theplanetd.com/kitesurfing-cape-town-guide/",
+      "http://en.wannakitesurf.com/spot/Africa/South_Africa/Western_Cape/Tableview/"
+    ]
   }
 }

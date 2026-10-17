@@ -180,3 +180,16 @@ describe('worldwide fixes', () => {
     expect(text).toMatch(/Microtidal here \(model range 0.2 m/); expect(text).not.toMatch(/HW \d/)
   })
 })
+
+describe('app API', () => {
+  it('falls back to coordinates when the spot id is unknown', async () => {
+    const { verdictFor } = await import('../../src/api.js')
+    const r: any = await verdictFor(store, new URLSearchParams({ spot: 'renamed-spot', lat: '36.03', lon: '-5.62', sport: 'kitesurf', weight: '80', sizes: '9,12', lang: 'es' }))
+    expect(r.error).toBeUndefined(); expect(r.days).toHaveLength(2); expect(r.days[0].day).toBe('Hoy'); expect(typeof r.days[0].score).toBe('number')
+  })
+  it('rejects a bad profile with a clear message', async () => {
+    const { verdictFor } = await import('../../src/api.js')
+    expect(await verdictFor(store, new URLSearchParams({ lat: '1', lon: '2', weight: '500' }))).toEqual({ error: 'weight must be between 30 and 150 kg' })
+    expect(await verdictFor(store, new URLSearchParams({ sport: 'surf', lat: '1', lon: '2' }))).toEqual({ error: 'sport must be kitesurf, wingfoil or windsurf' })
+  })
+})

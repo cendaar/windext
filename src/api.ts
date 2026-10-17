@@ -28,7 +28,8 @@ export async function verdictFor(store: Store, q: URLSearchParams) {
   const lang = (LANGS as string[]).includes(q.get('lang') ?? '') ? q.get('lang') as Lang : 'en'
   let card: SpotCard | null = null
   if (q.get('spot')) card = await store.getSpot(q.get('spot')!)
-  const lat = card?.lat ?? Number(q.get('lat')), lon = card?.lon ?? Number(q.get('lon'))
+  const lat = card?.lat ?? Number(q.get('lat') ?? NaN), lon = card?.lon ?? Number(q.get('lon') ?? NaN)
+  // An unknown spot id falls back to the coordinates sent alongside it
   if (!isFinite(lat) || !isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) return { error: 'give spot=<id> or lat and lon' }
   const facing = q.get('facing') != null ? Number(q.get('facing')) : card?.facing_deg ?? null
   const fc = await fetchForecast({ lat, lon, days: 2 })

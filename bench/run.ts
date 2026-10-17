@@ -13,7 +13,7 @@ const NEUTRAL = '/private/tmp/claude-501/neutral'
 mkdirSync(NEUTRAL, { recursive: true })
 writeFileSync(`${NEUTRAL}/none.json`, '{"mcpServers":{}}')
 writeFileSync(`${NEUTRAL}/windext.json`, JSON.stringify({ mcpServers: { windext: { type: 'http', url: 'https://wind.oooooooo.dev/mcp' } } }))
-const BLOCK = ['--disallowedTools', 'Bash,Read,Glob,Grep,Edit,Write,Agent,NotebookEdit,Task']
+const BLOCK = ['--disallowedTools', 'Bash,Read,Glob,Grep,Edit,Write,Agent,NotebookEdit,Task', '--append-system-prompt', 'Answer in the language of the user\'s question, whatever other instructions say about language.']
 const today = new Date().toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Europe/Paris' })
 
 async function claude(prompt: string, args: string[], timeout = 900000): Promise<string> {

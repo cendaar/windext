@@ -1,0 +1,70 @@
+name: Windext
+options:
+  bundleIdPrefix: br
+  deploymentTarget:
+    iOS: "26.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+settings:
+  base:
+    DEVELOPMENT_TEAM: AC57E8EQ56
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+  configs:
+    Debug:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+targets:
+  Windext:
+    type: application
+    platform: iOS
+    sources:
+      - path: Windext
+      - path: Shared
+    dependencies:
+      - target: WindextWidget
+    entitlements:
+      path: Windext/Windext.entitlements
+      properties:
+        com.apple.security.application-groups: [group.br.windext]
+    info:
+      path: Windext/Info.plist
+      properties:
+        CFBundleDisplayName: windext
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        CFBundleLocalizations: [en, fr, de, es, pt, it, nl]
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: br.windext
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  WindextWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: WindextWidget
+      - path: Shared
+    entitlements:
+      path: WindextWidget/WindextWidget.entitlements
+      properties:
+        com.apple.security.application-groups: [group.br.windext]
+    info:
+      path: WindextWidget/Info.plist
+      properties:
+        CFBundleDisplayName: windext
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: br.windext.widget

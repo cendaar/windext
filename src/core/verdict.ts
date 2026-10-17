@@ -108,6 +108,9 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
     return base('no', { code: 'NO', vars: {} }, [{ code: 'ALERT', vars: { event: blocking.event } }], { score: 0, confidence: 'high' })
   }
 
+  /** Two hours before `fromHour`, never before 06:00 and never in the past today. */
+  const checkAt = (fromHour: number) => `${String(Math.max(fromHour - 2, 6, opts.day === 'today' ? nowHour : 0)).padStart(2, '0')}:00`
+
   const evals: HourEval[] = usable.map(h => {
     const s = summarizeHour(h, facing)!
     const cape = h.cape ?? 0, precip = h.precip ?? 0
@@ -145,10 +148,10 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
     const disagree = all.filter(s => s.agreement === 'low').length / all.length >= 0.5
     if (disagree && (main === 'TOO_LIGHT_FOR_GEAR' || main === 'TOO_STRONG')) { codes.add('MODELS_DISAGREE'); reasons.push({ code: 'MODELS_DISAGREE', vars: { spread: r0(mean(all.map(s => s.spread))) } }) }
     const status: Status = disagree && (main === 'TOO_LIGHT_FOR_GEAR' || best.length === 1) ? 'check' : 'no'
-    if (status === 'check') { codes.add('CHECK_RULE'); reasons.push({ code: 'CHECK_RULE', vars: { min: r0(range.min), max: r0(range.max), checkTime: `${String(Math.max(dl[0] - 1, 6)).padStart(2, '0')}:00` } }) }
+    if (status === 'check') { codes.add('CHECK_RULE'); reasons.push({ code: 'CHECK_RULE', vars: { min: r0(range.min), max: r0(range.max), checkTime: checkAt(best.length ? hourOf(best[0].s.time) : dl[0] + 1) } }) }
     const hard = ['STORM', 'OFFSHORE', 'FORBIDDEN', 'TOO_LIGHT'].includes(main)
-    const score = hard ? 0 : status === 'check' ? 2 : 1
-    return base(status, { code: status === 'check' ? 'CHECK' : 'NO', vars: { checkTime: status === 'check' ? `${String(Math.max(dl[0] - 1, 6)).padStart(2, '0')}:00` : '' } }, reasons, { wind: avg, confidence: disagree ? 'low' : 'medium', score })
+    const score = status === 'check' ? 2 : hard ? 0 : 1   // a maybe is never scored 0
+    return base(status, { code: status === 'check' ? 'CHECK' : 'NO', vars: {} }, reasons, { wind: avg, confidence: disagree ? 'low' : 'medium', score })
   }
 
   // There is a window
@@ -202,12 +205,12 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
   const score = sessionScore({ hours: w.length, speed: effKn, gust: avg.gust, idealKn: (rider.sport === 'kitesurf' ? 2.2 : rider.sport === 'wingfoil' ? 1.05 : 1.45) * rider.weightKg / pick, gustFactor: gf, confidence, shore: midShore, level: rider.level })
   // A plain yes needs a decent score: below 5 the session is rideable but not worth driving for without checking
   const status: Status = confidence === 'low' || risky || score < 5 || (w.length <= 2 && confidence !== 'high') ? 'check' : 'go'
-  if (status === 'check') add('CHECK_RULE', { min: r0(range.min), max: r0(Math.min(range.max, avg.gust + 5)), checkTime: `${String(Math.max(+start.slice(0, 2) - 2, 6)).padStart(2, '0')}:00` })
+  if (status === 'check') add('CHECK_RULE', { min: r0(range.min), max: r0(Math.min(range.max, avg.gust + 5)), checkTime: checkAt(+start.slice(0, 2)) })
   if (blocking) add('ALERT', { event: blocking.event })
   // Order: priority list
   reasons.sort((a, b) => CODES.indexOf(a.code) - CODES.indexOf(b.code))
   // Keep the decisive ones first: disagreement or danger, then the wind character, then the shore/timing
-  return base(status, { code: status === 'go' ? 'GO' : 'CHECK', vars: { start, end: endPlus, size: pick, unit: gear.unit, checkTime: `${String(Math.max(+start.slice(0, 2) - 2, 6)).padStart(2, '0')}:00` } }, reasons, {
+  return base(status, { code: status === 'go' ? 'GO' : 'CHECK', vars: { start, end: endPlus, size: pick, unit: gear.unit } }, reasons, {
     window: { start, end: endPlus }, gear, wind: avg, confidence,
     score,
   })

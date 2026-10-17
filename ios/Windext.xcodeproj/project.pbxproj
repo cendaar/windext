@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B94E62EC1349125487F5EE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AD3FDCD762FA34BAF3977 /* Assets.xcassets */; };
+		1EA84D78CDCD06E8D51AAEC1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D168BC1E2B00498E931B318 /* Models.swift */; };
+		4538F6D34576448DC0AF07D8 /* AddSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16228B5C105738A076EB15 /* AddSpotView.swift */; };
+		49F0845746D7E8BCBF167724 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459288CF623571A1F14049E /* OnboardingView.swift */; };
+		5C0605500FE8508785A87615 /* WindextWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD38C8841971E0A190A0D17 /* WindextWidget.swift */; };
+		6C708B7DCA487AF06CF68EBB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA52BC9039E99CB0305D3599 /* Localizable.xcstrings */; };
+		72CF58A227E3DCFBD0A7D913 /* WindextWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 25836899D87720CD4D5BBADD /* WindextWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		79BF4CD414FCF051299E390A /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D168BC1E2B00498E931B318 /* Models.swift */; };
+		7AE6CD7727A186F492A1BACB /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CA05F48CB269B1EE98105 /* SpotDetailView.swift */; };
+		8D9E4D6DABD6B4EB11F22ED5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685548428E98500B1AE997F /* HomeView.swift */; };
+		9401FA5A6C64AFACD7D6F680 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C1CCD783D0E21D2F29D1F1 /* AppModel.swift */; };
+		96839A6931D416FE2FDDA56E /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D99E005C2DAA6E39EAE6107 /* SharedStore.swift */; };
+		9FC6BE107307E6729DBC40BF /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DE1FB2FEF3B9D634B4EA09 /* Notifications.swift */; };
+		ADEA6B8338235E8E1532CFB1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7485D7D05D0E50BBE95931CC /* SettingsView.swift */; };
+		B2D41983BBB9457720E98FED /* ProfileForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1423A447BAAED86C28FEA /* ProfileForm.swift */; };
+		D6DC058B7BF772FB1D795AD9 /* WindextApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA70038D46730107D7B35965 /* WindextApp.swift */; };
+		D9A4AD5866AD0A409A2D2874 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EC4C30FB62C887FAE67EB /* API.swift */; };
+		DB5B87B334FF8ED366B7A3AE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA52BC9039E99CB0305D3599 /* Localizable.xcstrings */; };
+		E3C53A8B6A37F607CAE558DC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EC4C30FB62C887FAE67EB /* API.swift */; };
+		FCB63028773261F49AE80F01 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D99E005C2DAA6E39EAE6107 /* SharedStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A8F49C02D4646CFDE2BC621 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 280D698503A64F0232E3F16E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B59260825212378DFFC7B56;
+			remoteInfo = WindextWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2D22AF90CBE15CE165F6A856 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				72CF58A227E3DCFBD0A7D913 /* WindextWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1685548428E98500B1AE997F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1A4AD3FDCD762FA34BAF3977 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BD38C8841971E0A190A0D17 /* WindextWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindextWidget.swift; sourceTree = "<group>"; };
+		1D168BC1E2B00498E931B318 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		1D99E005C2DAA6E39EAE6107 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		25836899D87720CD4D5BBADD /* WindextWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = WindextWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D67D7A4165143A487A42B07 /* Windext.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Windext.entitlements; sourceTree = "<group>"; };
+		526EC4C30FB62C887FAE67EB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5459288CF623571A1F14049E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		60DCC1AC6070229DE94E060D /* Windext.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Windext.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7485D7D05D0E50BBE95931CC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AA52BC9039E99CB0305D3599 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		AB1CA05F48CB269B1EE98105 /* SpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailView.swift; sourceTree = "<group>"; };
+		B4C1CCD783D0E21D2F29D1F1 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		C3A1423A447BAAED86C28FEA /* ProfileForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileForm.swift; sourceTree = "<group>"; };
+		C9597BAB1BA8D8FBFACD30A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CA70038D46730107D7B35965 /* WindextApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindextApp.swift; sourceTree = "<group>"; };
+		CC16228B5C105738A076EB15 /* AddSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpotView.swift; sourceTree = "<group>"; };
+		D1DBD7214176B84179FFD401 /* WindextWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WindextWidget.entitlements; sourceTree = "<group>"; };
+		E9DE1FB2FEF3B9D634B4EA09 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		FE5656C2C8F8DDED57E98BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		254887D5C1337AFD65CF280C /* Windext */ = {
+			isa = PBXGroup;
+			children = (
+				CC16228B5C105738A076EB15 /* AddSpotView.swift */,
+				B4C1CCD783D0E21D2F29D1F1 /* AppModel.swift */,
+				1A4AD3FDCD762FA34BAF3977 /* Assets.xcassets */,
+				1685548428E98500B1AE997F /* HomeView.swift */,
+				C9597BAB1BA8D8FBFACD30A3 /* Info.plist */,
+				E9DE1FB2FEF3B9D634B4EA09 /* Notifications.swift */,
+				5459288CF623571A1F14049E /* OnboardingView.swift */,
+				C3A1423A447BAAED86C28FEA /* ProfileForm.swift */,
+				7485D7D05D0E50BBE95931CC /* SettingsView.swift */,
+				AB1CA05F48CB269B1EE98105 /* SpotDetailView.swift */,
+				2D67D7A4165143A487A42B07 /* Windext.entitlements */,
+				CA70038D46730107D7B35965 /* WindextApp.swift */,
+			);
+			path = Windext;
+			sourceTree = "<group>";
+		};
+		5A3F89E8A5C6069D2F5CD755 = {
+			isa = PBXGroup;
+			children = (
+				65C25AA6611032E6915A42B2 /* Shared */,
+				254887D5C1337AFD65CF280C /* Windext */,
+				D5794CF23A6B60234A3BF26D /* WindextWidget */,
+				FFC2A38E3EB5E67186438F60 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65C25AA6611032E6915A42B2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				526EC4C30FB62C887FAE67EB /* API.swift */,
+				AA52BC9039E99CB0305D3599 /* Localizable.xcstrings */,
+				1D168BC1E2B00498E931B318 /* Models.swift */,
+				1D99E005C2DAA6E39EAE6107 /* SharedStore.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D5794CF23A6B60234A3BF26D /* WindextWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FE5656C2C8F8DDED57E98BCC /* Info.plist */,
+				D1DBD7214176B84179FFD401 /* WindextWidget.entitlements */,
+				1BD38C8841971E0A190A0D17 /* WindextWidget.swift */,
+			);
+			path = WindextWidget;
+			sourceTree = "<group>";
+		};
+		FFC2A38E3EB5E67186438F60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60DCC1AC6070229DE94E060D /* Windext.app */,
+				25836899D87720CD4D5BBADD /* WindextWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19F3CBB9629B06811F6E8C92 /* Windext */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08658D08B8CEA321B18F7CCA /* Build configuration list for PBXNativeTarget "Windext" */;
+			buildPhases = (
+				33EE1994BD771EC9DC755C25 /* Sources */,
+				087F80D27F49D0345EAA075E /* Resources */,
+				2D22AF90CBE15CE165F6A856 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				109C7BB63BB728F475C56E54 /* PBXTargetDependency */,
+			);
+			name = Windext;
+			packageProductDependencies = (
+			);
+			productName = Windext;
+			productReference = 60DCC1AC6070229DE94E060D /* Windext.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B59260825212378DFFC7B56 /* WindextWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F546C03182A3741EC87D3A9D /* Build configuration list for PBXNativeTarget "WindextWidget" */;
+			buildPhases = (
+				05ACC25AA02186854970D470 /* Sources */,
+				EDAA5A1D4F096645C30F2425 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WindextWidget;
+			packageProductDependencies = (
+			);
+			productName = WindextWidget;
+			productReference = 25836899D87720CD4D5BBADD /* WindextWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		280D698503A64F0232E3F16E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					19F3CBB9629B06811F6E8C92 = {
+						DevelopmentTeam = AC57E8EQ56;
+						ProvisioningStyle = Automatic;
+					};
+					9B59260825212378DFFC7B56 = {
+						DevelopmentTeam = AC57E8EQ56;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4E731D0451F843C5F6269768 /* Build configuration list for PBXProject "Windext" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				de,
+				en,
+				es,
+				fr,
+				it,
+				nl,
+				pt,
+			);
+			mainGroup = 5A3F89E8A5C6069D2F5CD755;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19F3CBB9629B06811F6E8C92 /* Windext */,
+				9B59260825212378DFFC7B56 /* WindextWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		087F80D27F49D0345EAA075E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B94E62EC1349125487F5EE5 /* Assets.xcassets in Resources */,
+				6C708B7DCA487AF06CF68EBB /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDAA5A1D4F096645C30F2425 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB5B87B334FF8ED366B7A3AE /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05ACC25AA02186854970D470 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3C53A8B6A37F607CAE558DC /* API.swift in Sources */,
+				1EA84D78CDCD06E8D51AAEC1 /* Models.swift in Sources */,
+				96839A6931D416FE2FDDA56E /* SharedStore.swift in Sources */,
+				5C0605500FE8508785A87615 /* WindextWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33EE1994BD771EC9DC755C25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A4AD5866AD0A409A2D2874 /* API.swift in Sources */,
+				4538F6D34576448DC0AF07D8 /* AddSpotView.swift in Sources */,
+				9401FA5A6C64AFACD7D6F680 /* AppModel.swift in Sources */,
+				8D9E4D6DABD6B4EB11F22ED5 /* HomeView.swift in Sources */,
+				79BF4CD414FCF051299E390A /* Models.swift in Sources */,
+				9FC6BE107307E6729DBC40BF /* Notifications.swift in Sources */,
+				49F0845746D7E8BCBF167724 /* OnboardingView.swift in Sources */,
+				B2D41983BBB9457720E98FED /* ProfileForm.swift in Sources */,
+				ADEA6B8338235E8E1532CFB1 /* SettingsView.swift in Sources */,
+				FCB63028773261F49AE80F01 /* SharedStore.swift in Sources */,
+				7AE6CD7727A186F492A1BACB /* SpotDetailView.swift in Sources */,
+				D6DC058B7BF772FB1D795AD9 /* WindextApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		109C7BB63BB728F475C56E54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B59260825212378DFFC7B56 /* WindextWidget */;
+			targetProxy = 3A8F49C02D4646CFDE2BC621 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		038B41AD0001E6ABE6AA1202 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AC57E8EQ56;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		0BF6876D6FFE346DA7F13928 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Windext/Windext.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Windext/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.windext;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2FC36D09EFD3E0A813247AB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AC57E8EQ56;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		40C5B70747734AD1D2466EC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WindextWidget/WindextWidget.entitlements;
+				INFOPLIST_FILE = WindextWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.windext.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6E2745919B6DE50DE587CAAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WindextWidget/WindextWidget.entitlements;
+				INFOPLIST_FILE = WindextWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.windext.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E1856913F2992643470B9E44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Windext/Windext.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Windext/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.windext;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08658D08B8CEA321B18F7CCA /* Build configuration list for PBXNativeTarget "Windext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BF6876D6FFE346DA7F13928 /* Debug */,
+				E1856913F2992643470B9E44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4E731D0451F843C5F6269768 /* Build configuration list for PBXProject "Windext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FC36D09EFD3E0A813247AB4 /* Debug */,
+				038B41AD0001E6ABE6AA1202 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F546C03182A3741EC87D3A9D /* Build configuration list for PBXNativeTarget "WindextWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E2745919B6DE50DE587CAAE /* Debug */,
+				40C5B70747734AD1D2466EC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 280D698503A64F0232E3F16E /* Project object */;
+}

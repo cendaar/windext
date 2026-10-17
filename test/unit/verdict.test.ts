@@ -51,6 +51,7 @@ describe('dayVerdict', () => {
   it('turns a gear-limited day into a check when the models disagree, with a morning rule', () => {
     const v = V(fc(() => ({ s: 11.5, spread: 12 })))
     expect(v.status).toBe('check'); expect(v.codes).toEqual(expect.arrayContaining(['MODELS_DISAGREE', 'CHECK_RULE'])); expect(v.score).toBe(2)
+    const single = V(fc(h => ({ s: h === 9 ? 17 : 6, spread: 12 }))); expect(single.status).toBe('check'); expect(single.score).toBe(2)
   })
   it('says no offshore, and no in a forbidden sector even onshore', () => {
     expect(V(fc(() => ({ s: 18, d: 180 }))).reasons[0].code).toBe('OFFSHORE')
@@ -161,5 +162,12 @@ describe('sweep regressions', () => {
   it('the maybe headline does not repeat the check time, the rule carries it', () => {
     const r = renderVerdict(V(fc(() => ({ s: 17, spread: 12 }))), 'en')
     expect(r.headline).toBe('Maybe, 09:00 to 19:05 with the 9 m.'); expect(r.reasons.join(' ')).toMatch(/Go if the live station shows at least 13 knots/)
+  })
+})
+
+describe('check time', () => {
+  it('is never in the past today', () => {
+    const v = dayVerdict(fc(() => ({ s: 17, spread: 12 })), kite, { day: 'today', facing: 0, nowLocal: '2026-10-17 10:32' })
+    expect(v.reasons.find(r => r.code === 'CHECK_RULE')!.vars.checkTime).toBe('11:00')
   })
 })
