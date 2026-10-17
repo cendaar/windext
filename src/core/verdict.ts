@@ -187,8 +187,8 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
   const confidence: DayVerdict['confidence'] = lowShare >= 0.5 ? 'low' : highShare >= 0.5 ? 'high' : 'medium'
 
   // Gear: size for an effective wind a bit above the mean when gusty; on a tie, the smaller one when gusty
-  const effKn = avg.speed + (gf >= 1.5 ? 0.3 * (avg.gust - avg.speed) : 0)
-  const target = idealSize(rider.sport, rider.weightKg, effKn) * (gf >= 1.5 ? 0.93 : 1)   // gusty: lean small
+  const effKn = avg.speed + (gf >= 1.5 ? 0.15 * (avg.gust - avg.speed) : 0)
+  const target = idealSize(rider.sport, rider.weightKg, effKn)
   const sizes = [...rider.sizes].sort((a, b) => a - b)
   const pick = sizes.reduce((a, b) => { const da = Math.abs(a - target), db = Math.abs(b - target); return db < da - 0.05 || (Math.abs(db - da) <= 0.05 && gf >= 1.5 ? b < a : false) ? b : a })
   const gear = { size: pick, unit: unitFor(rider.sport) }

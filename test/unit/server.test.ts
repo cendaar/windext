@@ -57,7 +57,7 @@ describe('submit_spot validation', () => {
 describe('spot_forecast', () => {
   it('works from raw coordinates without orientation and says so', async () => {
     const { text } = await call('spot_forecast', { lat: 49.2757, lon: -0.2591, days: 1, start_date: '2026-10-18' })
-    expect(text).toMatch(/^VERDICT \(kitesurf \(default profile: 75 kg, 9 and 12 m/); expect(text).toMatch(/windext score \d+\/10/); expect(text).toMatch(/\nIssued (Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day \d{4}-\d{2}-\d{2} \d{2}:\d{2} local/); expect(text).toMatch(/-- Sun 2026-10-18 \(sun 08:26-19:05\) --/); expect(text).toMatch(/Sea state \(daytime\):\n2026-10-18: waves 0.8-1.3 m from N, 5 s/)
+    expect(text).toMatch(/^ASSESSMENT for a kitesurf rider \(default profile: 75 kg, 9 and 12 m/); expect(text).toMatch(/Rating \d+\/10/); expect(text).not.toMatch(/windext score/); expect(text).toMatch(/\nIssued (Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day \d{4}-\d{2}-\d{2} \d{2}:\d{2} local/); expect(text).toMatch(/-- Sun 2026-10-18 \(sun 08:26-19:05\) --/); expect(text).toMatch(/Sea state \(daytime\):\n2026-10-18: waves 0.8-1.3 m from N, 5 s/)
     expect(text).toMatch(/Beach orientation unknown/); expect(text.split('\n').filter(l => /^\d\d:\d\d/.test(l)).join()).not.toMatch(/onshore|offshore/); expect(text).toMatch(/Models: AROME\/ARPEGE, ICON, ECMWF 9km, GFS, UKMO, KNMI, DMI/)
     expect(text.split('\n').filter(l => /^\d\d:\d\d/.test(l))).toHaveLength(16) // 06..21
   })

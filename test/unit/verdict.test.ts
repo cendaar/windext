@@ -189,3 +189,10 @@ describe('alternative spot', () => {
     expect(V(fc(() => ({ s: 17, d: 135 })), { nearby: [near('Other', 45, 6)] }).codes).toContain('ALT_SPOT')
   })
 })
+
+describe('gear in gusty wind', () => {
+  it('Maui case: 75 kg in 15 kn gusting 24 takes the 10, not the 8', () => {
+    const v = V(fc(() => ({ s: 15, g: 24 })), {}, { sport: 'kitesurf', weightKg: 75, sizes: [8, 10, 12], level: 'intermediate' })
+    expect(v.gear!.size).toBe(10)
+  })
+})

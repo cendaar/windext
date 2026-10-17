@@ -1,0 +1,46 @@
+{
+  "id": "hatteras-kite",
+  "q": "Kiting at Cape Hatteras tomorrow, ocean side near the fishing pier: worth it? 78 kg, 9 and 12 m kites. Best window, size, tide and safety.",
+  "sans": "**No, don't go tomorrow (Sunday, Oct 18).** It isn't a question of picking the right kite or time. The current NWS forecast and alerts for the Avon/Hatteras ocean side put conditions well past safe for both your kites, all day.\n\n**Tomorrow's forecast**\n- **Wind:** NNE to NE at about 38–39 mph (~33–34 kt), with gusts to 51–53 mph (~45–46 kt). It barely changes from 6am to 8pm, so there's no window when it eases.\n- **Your gear:** At 78 kg, a 9 m tops out around 25–28 kt. In 33 kt with 46 kt gusts, even a 5–6 m would be hard to control. The 12 m is out of the question.\n- **Gusts:** The gap between the steady wind and the gusts is about 13 kt. That's how riders get lofted, especially next to a pier.\n- **Active alerts:**\n  - **High Surf Advisory:** 8–14 ft breaking waves, through Tuesday 8am.\n  - **Coastal Flood Warning:** 2–4 ft of flooding in low-lying areas. NC‑12 may flood at high tide, and you could be stranded for days.\n  - **Wind Advisory:** 30–40 mph with gusts to 50, through Monday 8pm.\n  - Strong rip currents and longshore currents in the surf zone.\n- **Rain:** 40% chance of showers, about 65°F.\n\n**Tide:** It doesn't help. The nearest NOAA station is inside the inlet, so its times don't match the ocean beach well. With water already being pushed ashore, high tide just means even less beach and more water over NC‑12.\n\n**Safety, if you're on the island anyway**\n- Stay off the beach near the pier. NE wind blows along the shore toward the pier, which is the setup for getting dragged into the pilings.\n- Don't swap to the sound side either. It's the same wind, and the sound will be flooded too.\n- Check NC‑12 status (NCDOT) before driving. Flooding at high tide is the main risk to your trip right now.\n\n**When it might work:** The wind advisory ends Monday evening and the surf and flood alerts end Tuesday 8am. As the NE wind drops, **Tuesday or Wednesday** could be good, with the 9 m in the high teens to mid‑20s kt and the 12 m as it drops further. The surf will still be big at first, so the sound side will likely be easier for the first session after the storm. Check the forecast again Monday night and I can look up specific times for you then.\n\nSources: [NWS hourly forecast](https://api.weather.gov/gridpoints/MHX/99,92/forecast/hourly), [NWS forecast](https://api.weather.gov/gridpoints/MHX/99,92/forecast), [NWS active alerts](https://api.weather.gov/alerts/active?point=35.352,-75.502), [NOAA tide predictions, station 8654467](https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&begin_date=20261018&end_date=20261018&datum=MLLW&station=8654467&time_zone=lst_ldt&interval=hilo&units=english&format=json)",
+  "avec": "**Verdict: no. Don't kite tomorrow (Sun 18 Oct). Score 1/10.** There's no wind window you could ride on a 9 or 12, at any hour.\n\n**Why:**\n- The forecast is a nor'easter: NNE **30–32 kn average, gusts 42–44 kn**, all day from 06:00 to 21:00. The ICON model shows gusts up to 52 kn. Even the lightest model (UKMO, 23–25 kn with gusts near 39) is too much for a 9 m at 78 kg.\n- The National Weather Service has **Wind Advisory, High Wind Watch, High Surf Advisory and Coastal Flood Warning** in effect through Monday.\n- Waves are about 1.8 m from the NE, but only 6 seconds apart, so expect a short, steep, messy shorebreak. Coastal flooding may also cover the beach and access ramps.\n\n**If you go anyway (which I advise against):**\n- **Size:** a 9 m is still too big. You'd need about a 6–7 m.\n- **Time:** the wind is the same all day, so no time is better than another.\n- **Tide:** the official ocean-side times aren't useful here. The tide tool used Peter's Ditch, a sound-side station that shows almost no range. Treat that as unreliable for the ocean beach, especially with storm surge on top.\n- **Pier:** at Avon or Rodanthe, NNE is side-shore, which pushes you along the beach toward the pier and its pilings. Being dragged into them in 40-kn gusts is the main danger.\n\n**Better bet:** look at Monday afternoon or Tuesday once the low moves away and the wind drops into the 18–25 kn range. I can run that forecast if you'd like.\n\n**Assumptions to check:** there was no spot card for this pier, so I assumed **Avon pier** with the beach facing ESE. If you meant the old Frisco pier, also called \"Cape Hatteras Fishing Pier\", that beach faces south. NNE wind would then be offshore there, which is even more dangerous. Could you tell me which pier you mean and confirm the beach direction? I'll then add it to the spot database.\n\nSources:\n- [Real Watersports – 5 best spots](https://realwatersports.com/blogs/news/the-5-best-spots-for-kiteboarding-in-cape-hatteras)\n- [Kitesurfing Mag – Hatteras downwinder guide](https://kitesurfingmag.com/cape-hatteras-kiteboarding-downwinder-guide/)\n- [Windfinder – Cape Hatteras fishing pier](https://www.windfinder.com/windstatistics/cape_hatteras_fishing_pier)",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 5,
+      "uncertainty": 3,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "The date is right: Sunday 18 Oct 2026. The NWS gridpoint MHX/99,92 (Avon area) gives NE about 39 mph (34 kt) with gusts to 53 mph (46 kt), so A quotes the numbers correctly. The alert list mostly matches too: Coastal Flood Warning and High Surf Advisory (8–14 ft) until Tue 20 Oct 08:00, and Wind Advisory until Mon 19 Oct 20:00.",
+        "The outlook for after the storm is too optimistic. NWS has Monday at N about 37 mph gusting to 48, and Tue/Wed still at N 28–33 mph (about 24–29 kt). The Wind Advisory also says the event will likely continue past Monday evening. So Tue/Wed are 9 m-or-smaller days at best for 78 kg, with the 12 m unlikely. A should not have said 'high teens to mid-20s'.",
+        "The advisory text says the wind is North, but A describes it as NNE–NE. That changes the side-shore angle a little.",
+        "A says it doesn't know the ocean tide times but gives no fallback. It could have said to use NOAA ocean-side subordinate stations such as Cape Hatteras or Avon ocean and to expect surge on top of the prediction.",
+        "It never names the pier (Avon) or the beach orientation (about ESE). It relies on the coordinates without telling the rider.",
+        "It doesn't say how to decide on the day: no live wind-meter check, no gust thresholds, no buddy or rescue plan.",
+        "It doesn't mention the Beach Hazards Statement, though the rip-current warning covers the same hazard."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 3,
+      "actionability": 3,
+      "local_knowledge": 3,
+      "concision": 2,
+      "errors": [
+        "It lists a 'High Wind Watch', but the active NWS alerts for this point don't include one. What's active is a Wind Advisory, Coastal Flood Warning, High Surf Advisory and Beach Hazards Statement.",
+        "It understates the surf. '1.8 m at 6 s' doesn't match the NWS High Surf Advisory of 8–14 ft (2.4–4.3 m) breakers.",
+        "'Monday afternoon' as the better bet is wrong. NWS has Monday at N about 37 mph gusting to 48 mph, and the Wind Advisory runs to Mon 20:00 and may be extended. Tuesday is still 24–29 kt.",
+        "It says the alerts run 'through Monday', but the Coastal Flood Warning and High Surf Advisory last until Tue 20 Oct 08:00.",
+        "It leaks tool talk the rider can't use: 'Score 1/10', 'the tool used Peter's Ditch', 'no spot card', 'add it to the spot database'.",
+        "It points to Frisco's 'Cape Hatteras Fishing Pier' without saying that pier was demolished years ago. Its south-facing beach and offshore-NNE point are valid, though, and pointing out the ambiguity is good local awareness.",
+        "Its sources are generic spot guides and a Windfinder statistics page, with no link to an actual forecast or alerts.",
+        "Quoting a multi-model spread (30–32 kt mean, ICON gusts to 52, UKMO lighter) is fine and fits the NWS 34/46 kt. The 6–7 m size for 78 kg is reasonable, but only if a rider went out, which B rightly advises against."
+      ]
+    },
+    "winner": "sans",
+    "why": "Both correctly say no-go. A's alerts, numbers and dates match official NWS data closely, while B invents a High Wind Watch, understates the surf, suggests a Monday window the forecast doesn't support and fills the answer with internal tool jargon."
+  },
+  "seconds": 83
+}

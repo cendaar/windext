@@ -1,0 +1,41 @@
+{
+  "id": "garda-windsurf",
+  "q": "Lohnt sich morgen Windsurfen in Torbole am Gardasee? 80 kg, Segel 5,3 und 6,5. Wann Pelèr, wann Ora, welches Segel?",
+  "sans": "Kurz gesagt: **Morgen (So, 18.10.) lohnt sich Windsurfen in Torbole eher nicht.** Ich habe zwei Vorhersagen angeschaut, und beide sagen praktisch keinen Wind voraus.\n\n**Vorhersage für morgen ([Windfinder Torbole Centre](https://www.windfinder.com/forecast/torbole_centre))**\n\n| Uhrzeit | Wind | Richtung | Bewölkung |\n|---|---|---|---|\n| 05–08 Uhr | 3–4 kn | N/NE (das wäre der Pelèr) | 72–87 % |\n| 11 Uhr | 2 kn | E | 83 % |\n| 14 Uhr | 3 kn | S (das wäre die Ora) | 94 % |\n| 17 Uhr | 2 kn | SE | 100 % |\n\nEs bleibt trocken bei bis zu 20 °C. [Windy.app](https://windy.app/forecast2/spot/24446/Nago-Torbole) kommt auf das Gleiche: im Mittel 1,8 m/s (ca. 3,5 kn), Einstufung „zu schwach“.\n\n**Warum so wenig Wind**\n- **Pelèr:** Morgens kommt er zwar aus der richtigen Richtung (Nord), aber nur mit 3–4 kn. Es gibt offenbar kein Druckgefälle von Norden, das ihn antreibt.\n- **Ora:** Sie ist ein thermischer Wind und braucht Sonne. Bei 94–100 % Bewölkung am Nachmittag kommt sie kaum in Gang. Heute war es ähnlich: Der Wind-Experte von gardasee.de hat für den Morgen nur schwachen Nordwind gemeldet, weil es zu bewölkt war.\n\n**Allgemein: wann welcher Wind, welches Segel (bei 80 kg)**\n\n| | Pelèr (Nord) | Ora (Süd) |\n|---|---|---|\n| Zeit | ca. 4–5 Uhr bis 10–11 Uhr; das Beste ist meist zwischen 7 und 10 Uhr | ca. 12–13 Uhr bis 17–18 Uhr. Im Oktober ist sie schwächer und hört früher auf als im Sommer |\n| Typische Stärke | 15–25 kn, an Nordföhn-Tagen auch mehr | 12–20 kn, im Herbst eher 10–15 kn |\n| Segel | **5,3** ab ca. 18–20 kn. Unter ca. 16 kn reicht es mit 5,3 kaum fürs Gleiten | **6,5** im Normalfall. Die 5,3 nur bei einer kräftigen Ora über 20 kn |\n\nGrob gilt für dich: bis ca. 18 kn die 6,5, darüber die 5,3. Unter ca. 12 kn kommst du auch mit der 6,5 nicht mehr ins Gleiten. Für morgen bräuchtest du Foil- oder Leichtwind-Material.\n\n**Tipp:** Die Modelle unterschätzen die Thermik manchmal. Wenn morgen früh doch die Sonne herauskommt, kann sich am frühen Nachmittag eine schwache Ora bilden. Aktuelle Infos findest du hier:\n- Morgens die Windprognose auf [gardasee.de](https://www.gardasee.de/windprognose) (vom lokalen Wind-Experten in Torbole, meist bis ca. 9 Uhr aktualisiert)\n- Die Live-Windmesser an den Surfstationen in Torbole\n\nSources:\n- [Windfinder – Torbole Centre](https://www.windfinder.com/forecast/torbole_centre)\n- [Windy.app – Nago-Torbole](https://windy.app/forecast2/spot/24446/Nago-Torbole)\n- [gardasee.de – Windprognose](https://www.gardasee.de/windprognose)",
+  "avec": "**Nein, morgen (So 18.10.) lohnt es sich nicht.** windext-Score 0/10, den ganzen Tag kein brauchbarer Wind.\n\n**Warum:**\n- Alle 7 Modelle sehen von 6 bis 21 Uhr nur 2–3 kn im Mittel, Böen höchstens 6–7 kn. Zum Gleiten brauchst du mit 80 kg und 6,5 m² etwa 14–15 kn.\n- **Pelèr:** Morgens kommt nur ein schwacher Hauch aus NE, kein richtiger Pelèr. Der braucht meist eine Nordströmung nach einer durchgezogenen Front, und die ist nicht in Sicht.\n- **Ora:** Für den Nachmittag zeigt kein Modell einen Südwind. Mitte Oktober ist die Ora ohnehin schwach und unzuverlässig, an guten Tagen etwa 13–17 Uhr mit oft nur 10–15 kn.\n- Das Tool meldet „offshore“, weil die Windrichtung NE ist. Bei 2–3 kn spielt das praktisch keine Rolle. Das Problem ist schlicht, dass kein Wind da ist.\n- Die Modelle sind sich über die Windrichtung uneinig, über die Stärke aber alle einig: kaum Wind. Globale Modelle erfassen die lokalen Gardasee-Winde allerdings nur grob. Schau morgen früh trotzdem kurz auf die Livestation bzw. Webcam von Torbole. Rechne aber nicht damit, dass es reicht.\n\n**Segelwahl für einen anderen Tag (80 kg, grobe Faustregel):**\n- **6,5 m²:** bei etwa 15–21 kn, also typische Ora im Frühjahr oder Sommer und schwächerer Pelèr\n- **5,3 m²:** bei etwa 21–28 kn, also kräftiger Pelèr am Morgen oder starke Ora mit Kabbelwelle\n- Der Pelèr ist in Ufernähe side-off und böig. Er wird erst 50–70 m draußen gleichmäßig.\n\nDie Spotkarte für Torbole stammt aus der Community und ist nicht verifiziert. Falls du die Infos zu Ausrichtung und Windsektoren bestätigen oder korrigieren kannst, verbessere ich sie gern.",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 2,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "Saying you won't plane on 6.5 'below about 12 kn' is optimistic for 80 kg. Realistic early planing on 6.5 with a normal freeride board starts around 14–15 kn, so between 12 and 14 kn the rider would mostly be slogging.",
+        "There is almost no safety information. It doesn't say the Pelèr at Torbole blows side-off and gusty near shore, it gives no gust figures, and it says nothing about cold water or wetsuits in October.",
+        "It quotes the local wind expert at gardasee.de on 'today's' conditions. That can't be checked and adds little to the decision.",
+        "The Pelèr strength of 15–25 kn is fine. Calling a 3–4 kn N/NE breath 'the Pelèr' in the table is loose wording; with no pressure gradient behind it, it is really just a land breeze.",
+        "The two tables are a bit long, but the times (Pelèr about 4–11 h, Ora about 12–18 h and weaker and shorter in October), the sail crossover (6.5 up to about 18 kn, 5.3 above) and the sources the rider can check on the day are concrete and correct."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 3,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "It leans on internal tool talk that does nothing for the rider: 'windext-Score 0/10', 'Das Tool meldet offshore', 'Alle 7 Modelle' with no model names, and the closing offer to correct a 'community spot map'. The useful content is a forecast of 2–3 kn and a 'no' verdict, which matches the published Windfinder and Windy.app spot forecasts for Torbole on Sun 18.10.2026. 18.10.2026 really is a Sunday.",
+        "The 5.3 range of 21–28 kn is too wide at the top for an 80 kg rider. At 28 kn most 80 kg riders are clearly overpowered on 5.3 and would be on about 4.7. The 6.5 range of 15–21 kn is also optimistic at the top; around 18–20 kn is the usual crossover.",
+        "It never explains the most likely reason there is no Ora on Sunday: heavy cloud cover (about 90–100% in the afternoon) kills the thermal. Saying the Ora 'is weak in October' is true but only part of the story.",
+        "Safety gap: there is no word on water temperature in mid-October (about 16–17 °C, so wetsuit and gloves matter on long sessions). The note that the Pelèr is side-off and gusty near shore and steadies 50–70 m out is good local knowledge and a real safety point.",
+        "The Pelèr window (roughly 5–11 h, best 7–10 h) is only hinted at as 'morgens'. The rider asked directly 'wann Pelèr', so it should give actual times."
+      ]
+    },
+    "winner": "sans",
+    "why": "Both reach the right 'no wind on Sunday' verdict, but B links the missing Ora to the cloud cover, gives clearer Pelèr and Ora times, a more realistic 6.5/5.3 crossover for 80 kg and real sources to check on the day, without A's tool jargon. B's main weakness is the lack of safety notes."
+  },
+  "seconds": 106
+}

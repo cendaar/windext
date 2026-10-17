@@ -1,0 +1,44 @@
+{
+  "id": "maui-kite",
+  "q": "Kanaha, Maui, tomorrow: what time does the trade wind fill in, how strong, and which kite for 75 kg (8, 10, 12 m)?",
+  "sans": "For tomorrow, Saturday Oct 18 at Kanaha, plan on the trades filling in around 9:30–10:30 am. They should hold at about 15–20 kt from late morning through about 5 pm. For 75 kg, rig the 10 m.\n\n**Timing and strength (two sources roughly agree)**\n- **Before 9 am:** 9–12 kt and gusty. Not much of a session.\n- **9–10 am:** builds to 14–17 kt. This is when it fills in.\n- **11 am–4 pm:** peaks at about 17–19 kt, gusting to the mid-20s.\n- **5–7 pm:** eases to about 15 kt. Still kiteable on the 12 m.\n- **Direction:** ENE (63–66°), the normal trade direction. That's side-onshore at Kanaha, which is good.\n- The NWS forecast says NE wind 13–20 mph (11–17 kt), gusting to 28 mph (24 kt). The Open-Meteo model is a little stronger, peaking around 19 kt. Its gust figures (30–36 kt) are probably too high, because models tend to overstate gusts, so expect about 25 kt.\n\n**Which kite (75 kg)**\n- **10 m:** best choice for 11 am–4 pm at 15–20 kt. It handles the 25 kt gusts and still has power in the lulls.\n- **12 m:** for 9:30–11 am, after 4:30 pm, or if it only reaches the lower NWS numbers (13–15 kt).\n- **8 m:** only if it's steadily blowing 22 kt or more, which is unlikely tomorrow. Take it along anyway in case it overperforms.\n\nIf you can only take one kite, take the 10 m. Ideally bring the 10 m and the 12 m, and check the live Kanaha wind meter (iWindsurf or Windguru) before you rig. The NWS text is from yesterday evening (6:01 pm Oct 16), so check the morning update.\n\nKanaha has a kite rule that changes at 11 am: after that, kiting is limited to the Kite Beach zone, away from the windsurfers. Lifeguards or the posted signs will have the current boundaries.\n\nSources:\n- [NWS point forecast, Kanaha](https://forecast.weather.gov/MapClick.php?lat=20.896&lon=-156.44&unit=0&lg=english&FcstType=text&TextType=1)\n- [Open-Meteo hourly wind](https://api.open-meteo.com/v1/forecast?latitude=20.90&longitude=-156.44&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m&wind_speed_unit=kn&timezone=Pacific/Honolulu&forecast_days=3)",
+  "avec": "**Verdict for Sun 18 Oct: maybe. Window 09:00–18:00, 8 m kite, windext score 4/10.**\n\n**When the wind fills in**\n- Usable wind (12 kn or more) arrives around 08:00–09:00.\n- It is strongest from 12:00 to 15:00, averaging 16–17 kn.\n- It eases to about 13 kn after 17:00.\n\n**How strong**\n- The model average is 15 kn, with gusts up to about 27–28 kn. Gusts are nearly double the average, so expect lulls and sudden overpowered spikes.\n- The direction is ENE (east-north-east). It blows along the beach, which is ideal at Kanaha.\n- The models disagree. ICON shows only about 10 kn, while ECMWF and UKMO show 18–19 kn with gusts in the mid-30s. Global models are coarse and often underestimate how much the trades speed up through Maui's central valley, so Kanaha may well be windier than the 15 kn average.\n\n**Which kite (75 kg)**\n- **8 m** is the call for the midday gusts.\n- Bring the **10 m** for the morning or late afternoon, or if it stays near 14–15 kn without big gusts.\n- Leave the **12 m** at home.\n\n**Morning check:** at 07:00, look at the live Kanaha or Kahului airport wind station. Go if it averages at least 12 kn and gusts stay under 28 kn. If the station already reads above 18 kn by mid-morning, rig the 8 m.\n\n**Safety**\n- Kahului airport is right next door, so kite only in the designated Kite Beach zone at the downwind end and keep your lines short.\n- There are local time and area rules that separate kiters from windsurfers. Check the posted signs or ask a local school before launching.\n- High tide is at 10:06 but small (+0.3 m). Watch for shallow reef at low water.\n\nKanaha isn't in the windext spot database yet. I assumed the beach faces north-north-east. If you know the local rules and hazards, confirm them and I can add the spot.",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 3,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "Wrong weekday. Today is Saturday 17 Oct 2026, so tomorrow is Sunday 18 Oct, not 'Saturday Oct 18'.",
+        "The 11 am rule is described wrongly. Before 11:00 the water is reserved for swimmers and fishermen, and only beginner lessons may run (from about 09:00). Kitesurfers and windsurfers share access after 11:00, with kiting confined to the Kite Beach zone. B says kiting is restricted to the Kite Beach zone after 11, as if open kiting were allowed earlier. That contradicts its own advice to ride the 12 m from 9:30–11.",
+        "It gives no tide or reef information. Kanaha has shallow reef patches inside, and these matter at low water.",
+        "It has no airport-proximity or kite-height warning. Kahului airport is right next to Kanaha, and kite height limits apply (about 125 ft is commonly cited).",
+        "The 12 m for 5–7 pm at about 15 kt is fine, but sunset is around 18:10 HST in mid-October. The session realistically ends around 18:00, not 19:00.",
+        "Strengths: the 10 m call for 75 kg in 15–20 kt is correct, and it gives a sensible 10 m + 12 m quiver. It cross-checks the NWS point forecast against Open-Meteo, discounts model gusts sensibly, says how old the NWS text is, and links its sources."
+      ]
+    },
+    "avec": {
+      "accuracy": 2,
+      "safety": 3,
+      "uncertainty": 4,
+      "actionability": 2,
+      "local_knowledge": 2,
+      "concision": 3,
+      "errors": [
+        "The kite call doesn't fit A's own forecast. With a 15 kn average and a 16–17 kn peak, an 8 m kite leaves a 75 kg rider underpowered in the lulls. A 10 m (or a 9 m in Maui) is the normal choice, and the 8 m is only for a steady 22 kn or more.",
+        "The 09:00 start conflicts with the Kanaha rule. County and state rules (HAR §13-256-130 restricted zones) keep the water for swimmers and fishermen until 11:00, with only beginner lessons allowed from about 09:00. Independent riders should plan to start at 11:00. A only says 'there are local time and area rules' without saying what they are.",
+        "Gusts of 27–28 kn are taken straight from model gust output, which usually overstates gusts in trade flow. A doesn't check this against the NWS point forecast (gusts around 24 kt).",
+        "'Kanaha isn't in the windext spot database', the 'windext score 4/10' and the offer to 'add the spot' are internal tool talk that doesn't help the rider.",
+        "A says it assumed the beach faces NNE. Kanaha faces roughly north. ENE trades come side-shore to side-onshore from the right, so the conclusion is right, but A presents its setup as a guess.",
+        "The tide figure (high 10:06, +0.3 m) is unsourced and couldn't be checked against NOAA Kahului Harbor for 18 Oct. The reef warning is relevant, though. Kahului tides are small (about 0.6 m spring range), so a small tide is plausible.",
+        "Strengths: the weekday is right (Sun 18 Oct), the morning go/no-go check with thresholds is useful, it warns about the airport and line length, and it gives a reasonable explanation of why the models disagree."
+      ]
+    },
+    "winner": "sans",
+    "why": "B's 10 m call fits a 75 kg rider in 15–20 kt, and it cross-checks NWS against a model and handles gusts realistically, while A recommends an 8 m that's too small for its own 15 kn forecast and adds internal tool talk; both get the 11 am rule wrong, and B also has the wrong weekday."
+  },
+  "seconds": 100
+}

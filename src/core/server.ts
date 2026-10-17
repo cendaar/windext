@@ -19,7 +19,7 @@ WORKFLOW
 5. If the user mentions having ridden a spot ("I was there yesterday, it was 20 knots"), thank them and note that session reports will soon be recorded to score the models.
 
 ANSWER FORMAT (riders read this on a phone in the car park)
-- Open with the VERDICT line of the day asked, as given by spot_forecast: yes / maybe / no, the window, the gear size, and the windext score out of 10. Do not soften or contradict it unless you found an official warning or a hard fact it could not know.
+- Open with the ASSESSMENT of the day asked, as given by spot_forecast: yes / maybe / no, the window, the gear size, and the rating out of 10. Do not soften or contradict it unless you found an official warning or a hard fact it could not know.
 - Then 2 to 4 short lines on why (the verdict's reasons), then the decision rule for the morning when the verdict is maybe, then the safety points that apply to this spot. Under 250 words unless the user asks for detail. No per-model table unless asked.
 - If there is no spot card, ask at most ONE short sentence at the very end ("Do you know this spot? Tell me if the beach faces N and I will save it for the next riders."). Never add it for a professional or school question, and never more than once per conversation.
 - Official warnings (OFFICIAL WARNINGS line) override everything: say it first.
@@ -209,7 +209,7 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
     const nearby = await store.nearbySpots(lat, lon, 30, 20).catch(() => [])
     const verdicts = (['today', 'tomorrow'] as const).map(day => renderVerdict(dayVerdict(fc, rider, { day, facing: facing ?? null, card: c2, nearby, alerts: alerts.map(x => ({ event: x.event, blocking: isBlocking(x.event) })) }), 'en'))
       .filter(v => fc.hours.some(h => h.time.startsWith(v.date)))
-    const verdictBlock = `VERDICT (${rider.sport}${profileNote}):\n${verdicts.map(v => `${v.day} ${v.date}: ${v.headline} windext score ${v.score}/10. ${v.reasons.join(' ')}`).join('\n')}`
+    const verdictBlock = `ASSESSMENT for a ${rider.sport} rider${profileNote}. Rewrite it in your own words, in the user's language; do not quote these labels:\n${verdicts.map(v => `${v.day} ${v.date}: ${v.headline} Rating ${v.score}/10. ${v.reasons.join(' ')}`).join('\n')}`
     const alertBlock = alerts.length ? `OFFICIAL WARNINGS (US National Weather Service): ${alerts.map(x => `${x.event}${x.ends ? ` until ${x.ends.slice(0, 16).replace('T', ' ')}` : ''}`).join('; ')}\n` : ''
     return { content: [{ type: 'text', text: `${alertBlock}${verdictBlock}\n\n${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}${sea ? `\n\nSea state (daytime):\n${sea}` : ''}${tideBlock}` }] }
   })

@@ -1,0 +1,47 @@
+{
+  "id": "capetown-kite",
+  "q": "Kiting at Bloubergstrand, Cape Town tomorrow. 85 kg, 7, 9 and 12 m. Will the south-easter blow, when, and what size?",
+  "sans": "Yes, it should blow tomorrow (Sunday 18 Oct), but only moderately. It doesn't look like a classic pumping south-easter.\n\n**What the models show** (ECMWF, GFS, ICON and UKMO all broadly agree):\n\n| Time | Mean | Gusts | Direction |\n|---|---|---|---|\n| Morning to 10:00 | 7–10 kn | 14–20 kn | SSE |\n| **12:00–17:00** | **10–12 kn** | **20–24 kn** | **S (175–190°)** |\n| 18:00 | ~10 kn, dropping | ~21 kn | S |\n| After 19:00 | dying (<8 kn) | — | S–SSW |\n\n**Reading it:**\n- **When:** Plan on about 12:30 to 17:30. The wind peaks around 13:00–16:00 and has faded by about 19:00.\n- **Direction:** Mostly due south rather than the usual SE. At Blouberg that's cross-shore from the left, which is fine and arguably better than cross-off.\n- **Strength:** Global models usually under-read the wind at Blouberg because of local acceleration, so on the beach expect roughly **14–20 kn**. Gusts are about twice the mean, so it will be gusty and patchy rather than smooth.\n\n**Kite choice at 85 kg:**\n- **12 m** is your main kite. It will most likely be the right size for most of the session.\n- **9 m** is your backup if it's clearly filling in past about 18 kn mean by mid-afternoon. Rig it if you see whitecaps across the bay.\n- **7 m** can stay in the car. Nothing suggests a nuking day.\n\n**One caveat:** I could only get the global models for the spot. I couldn't reach a local high-res forecast like Windguru or Windfinder. Before you leave tomorrow, check a live sensor at Big Bay or Blouberg and a fresh Windguru run around 10:00. If the morning reading is already above 12–14 kn, expect it to come in stronger than shown above.",
+  "avec": "**No for tomorrow (Sun 18 Oct): windext score 0/10.** It never gets strong enough, even on your 12 m. Average wind peaks at about 10 kn between 13:00 and 17:00, and it blows from the south, not a proper south-easter.\n\n**Why:**\n- At 85 kg you need about 14–15 kn steady to ride the 12 m. All five forecast models put the afternoon at 9–11 kn, and they agree most closely on the 14:00–16:00 peak.\n- It's very gusty. Gusts reach 20–25 kn, about double the average wind, so expect lulls where the kite drops and sudden spikes that overpower you. That's a bad mix on a 12 m.\n- The sea will be rough: 2.3–2.6 m swell from the SW every 11 s. That means a heavy shore break at the launch.\n\n**If you go anyway:** take only the 12 m and only between 13:00 and 16:00. Go out only if a whole stretch of water is covered in whitecaps, not just patches of gusts. The water is about 16.5 °C, so wear a 4/3 wetsuit.\n\nThe spot details I used (beach faces WSW, S–SSE wind runs along the shore, E wind blows offshore) come from an unverified guide. Tell me if any of it doesn't match what you know from riding there.",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 2,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "The date is correct: 18 Oct 2026 is a Sunday.",
+        "It turns a model mean of 10–12 kn into 14–20 kn on the beach by citing 'local acceleration'. That speed-up is a feature of the SE Cape Doctor regime. This forecast is a southerly, so the upgrade is speculative and nudges the rider toward going on a marginal day.",
+        "It says gusts reach about twice the mean but does not explain the risk on a 12 m: lulls drop the kite and 20–24 kn gusts overpower it, a real hazard at 85 kg.",
+        "It leaves out the sea state. Spring in Table Bay often brings a large SW groundswell with a heavy shore break at the Blouberg launch, and the answer gives no swell or shore-break warning.",
+        "It gives no water temperature or wetsuit advice. The Atlantic side is cold, roughly 12–16 °C.",
+        "It does not mention the tide. The Cape Town range is small, but reef and rocks plus a dumping shore break at certain stages matter at Blouberg/Kite Beach.",
+        "The orientation is right: on a beach facing roughly W–WSW, a S wind is side-shore from the left. However, it never warns that if the wind backs toward SE/E it turns cross-off or offshore.",
+        "The 'I couldn't reach Windguru' caveat is tool talk, though it does lead to the useful advice to check a live sensor."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 3,
+      "actionability": 4,
+      "local_knowledge": 4,
+      "concision": 4,
+      "errors": [
+        "'windext score 0/10' is internal jargon that means nothing to the rider.",
+        "It says 'five models' while A names four. Neither can be checked, and I could not find a published spot forecast for 18 Oct to confirm either set of model numbers.",
+        "'0/10' and 'never gets strong enough' are too absolute when the same answer gives a 13:00–16:00 window to go anyway. A true score of 0 contradicts that conditional advice.",
+        "A water temperature of 16.5 °C is on the warm side for Blouberg in October; upwelling often brings it down to 12–14 °C. A 4/3 is the minimum, and a 5/4 is often wiser.",
+        "It gives no tide times or tide-related launch notes.",
+        "It gives no live-sensor or morning-check routine, such as checking a Big Bay or Blouberg station or a fresh model run. Its uncertainty handling is weaker than A's.",
+        "Flagging the spot guide as 'unverified' is honest, but it is tool talk. The facts are actually right: the beach faces roughly WSW, S–SSE wind runs along the shore, and E wind is offshore.",
+        "Its minimum of about 14–15 kn steady for a 12 m at 85 kg is reasonable. A twintip rider on a 12 m can sometimes ride from about 13 kn, so the cutoff is slightly conservative."
+      ]
+    },
+    "winner": "avec",
+    "why": "Both answers read the same marginal, gusty southerly correctly, but B's cautious call, its swell and shore-break and cold-water warnings, and its correct spot orientation are safer and better supported than A's unproven upgrade to 14–20 kn, although B loses points for the 'windext' jargon and for having no morning check routine."
+  },
+  "seconds": 97
+}

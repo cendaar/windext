@@ -1,0 +1,44 @@
+{
+  "id": "brouwersdam-wing",
+  "q": "Morgen wingen op de Brouwersdam? 82 kg, wings 4,5 en 6 m. Welke kant (Noordzee of Grevelingen), welk tijdstip en welke maat?",
+  "sans": "**Kort antwoord:** Grevelingen-kant, de **6 m**, en ga vroeg: tussen **ca. 09:00 en 13:00**. Het wordt waarschijnlijk randje. Met 82 kg op een 6 m in deze wind heb je een grote foil nodig (zeg 1500 cm² of meer) en moet je flink pompen om los te komen.\n\n**Verwachting zondag 18 oktober** (wind uit het NO, 30–65°, en draait in de middag naar het oosten)\n\n| Model | 09–13 u gemiddeld | Vlagen | Na 14 u |\n|---|---|---|---|\n| KNMI (Harmonie) | 8–13 kn | 15–21 kn | 4–6 kn, voorbij |\n| ICON | 11–13 kn | 18–21 kn | 7–9 kn |\n| Météo-France | 11–14 kn | 17–19 kn | 7–10 kn |\n| ECMWF | 7–8 kn | 12–17 kn | 6–7 kn |\n\nDrie van de vier modellen geven 's ochtends tot het begin van de middag zo'n 11–13 kn. ECMWF is pessimistisch; als dat klopt, valt het niet te wingen. Het is in alle modellen erg vlagerig: het verschil tussen gemiddeld en vlagen is 6 à 8 kn, omdat de wind over land komt.\n\n**Waarom Grevelingen**\n- Een NO-wind is op de Noordzeekant **aflandig tot schuin aflandig**. Als de wind wegvalt, en dat doet hij vanaf het begin van de middag, drijf je de zee op. Dat is niet verstandig.\n- Op zee staat bovendien nog 1,3–1,5 m deining uit het noorden. Met weinig en vlagerige wind is dat lastig om te starten en op te pompen.\n- Op de Grevelingen is de wind aanlandig richting de dam en het water vlak. Bij weinig wind is dat ideaal en veilig.\n\n**Welke maat:** de 6 m, want de 4,5 m heb je morgen niet nodig. Pak je grootste foil en een groot genoeg board. Met een pumpbaar setje kom je bij 11–13 kn waarschijnlijk wel los, in de vlagen zeker.\n\n**Wanneer:** 09:00–13:00. Rond 10–11 u zit volgens de meeste modellen de piek. Na 14:00 zakt de wind in en draait hij naar het oosten.\n\n**Tips**\n- Kijk 's ochtends eerst naar de actuele metingen, bijvoorbeeld het station Brouwersdam op Windfinder of de metingen van Rijkswaterstaat. Meet je om 9 uur minder dan ~10 kn gemiddeld, dan heeft ECMWF waarschijnlijk gelijk.\n- Het is 11–12 °C met een kans op een buitje rond het middaguur. Het water is in oktober rond de 14 °C, dus neem een 5/4 of minimaal een 4/3 met schoentjes.\n\nBronnen: [Open-Meteo forecast (KNMI/ECMWF/ICON/Météo-France)](https://api.open-meteo.com/v1/forecast?latitude=51.76&longitude=3.85&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m&wind_speed_unit=kn&timezone=Europe/Amsterdam&start_date=2026-10-18&end_date=2026-10-18&models=ecmwf_ifs025,icon_seamless,meteofrance_seamless), [Open-Meteo Marine](https://marine-api.open-meteo.com/v1/marine?latitude=51.78&longitude=3.80&hourly=wave_height,wave_period,wave_direction,sea_level_height_msl&timezone=Europe/Amsterdam&start_date=2026-10-18&end_date=2026-10-18)",
+  "avec": "**Morgen (zo 18/10): het loont eigenlijk niet. Windext-score 1/10. Hooguit een kort venster van 10:00 tot 11:00, met de 6 m aan de Grevelingenkant.**\n\n**Waarom:**\n- Het waait 10 à 13 kn uit het NO tot ONO, met vlagen tot 18 kn. Voor 82 kg heb je met de 6 m minstens zo'n 13 kn gemiddeld nodig, en dat haal je alleen rond 09:00–11:00.\n- De modellen zijn het niet goed eens (spreiding 6–9 kn). ECMWF geeft maar 8–9 kn, UKMO en AROME 14–17 kn.\n- Vanaf ongeveer 14:00 zakt het naar 8–10 kn en draait het naar O/ZO. Dan is het niks meer.\n\n**Noordzee of Grevelingen:** kies de **Grevelingen**.\n- Aan de Noordzeekant (strand ligt op het WNW) begint het 's ochtends sideshore en wordt het vanaf 10:00 side-off. Vanaf 15:00 is het aflandig. Daar komt een golfslag van 0,8–1,3 m uit het noorden bij en vlagerige wind die over de dam komt.\n- Aan de Grevelingenkant blijft het sideshore en tegen 14:00 side-on. Je hebt er vlak water en geen getij.\n- Let op: voor de Grevelingenkant heb ik zelf aangenomen dat de oever naar het ZO (130°) ligt. Die kant staat nog niet in de database. Klopt dat?\n\n**Maat:** de **6 m**. De 4,5 m blijft morgen in de auto.\n\n**Beslisregel voor morgenochtend:** kijk om 08:30 naar de meting op Brouwersdam of Lichteiland Goeree. Zit het gemiddelde op 13 kn of meer, dan rijd je en ben je om 09:30 op het water. Zit het eronder, dan blijf je thuis. Na 11:00 heeft het geen zin meer.\n\n**Veiligheid:** het zeewater is 15,8 °C en de lucht 12 °C, dus een 4/3 of 5/4 wetsuit. Op de Noordzeekant ga je niet het water op, want die wordt aflandig. De vlagen tot 18 kn komen bij een gemiddelde van 12 kn: hou er rekening mee dat je stilvalt en terug moet peddelen.\n\nDe spotkaart van Brouwersdam is nog niet geverifieerd. Ken je de Grevelingenkant goed (oriëntatie, waar je het water op gaat, regels)? Laat het weten, dan zet ik die erbij.",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 3,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 2,
+      "concision": 3,
+      "errors": [
+        "It calls the NE wind (30–65°) 'aflandig tot schuin aflandig' on the North Sea side. The North Sea beach faces roughly NW (about 300–315°), so 30–45° is sideshore to slightly side-on. It only turns side-off from about ENE, and fully offshore once the wind goes east, in the afternoon. Choosing Grevelingen is still right, but the reason given is overstated.",
+        "It calls the wind on the Grevelingen side 'aanlandig richting de dam'. The Grevelingen shore faces roughly SE (about 130–135°), so NE is sideshore. It only becomes side-on when the wind veers east in the afternoon.",
+        "The 09:00–13:00 window is too optimistic. The answer's own numbers show a 6–8 kn gap between mean wind and gusts, and an 82 kg rider on a 6 m wing needs about 12–13 kn mean even with a 1500 cm² foil. The realistic window is roughly 09:30–11:30.",
+        "It never says whether the session is worth the trip. The verdict is 'randje', but there is no clear go/no-go threshold beyond 'below ~10 kn means ECMWF is right'. 10 kn is too low a cut-off for 82 kg on 6 m.",
+        "It says nothing about the designated kite/wing zones at the Brouwersdam. Both sides have marked zones, and on the North Sea side kiting is only allowed in the marked area. It also gives no launch spot on the Grevelingen side and doesn't mention that the Grevelingen has almost no tide.",
+        "A 1.3–1.5 m swell close to shore is probably overstated. The banks off the Brouwersdam take much of the North Sea swell, and near the beach it rarely goes above about 1 m.",
+        "It puts raw API URLs in the answer as sources. That is noise for the rider."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 4,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "The orientation analysis is correct: the North Sea side starts sideshore, goes side-off and then offshore as the wind veers east, and the Grevelingen side goes from sideshore to side-on. It also correctly notes the Grevelingen has no tide. But it shows tool and internal jargon that is no use to the rider: 'Windext-score 1/10', 'staat nog niet in de database', 'spotkaart nog niet geverifieerd', and asking the rider for the shore orientation. The Grevelingen side facing SE is a known fact and should be stated, not asked.",
+        "The window is inconsistent. The headline says 10:00–11:00, the reasoning says 13 kn is only reached around 09:00–11:00, and the decision rule says be on the water at 09:30. It should give one window.",
+        "The verdict '1/10, het loont niet' contradicts the go rule (≥13 kn at 08:30 means go). It would be better as a clear conditional: 'only worth it if…'.",
+        "It says nothing about foil or board size. On a marginal day that is the deciding factor for an 82 kg rider on a 6 m wing, and something like 1500+ cm² is needed.",
+        "A sea temperature of 15.8 °C is a little high for the coast off Zeeland in mid-October, where about 14–15 °C is more typical. The wetsuit advice (4/3 or 5/4) is still right, but it leaves out boots and a hood.",
+        "Like A, it doesn't mention the designated kite/wing zones on either side of the dam, or where to launch on the Grevelingen side (for example near the Kabbelaarsbank / Port Zélande)."
+      ]
+    },
+    "winner": "avec",
+    "why": "B gets the shore orientation right (sideshore turning side-off and then offshore as the wind veers east), sets a realistic wind threshold for 82 kg on a 6 m wing and gives a clear go/no-go rule; A says the NE wind is already offshore on the North Sea side and gives too long a window, which outweighs B's tool jargon and inconsistent window."
+  },
+  "seconds": 92
+}

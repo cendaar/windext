@@ -1,0 +1,44 @@
+{
+  "id": "cumbuco-week",
+  "q": "Vou para Cumbuco esta semana para kitar. Quais os melhores dias e horários? Peso 70 kg, tenho 7, 9 e 12 m.",
+  "sans": "Pela previsão de hoje (17/10), **de terça (20) a sexta (23)** devem ser os melhores dias, com o pico provável na **quarta (21) e quinta (22)**. Sábado e domingo (17 e 18) e segunda (19) vêm mais fracos.\n\n| Dia | Vento médio previsto (modelo) | Rajadas | Avaliação |\n|---|---|---|---|\n| Sáb 17 / Dom 18 | 11–13 nós | 22–27 | Mais fraco |\n| Seg 19 | ~12 nós, só perto do meio-dia | ~25 | Fraco de manhã, melhora à tarde |\n| Ter 20 | 13 nós, firme até 18h | ~27 | Bom |\n| **Qua 21** | 14 nós | ~29 | **Melhor** |\n| **Qui 22** | 14–15 nós | ~30 | **Melhor** |\n| Sex 23 / Sáb 24 | ~13 nós | ~27 | Bom |\n\n**Esses números estão abaixo do vento real.** Modelos globais como esse subestimam bastante o vento de Cumbuco, porque não pegam bem o efeito térmico da costa. As rajadas altas indicam que o vento na praia deve ficar mais perto de **17–24 nós**, que é o normal de outubro, auge da temporada. Use a tabela para comparar os dias entre si, não como valor exato. Confira o Windguru e o Windfinder na véspera e pergunte nas escolas locais.\n\n**Horários:**\n- De manhã cedo o vento é mais fraco e irregular.\n- **Das 11h às 17h** é a melhor janela. O vento fica mais firme e forte entre o meio-dia e as 16h.\n- O sol se põe por volta das 17h30, então não saia muito tarde.\n\n**Qual kite usar (70 kg):**\n- **12 m:** dias mais fracos, como fim de semana e segunda, ou o começo da manhã.\n- **9 m:** provavelmente o que você mais vai usar nesta semana.\n- **7 m:** à tarde na quarta e na quinta, se passar de 23–25 nós ou se estiver muito rajado.\n\n**Dica:** nos dias de vento forte e mar mexido, a lagoa do Cauípe tem água lisa e é ótima à tarde. Nos dias mais fracos, o mar de Cumbuco funciona melhor com o 12 m.\n\nBom vento! 🪁\n\nFontes:\n- [Windfinder – Cumbuco Kitepoeira](https://www.windfinder.com/forecast/cumbuco)\n- [Open-Meteo – previsão horária para Cumbuco](https://api.open-meteo.com/v1/forecast?latitude=-3.627&longitude=-38.732&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m&wind_speed_unit=kn&timezone=America/Fortaleza&forecast_days=8)",
+  "avec": "**Hoje (sáb 17/10): Talvez.** Das 09h às 15h com a 9 m, score windext 4/10. A melhor parte da semana é de **quarta a sexta**.\n\n| Dia | Janela | Vento (média / rajadas) | Direção |\n|---|---|---|---|\n| Sáb 17 | 09–15h (talvez) | 12 / 22 kn | E, side-on |\n| Dom 18 | 12–14h (talvez, 3/10) | 11 / 21 kn | E |\n| Seg 19 | fraco | 10–11 kn | E |\n| Ter 20 | 10–15h | 12 / 23 kn | E, side-on |\n| **Qua 21** | **09–15h** | **13 / 24 kn** | ESE, side |\n| **Qui 22** | **09–15h** | **13 / 23 kn** | ESE, side |\n| **Sex 23** | **08–15h** | **13 / 23 kn** | ESE, side |\n\n**Por quê:**\n- Os 5 modelos concordam, então a previsão é confiável. O pico costuma ser entre 11h e 13h, e o vento cai a partir das 16h.\n- De manhã sopra ESE (side), à tarde vira E (side-on). As duas direções são as melhores para o spot.\n- Tem muita rajada (fator 1,9): espere buracos e picos de excesso. O ar está mais quente que o mar, então o vento perto da praia pode ficar abaixo do previsto.\n\n**Equipamento (70 kg):** a 9 m é a escolha do windext por causa das rajadas até 25 kn. Leva a 12 m para a praia caso a média fique em 11–12 kn com rajadas moderadas. A 7 m provavelmente não vai sair da mala esta semana.\n\n**Regra para a manhã (sábado e domingo):** vá se a estação ao vivo marcar pelo menos 11 kn de média, com rajadas abaixo de 26–27 kn, por volta das 09–10h.\n\n**Segurança:**\n- Vento S é offshore na praia principal, então não entre. Com SSE, vá para outro spot.\n- Corrente de 1–2 kn, ondas de 1,2–1,5 m e bancos de areia mais para fora.\n- Fim de semana fica cheio, inclusive a Lagoa do Cauípe. Há relatos de roubo, então não deixe nada sem vigilância.\n- O spot não depende da maré.\n\nEssas informações vêm de uma ficha \"seed\" montada com guias online, ainda não verificada por locais. Como você vai estar lá, me diga se algo não bate (orientação da praia, zona de largada, direções) e eu corrijo a ficha.",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 2,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "Says nothing about wind direction or which way the beach faces. In October the trade wind is E–SE, side-shore from the right, and turns more side-onshore in the afternoon. A wind from S/SSW blows offshore at the main beach and is dangerous; this is not mentioned.",
+        "No hazards listed: the current along the shore, waves and outer sandbars, crowding at the weekend, theft on the beach.",
+        "Gives no tide information. In Ceará the spring tide range is about 3 m, so the width of the beach and the sandbars change with the tide. It does not need to be detailed, but it should be noted.",
+        "The 17–24 kn estimate is reasonable, since 18–25 kn is the October norm. But it is inferred from gusts rather than checked against a live station, and there is no clear rule for go/no-go on the day.",
+        "Listing a raw Open-Meteo API link as a source is technical noise that does not help the rider.",
+        "Sunset at about 17:30 is roughly right: the actual time in Fortaleza is about 17:36–17:38, so 'by about 17:30' is slightly early but safe. The weekdays for 20–23 October are correct (Tuesday to Friday)."
+      ]
+    },
+    "avec": {
+      "accuracy": 2,
+      "safety": 4,
+      "uncertainty": 3,
+      "actionability": 3,
+      "local_knowledge": 3,
+      "concision": 2,
+      "errors": [
+        "Says the wind peaks at 11–13h and drops from 16h. In Cumbuco the wind is usually strongest in the afternoon and often holds until close to sunset (about 17:37), so the 09–15h windows miss the best part of the day.",
+        "Says air warmer than the sea means the wind near the beach may be below forecast. That is backwards for Cumbuco: daytime heating over land strengthens the trade wind, and global models usually under-forecast it.",
+        "Says the 7 m will probably stay in the bag. In October the wind is typically 18–25 kn with strong gusts (B's own gust factor is 1.9), so a 70 kg rider is likely to need the 7 m on some afternoons.",
+        "Says the spot does not depend on the tide. That is overstated: with about 3 m of spring tide range, the beach width and sandbars change, and nearby spots are best at low tide.",
+        "Uses internal tool language that means nothing to the rider: 'score windext 4/10', 'ficha seed não verificada', and asking the rider to correct the card.",
+        "Accepts the raw model averages (11–13 kn) without saying they under-forecast this spot, which undersells the peak of the season.",
+        "Good points: correctly says S is offshore, mentions the current, waves, crowding and theft, and gives a usable morning rule based on a live station."
+      ]
+    },
+    "winner": "sans",
+    "why": "A's verdict, afternoon window and kite choice match how Cumbuco actually works in October, while B confidently pushes too-early windows and a backwards thermal claim wrapped in tool jargon, even though B covers safety better."
+  },
+  "seconds": 95
+}

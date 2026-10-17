@@ -1,0 +1,45 @@
+{
+  "id": "wissant-berck",
+  "q": "Dimanche, kite à Wissant ou à Berck ? 75 kg, 9 et 12 m. Dis-moi lequel et pourquoi.",
+  "sans": "**Berck.** Mais franchement, aucun des deux spots n'est bon dimanche, et même à Berck ta 12 m risque de manquer de vent.\n\nD'après les prévisions Open-Meteo pour le dimanche 18 octobre :\n\n| | Wissant | Berck |\n|---|---|---|\n| Vent sur l'eau (12h–17h) | 2–7 nœuds, direction instable (N à ENE) | **9–13 nœuds**, rafales à 14 |\n| Direction | Change d'heure en heure | **N à NNE, assez stable** |\n| Météo | Averses toute la matinée | Sec, environ 12 °C |\n| Vagues | 1,2–1,5 m, période courte | 0,7 m, plan d'eau plus calme |\n\n**Pourquoi Berck :**\n- **Le vent y est plus régulier.** À Wissant il tombe presque à zéro l'après-midi et sa direction change tout le temps, avec des averses.\n- **La direction est bonne.** Le vent de nord y est side-shore, alors qu'à Wissant un vent de NE est plutôt side-off.\n- **Le plan d'eau est plus facile** : moins de clapot, donc plus simple quand le vent est juste.\n\n**Ce qu'il faut savoir :**\n- **À 75 kg avec 10–13 nœuds, ta 12 m sera juste.** Tu pourras naviguer avec une grande planche ou un foil. Avec un twin-tip standard, tu vas surtout faire du body drag. Laisse la 9 m dans le coffre.\n- **Créneau conseillé : de 13h à 16h.** C'est le moment où le vent est le plus fort, et la marée monte (basse vers 11h, haute vers 16–17h).\n- **Attention si le vent passe au NNE.** Il devient side-off : évite de t'éloigner de la plage et ne sors pas seul.\n- **Revérifie samedi soir et dimanche matin** sur Windguru ou Windfinder. Ces chiffres viennent d'un seul modèle et les écarts sont grands à Wissant. Si Berck tombe sous 10 nœuds, la journée ne vaut sans doute pas le trajet.\n\nSources : [Open-Meteo Forecast API](https://open-meteo.com/), [Open-Meteo Marine API](https://open-meteo.com/en/docs/marine-weather-api)",
+  "avec": "**Ni l'un ni l'autre dimanche (18/10).** Les deux spots ont un score windext de 0/10. Si tu tiens absolument à y aller, c'est **Wissant** : c'est le seul où il peut se passer quelque chose, vers 15h-18h, avec le 12 m.\n\n**Pourquoi Berck est exclu**\n- Le vent vient du NNE/NE toute la journée. Sur une plage orientée ouest, il est side-off à offshore tout le temps. C'est un secteur interdit sur ce spot.\n- Il est en plus très faible : 6-7 nds en moyenne.\n\n**Pourquoi Wissant reste un peu possible**\n- Ça reste faible : 8 nds en moyenne, 10 nds au mieux vers 16h. À 75 kg, il te faut environ 14-15 nds pour tenir sur le 12 m.\n- L'après-midi, le vent tourne au N/NNE, ce qui le met side-on sur une plage orientée NW. C'est la seule fenêtre où l'orientation va. Le matin, il est ENE, donc side-off, à éviter.\n- Les modèles ne sont pas d'accord du tout. KNMI et DMI annoncent 13-22 nds entre 16h et 18h, alors qu'ICON et UKMO restent à 2-5 nds. Il y a aussi des averses, donc des rafales et des trous de vent.\n- La marée haute est vers 17h (marée calculée par le modèle, à vérifier sur maree.info). La fenêtre tombe donc sur la marée haute, quand la plage est étroite et le shorebreak au plus fort.\n\n**Règle pour dimanche matin :** n'y va que si les runs du matin et les balises de Wissant montrent au moins 14 nds établis du N/NNE pour l'après-midi. Si le vent reste ENE ou E, reste chez toi.\n\n**Sécurité :** s'il est à l'est de NE, il est offshore, avec le rail de navigation du détroit au large. Fais attention aussi au courant de marée et au shorebreak à marée haute.\n\nLes deux fiches de spots sont des fiches « seed », compilées à partir de guides et pas encore validées par des locaux. Si tu connais bien Wissant ou Berck, tes corrections sont bienvenues.",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 3,
+      "uncertainty": 3,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "It contradicts itself on direction at Berck. It sells a 'N à NNE, assez stable' wind as the main reason for choosing the spot, then warns that NNE is side-off. Berck beach faces roughly west, so N is side-shore but NNE is already side-off and NE is offshore. A wind that stays between N and NNE all day means a good part of the session is side-off.",
+        "It relies on a single model (Open-Meteo, default blend). It does admit this, but it doesn't flag that the picture could flip: other models put Berck at NNE/NE and weak (offshore), and Wissant at 13-22 kn from N/NNE late in the day. Its verdict depends entirely on that single run.",
+        "Tides at Berck: maree.info gives low tide at 11h38 (3.59 m) and high tide at 17h12 (7.28 m), not 'haute vers 16–17h'. It's close, but it doesn't mention that this is a neap tide (coefficients 37/32).",
+        "It doesn't give a clear go/no-go rule based on direction. It only has a speed threshold (under 10 kn). It also doesn't say to check the Berck station or webcam for direction before driving.",
+        "'Ne sors pas seul' is good, but there is no explicit ban on going out if the wind turns to NE/ENE, which would be offshore at Berck. There is also nothing about the cold (water around 14-15 °C, suitable wetsuit).",
+        "At 10-13 kn with gusts to 14, it says the 12 m is 'juste' and suggests a big board or a foil. That is consistent, but the claim that you'll 'surtout faire du body drag' on a standard twin-tip contradicts recommending the trip in the first place.",
+        "Local knowledge is thin: nothing about the launch at Berck (beach in front of the Esplanade / kite zone), access depending on the tide, or how the Authie bay affects the area."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 4,
+      "uncertainty": 5,
+      "actionability": 3,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "It says high tide at Wissant is 'vers 17h'. maree.info gives 17h41 (6.21 m), with low tide at 12h12. The forecast window of 15h-18h therefore falls on the rising tide and high water, which the answer roughly gets right, but the time is about 40 minutes early.",
+        "It never says that 18/10 is a neap tide (coefficients 37/32). The tidal current is weak that day, so the warning about tidal current is overstated. With a small tidal range, the beach also doesn't get very narrow at high water.",
+        "It contains tool jargon that means nothing to the rider: 'score windext 0/10', 'fiches seed', 'marée calculée par le modèle'. The last paragraph asking for local feedback is padding.",
+        "The verdict sends a mixed message: 'Ni l'un ni l'autre' and then 'c'est Wissant'. It is reasonable, but the opening could be clearer.",
+        "The shipping lane in the Strait of Dover is several miles offshore. It is not a realistic hazard for a kiter blown offshore, who faces drifting out and hypothermia long before reaching it. The real offshore hazards are drifting and the lack of rescue in October.",
+        "It doesn't mention the cold: water is around 14-15 °C in mid-October and the air is about 12 °C with showers, so a 4/3 or 5/4 wetsuit is needed, and you shouldn't go out alone.",
+        "The 14-15 kn threshold for a 12 m at 75 kg is a bit conservative for a good rider on a twin-tip (12-13 kn is possible). It is coherent, though, and it correctly rules out the 9 m implicitly."
+      ]
+    },
+    "winner": "avec",
+    "why": "I could verify the tides (maree.info) and the orientations, though not the competing wind forecasts. A gets the key safety reasoning on wind direction right, shows how far apart the models are and gives a clear rule for deciding on Sunday morning, while B picks Berck on a single model and its own forecast includes the side-off NNE it warns about. A loses points for its tool jargon."
+  },
+  "seconds": 130
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ouistreham-kite",
+  "q": "Ça vaut le coup d'aller kiter à Ouistreham demain ? Je fais 80 kg, j'ai une 9 m et une 12 m. Créneau, taille d'aile, sécurité.",
+  "sans": "**Pas vraiment.** Demain, c'est une journée de vent faible, avec des rafales et des averses. Je n'y irais que si tu habites à côté et que tu acceptes de ne pas naviguer.\n\n**Le vent dimanche 18/10 à Ouistreham**\n\n| Créneau | Vent moyen | Rafales | Direction |\n|---|---|---|---|\n| 8h–11h | 9 à 19 kn selon le modèle | 17 à 29 kn | N à NNE |\n| 12h–19h | 7 à 12 kn | 12 à 22 kn | NNE à NE |\n\n- **Les modèles ne sont pas d'accord.** ECMWF donne seulement 8 à 10 kn toute la journée. ICON et GFS donnent 15 à 19 kn le matin. Seul le matin peut être navigable.\n- **Les rafales sont très fortes par rapport au vent moyen**, parfois presque le double (par exemple 15 kn établis avec des rafales à 28 kn selon ICON). On est en régime d'averses avec un peu d'instabilité, donc des grains sont possibles.\n- **La direction est N à NNE, donc onshore.** C'est rassurant parce que tu reviens vers la plage, mais ça fait un plan d'eau haché : environ 1,3 m de houle courte (période 5 s) et un shorebreak désordonné.\n\n**Taille d'aile (80 kg)**\n- **12 m**, et seulement le matin si le vent dépasse vraiment 14–15 kn établis. L'après-midi, même la 12 m sera trop juste pour un twin-tip, sauf si tu as une grande planche ou un foil.\n- **La 9 m ne sert à rien demain.** Il lui faudrait 20 kn établis.\n- **Attention au piège** : une 12 m réglée pour 13 kn qui prend une rafale à 28 kn sous un grain, c'est dangereux. Si tu sors, choisis la 12 m mais navigue en dépower et reste près du bord.\n\n**Marée**\nD'après le modèle, la basse mer est vers 9h et la pleine mer vers 15h. Vérifie les horaires exacts sur l'annuaire du SHOM ou maree.info, ces heures sont approximatives. Le meilleur créneau de vent tombe donc à marée basse : estran très large, longue marche, bancs de sable et bâches.\n\n**Sécurité**\n- **Grains** : surveille le ciel au nord. Si un nuage noir arrive, pose l'aile avant qu'il soit sur toi, pas pendant.\n- **Ne navigue pas seul** un jour comme demain. Préviens quelqu'un.\n- **Reste à l'écart du chenal de l'Orne et de la digue**, où passent les ferries de Brittany Ferries. Respecte la zone kite balisée de Riva-Bella.\n- **Équipement** : eau à environ 16,5 °C et air à 12 °C avec la pluie, donc combinaison 4/3 minimum. Vérifie ton quick release avant de partir.\n- Avec un vent onshore, si tu dois lâcher l'aile, tu dérives vers la plage. C'est plutôt bien, mais méfie-toi des épis et des obstacles sur le sable.\n\n**Ce que je te conseille**\nRegarde le run AROME ce soir ou demain à 7h, sur Windguru ou Météo-France avec le modèle AROME. Les modèles fins seront plus fiables que les modèles globaux sur une situation d'averses comme celle-ci.\n- S'il annonce au moins 15 kn établis entre 8h et 11h et peu de grains : vas-y avec la 12 m.\n- Sinon : repos, ou foil si tu en as un.\n\nSources : prévisions [Open-Meteo](https://open-meteo.com) (modèles Météo-France, ECMWF, ICON, GFS) et [Open-Meteo Marine](https://open-meteo.com/en/docs/marine-weather-api) pour la houle et la marée.",
+  "avec": "**Demain (dim. 18/10) : non. Score windext 0/10.** Il n'y a pas assez de vent : 9 nœuds de moyenne, 13 au mieux vers 10h.\n\n**Pourquoi**\n- Avec 80 kg, il te faudrait au moins 14-15 nœuds réguliers pour la 12 m. Ça n'arrive à aucune heure en moyenne des modèles. Le seul pic est vers 9h-11h, de secteur NNE.\n- Les modèles se contredisent sur 79 % des heures. GFS annonce 19-20 nœuds le matin, KNMI et DMI moins de 5. Personne ne sait vraiment ce qui va se passer.\n- Les rafales vont jusqu'à deux fois le vent moyen (par ex. 11 nœuds de moyenne avec des rafales à 23). Il y aura aussi des averses. Tu passeras de molles à des coups de vent qui te surtoilent.\n- Mer formée et hachée : vagues de 1,1 à 1,3 m toutes les 5 s, de NNE.\n\n**Si tu veux quand même vérifier demain matin**\n- Prends seulement la 12 m. La 9 m sera trop petite toute la journée.\n- Ne pars que si les balises en direct (Ouistreham, Luc-sur-Mer) montrent au moins 14 nœuds de moyenne vers 9h, avec des rafales qui ne dépassent pas 25. Sinon, reste chez toi.\n- Le seul créneau possible est 9h30-11h30. La marée basse est à 9h58, ce qui va dans le sens du guide Let's Kite, qui conseille de rider à marée basse.\n\n**Sécurité**\n- En dessous de 12 nœuds avec cette houle, relancer une 12 m tombée à l'eau est compliqué. Reste près du bord, et ne sors jamais seul.\n- Gare aux averses : quand un grain arrive, rentre avant la rafale.\n- L'eau est à 17 °C et l'air à 12 °C : mets une combi 4/3 au minimum.\n- Décolle loin de la digue et des maisons, car le vent y tourbillonne. Reste à l'écart du chenal de l'Orne et du port de ferry à l'est.\n\nLa fiche du spot (orientation nord, secteurs sud interdits car le vent y souffle vers le large) vient de guides en ligne et n'est pas vérifiée. Si tu connais bien le spot, dis-moi si elle est juste, et je la corrige.",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 5,
+      "uncertainty": 5,
+      "actionability": 4,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "The tide times are off by about an hour. Maree.info (SHOM data) gives low water at Ouistreham on Sunday 18/10/2026 at 10h02 (3.33 m) and high water at 15h41, not low water around 9h. The answer does say its times are approximate and should be checked.",
+        "It says the morning low tide means a 'very wide foreshore, long walk, sandbanks and pools'. Coefficients are only 37/32 (neap tides) and low water is still 3.3 m, so the tidal range is small and the walk out is much shorter than on a spring tide. It never mentions that these are neap tides.",
+        "The opening verdict is muddled: 'Je n'y irais que si tu habites à côté et que tu acceptes de ne pas naviguer' is a contradictory way to answer a go/no-go question.",
+        "It gives no wind threshold to check live on the beach in the morning (for example a wind station or a gust limit). It relies only on the next AROME model run.",
+        "Naming four models (ECMWF, ICON, GFS, AROME) plus an Open-Meteo sources line is a bit heavy for a rider. It does not say which beach directions are dangerous because the wind blows out to sea (S/SE/SW), though they are not a factor tomorrow.",
+        "The 'zone kite balisée de Riva-Bella' reference is not checked, and marked zones mostly apply in summer. This is a small point."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 4,
+      "uncertainty": 5,
+      "actionability": 5,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "'Score windext 0/10' and 'les modèles se contredisent sur 79 % des heures' are tool output that means nothing to the rider.",
+        "The closing paragraph about the spot guide being 'non vérifiée' and asking the rider to correct it is the tool talking about itself. It undermines confidence and should be cut.",
+        "It doesn't mention that these are neap tides (coefficients 37/32). Low water at 9h58 is close to the official 10h02, so the time is fine.",
+        "The claim that the Let's Kite guide recommends riding at low tide is not checked or explained (for example the shorebreak at high tide or space on the beach).",
+        "On safety it leaves out checking the quick release, the ferry traffic through the Orne channel (it only mentions the port), and the fact that an onshore wind brings a dropped kite back toward the beach and its obstacles."
+      ]
+    },
+    "winner": "avec",
+    "why": "B is narrowly better: its tide time is correct, its window is tied to the tide, and it gives a clear on-the-day check (live wind stations reading at least 14 kn with gusts no higher than 25 kn), while A's low-tide time is about an hour early and its morning verdict is muddled; both have the right no-go call and the right 12 m choice, and B loses points for tool jargon."
+  },
+  "seconds": 109
+}

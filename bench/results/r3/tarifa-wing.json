@@ -1,0 +1,44 @@
+{
+  "id": "tarifa-wing",
+  "q": "¿Merece la pena salir con el wing en Tarifa (Los Lances) mañana? Peso 72 kg, tengo un ala de 4 y una de 5,5 m. Horario, tamaño y seguridad.",
+  "sans": "**No merece la pena.** Mañana, domingo 18 de octubre, prácticamente no habrá viento en Los Lances.\n\n## Previsión\n\n| Fuente | Viento medio (08–20 h) | Rachas | Dirección |\n|---|---|---|---|\n| Open-Meteo (mejor modelo) | 2–5 kn | 6–10 kn | Variable, sin dirección clara (E por la mañana, SW/W por la tarde) |\n| ECMWF | 1–6 kn (máx. ~11 h) | hasta ~12 kn | E/SE flojo; casi calma entre las 13 y las 16 h |\n| ICON-EU / GFS | < 5 kn | ~10 kn | – |\n| Windfinder (Tarifa) | 2–7 kn | 4–10 kn | E/ENE flojo; sube un poco a última hora (8 kn y rachas de 13 kn hacia las 23 h) |\n\n- **Lluvia:** chubascos entre las 7 y las 11 h (hasta unos 4 mm/h). El cielo estará muy cubierto casi todo el día.\n- **Mar:** mar de fondo del W de unos 0,7 m con periodo de 8 a 10 s. Las olas son pequeñas pero tienen algo de fuerza en la orilla.\n\n## Tamaño de ala\nPesas 72 kg. Con el ala de 5,5 m² necesitas más o menos **12–14 kn medios** para despegar con soltura, según la tabla y el foil. Con el ala de 4 m², unos **17–18 kn o más**. Mañana el viento medio no pasará de unos 6 kn, así que ni la de 5,5 te servirá para volar. Como mucho podrías arrastrarte en modo desplazamiento.\n\n## Horario\nNo hay ninguna franja buena. Si quieres arriesgarte, lo \"menos malo\" sería entre las 10 y las 12 h según ECMWF, pero hablamos de 5–6 kn con rachas de unos 11 kn. Es insuficiente y además coincide con la lluvia.\n\n## Seguridad\n- **El riesgo principal es quedarte sin viento lejos de la orilla.** Con un viento tan flojo y cambiante, volver remando o nadando con todo el material es agotador.\n- En Tarifa, el **levante flojo o terral sopla hacia fuera del agua**. Si cayera a cero, la deriva te alejaría de la playa.\n- Hay corrientes del Estrecho, y en octubre ya no hay vigilancia de verano.\n- Si aun así sales: quédate cerca de la orilla, lleva neopreno (el agua estará a unos 18–19 °C), chaleco o impact vest y casco, y avisa a alguien de la hora a la que piensas volver.\n\n## Alternativas\n- Con este mar de fondo del W, si tienes **foil de surf o tabla de SUP foil**, podría haber alguna ola en la zona del Balneario o en Valdevaqueros. Compruébalo antes en las webcams.\n- Mira la previsión de los próximos días: el ENE aumenta a última hora del domingo y podría venir **levante para el lunes**. Lo puedo comprobar si quieres.\n\n*Es una previsión de modelos, así que confírmala por la mañana en Windguru o con la estación de Tarifa en directo.*\n\nFuentes:\n- [Open-Meteo Forecast API](https://open-meteo.com/) (modelos ECMWF IFS, ICON-EU y GFS; Marine API para el oleaje)\n- [Windfinder – Tarifa](https://www.windfinder.com/forecast/tarifa)",
+  "avec": "**No merece la pena mañana (domingo 18/10): windext 0/10.** Ni el ala de 5,5 m te sirve.\n\n**Por qué:**\n- Habrá unos 3 nudos de media todo el día y el pico es de solo 4 nudos sobre las 11:00. Con 72 kg y la 5,5 m necesitas unos 12–14 nudos para salir del agua con un foil normal.\n- Las rachas que dan algunos modelos (ECMWF hasta 12–14 nudos) vendrían de chubascos, no de un viento estable. Llegan de golpe y luego el viento cae del todo, así que no se puede navegar con eso.\n- Los modelos no se ponen de acuerdo en la dirección. Por la tarde algunos dan Levante flojo de lado y desde tierra, que es el peor caso en Los Lances porque te arrastra mar adentro.\n\n**Si aun así te lo planteas:**\n- **Tormentas:** la atmósfera está inestable (CAPE hasta 1330 J/kg). Si ves nubes que crecen o oyes truenos, no entres al agua, y si estás dentro, sal enseguida.\n- **Viento flojo desde tierra:** si se te cae el viento con Levante, nadar de vuelta cuesta mucho. Lleva chaleco y casco y no te alejes de la orilla.\n- **Mar:** olas de 0,7 m del oeste-noroeste cada 9 s, nada preocupante. El agua está a 21 °C.\n\n**Decisión de mañana por la mañana:** las previsiones son poco fiables, así que antes de ir mira las estaciones en directo de Tarifa (Windguru o iKitesurf). Solo vale la pena si marcan 12 nudos o más **y estables**. Si no, quédate en casa.\n\nLa ficha del spot no está verificada (sale de OpenStreetMap y guías web). Si eres de la zona y ves algo mal en la orientación (SO) o en lo que dice de Levante y Poniente, dímelo y la corrijo.",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 5,
+      "uncertainty": 4,
+      "actionability": 5,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "Shows 'Open-Meteo (mejor modelo)' as a forecast source, which is mild tool talk; Open-Meteo combines several models and isn't a model itself. The table is somewhat long for a clear no-go day.",
+        "The surf-foil tip about 'Balneario or Valdevaqueros' with 0.7 m of W swell is doubtful. Balneario is sheltered and seldom works, and 0.7 m at 8–10 s is very small inside the Strait.",
+        "No tide times. It mentions Strait currents, which is good, but the tidal range and the time of the current change at Los Lances are missing.",
+        "The 'Levante on Monday' outlook is speculative, though it is clearly marked as something to check.",
+        "The 12–14 kn figure for the 5.5 m and 17–18+ kn for the 4 m at 72 kg are reasonable. The 4 m threshold could be a little higher for an average board.",
+        "Water at 18–19 °C is plausible for October, and the wetsuit advice is consistent with it. Saying there is no summer lifeguard cover in October is correct, since the Tarifa lifeguard season ends in September."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 4,
+      "actionability": 3,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "Uses internal jargon and tool talk that does not help the rider: 'windext 0/10' and the note that the spot sheet 'comes from OpenStreetMap and web guides, tell me if it's wrong'.",
+        "Never mentions the 4 m wing, even though the rider asked about both sizes. With 72 kg the 4 m needs roughly 17–20 kn, and saying so would have closed the question.",
+        "Gives water at 21 °C. Mid-to-late October at Tarifa is usually about 18–20 °C because of Strait mixing and upwelling. The figure looks high, and no wetsuit advice follows from it.",
+        "Says 3 kn average with a 4 kn peak, but then cites ECMWF gusts of 12–14 kn without showing the spread between models. That makes the forecast less transparent.",
+        "No tide or Strait current information. The range at Tarifa is about 1–2 m and the currents in the Strait are strong, which matters when you have to come back without wind. No timing given for the showers either.",
+        "Calls Levante 'side and from land' and the worst case at Los Lances. The beach faces SSW, so Levante there is side-offshore and gusty; this is correct and well stated, but there is no launch or zone advice.",
+        "Its main safety point (CAPE / storms) uses a technical figure (1330 J/kg) that most riders won't understand, although the advice that follows is sound."
+      ]
+    },
+    "winner": "sans",
+    "why": "Both reach the right no-go call for Sunday 18/10, but B answers the whole question (both wing sizes, time window, Levante blowing offshore, currents, no lifeguards, wetsuit) clearly and without the internal jargon and spot-sheet tool talk that weakens A."
+  },
+  "seconds": 81
+}
