@@ -1,7 +1,9 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { z } from 'zod'
 import { fetchForecast, geocode, MODEL_LABELS, defaultModels } from './openmeteo.js'
-import { summarizeHour, findWindows, gustDiagnostics, renderTable, compass, COMPASS, tideEvents, renderTides, renderSea, daylightMap, weekday } from './analysis.js'
+import { summarizeHour, findWindows, gustDiagnostics, renderTable, compass, COMPASS, tideEvents, renderTides, renderSea, daylightMap, weekday, tideRange, significantTides } from './analysis.js'
+import { nearestStation, noaaTides } from './noaa.js'
+import type { Forecast } from './openmeteo.js'
 import type { Store, SpotCard, WindQuality } from './store.js'
 
 export const INSTRUCTIONS = `windext: multi-model wind forecasts for wind sports (kitesurf, windsurf, wingfoil, sailing) plus an open, community-built database of spots. Every question a rider asks makes the next answer better: forecasts are archived, spot cards are shared, and session reports will score the models spot by spot.
@@ -48,7 +50,7 @@ const tideCaveat = (card: SpotCard | null) => card?.tide_offset_min != null ? `m
 
 const sectorQuality = (card: SpotCard | null, dir: number): WindQuality | undefined => card?.wind.find(w => w.sector === compass(dir))?.quality
 
-export interface ServerOptions { estimateFacing?: (lat: number, lon: number) => Promise<{ facing_deg: number; distance_m: number } | null> }
+export interface ServerOptions { noaaFetch?: typeof fetch; estimateFacing?: (lat: number, lon: number) => Promise<{ facing_deg: number; distance_m: number } | null> }
 
 export function createServer(store: Store, options: ServerOptions = {}): McpServer {
   const server = new McpServer({ name: 'windext', version: '0.3.0' }, { instructions: INSTRUCTIONS })
@@ -73,6 +75,22 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
     const lat = card?.lat ?? a.lat, lon = card?.lon ?? a.lon
     if (lat == null || lon == null) throw new Error('Give either spot_id or lat+lon.')
     return { card, lat, lon }
+  }
+
+  /** Tide block: official NOAA predictions when a station is close, otherwise the marine model with honest caveats. */
+  const tideText = async (card: SpotCard | null, lat: number, lon: number, fc: Forecast, days: number): Promise<string> => {
+    const st = nearestStation(lat, lon)
+    if (st) {
+      try {
+        const ev = await noaaTides(st.id, fc.hours[0].time.slice(0, 10), days, options.noaaFetch ?? fetch)
+        if (ev.length) return `Official NOAA predictions, station ${st.name} (${st.km} km), heights vs mean sea level:\n${renderTides(ev.map(e => ({ ...e, time: e.time.slice(0, 16) })))}`
+      } catch { /* fall back to the model */ }
+    }
+    if (!fc.seaLevel.some(v => v != null)) return card?.water === 'lake' || card?.water === 'river' ? '' : 'No tide data from the marine model at this point (inland water, or a fjord or harbour outside the model grid). For a coastal spot, use the official port table.'
+    const range = tideRange(fc.seaLevel)
+    if (range < 0.3) return `Microtidal here (model range ${range} m over the period): the tide is negligible for riding.`
+    const ev = significantTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel, card?.tide_offset_min ?? 0))
+    return `${tideCaveat(card)}:\n${renderTides(ev)}`
   }
 
   server.registerTool('find_spot', {
@@ -167,9 +185,9 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
         await store.archiveForecast(rows)
       }
     } catch { /* statistics must never break a forecast */ }
-    const head = `Issued ${weekday(fc.issued)} ${fc.issued} local (${fc.timezone}); check the weekday the user named against the table headers.\n${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
-    const tides = renderTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel, c2?.tide_offset_min ?? 0))
-    const tideBlock = tides ? `\n\nTides (${tideCaveat(c2)}${c2?.tide_notes ? `; spot note: ${c2.tide_notes}` : ''}):\n${tides}` : ''
+    const head = `Issued ${weekday(fc.issued)} ${fc.issued} local (${fc.timezone}); check the weekday the user named against the table headers.\n${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}${fc.dropped?.length ? ` (not available here: ${fc.dropped.map(m => MODEL_LABELS[m] ?? m).join(', ')})` : ''}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
+    const tides = await tideText(c2, lat, lon, fc, a.days)
+    const tideBlock = tides ? `\n\nTides${c2?.tide_notes ? ` (spot note: ${c2.tide_notes})` : ''}:\n${tides}` : ''
     const sea = renderSea(fc)
     return { content: [{ type: 'text', text: `${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}${sea ? `\n\nSea state (daytime):\n${sea}` : ''}${tideBlock}` }] }
   })
@@ -206,9 +224,9 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
   }, async (a) => {
     const { card, lat, lon } = await resolve(a)
     const fc = await fetchForecast({ lat, lon, days: a.days, startDate: a.start_date, models: ['gfs_seamless'] })
-    const t = renderTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel, card?.tide_offset_min ?? 0))
-    if (!t) return { content: [{ type: 'text', text: 'No tidal signal here (inland water or no marine model coverage).' }] }
-    return { content: [{ type: 'text', text: `${card ? `${card.name}. ` : ''}Local time (${fc.timezone}). Heights vs mean sea level. ${tideCaveat(card)}.\n${t}${card?.tide_notes ? `\nSpot note: ${card.tide_notes}` : ''}` }] }
+    const t = await tideText(card, lat, lon, fc, a.days)
+    if (!t) return { content: [{ type: 'text', text: 'No tide here (inland water).' }] }
+    return { content: [{ type: 'text', text: `${card ? `${card.name}. ` : ''}Local time (${fc.timezone}).\n${t}${card?.tide_notes ? `\nSpot note: ${card.tide_notes}` : ''}` }] }
   })
 
   server.registerTool('list_models', {

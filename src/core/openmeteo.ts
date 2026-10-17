@@ -42,6 +42,7 @@ export interface Forecast {
   lon: number
   timezone: string
   models: string[]
+  dropped?: string[]   // models requested but absent or duplicates of another one here
   hours: Hour[]
   seaTemp: number | null
   waveHeight: (number | null)[]
@@ -93,12 +94,21 @@ export async function fetchForecast(opts: { lat: number; lon: number; days: numb
       cape: c.hourly.cape?.[i] ?? null, cloud: c.hourly.cloud_cover?.[i] ?? null, speed80: c.hourly.wind_speed_80m?.[i] ?? null,
     }
   })
+  // Regional models outside their domain come back as a copy of another model (KNMI/DMI -> ECMWF). Drop the copies so the consensus is not double-counted.
+  const sig = (mod: string) => hours.map(h => `${h.models[mod].speed}/${h.models[mod].gust}/${h.models[mod].dir}`).join(',')
+  const seen = new Map<string, string>(); const kept: string[] = []
+  for (const mod of models) {
+    const empty = hours.every(h => h.models[mod].speed == null)
+    const k = sig(mod)
+    if (empty || seen.has(k)) { for (const h of hours) delete h.models[mod]; continue }
+    seen.set(k, mod); kept.push(mod)
+  }
   const sst = s?.hourly?.sea_surface_temperature?.find((v: number | null) => v != null) ?? null
   const waves = (s?.hourly?.wave_height ?? []).map((hgt: number | null, i: number) => ({ height: hgt, dir: s.hourly.wave_direction?.[i] ?? null, period: s.hourly.wave_period?.[i] ?? null }))
   const sun = ((c.daily?.time ?? []) as string[]).map((date, i) => ({ date, sunrise: String(c.daily.sunrise?.[i] ?? '').slice(11, 16), sunset: String(c.daily.sunset?.[i] ?? '').slice(11, 16) }))
   const off = Number(m.utc_offset_seconds ?? 0)
   const issued = new Date(Date.now() + off * 1000).toISOString().slice(0, 16).replace('T', ' ')
-  return { lat: opts.lat, lon: opts.lon, timezone: m.timezone, models, hours, seaTemp: sst, waveHeight: s?.hourly?.wave_height ?? [], seaLevel: s?.hourly?.sea_level_height_msl ?? [], waves, sun, issued, utcOffsetSeconds: off }
+  return { lat: opts.lat, lon: opts.lon, timezone: m.timezone, models: kept, dropped: models.filter(x => !kept.includes(x)), hours, seaTemp: sst, waveHeight: s?.hourly?.wave_height ?? [], seaLevel: s?.hourly?.sea_level_height_msl ?? [], waves, sun, issued, utcOffsetSeconds: off }
 }
 
 export async function geocode(name: string): Promise<{ name: string; admin: string; country: string; lat: number; lon: number }[]> {

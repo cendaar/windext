@@ -7,11 +7,12 @@ export function forecastPayload(o: FakeOpts = {}) {
   for (let d = 0; d < days; d++) for (let h = 0; h < 24; h++) { const dt = new Date(day + 'T00:00:00Z'); dt.setUTCDate(dt.getUTCDate() + d); time.push(`${dt.toISOString().slice(0, 10)}T${String(h).padStart(2, '0')}:00`) }
   const hourly: Record<string, any> = { time }
   const suffix = (m: string) => models.length === 1 ? '' : `_${m}`
-  for (const m of models) {
+  models.forEach((m, idx) => {
     hourly[`wind_speed_10m${suffix(m)}`] = time.map((_, i) => (o.speed ?? (() => 15))(m, i % 24))
     hourly[`wind_gusts_10m${suffix(m)}`] = time.map((_, i) => (o.gust ?? (() => 20))(m, i % 24))
-    hourly[`wind_direction_10m${suffix(m)}`] = time.map((_, i) => (o.dir ?? (() => 20))(m, i % 24))
-  }
+    // tiny per-model offset so models are distinct (identical series are treated as fallback copies and dropped)
+    hourly[`wind_direction_10m${suffix(m)}`] = time.map((_, i) => (o.dir ?? (() => 20))(m, i % 24) + idx * 0.1)
+  })
   return { timezone: 'Europe/Paris', utc_offset_seconds: 7200, hourly }
 }
 export function contextPayload(o: FakeOpts = {}) {

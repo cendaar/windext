@@ -30,3 +30,11 @@ describe('estimateFacing', () => {
     expect(await estimateFacing(1, 1, { fetchImpl })).toBeNull()
   })
 })
+
+describe('complex coastlines', () => {
+  it('refuses to estimate inside a cove where segments point every way', () => {
+    // a U-shaped bay around the point
+    const bay = [{ geometry: [{ lat: 49.30, lon: -0.263 }, { lat: 49.2885, lon: -0.263 }, { lat: 49.2885, lon: -0.257 }, { lat: 49.30, lon: -0.257 }] }]
+    expect(facingFromGeometry(49.29, -0.26, bay)).toBeNull()
+  })
+})

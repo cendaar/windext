@@ -65,7 +65,7 @@ describe('spot_forecast', () => {
     await call('submit_spot', riva)
     const { text } = await call('spot_forecast', { spot_id: 'ouistreham-riva-bella', days: 1, start_date: '2026-10-18', hours_from: 9, hours_to: 10 })
     expect(text).toMatch(/Spot: Ouistreham Riva-Bella \[community\]/); expect(text).toMatch(/Beach faces NNE/); expect(text).toMatch(/onshore/); expect(text).toMatch(/sectors best 24h/); expect(text).not.toMatch(/FORBIDDEN/)
-    vi.stubGlobal('fetch', stubOpenMeteo({ dir: () => 225 }).fetch)
+    vi.stubGlobal('fetch', stubOpenMeteo({ dir: () => 215 }).fetch)
     const r2 = await call('spot_forecast', { spot_id: 'ouistreham-riva-bella', days: 1, start_date: '2026-10-18', hours_from: 9, hours_to: 10 })
     expect(r2.text).toMatch(/offshore/); expect(r2.text).toMatch(/FORBIDDEN sector at 00:00, 01:00/)
   })
@@ -95,7 +95,7 @@ describe('ride_windows', () => {
   })
   it('drops hours in a forbidden sector, and reports no window when too light', async () => {
     await call('submit_spot', riva)
-    vi.stubGlobal('fetch', stubOpenMeteo({ dir: () => 225 }).fetch)
+    vi.stubGlobal('fetch', stubOpenMeteo({ dir: () => 215 }).fetch)
     expect((await call('ride_windows', { spot_id: 'ouistreham-riva-bella', days: 1 })).text).toMatch(/No window/)
     expect((await call('ride_windows', { spot_id: 'ouistreham-riva-bella', days: 1, allow_offshore: true })).text).toMatch(/SW offshore/)
     vi.stubGlobal('fetch', stubOpenMeteo({ speed: () => 6 }).fetch)
@@ -109,7 +109,7 @@ describe('tides', () => {
     const { text } = await call('tides', { spot_id: 'ouistreham-riva-bella', days: 1 })
     expect(text).toMatch(/Ouistreham Riva-Bella\. Local time/); expect(text).toMatch(/HW 03:00 \(\+2 m\)/); expect(text).toMatch(/LW 09:1\d \(-2 m\)/); expect(text).toMatch(/Spot note: ride 2h around HW/)
     const f = await call('spot_forecast', { spot_id: 'ouistreham-riva-bella', days: 1, hours_from: 9, hours_to: 9 })
-    expect(f.text).toMatch(/Tides \(MODEL TIDE, UNCALIBRATED.*spot note: ride 2h around HW\):\n2026-10-18: HW 03:00/)
+    expect(f.text).toMatch(/Tides \(spot note: ride 2h around HW\):\nMODEL TIDE, UNCALIBRATED.*\n2026-10-18: HW 03:00/)
   })
   it('applies and reports a submitted tide calibration', async () => {
     await call('submit_spot', { ...riva, tide_offset_min: 50 })
@@ -120,8 +120,8 @@ describe('tides', () => {
   })
   it('says so on a lake', async () => {
     vi.stubGlobal('fetch', stubOpenMeteo({ marine: 'fail' }).fetch)
-    expect((await call('tides', { lat: 46.5, lon: 6.5 })).text).toMatch(/No tidal signal/)
-    const f = await call('spot_forecast', { lat: 46.5, lon: 6.5, days: 1, hours_from: 9, hours_to: 9 }); expect(f.text).not.toMatch(/Tides/)
+    expect((await call('tides', { lat: 46.5, lon: 6.5 })).text).toMatch(/No tide data from the marine model/)
+    const f = await call('spot_forecast', { lat: 46.5, lon: 6.5, days: 1, hours_from: 9, hours_to: 9 }); expect(f.text).not.toMatch(/HW \d/)
   })
 })
 
@@ -160,5 +160,23 @@ describe('seed cards and coastline estimate', () => {
     const r2: any = await c.callTool({ name: 'spot_info', arguments: { spot_id: 'inland-lake' } }); expect(r2.content[0].text).toMatch(/faces unknown/)
     expect(calls).toBe(1)
     await c.close()
+  })
+})
+
+describe('worldwide fixes', () => {
+  it('drops fallback copies of a model and names them', async () => {
+    vi.stubGlobal('fetch', stubOpenMeteo({ speed: (m) => (m === 'knmi_seamless' || m === 'dmi_seamless' || m === 'ecmwf_ifs' ? 12 : 15), dir: () => 20 }).fetch)
+    // make KNMI and DMI exact copies of ECMWF: same speed, gust and direction (the fixture offsets direction by model index, so override)
+    const s = stubOpenMeteo({ speed: (m) => (['knmi_seamless', 'dmi_seamless', 'ecmwf_ifs'].includes(m) ? 12 : 15) })
+    const base = s.fetch
+    vi.stubGlobal('fetch', async (url: string) => { const r = await base(url); const j: any = await r.json(); const h = j.hourly; if (h && h.wind_direction_10m_ecmwf_ifs) { for (const m of ['knmi_seamless', 'dmi_seamless']) h[`wind_direction_10m_${m}`] = h.wind_direction_10m_ecmwf_ifs } return new Response(JSON.stringify(j)) })
+    const { text } = await call('spot_forecast', { lat: 36.03, lon: -5.62, days: 1, hours_from: 9, hours_to: 9 })
+    expect(text).toMatch(/Models: AROME\/ARPEGE, ICON, ECMWF 9km, GFS, UKMO \(not available here: KNMI, DMI\)/)
+  })
+  it('calls a microtidal sea negligible instead of printing noise', async () => {
+    const s = stubOpenMeteo(); const base = s.fetch
+    vi.stubGlobal('fetch', async (url: string) => { const r = await base(url); const j: any = await r.json(); if (j.hourly?.sea_level_height_msl) j.hourly.sea_level_height_msl = j.hourly.sea_level_height_msl.map((v: number) => v * 0.05); return new Response(JSON.stringify(j)) })
+    const { text } = await call('tides', { lat: 42.91, lon: 3.05, days: 1 })
+    expect(text).toMatch(/Microtidal here \(model range 0.2 m/); expect(text).not.toMatch(/HW \d/)
   })
 })

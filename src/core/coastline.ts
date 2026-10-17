@@ -24,12 +24,14 @@ export function facingFromGeometry(lat: number, lon: number, ways: { geometry: {
     }
   }
   if (!best) return null
-  let sx = 0, sy = 0
+  let sx = 0, sy = 0, total = 0
   for (const s of segs) {
     const dd = Math.hypot((s.mx - best.p.lon) * kx, (s.my - best.p.lat) * ky)
-    if (dd <= smoothM) { sx += s.dx; sy += s.dy }   // length-weighted by construction
+    if (dd <= smoothM) { sx += s.dx; sy += s.dy; total += s.len }   // length-weighted by construction
   }
   if (!sx && !sy) return null
+  // A cove, a point or a lagoon mouth has segments pointing every way: the estimate would be a guess, so give none.
+  if (Math.hypot(sx, sy) / total < 0.8) return null
   const bearing = (Math.atan2(sx, sy) * 180 / Math.PI + 360) % 360   // direction of travel along the way
   return { facing_deg: Math.round((bearing + 90) % 360), distance_m: Math.round(best.d) }
 }

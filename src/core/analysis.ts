@@ -139,6 +139,23 @@ export function tideEvents(times: string[], level: (number | null)[], offsetMin 
   return out
 }
 
+/** Peak-to-trough range of the series, metres. */
+export function tideRange(level: (number | null)[]): number {
+  const v = level.filter((x): x is number => x != null); return v.length ? Math.round((Math.max(...v) - Math.min(...v)) * 100) / 100 : 0
+}
+
+/** Drops wiggles: keeps alternating extremes separated by at least `minRise` metres. */
+export function significantTides(ev: TideEvent[], minRise = 0.15): TideEvent[] {
+  const out: TideEvent[] = []
+  for (const e of ev) {
+    const last = out[out.length - 1]
+    if (!last) { out.push(e); continue }
+    if (last.type === e.type) { if ((e.type === 'high' && e.height > last.height) || (e.type === 'low' && e.height < last.height)) out[out.length - 1] = e; continue }
+    if (Math.abs(e.height - last.height) >= minRise) out.push(e)
+  }
+  return out
+}
+
 export function renderTides(ev: TideEvent[]): string {
   if (!ev.length) return ''
   const byDay = new Map<string, TideEvent[]>()

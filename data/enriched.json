@@ -1,0 +1,1918 @@
+{
+  "Merville-Franceville, Normandy, France": {
+    "name": "Merville-Franceville",
+    "aliases": [
+      "Franceville",
+      "Franceville-Plage",
+      "Merville-Franceville-Plage",
+      "Baie de Sallenelles"
+    ],
+    "lat": 49.2849,
+    "lon": -0.2118,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 350,
+    "sports": [
+      "kitesurf"
+    ],
+    "wind": [
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Summer afternoon thermal, typically 16-18 kn. A venturi effect from the Orne estuary can make it 10-15 kn stronger than forecast, though another guide calls the NE thermal weak, filling only on the western beaches."
+      },
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Onshore. Part of the NW-NE reference range."
+      },
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Said to be slightly steadier and gives waves."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Listed among the usable onshore/side-shore directions."
+      },
+      {
+        "sector": "SW",
+        "quality": "marginal",
+        "note": "Sources disagree. One guide calls SW the best direction (venturi in Sallenelles Bay, flat-water lagoons); another calls SE-SW offshore and gusty off the main beach. Experienced riders only, and only inside the bay."
+      },
+      {
+        "sector": "S",
+        "quality": "forbidden",
+        "note": "Offshore. Described as unsuitable."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore, gusty and unpredictable."
+      }
+    ],
+    "launch_notes": "Western end of the beach near the Orne estuary, next to the Kite-R Evolution school. Take Boulevard Wattier west to the wooden barrier that marks the kite zone. Parking at the barrier or on the access track is forbidden: park in the side streets and carry your gear along the dune path. Rig and launch at least 100 m away from the dune vegetation.",
+    "tide_notes": "Works at all tides. Low tide gives flat water in the runnels (baïnes), good for beginners and freestyle, but it can mean a 30-minute walk back to the car. Waves break on the sandbanks on the ebb and at high tide. The beach is about 7 km long and up to 200 m wide, so some sand stays dry even at high tide.",
+    "hazards": "Orne estuary and bird reserve to the west: riding is strictly prohibited in the last 300 m on the reserve side. Sandbanks and shallow water. Heavy crowding in summer, with dozens of kiters. The beach is shared with horse riders, hunters (Sept-Jan), shrimp and shellfish gatherers, swimmers and walkers. Cold water outside summer: in Feb 2020 two kiters were rescued and one had hypothermia.",
+    "rules": "Described as the only Calvados beach where kitesurfing is allowed all year. In summer (July-August) kiting is limited to a marked zone on the western side. The ornithological reserve at the western end is closed to all riding. From 16 June to 30 Sept, horses are allowed only 05:00-09:00 and after 20:00, between the Orne estuary and the marked kite zone.",
+    "season": "March-November. Riding is possible all year, with stricter rules in July-August.",
+    "sources": [
+      "https://vvanat.fr/blog/franceville-normandie-kitesurf/",
+      "https://vvanat.fr/blog/association-francevillaise-de-kitesurf/",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/franceville-normandie-france.html"
+    ]
+  },
+  "Wissant, Pas-de-Calais, France": {
+    "name": "Wissant",
+    "aliases": [
+      "Baie de Wissant",
+      "Wissant Plage"
+    ],
+    "lat": 50.88726,
+    "lon": 1.66131,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 315,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Reference direction: side-shore from the left. The region's best wave conditions, a top French high-wind spot. Works best on a falling tide. Allows a downwinder to Sangatte along the beaches and cliffs."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Side-on with waves. Similar to SW."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Side-on to onshore. Usable."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Onshore, from the Channel. Regular wind but choppier water and harder exits through the shorebreak."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Cited by surf-report as a good orientation. Side-on from the right."
+      },
+      {
+        "sector": "NE",
+        "quality": "marginal",
+        "note": "Side-shore to side-off from the right, gusty near Cap Blanc-Nez. Strong NE flow is common in the bay. Inferred from beach orientation, not confirmed by locals."
+      },
+      {
+        "sector": "S",
+        "quality": "marginal",
+        "note": "Side-offshore from the left. Gusty over the dunes and cliffs. Inferred from beach orientation."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore: drifts riders out into the Channel and its shipping lanes."
+      },
+      {
+        "sector": "ESE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore to side-off. Gusty off the land."
+      }
+    ],
+    "launch_notes": "Windsurfers mostly use the left (west) part of the bay, kiters the right. At high tide everyone gathers in front of the reinforced seafront promenade, where the beach almost disappears. The south beach (Dune d'Aval) is reserved for water sports (kite, land yacht) and swimming is banned there. The beach is narrow, so take extra care when launching and landing. Gets crowded on good days.",
+    "tide_notes": "Big tidal range, so conditions vary a lot with the tide. Waves are best at high tide, but the rip and shorebreak are also strongest then and the beach is very narrow by the promenade. SW wind with a falling tide is the classic setup. Tidal current can reach several knots and pushes riders downwind.",
+    "hazards": "Strong tidal current (one guide cites up to 11 kn), so walking back upwind is common. Rip currents and shorebreak, worst at high tide. Narrow beach and seawall at high tide. Crowds on good days. Heavy shipping traffic in the Dover Strait offshore. Breakwater stakes at Sangatte on downwinders. Wartime ordnance occasionally found on the beach: a demining operation took place in Oct 2025.",
+    "rules": "South beach (Dune d'Aval) is reserved for water sports (kitesurf, land yacht) with swimming banned. Kite zoning is enforced more strictly in high season so beach users can share the space. Check the town hall's current beach order (arrêté).",
+    "season": "Usable all year. Strongest, most reliable winds roughly September to December; March to September also cited for kitesurfing.",
+    "sources": [
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/wissant-nord-pas-de-calais-france.html",
+      "https://vvanat.fr/blog/wissant-planche-a-voile/",
+      "https://www.plages.tv/chiens/liste-wissant-62179a",
+      "https://www.surf-report.com/surf-info/wissant-s1107.html"
+    ]
+  },
+  "Berck-sur-Mer, Pas-de-Calais, France": {
+    "name": "Berck-sur-Mer (Grande Plage / Terminus)",
+    "aliases": [
+      "Berck-Plage",
+      "Berck Terminus",
+      "Berck La Grande Plage"
+    ],
+    "lat": 50.424,
+    "lon": 1.563,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 260,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Dominant wind and reference direction; side-onshore. Typical range is 12-28 kn with choppy water."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Side-onshore. Works well across the whole beach."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Straight onshore. Rides well, but at high tide there is shore break and it is harder to get out (intermediate+)."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Inside the usable S-to-N arc through W."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Inside the usable arc. Check the Fort-Mahon anemometer for northerly components."
+      },
+      {
+        "sector": "SSW",
+        "quality": "ok",
+        "note": "Inside the usable S-SW-to-N arc."
+      },
+      {
+        "sector": "S",
+        "quality": "marginal",
+        "note": "Full south is slightly side-off. Guides advise avoiding it."
+      },
+      {
+        "sector": "N",
+        "quality": "marginal",
+        "note": "Wind is disturbed by beachfront buildings. Guides advise avoiding it."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "Offshore. The local school moves to Wissant in NE wind."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "About 3 km of sandy beach from the Maritime Hospital (south) to Terminus beach (north). Main access is the Terminus car park (north, near the mussel beds) or the Saint-Nicolas car park. Northern beach is reached via Esplanade Parmentier past the Eole Club land-yacht base. In July-August, stay away from the swimming zones in front of the town centre.",
+    "tide_notes": "At low tide the sea goes out 2-3 km. Large tidal pools (baïnes) form, giving flat water for about 2.5 h around low tide, good for beginners. At high tide the water is 300-400 m from the seawall, with waves and shore break; intermediate+ in onshore wind. Currents are stronger on the falling tide. The rising tide fills in fast around the sandbanks and can cut people off.",
+    "hazards": "Bouchot mussel beds north of Berck, uncovered at low tide and marked with a yellow buoy. Waves and currents at high tide, especially on the falling tide. Fast rising tide around the sandbanks between Baie d'Authie and the main beach. Shore break at high tide in onshore wind. Summer crowds near the town centre. Baie d'Authie to the south is a confined area for experienced riders only.",
+    "rules": "Inside the 300 m coastal strip, the mayor sets the rules and speed is limited to 5 kn. In July-August, kiting is not allowed in the swimming zones in front of the town centre. Guide sources say kiting is banned in Baie d'Authie (Les Sternes) to protect a seal colony; windsurfing is allowed there.",
+    "season": "Year-round (windy coast); water is very cold in winter.",
+    "sources": [
+      "https://www.opale-kite.fr/lecole/le-spot/",
+      "https://theridery.com/pages/spot-de-kitesurf-berck-la-grande-plage",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/les-sternes-berck-nord-pas-de-calais-france.html",
+      "https://park4night.com/en/place/274795"
+    ]
+  },
+  "Hardelot, Pas-de-Calais, France": {
+    "name": "Hardelot-Plage",
+    "aliases": [
+      "Hardelot",
+      "Neufchâtel-Hardelot",
+      "Plage d'Hardelot",
+      "Base de glisse Georges Pernoud"
+    ],
+    "lat": 50.6326,
+    "lon": 1.5768,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 275,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Side-shore. Local school Kitezone lists the south sector as recommended."
+      },
+      {
+        "sector": "SSW",
+        "quality": "ok",
+        "note": "Side to side-on. Works well."
+      },
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Prevailing wind on this coast. Side-onshore. Reference direction."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Side-onshore. Reference direction."
+      },
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Onshore to side-onshore. Choppier and wavier at high tide."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Side-onshore. Usable."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Upper limit of the S to NW working range given by spot guides."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Usable depending on conditions."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Side-shore. Kitezone lists the north sector as recommended. Other guides say it depends on conditions."
+      },
+      {
+        "sector": "NNE",
+        "quality": "marginal",
+        "note": "Side-offshore. Gusty. Avoid unless experienced."
+      },
+      {
+        "sector": "SSE",
+        "quality": "marginal",
+        "note": "Side-offshore. Gusty over the dunes."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "Offshore. Do not ride."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore. Do not ride."
+      }
+    ],
+    "launch_notes": "Launch on the beach in front of the Base de glisse Georges Pernoud (seafront, Hardelot-Plage). Changing rooms and showers at the base. Schools (e.g. Kitezone) and sand-yacht clubs share the beach, so give them space and keep clear of beach users when launching or landing. The north beach (towards the Becque estuary and dunes) is also used for watersports.",
+    "tide_notes": "Large tidal range. At low tide the wide beach has baïnes (sandbar pools) with flat water over several km, the best conditions for beginners and freestyle. At high tide there is little beach, more waves and stronger current, so it gets more technical. Tidal current is moderate but real.",
+    "hazards": "Tidal currents, especially around high tide. Shore break and reduced launch space at high tide. Busy in summer with swimmers, schools and sand yachts on the beach at low tide.",
+    "rules": "In season, watersports are banned in the lifeguarded swimming zone at Plage Centrale (about 600 m long). Ride outside it and beyond the 300 m coastal strip rules. Schools run supervised zones in peak season. Check the current municipal order (Neufchâtel-Hardelot) for exact zone limits.",
+    "season": "All year. Most consistent wind from October to March. Summer works but the beach is crowded.",
+    "sources": [
+      "https://www.kitezone.fr/lecole/spots",
+      "https://www.kiteloopers.com/en/spots/kite-spot-france-hardelot-plage-plage-dhardelot",
+      "https://lets-kite.com/fr/spots/1035/hardelot?saison=kitesurf",
+      "https://www.plages.tv/detail/plage-nord-hardelot-62152"
+    ]
+  },
+  "Dunkerque Malo-les-Bains, France": {
+    "name": "Dunkerque Malo-les-Bains",
+    "aliases": [
+      "Dunkerque - Malo / Dunes de Flandre (DFC)",
+      "Malo Terminus",
+      "Plage du Terminus",
+      "Parc du Vent",
+      "Dunkerque"
+    ],
+    "lat": 51.05583,
+    "lon": 2.42407,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 340,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Reference direction. Side-onshore on the north-facing beach."
+      },
+      {
+        "sector": "NNW",
+        "quality": "best",
+        "note": "Onshore to side-onshore. Flat to choppy water."
+      },
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Onshore to side-onshore."
+      },
+      {
+        "sector": "NNE",
+        "quality": "best",
+        "note": "Side-onshore."
+      },
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Side-onshore. One end of the reference NW-NE range."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Usable. Waves build as the wind turns west."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Common and usable. Side-shore with waves for experienced riders."
+      },
+      {
+        "sector": "ENE",
+        "quality": "marginal",
+        "note": "Conditional: side-shore and gustier."
+      },
+      {
+        "sector": "E",
+        "quality": "marginal",
+        "note": "Conditional: side-shore to side-off."
+      },
+      {
+        "sector": "WSW",
+        "quality": "marginal",
+        "note": "Offshore risk. Experienced riders only, never alone."
+      },
+      {
+        "sector": "SW",
+        "quality": "marginal",
+        "note": "Offshore risk. Experienced riders only, never alone. Locals sail slalom between the Kursaal and the port in SSW-SW."
+      },
+      {
+        "sector": "SSW",
+        "quality": "forbidden",
+        "note": "Offshore and gusty. Avoid."
+      },
+      {
+        "sector": "S",
+        "quality": "forbidden",
+        "note": "Offshore, irregular wind. Avoid."
+      },
+      {
+        "sector": "SSE",
+        "quality": "forbidden",
+        "note": "Offshore. Avoid."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore. Avoid."
+      },
+      {
+        "sector": "ESE",
+        "quality": "forbidden",
+        "note": "Offshore. Avoid."
+      }
+    ],
+    "launch_notes": "Launch from the beach in front of the Station Nautique des Dunes de Flandre / base Licorne (Digue Nicolas II), next to the Parc du Vent, about 10 m from the beach. Home of the Dunkerque Flysurfing Club (DFC), which runs lessons and a kite simulator. The kite/sailing zone is the central beach along the Parc du Vent, between the Pavois and Terminus lifeguard posts. Stay out of the bathing areas at each end. The beach is shared with land yachts, cyclists and joggers.",
+    "tide_notes": "Very large tidal range (about 4.7-5.5 m springs). Low to mid tide works best: the beach dries far out, giving lots of space, and riders stand in the shallows. Avoid high tide, when the beach shrinks; wait at least 1 h after high water. Falling tide is often quoted as best. Tidal current about 1-2 kn.",
+    "hazards": "3 rocky breakwaters offshore and 1 marked wreck east of the base. Offshore drift in S-SW winds. Moderate tidal current. Busy beach (land yachts, bikes, joggers, dogs), crowded at weekends. The port of Dunkerque lies to the west.",
+    "rules": "Swimming is banned in the central kite/watersports zone along the Parc du Vent. The ends of the beach are bathing areas, with lifeguards in summer. From 1 July to 31 August, a prefectural order limits kiting to a zone 500 m west of the Terminus post, facing the Parc du Vent at the sailing base. The 'batteries' zone to the east (blockhouses, Leffrinckoucke dyke) is open all year.",
+    "season": "Rideable all year (March-November most cited). April-August is best, with a peak in June.",
+    "sources": [
+      "https://lets-kite.com/fr/spots/1097/kitesurf/dunkerque-malo-dunes-de-flandre-dfc",
+      "https://www.plages.tv/detail/plage-du-terminus-malo-les-bains-dunkerque-59140",
+      "https://www.wannakitesurf.com/spot/Europe/France/Nord_Pas_de_Calais/Dunkerque/",
+      "https://vvanat.fr/blog/kitesurf-dunkerque-malo/"
+    ]
+  },
+  "Le Crotoy, Baie de Somme, France": {
+    "name": "Le Crotoy",
+    "aliases": [
+      "Le Crotoy plage nord",
+      "Plage du Marais",
+      "Baie de Somme - Le Crotoy"
+    ],
+    "lat": 50.22836,
+    "lon": 1.61016,
+    "country": "France",
+    "water": "estuary",
+    "facing_deg": 225,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Reference direction for freeride/freestyle; most frequent wind at the spot."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Onshore, roughly parallel to beach, small shore break."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Side-shore (starboard tack), small wavelets for jumping."
+      },
+      {
+        "sector": "S",
+        "quality": "marginal",
+        "note": "Listed as usable by some guides, but local school says wind is more irregular and currents stronger."
+      },
+      {
+        "sector": "N",
+        "quality": "marginal",
+        "note": "Less advised: gusty/irregular wind and stronger currents (The Ridery)."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "Offshore, strongly discouraged."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore, strongly discouraged."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore, strongly discouraged."
+      }
+    ],
+    "launch_notes": "Launch from the north end of Le Crotoy beach (plage nord / Plage du Marais, Chemin du Marais), where the official kite zone is. A ramp along the dike gives access. Parking near the beach, paid in some seasons. At high tide the launch strip is narrow: take turns when launching. Crowded on weekends and in summer.",
+    "tide_notes": "Only rideable around high tide: about 2 h for small coefficients and up to 4 h for big ones. Best with coefficients 60-90. Below 60 the water does not come in far enough. Above 90 currents are strong and the beach floods quickly, leaving little room to launch. At low tide the sea goes out several hundred metres and you can end up stranded on the sand.",
+    "hazards": "Strong estuary currents, especially when the tide turns; the falling tide pushes riders out to sea, mainly in side winds. Very shallow water with sandbanks and hidden obstacles. Muddy bottom in places. Fast-rising tide. Crowds on weekends. Birds and seals in the nearby reserve are easily disturbed.",
+    "rules": "No board or kite sports in front of the built-up seafront, where currents are violent. Kitesurfing is banned in the Baie de Somme National Nature Reserve: do not go past the yellow buoys marking the reserve entrance. The town recommends these sports in the bay only for riders who already have training.",
+    "season": "",
+    "sources": [
+      "https://spots.universkite.fr/item/spot-de-kitesurf-le-crotoy/",
+      "https://theridery.com/pages/spot-kitesurf-baie-de-somme-le-crotoy",
+      "https://www.somme-tourisme.com/en/?p=17250",
+      "https://villeducrotoy.fr/sports/"
+    ]
+  },
+  "Cabourg, Normandy, France": {
+    "name": "Cabourg",
+    "aliases": [
+      "Cap Cabourg",
+      "Plage de Cabourg"
+    ],
+    "lat": 49.296,
+    "lon": -0.10488,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 345,
+    "sports": [
+      "kitesurf"
+    ],
+    "wind": [
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Reference direction per the local school. W to NW winds bring waves."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Between W and NW, both of which the school lists as best. W–NW winds bring waves."
+      },
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Reference direction per the local school. W to NW winds bring waves."
+      },
+      {
+        "sector": "WSW",
+        "quality": "ok",
+        "note": "Listed as working by the local school. Side-shore from the left on a beach facing roughly NNW."
+      },
+      {
+        "sector": "SW",
+        "quality": "marginal",
+        "note": "The school lists SW as working, but it is side-off on this coastline. Gusty, and it pushes you away from the beach."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Listed as working by the school (beach sessions in N wind). Close to onshore, so expect chop and shorebreak at high tide."
+      },
+      {
+        "sector": "NE",
+        "quality": "ok",
+        "note": "Fairly weak summer thermal. Mostly freeride conditions."
+      },
+      {
+        "sector": "S",
+        "quality": "forbidden",
+        "note": "Offshore. In S wind the school only runs boat-supported deep-water sessions."
+      },
+      {
+        "sector": "SSE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SSW",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Main launch is on Cabourg beach at Cap Cabourg (Avenue Durand-Morimbau, east end of the town near the Dives estuary), where Le Menhir Normandie Kite is based (FFVL-affiliated, showers and changing rooms). Stay out of the school's lesson area and keep clear of beginners.",
+    "tide_notes": "Large tidal range. At low tide, big sandbanks shelter a shallow, flat lagoon-like area that suits beginners. At high tide there is shorebreak and the groynes are a hazard.",
+    "hazards": "Groynes (épis) along the beach, especially at high tide. Shorebreak at high tide. Shallow water and sandbanks at low tide. The Dives estuary and Port-Guillaume channel are next to Cap Cabourg. The beach gets crowded in summer.",
+    "rules": "The local school describes a ZRUK (Zone Réservée Uniquement au Kitesurf) open year-round, even in summer. A spot guide reports that kiting is banned during the summer holidays outside designated areas. Check the current municipal beach-marking order and the summer bathing zones before riding.",
+    "season": "",
+    "sources": [
+      "https://en.normandie-tourisme.fr/sports-and-leisure-activities/le-menhir-normandie-kite-kitesurfing-school/",
+      "https://www.manawa.com/fr-FR/activite/france/cabourg/kitesurf/cours-de-kitesurf-a-cabourg/2540",
+      "https://vvanat.fr/blog/cabourg-spot-de-kitesurf/",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/cabourg-normandie-france.html"
+    ]
+  },
+  "Siouville, Cotentin, France": {
+    "name": "Siouville-Hague",
+    "aliases": [
+      "Siouville",
+      "Plage de Siouville-Hague",
+      "Anse de Vauville (south end)"
+    ],
+    "lat": 49.55849,
+    "lon": -1.84012,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 280,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Reference direction: southwesterly lows give the best wave-sailing conditions. The cape and rocks at the south end partly shelter the beach from S/SW, so wind can be gusty near the south end."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Cross-onshore on a west-facing beach, with good wave conditions."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Prevailing direction, onshore. Steady wind, good for jumping, but onshore with heavy shorebreak."
+      },
+      {
+        "sector": "S",
+        "quality": "marginal",
+        "note": "Side-shore, but the cape and rocks to the south shelter the spot, so wind is weaker and gustier at Siouville than further along the bay."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "ENE",
+        "quality": "forbidden",
+        "note": "Offshore. Good surfing wind, not for kiting or windsurfing."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "ESE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Main access via Cale John-Hunter (beach slipway) in Siouville. Launch outside the supervised swimming zone and keep clear of surfers from the Cotentin Surf Club. The beach runs about 11 km north to Vauville, so there is room to spread out away from the village. No windsurf rental: the local club is surf-only, so bring your own gear.",
+    "tide_notes": "Shorebreak can be very violent at low tide. Waves are softer at high tide and hollower at low tide; mid-tide is generally best for waves.",
+    "hazards": "Powerful waves and heavy shorebreak, especially at low tide; experienced riders only. Rocky outcrop at the south end of the beach. Busy with surfers.",
+    "rules": "In season, all watersports (sailing, windsurf, surf, kitesurf, kayak...) are banned inside the supervised bathing area; lifeguard hours can shift with the tide, so check the flags and the municipal bylaw posted at the lifeguard post. Motorised watercraft banned on all beaches July 1 to Sept 15, 9am to 7pm.",
+    "season": "",
+    "sources": [
+      "https://www.manche-tourism.com/outdoor/water-sport/sportive-practice/champion-windsurf/",
+      "https://en.normandie-tourisme.fr/sports-and-leisure-activities/plage-de-siouville-hague/",
+      "https://vvanat.fr/blog/cote-normande-kitesurf/"
+    ]
+  },
+  "Saint-Malo, Brittany, France": {
+    "name": "Saint-Malo – Plage du Sillon",
+    "aliases": [
+      "Le Sillon",
+      "Grande Plage du Sillon",
+      "Saint-Malo Le Sillon",
+      "Rochebonne"
+    ],
+    "lat": 48.6566,
+    "lon": -2.0046,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 330,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Reference direction, side-shore (port tack). Brings some waves."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Side-onshore."
+      },
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Side-onshore to onshore. Strong NW storms make it rough."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Onshore."
+      },
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Onshore to side-onshore."
+      },
+      {
+        "sector": "NNE",
+        "quality": "ok",
+        "note": "Side-onshore."
+      },
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Side-onshore. Summer NE thermal days."
+      },
+      {
+        "sector": "WSW",
+        "quality": "ok",
+        "note": "Usable, getting side-off. Wind disturbed by the seawall and ramparts."
+      },
+      {
+        "sector": "SW",
+        "quality": "marginal",
+        "note": "Conditional: side-offshore and gusty in the lee of the town."
+      },
+      {
+        "sector": "ENE",
+        "quality": "marginal",
+        "note": "Conditional."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore, does not work."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "S",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SSW",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Main launch in front of the Thermes Marins / surf school, in the middle of the Sillon. Park on the street, cross the seawall and walk down the stairs. Waves near Rochebonne at the east end. Share the beach with swimmers, surfers and walkers, and stay in the marked kite zone when there is one.",
+    "tide_notes": "Tidal range up to about 12 m. Best from mid to low tide: wide beach and flat water at low tide. At high tide on big coefficients the beach becomes very narrow, the marked zone disappears, and there are currents and shore break along the seawall.",
+    "hazards": "Rocky areas only visible at low tide. Rows of old wooden breakwater posts (brise-lames) on the beach. Currents and shore break near the seawall at high tide. Wind turbulence from the seawall and city ramparts. Crowded urban beach.",
+    "rules": "Kitesurf is officially allowed at Plage du Sillon and Plage de Rochebonne (Saint-Malo city beach data). In summer (about 15 June–15 Sept), kiting is reportedly banned in bathing zones and only allowed in a marked corridor about 300 m wide, kept 50 m from the seawall. July–August restrictions reportedly apply 09:00–19:00. Check the current municipal order.",
+    "season": "Mostly September to May. Best wind March–May and in winter (Dec–Jan). Summer has NE thermals but more restrictions.",
+    "sources": [
+      "https://lets-kite.com/fr/spots/1050/kitesurf/le-sillon-saint-malo-cote-d-emeraude",
+      "https://www.kitesurfy.com/kitespot/saint-malo-le-sillon",
+      "https://www.data.gouv.fr/datasets/emplacement-et-reglementations-des-plages-de-saint-malo"
+    ]
+  },
+  "Penthièvre, Quiberon, Brittany, France": {
+    "name": "Penthièvre",
+    "aliases": [
+      "Penthièvre Océan",
+      "Plage de Penthièvre",
+      "Isthme de Penthièvre",
+      "Les Palissades"
+    ],
+    "lat": 47.5463,
+    "lon": -3.1345,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 250,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Reference direction for the ocean side (Côte Sauvage) north of Fort de Penthièvre. Schools quote W at 15-30 kn."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "West-sector wind, onshore to slightly cross on the ocean beach."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "West-sector wind, onshore to slightly cross on the ocean beach."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Cross-onshore on the ocean side. Listed as a working direction by spot guides."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Cross-onshore on the ocean side."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "Offshore on the ocean beach. Use the bay-side launch instead (it works SE to NE)."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore on the ocean beach. It is the bay side's reference wind (flat, shallow water facing Carnac)."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore on the ocean beach. Use the bay side instead."
+      }
+    ],
+    "launch_notes": "Two launches about 100 m apart across the isthmus at the entrance to the Quiberon peninsula. Ocean side: the beach north of Fort de Penthièvre, for west-sector winds. Its northern part (beach accesses 10 and 11) is a take-off/landing-only zone. Bay side: 3 km sandy beach from Camping des Sables Blancs to the isthmus, for E/SE/NE winds. Parking at the isthmus. Schools use the bay side for beginners.",
+    "tide_notes": "Bay side works mainly from mid-tide to low tide: shallow and standable, sheltered from swell and current. Ocean side tide behaviour for kiting is not documented. The surf break there is reported best around high tide.",
+    "hazards": "Ocean side: exposed beach break with small to medium waves, and reefs are reported. Bay side: dike and oyster shells make it technical despite the flat water. Busy with schools in season.",
+    "rules": "Ocean side: the north zone (accesses 10-11) is a take-off/landing-only zone. Bay side: kite and other air-towed sports banned from 29 May to 11 September in front of the beach at the southern end of Camping de Penthièvre (reported dates; check the current municipal order).",
+    "season": "Year-round. Strongest and most reliable west winds are Oct-Mar, best Jan-Mar, for experienced riders. Lighter summer winds (weakest in July) suit the bay side. Schools operate Mar-Nov.",
+    "sources": [
+      "https://vvanat.fr/blog/kitesurf-golfe-du-morbihan/",
+      "https://www.ecole.kite-spirit.com/ecole-kitesurf-quiberon/",
+      "https://www.unplug-kitesurf.com/spots/penthievre-france",
+      "https://thespot2be.com/spot/les_palissades/"
+    ]
+  },
+  "La Torche, Brittany, France": {
+    "name": "La Torche",
+    "aliases": [
+      "Pointe de la Torche",
+      "Tronoën",
+      "Pors Carn (south bay, Penmarc'h)"
+    ],
+    "lat": 47.83911,
+    "lon": -4.3471,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 260,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Mainly for the left/south bay (Pors Carn), where N-NE give side-on starboard conditions."
+      },
+      {
+        "sector": "NNE",
+        "quality": "marginal",
+        "note": "Workable on the Pors Carn side only; side-off on the main beach north of the point."
+      },
+      {
+        "sector": "NE",
+        "quality": "marginal",
+        "note": "Pors Carn side only (side-on starboard); side-off to offshore on the main La Torche beach."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Side-on, works on both sides of the point."
+      },
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Dominant wind; wraps both sides of the point, side-on to side-onshore."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Side-onshore starboard on the main beach, classic wave-riding direction."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Onshore on the main beach; Pors Carn also works in W, which few local spots do."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Side-onshore on the right (north) side; frequent with strong winter storms Nov-Mar."
+      },
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Side-onshore on the right (north) side, good for waves."
+      },
+      {
+        "sector": "SSW",
+        "quality": "ok",
+        "note": "Workable on the main beach; Pors Carn is sheltered/offshore in SSW."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore (it is the classic surf wind here)."
+      },
+      {
+        "sector": "ESE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Main free car park at the point, with direct access, toilets and showers. Big launch area on the beach north (right) of the point. For Pors Carn (left/south bay), access from the Cyprès car park in Penmarc'h. Never launch or land a kite on the grass or dunes: beach only, all year round. Avoid riding solo.",
+    "tide_notes": "At high tide the beach is narrow, with shore break and little room to launch. At low tide the beach is wide with sandbanks, but the 'Méchants' rocks are exposed on the NW of Pors Carn. At Pors Carn, rising tide is preferred because of the many rocks; some rocks midway along the beach are covered at high tide.",
+    "hazards": "Powerful waves, often mast-high or more. Strong rip current running out along the point, plus baïnes and strong lateral currents. The 'Méchants' reef and its currents must be avoided. Rocky outcrop splitting the bay. The right side is for experienced wave riders only. Heavy crowds of bathers and surfers in summer.",
+    "rules": "Prefectural order: at Pors Carn kitesurf is allowed only in the yellow-buoyed channel (in season); do not ride past the end of the channel. 15 June-15 September: the right side of the point is tacitly left to surfers. Natura 2000 site: keep inside the marked boundaries.",
+    "season": "September to May; spring peak (March-May, May best); frequent strong WSW winds November-March.",
+    "sources": [
+      "https://lets-kite.com/fr/spots/1076/la-torche",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/la-torche-bretagne-france.html",
+      "https://www.onekite.com/topic/3752/bretagne-spots-autour-de-la-torche-penmarc-h"
+    ]
+  },
+  "Lacanau, Gironde, France": {
+    "name": "Lacanau Océan – Plage Sud",
+    "aliases": [
+      "Lacanau",
+      "Lacanau-Océan",
+      "Plage Sud Lacanau",
+      "Lacanau South Beach"
+    ],
+    "lat": 44.9905,
+    "lon": -1.2025,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 270,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Reference direction: side-on, often boosted by the summer thermal sea breeze."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Side-on, works well."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Side-shore along the beach; usable."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Side-onshore; choppier water and harder to get out through the shore break."
+      },
+      {
+        "sector": "W",
+        "quality": "marginal",
+        "note": "Straight onshore: messy water and hard to get out through the shore break."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Side-onshore; listed among the usable directions."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Side-shore; listed among the usable directions."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore: wind blows you out to sea, gusty air after crossing the dune and forest."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "Side-offshore to offshore; do not ride on the ocean side."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Side-offshore to offshore; do not ride on the ocean side."
+      }
+    ],
+    "launch_notes": "Launch at Plage Sud, south of the town's central lifeguarded beaches. Reach the beach over the dune on boardwalks. Rig and ride outside the swimming zones and downwind of them. Typical kites: 10-12 m², or 7-9 m² when the thermal kicks in. The lake (Moutchic/Talaris) is a separate flat-water spot with its own zone.",
+    "tide_notes": "Tidal range up to about 4 m. At high tide the waves are good but the shore break can be powerful and hard to get through, especially strapless. At low tide, sandbars and baïne channels show up and rip currents get stronger.",
+    "hazards": "Baïnes (bowls between sandbars) produce strong seaward rip currents, especially on the falling tide. Powerful shore break. Sandbars that keep moving. Some alios (hard sandstone) outcrops can damage fins. Crowded with swimmers and surfers in summer.",
+    "rules": "In summer during the day, only Plage Sud is open to kiting. Stay out of the lifeguarded swimming zones and keep downwind of them. On Lac de Lacanau, kitesurfing is only allowed on either side of the channel leading to Talaris marina (separate spot). Check the current municipal and prefecture orders on site.",
+    "season": "All year; autumn (September–November) for steady wind and swell; summer for the thermal NW breeze, with restrictions.",
+    "sources": [
+      "https://www.larive.fr/en/where-can-you-kitesurf-in-the-landes/",
+      "https://vvanat.fr/blog/windsurf-lacanau-ocean/",
+      "https://www.plages.tv/detail/plage-sud-lacanau-33680"
+    ]
+  },
+  "Hossegor, Landes, France": {
+    "name": "Hossegor – Plage Sud",
+    "aliases": [
+      "Soorts-Hossegor",
+      "Hossegor Plage Sud",
+      "La Sud"
+    ],
+    "lat": 43.6605,
+    "lon": -1.4462,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 280,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "S",
+        "quality": "marginal",
+        "note": "Usable but the wind is often irregular from the south."
+      },
+      {
+        "sector": "SSW",
+        "quality": "ok",
+        "note": "Part of the usable S-to-N-through-W window."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Common in winter: often gusty and comes with big swell."
+      },
+      {
+        "sector": "WSW",
+        "quality": "ok",
+        "note": "Onshore: big waves in winter."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Onshore. Possible, but staying clear of the surf zones is harder. Winter westerlies can be strong and gusty."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Onshore and usable."
+      },
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Reference direction. Steady NW at 18–25 kn is described as ideal."
+      },
+      {
+        "sector": "NNW",
+        "quality": "best",
+        "note": "Summer thermal sector (N to NW), usually 10–18 kn, building mid/late afternoon around 16–17h."
+      },
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Summer thermal, side-shore, light to moderate."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "East-sector winds (NE to SE) are offshore. Avoid."
+      },
+      {
+        "sector": "ENE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore. This is the surfers' best wind, not the kiters'."
+      },
+      {
+        "sector": "ESE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Main kite area is Plage Sud (south ocean beach, toward Capbreton), which has free parking and a lifeguard post. Its water is calmer than the rest of the coast, so it is a fallback spot when the sea is big. Alternative: Plage des Culs-Nus in the north, next to Les Estagnots (Seignosse), which is the recommended spot in summer. Stay clear of swimmers, walkers and the many surf schools. Windsurf beginners use Lac d'Hossegor instead (Plage du Rey sailing school, Plage des Chênes-Lièges, Plage Blanche, Plage du Parc).",
+    "tide_notes": "Shore break changes with tide and swell. The surf break at Plage Sud works mainly at low tide and not at high tide. Baïnes (sandbar troughs that create rip currents) form and change with the tide.",
+    "hazards": "Strong north-to-south longshore current with significant turbulence a few dozen metres from shore. Baïnes and rip currents. Variable shore break. Big, powerful winter swell (3 m+). Heavy crowds of surfers, surf schools and swimmers, especially in summer. Keep a fixed landmark on shore to watch your drift.",
+    "rules": "Kiting is discouraged during supervised bathing hours, especially in summer, because of crowds. One guide says a signposted kite zone exists from June to September during supervised hours (not confirmed by an official source). 2026 lifeguard season at Plage Sud: 4 Apr–25 Oct. Hours are 12:30–18:30, except 11:00–19:00 from 4 Jul to 30 Aug. No animals on the beach.",
+    "season": "Autumn to spring (Sep–May) for Plage Sud outside supervised hours, with strong W–NW fronts in winter. In summer, N–NW afternoon thermals are better used at Les Estagnots.",
+    "sources": [
+      "https://fksudouest.com/les-spots/hossegor/",
+      "https://vvanat.fr/blog/kitesurf-dans-les-landes/",
+      "https://www.hossegor.fr/activites/plage-sud-ocean/",
+      "https://www.allosurf.net/infos/surf/plage-hossegor-plage-sud-spot-30077.html"
+    ]
+  },
+  "La Tranche-sur-Mer, Vendée, France": {
+    "name": "La Tranche-sur-Mer – Plage du Phare",
+    "aliases": [
+      "Le Phare",
+      "Plage du Phare",
+      "La Tranche"
+    ],
+    "lat": 46.3419,
+    "lon": -1.46306,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 210,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Reference direction. Thermal NW sea breeze, sped up between the mainland and Île de Ré; often comes in mid-afternoon (around 15:00) from May to August."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Boards guide gives NW through W as the best range at Le Phare."
+      },
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Cross-onshore. Within the best range given by boards.co.uk."
+      },
+      {
+        "sector": "WSW",
+        "quality": "ok",
+        "note": "Onshore-ish. Usable at Le Phare. SW is reported as the best direction for the main La Tranche beach."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Onshore at Le Phare. Best direction for the main town beach (sailing school)."
+      },
+      {
+        "sector": "SSW",
+        "quality": "ok",
+        "note": "Given as the southern limit of the usable onshore range at Le Phare."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Usable, but northerly components cause an inshore wind shadow (gusty near the beach), especially at the main beach."
+      },
+      {
+        "sector": "N",
+        "quality": "marginal",
+        "note": "Northern limit of the usable range. Wind shadow inshore, gusty."
+      },
+      {
+        "sector": "SE",
+        "quality": "marginal",
+        "note": "Rare. Sideshore-to-side-off at Le Phare, moderate and gusty."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Summer kite zone at Plage du Phare is in front of the ruined bunker to the west. Beyond it, yellow buoys mark shallows on the point. Free parking at Impasse de la Youte, with beach accesses 146/147. Windsurf beginners usually use the main La Tranche beach (sailing school, sandy bottom, rescue boats). Le Phare is for experienced riders.",
+    "tide_notes": "Le Phare works best from mid-tide to high water, when the beach gets narrow. Near low tide the rocky shelf is exposed or shallow. At high tide with big coefficients, shorebreak is powerful and stronger currents make entry and exit hazardous. The main La Tranche beach works at any tide.",
+    "hazards": "Rocky shelf under the break and rocks around the point (marked by yellow buoys). Shorebreak and strong currents at high tide, plus baïnes. Lobster-pot lines and large jellyfish. With swell, the spot becomes a technically demanding wave spot.",
+    "rules": "Kitesurf May–Sept: allowed only at Plage du Phare (designated zone). Off-season: allowed everywhere except Plage de la Belle Henriette (nature reserve). Lifeguards on Plage du Phare in summer; keep clear of the bathing area.",
+    "season": "May–September (thermal NW sea breeze, mid-May to end of August); autumn and winter for frontal SW–NW winds",
+    "sources": [
+      "https://boards.co.uk/travel/world-travel/la-tranche-sur-mer-vendee-france.html",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/le-phare-pays-de-la-loire-france.html",
+      "https://vvanat.fr/blog/kitesurf-au-phare-de-la-tranche-sur-mer/",
+      "https://bord-de-mer.com/?p=9566"
+    ]
+  },
+  "Leucate La Franqui, France": {
+    "name": "Leucate La Franqui (Les Coussoules)",
+    "aliases": [
+      "La Franqui",
+      "Les Coussoules",
+      "Leucate - La Franqui - Les Coussoules"
+    ],
+    "lat": 42.9382,
+    "lon": 3.03858,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 100,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Tramontane veering north is side-shore. Flat to choppy water."
+      },
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Tramontane, the reference wind. It blows cross-offshore and gusty, often 25-40+ kn. Flat water and chop for bump & jump, freeride and freestyle. For experienced riders only."
+      },
+      {
+        "sector": "WNW",
+        "quality": "marginal",
+        "note": "The Tramontane gets more offshore and gusty here. Drift risk out to sea."
+      },
+      {
+        "sector": "W",
+        "quality": "forbidden",
+        "note": "Straight offshore."
+      },
+      {
+        "sector": "NE",
+        "quality": "ok",
+        "note": "Side-onshore."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "Onshore. Waves build and tend to dump on the beach."
+      },
+      {
+        "sector": "SE",
+        "quality": "ok",
+        "note": "Marin: humid onshore wind, mostly in summer. Gives surfable waves and a dumping shore break."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Side-onshore. Waves tend to dump on the beach."
+      }
+    ],
+    "launch_notes": "Park next to Camping des Coussoules / Domaine La Franqui. Walk about 300 m along the beach to the kite zone in front of the (old) lifeguard tower. The launch area is secured by the local association (KSL) and shared by independent riders and the many schools. The northern part toward Le Goulet is for windsurfers only.",
+    "tide_notes": "Mediterranean: tide is negligible and the spot does not depend on it.",
+    "hazards": "Cross-offshore Tramontane is strong and gusty and can push you out to sea. If you break gear or the wind drops, you drift offshore. When the wind turns onshore, a dumping shore break forms. The beach gets busy with schools and events such as the Mondial du Vent in April. In the nearby lagoon, oyster beds are marked by wooden posts.",
+    "rules": "During the supervised summer season the first 300 m from shore is the bathing band. Kites and windsurfs must cross it only through the marked nautical channel and ride beyond it. Local beach marking is set by municipal orders (e.g. arrêté n°32-2010 on beach marking). Le Goulet area is reserved for windsurf.",
+    "season": "March-April and July-October (Tramontane most consistent in spring); rideable year-round",
+    "sources": [
+      "https://www.ultimatefrance.com/kitesurfing/south-france/leucate-la-franqui",
+      "https://www.ultimatefrance.com/?p=5582",
+      "http://en.wannakitesurf.com/spot/Europe/France/Languedoc_Roussillon/La_Franqui/"
+    ]
+  },
+  "Leucate Plage, France": {
+    "name": "Leucate Plage (Les Pilotis / Le Mouret)",
+    "aliases": [
+      "Les Pilotis",
+      "Le Mouret",
+      "Leucate-Plage"
+    ],
+    "lat": 42.9006,
+    "lon": 3.0511,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 100,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "forbidden",
+        "note": "Tramontane, the dominant local wind (often 300+ days/yr), blows offshore here: flat water and fast runs per the tourist office, but it is strong and gusty and pushes riders out to sea. Experienced riders only, with rescue cover."
+      },
+      {
+        "sector": "N",
+        "quality": "forbidden",
+        "note": "Offshore or cross-offshore with Tramontane gusts."
+      },
+      {
+        "sector": "WNW",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SE",
+        "quality": "best",
+        "note": "Marin, onshore: regular moderate thermal wind in summer, waves in the off-season. Suits bump & jump."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Side-shore. Lifts waves on this stretch of coast."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "Onshore, sea state builds."
+      }
+    ],
+    "launch_notes": "Sandy sea beach at Les Pilotis / Le Mouret, between Leucate Plage and the oyster centre. Beach clubs on site. Motorhome parking at Aire de Mouret. Le Mouret is a protected natural beach: respect bathers and keep the beach clear.",
+    "tide_notes": "Mediterranean: tide is negligible. Water level changes with wind (storm surge in Marin, lower water in Tramontane).",
+    "hazards": "Offshore Tramontane: strong gusts and drift out to sea. Shore break and waves in onshore wind. Water stays shallow for a short distance from shore. Bathers in summer.",
+    "rules": "",
+    "season": "Spring and autumn for the strongest wind; summer for the thermal Marin (SE).",
+    "sources": [
+      "https://en.tourisme-leucate.com/discover/riding-in-leucate/leucate-top-spots/",
+      "https://www.ultimatefrance.com/?p=5582",
+      "https://vvanat.fr/blog/planche-a-voile-port-leucate/"
+    ]
+  },
+  "Gruissan, Aude, France": {
+    "name": "Gruissan",
+    "aliases": [
+      "Plage des Chalets",
+      "La Vieille Nouvelle",
+      "Gruissan Plage"
+    ],
+    "lat": 43.08612,
+    "lon": 3.0915,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 120,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Tramontane, the dominant wind, Apr-Oct in 3-6 day spells. Offshore to side-offshore: flat, glassy water and long speed runs. Gusty near the Chalets buildings, steadier past the dike towards Vieille Nouvelle. Experienced riders only."
+      },
+      {
+        "sector": "WNW",
+        "quality": "marginal",
+        "note": "Tramontane can swing to straight offshore. Gusty, high drift risk."
+      },
+      {
+        "sector": "W",
+        "quality": "forbidden",
+        "note": "Straight offshore at a SE-facing beach (estimated from the coast orientation)."
+      },
+      {
+        "sector": "NNE",
+        "quality": "ok",
+        "note": "Cross-shore, lets you get back to the beach on either tack."
+      },
+      {
+        "sector": "SSW",
+        "quality": "ok",
+        "note": "Cross-shore, lets you get back to the beach on either tack."
+      },
+      {
+        "sector": "SE",
+        "quality": "ok",
+        "note": "Marin: onshore, brings waves, good for freeride."
+      }
+    ],
+    "launch_notes": "Two sea launches. Plage des Chalets (Pôle Mer / Akila school at the beach entrance, Défi Wind venue). La Vieille Nouvelle, south of the Chalets past the dike: the reference Tramontane spot, runs of 10+ km towards Port-la-Nouvelle, wind stronger and steadier there. Driving onto the Vieille Nouvelle beach is banned (reported €1,500 fine): access on foot from the Chalets or via the canal. Lagoon options: Étang de Mateille, La Nautique, Grazel.",
+    "tide_notes": "Mediterranean, tide is negligible.",
+    "hazards": "Offshore Tramontane: risk of drifting out to sea, and the wind is gusty and turbulent at the Chalets because of the buildings. Getting overpowered on strong days (wind can gain 10+ kn between Gruissan and Port-la-Nouvelle). Vieille Nouvelle has no lifeguards. Waves in Marin. At La Nautique lagoon: stone blocks and broken tiles on the bottom.",
+    "rules": "In summer, launching from the Plage des Chalets is banned because of the swimming zone: launch from the marked channels and go beyond the 300 m strip. No vehicles on the Vieille Nouvelle beach.",
+    "season": "April to October (Tramontane season). Wind more than 300 days a year.",
+    "sources": [
+      "https://srokacompany.com/en/blogs/news/wingfoil-destination-in-gruissan",
+      "https://vvanat.fr/blog/zone-kitesurf-gruissan/",
+      "https://holfuy.com/en/weather/1135"
+    ]
+  },
+  "Port-la-Nouvelle, Aude, France": {
+    "name": "Port-la-Nouvelle – Plage Sud",
+    "aliases": [
+      "Plage Sud de Port-la-Nouvelle",
+      "Port la Nouvelle"
+    ],
+    "lat": 43.005,
+    "lon": 3.051,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 110,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "SE",
+        "quality": "best",
+        "note": "Marin: onshore to cross-onshore, builds a medium to powerful beach break at Plage Sud. Waves are cleaner north of the breakwaters, but you have to cross the harbour channel to get there."
+      },
+      {
+        "sector": "ESE",
+        "quality": "ok",
+        "note": "Marin variant, onshore with beach break."
+      },
+      {
+        "sector": "NE",
+        "quality": "ok",
+        "note": "Occasional NE thermal between Gruissan and La Franqui, usually around 15 kn."
+      },
+      {
+        "sector": "NW",
+        "quality": "forbidden",
+        "note": "Tramontane: offshore here, flat water but it pushes you out to sea. Guides say experienced riders only. Unsafe without rescue; ride the Etang de La Palme instead (onshore there)."
+      },
+      {
+        "sector": "WNW",
+        "quality": "forbidden",
+        "note": "Offshore at the sea beach."
+      }
+    ],
+    "launch_notes": "Plage Sud, south of the harbour jetties. Sandy beach with parking. Usually much less crowded than nearby spots (Leucate, Gruissan).",
+    "tide_notes": "Mediterranean, tidal range negligible. Conditions depend on wind and swell, not tide.",
+    "hazards": "Medium to powerful shore break in Marin. Harbour channel and breakwaters at the north end of the beach, with commercial port traffic. Offshore Tramontane (NW) carries riders out to sea.",
+    "rules": "",
+    "season": "",
+    "sources": [
+      "https://vvanat.fr/blog/port-la-nouvelle-le-rouet-windsurf/",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/port-la-nouvelle-occitanie-pyrenees-mediterranee-france.html"
+    ]
+  },
+  "Almanarre, Hyères, France": {
+    "name": "L'Almanarre",
+    "aliases": [
+      "Almanarre",
+      "Plage de l'Almanarre",
+      "Route du Sel",
+      "Presqu'île de Giens - Almanarre"
+    ],
+    "lat": 43.065,
+    "lon": 6.132,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 250,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Mistral blows cross-onshore from the right, often Force 6-9. It is usually a little weaker here than further south. Gusty, with choppy water and closing-out waves that suit jumping more than wave riding."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Mistral sector. Cross-onshore, powerful and gusty, with waves breaking on a small reef upwind."
+      },
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Onshore to cross-onshore. A reference direction, with choppy water and waves."
+      },
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Libeccio, up to about 20 kn. A reference direction, cross-onshore from the left."
+      },
+      {
+        "sector": "NNW",
+        "quality": "marginal",
+        "note": "Northerly Mistral turns side-shore to side-off from the right, so it gets gustier near the beach."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore for this west-facing beach. Some guides describe flat, glassy water for experienced riders who can go upwind, but drifting out to sea is a real risk. Not suitable for most riders."
+      },
+      {
+        "sector": "SE",
+        "quality": "marginal",
+        "note": "Some guides list it as usable, but it is side-off on a west-facing beach. Experienced riders only."
+      }
+    ],
+    "launch_notes": "Main kite zone: Route du Sel, between beach accesses 16 and 21. In summer it is marked by wooden posts with FFVL flags. The beach is narrow (about 150 m) with the road right behind it, so take off and land carefully and do not rig on the road. The water gets deep quickly. Quieter alternatives on the same beach: La Madrague (shallower, smaller waves) and behind Camping International, both with buoyed kite zones in summer. A welcome point with a beach marshal runs in July and August.",
+    "tide_notes": "Mediterranean, almost no tide; it does not affect sessions.",
+    "hazards": "Narrow beach with a road just behind, so launching and landing are risky. Strong, gusty Mistral. The water gets deep quickly. Waves close out in Mistral. There are rocks to the right of the launch. Crowded on the water and in the car parks when the wind is good, and cars at the car parks get broken into.",
+    "rules": "Kitesurfing is allowed only in the designated zones (Almanarre between accesses 16 and 21, plus two other designated zones). Riding is forbidden inside the 300 m strip from shore except in the marked channels, which are in place from April to October. Stricter rules apply from 15 June to 15 September, when the Route du Sel is open and summer zones are buoyed. A beach marshal and municipal police on jet-ski patrol in summer and can fine riders who break the rules.",
+    "season": "October to April for the most wind (Mistral). Summer works too, but with more restrictions and crowds.",
+    "sources": [
+      "https://www.ultimatefrance.com/kitesurfing/south-france/almanarre",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/l-almanarre-hyeres-provence-alpes-cote-d-azur-france.html",
+      "https://vvanat.fr/blog/kitesurf-almanarre-spot-carte/",
+      "https://hyeres.fr/wp-content/uploads/2026/07/regles_bonnes_pratique_kite_hyeres_fr_eng.pdf"
+    ]
+  },
+  "Beauduc, Camargue, France": {
+    "name": "Beauduc",
+    "aliases": [
+      "Plage de Beauduc",
+      "Plage de la Comtesse",
+      "Golfe de Beauduc"
+    ],
+    "lat": 43.39943,
+    "lon": 4.58802,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": null,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Mistral is the reference wind here: cross-shore, flat to slightly choppy water, often strong and not too gusty over the flat salt marshes. Guides say about 15 kn is ideal, but winter Mistral can reach 60 kn."
+      },
+      {
+        "sector": "NNW",
+        "quality": "best",
+        "note": "Mistral/Tramontane sector, cross-shore. Listed as a main direction on kiteforum. Can build small waves when strong."
+      },
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Mistral/Tramontane, cross-shore, regularly 25-30 kn. The right-hand side of the beach is preferred by windsurfers in side-shore Mistral."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Listed among the good directions. The U-shaped bay keeps it rideable."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Reliable summer thermal, side-shore to side-on, good for learning. The beach can flood in strong SW."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Side-on, rideable. Recommended for learners together with SW."
+      },
+      {
+        "sector": "SE",
+        "quality": "marginal",
+        "note": "Sources disagree: one guide calls SE offshore and dangerous (schools move north), another lists it as a usable wind. Check on site."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Straight easterly is described as the only fully offshore wind. Do not ride."
+      }
+    ],
+    "launch_notes": "Kites launch and land on the right-hand part of the beach (Plage de la Comtesse), which is set aside for kites and other sail sports. Kitesurfers use the left side in onshore winds, where the water is deeper. Shallow water for about 100 m. Huge sand area with no walk from parking. No water, toilets or shops except a small snack bar in summer. Take your waste back to town.",
+    "tide_notes": "Mediterranean, so tide is negligible. Strong SW wind and storm surge can flood the low-lying beach and the parking area.",
+    "hazards": "Weever fish (vives) buried in the sand, stings can go through soft booties. Very remote, with weak or no phone signal, so rescue is slow; carry a first-aid kit. Cars can sink in soft sand. Beach floods in strong SW. Offshore drift in E/SE winds. Crowded in summer. Mosquitoes.",
+    "rules": "Protected natural site (communes of Arles and Saintes-Maries). Arles municipal order of 27/03/2014 and prefectoral order of 30/09/2013: Plage de la Comtesse is reserved for kites and sail sports, and the southern part for swimming and fishing. Motor vehicles and land sail sports are banned on the public maritime land of the point from 1 April to 30 September. Camping banned since 2018, dunes off-limits. Track limited to vehicles about 2.0-2.1 m wide; quads, motorbikes and campervans banned.",
+    "season": "Year-round. Best April-October, with June-July the peak (thermals and moderate Mistral). Strong Mistral in winter.",
+    "sources": [
+      "https://ultimatefrance.com/kitesurfing/south-france/beauduc",
+      "https://vvanat.fr/blog/beauduc-kitesurf-dechets-reglementation/",
+      "https://vvanat.fr/blog/spot-de-windsurf-beauduc-acces/",
+      "https://se.kiteforum.com/landkite/spot/beauduc"
+    ]
+  },
+  "Saint-Cyprien, Pyrénées-Orientales, France": {
+    "name": "Saint-Cyprien – Plage Nord",
+    "aliases": [
+      "Saint-Cyprien Plage",
+      "St Cyprien North Beach",
+      "Plage de l'Amourette"
+    ],
+    "lat": 42.64078,
+    "lon": 3.03544,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 90,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "forbidden",
+        "note": "Tramontane, the dominant local wind. It blows offshore here because the beach faces east, and it is often strong and gusty."
+      },
+      {
+        "sector": "W",
+        "quality": "forbidden",
+        "note": "Offshore on an east-facing beach."
+      },
+      {
+        "sector": "N",
+        "quality": "marginal",
+        "note": "Side-shore to side-off along a north-south coastline. Likely gusty."
+      },
+      {
+        "sector": "SE",
+        "quality": "ok",
+        "note": "Marin, the onshore sea wind. Sources do not rate it as best or ok, so this rating is inferred from the beach orientation."
+      }
+    ],
+    "launch_notes": "Launch from Plage Nord (Boulevard Desnoyer). It has one marked channel for windsurfing and a separate one for kitesurfing, so use the kite channel to get in and out. The town and the local association have put signs across the whole practice area. Two water-sports clubs, including CBCM Boarder Club at 75 Bd Desnoyer, give lessons and rent gear.",
+    "tide_notes": "Mediterranean with very little tide. Tide has almost no effect on sessions.",
+    "hazards": "Swimmers and lifeguard zones on the beach in summer. Strong, gusty tramontane blows offshore. The harbour is to the south of Plage Nord.",
+    "rules": "Use the marked kite and windsurf channels. Lifeguard station no. 1 is on the beach. Dogs are not allowed on the beach. Parking is paid in July and August. I did not find the text of the municipal order.",
+    "season": "April to October (tourist office).",
+    "sources": [
+      "https://en.tourisme-saint-cyprien.com/activities/water-sports/go-kitesurfing/",
+      "https://www.tourisme-pyreneesorientales.com/plage-nord/saint-cyprien/loilar066v50qx3q",
+      "https://en.tourisme-saint-cyprien.com/saint-cyprien-the-destination/turning-the-beach-at-saint-cyprien/north-beach/",
+      "https://vvanat.fr/blog/spot-de-kitesurf-autour-de-perpignan/"
+    ]
+  },
+  "Carro, Martigues, France": {
+    "name": "Carro",
+    "aliases": [
+      "Plage de Carro",
+      "Pointe de Carro",
+      "Les Ragues"
+    ],
+    "lat": 43.33153,
+    "lon": 5.04337,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 225,
+    "sports": [
+      "windsurf",
+      "kitesurf"
+    ],
+    "wind": [
+      {
+        "sector": "SE",
+        "quality": "best",
+        "note": "Cross-shore from the left; biggest waves (1.5-3 m) but choppy. Reference wave-riding direction."
+      },
+      {
+        "sector": "SSE",
+        "quality": "best",
+        "note": "S/SE winds give the classic wave sessions."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Reported as working with swell."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "Usable, but easterlies can blow out the waves."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Listed as a working direction; often lighter."
+      },
+      {
+        "sector": "NW",
+        "quality": "marginal",
+        "note": "Mistral: cross-off from the right, clean reef-break waves, but there is a risk of being blown offshore. Experts only, and only if you can go upwind well."
+      },
+      {
+        "sector": "N",
+        "quality": "forbidden",
+        "note": "Northerly Mistral is offshore and flattens the waves; guides suggest La Cabane, about 500 m west, instead."
+      }
+    ],
+    "launch_notes": "No real beach at the wave spot: you launch from a rocky shelf on slippery slabs near Pointe de Carro. Large car parks on Rue des Ragues on the way out to the point. Advanced riders only. Kiting is described as tricky or impractical because of the rocky launch and landing. Equipment theft is reported, so do not leave gear unattended.",
+    "tide_notes": "",
+    "hazards": "Rocky reef and abrasive bottom with underwater holes, mussel-covered rocks and sea urchins, strong currents, heavy shore break, waves up to about 2 m, a dike/jetty near the port, and a risk of drifting offshore in Mistral.",
+    "rules": "",
+    "season": "Year-round; often windy (Mistral and SE storms), and autumn to spring brings the most wave days.",
+    "sources": [
+      "https://www.ultimatefrance.com/kitesurfing/south-france/carro",
+      "https://vvanat.fr/blog/carro-windsurf-secteur/",
+      "https://provence-alpes-cotedazur.com/que-faire/detente-et-loisirs/toutes-les-activites-detente-et-loisirs/spot-de-voile-de-carro-martigues-fr-4732872/",
+      "https://waterwind.it/new/en/windsurfing/spots/spots-reviews/262-france/1120-carro-france.html"
+    ]
+  },
+  "Tarifa Los Lances, Spain": {
+    "name": "Tarifa Los Lances",
+    "aliases": [
+      "Playa de Los Lances",
+      "Los Lances Norte",
+      "Los Lances Sur",
+      "Rio Jara"
+    ],
+    "lat": 36.0355,
+    "lon": -5.62946,
+    "country": "Spain",
+    "water": "sea",
+    "facing_deg": 220,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "E",
+        "quality": "best",
+        "note": "Levante: strong, warm, gusty; side-off from the left at Los Lances. Most popular kite wind here, but drift risk out to sea; rescue boat service operates in Levante. Medium/small kites."
+      },
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Poniente: steady, cooler, side-on/onshore from the right. Wide beach makes it easy to find space. Medium/large kites."
+      }
+    ],
+    "launch_notes": "7+ km sandy beach with many access points and car parks along the beach road (Rio Jara, Football Field, Los Carriles, others near town). Rio Jara area is the main launch in Levante. In summer use only the marked kite zones; respect school and swimmer zones. Area north of the kite zone up to La Peña is reserved for windsurfing. Arrive early in high season.",
+    "tide_notes": "Rideable at all tide stages.",
+    "hazards": "Levante is gusty and side-off, with drift risk out to sea. Shore break, especially with swell. Crowded, sometimes hectic, mostly in Levante. Wind is stronger near Tarifa town. Protected lagoon (La Charca) halfway along the beach: riding inside the staked area is forbidden.",
+    "rules": "Marked zones (yellow buoys) separate swimmers, kite schools and freeriders in summer; strictly enforced in summer, more relaxed in winter. Kiting in the protected lagoon is forbidden and can be fined.",
+    "season": "March-September (windiest); rideable all year",
+    "sources": [
+      "https://kitefuntarifa.com/en/kitesurf-spots-tarifa/kitesurf-spot-los-lances.html",
+      "https://www.iksurfmag.com/travel-guides/europe/spain/tarifa",
+      "https://andalucia.com/tarifa/kitesurf/practice-areas",
+      "https://en.wikipedia.org/wiki/Playa_de_Los_Lances"
+    ]
+  },
+  "Tarifa Valdevaqueros, Spain": {
+    "name": "Tarifa Valdevaqueros",
+    "aliases": [
+      "Valdevaqueros",
+      "Playa de Valdevaqueros",
+      "Valdevaqueros Tarifa"
+    ],
+    "lat": 36.06722,
+    "lon": -5.67806,
+    "country": "Spain",
+    "water": "sea",
+    "facing_deg": 205,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "E",
+        "quality": "best",
+        "note": "Levante is the reference wind here, side-offshore, often strong and gusty, so small to medium kites. Outside summer it is called the safest Tarifa spot in Levante because Punta Paloma limits the risk of drifting out to sea."
+      },
+      {
+        "sector": "ENE",
+        "quality": "marginal",
+        "note": "Levante turning more offshore. Risk of drifting out. 'If no-one else is out in Levante, don't even think about it.'"
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Poniente: the easiest wind, lighter, needs bigger kites. Los Lances is usually preferred in Poniente because it has more space. Summer thermal effect around midday on warm days."
+      },
+      {
+        "sector": "WSW",
+        "quality": "ok",
+        "note": "Poniente/thermal side-onshore. Usable with large kites (12-15 m) on light days."
+      }
+    ],
+    "launch_notes": "The summer kite zone is the southern part of the beach, in front of Bibo bar. The northern part, up to the dunes, is for windsurfers. Respect the marked kite, windsurf and swimmer zones (yellow buoys). Access is by exits from the N-340. Parking fills up quickly in summer.",
+    "tide_notes": "At high tide a small lagoon fills at the river mouth and gives flat water for tricks. No other tide guidance was found in the sources.",
+    "hazards": "Rocks on the beach and underwater rocks at the southern end, inside the summer kite zone. The zone is narrow and very crowded in summer. Levante is side-offshore and can carry riders out to sea. Gusty, very strong Levante days.",
+    "rules": "Kite and windsurf zones are strictly enforced in summer when the beaches are crowded. Schools give this period as about 15 June to 15 September. Swimmer areas are marked by yellow buoys. Rules are more relaxed in winter.",
+    "season": "All year. Spring and autumn are best for Levante and space. Summer has reliable thermals but restricted, crowded zones.",
+    "sources": [
+      "https://kitefuntarifa.com/en/kitesurf-spots-tarifa/kitesurf-spot-valdevaqueros.html",
+      "https://kitefuntarifa.com/en/blog/guide-kitesurf-spots-winds-tarifa.html",
+      "https://andalucia.com/tarifa/kitesurf/practice-areas",
+      "https://en.wikipedia.org/wiki/Valdevaqueros"
+    ]
+  },
+  "El Médano, Tenerife, Spain": {
+    "name": "El Médano – Playa Sur (Leocadio Machado)",
+    "aliases": [
+      "El Medano",
+      "Bahía de El Médano",
+      "Playa Sur",
+      "Playa del Médano",
+      "Playa Leocadio Machado"
+    ],
+    "lat": 28.04305,
+    "lon": -16.53923,
+    "country": "Spain",
+    "water": "sea",
+    "facing_deg": 130,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Reference trade wind (alisios), side/cross-onshore from the left. Funnelled and strengthened by the island relief. Typically 16-25 kn, strongest in Jul-Aug."
+      },
+      {
+        "sector": "ENE",
+        "quality": "best",
+        "note": "Prevailing direction in the stats (73-89°). Cross-onshore from the left."
+      },
+      {
+        "sector": "NNE",
+        "quality": "ok",
+        "note": "Usable trade-wind variant. Gusty close to the shore, especially near the northern jetty."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "The tourist board lists N and NE as the good directions, mainly in summer. It turns more side-shore, so expect gusts near the beach."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "Onshore-leaning. Usable, more chop."
+      },
+      {
+        "sector": "NW",
+        "quality": "forbidden",
+        "note": "Offshore given the SE-facing beach (inferred from orientation, not stated in guides)."
+      },
+      {
+        "sector": "WNW",
+        "quality": "forbidden",
+        "note": "Offshore given the SE-facing beach (inferred from orientation)."
+      },
+      {
+        "sector": "W",
+        "quality": "forbidden",
+        "note": "Offshore given the SE-facing beach (inferred from orientation)."
+      }
+    ],
+    "launch_notes": "Sandy beach that shelves slowly into deep water. A dedicated kite set-up zone is on the beach. Kiters use the southern part of the bay, downwind of the windsurfers, and launch/land downwind (leeward) of the bunker. Windsurfers stay further upwind (north). Schools, rentals and gear storage containers are on the seafront.",
+    "tide_notes": "Guides say it works at any tide. Watch out at low tide for exposed rocks just off and to the right of the launch, and around El Cabezo (the 'Godzilla' rock).",
+    "hazards": "Rocky shore downwind with very few places to land, so don't drift past the bay. Gusty wind close inshore. Shore break, waves 1-2 m. Strong currents and swell outside the bay, where riding is not advised. Current near the northern jetty. Sand and volcanic reef bottom, with sea urchins on the rocky slabs at El Cabezo. The spot gets crowded with windsurfers, kiters and schools. Lifeguards on duty.",
+    "rules": "Kite and windsurf zones are separate: kites in the south of the bay, windsurfers upwind. Montaña Roja (south end) is a Special Nature Reserve. Its specific kite restrictions were not confirmed.",
+    "season": "All year round thanks to the trade winds. Strongest Jun-Sep, especially Jul-Aug.",
+    "sources": [
+      "https://www.hellocanaryislands.com/kitesurfing/tenerife/kitesurf-on-el-medano-beach/",
+      "https://www.surf-magazin.de/en/spots-and-areas/international/spain/el-medano-el-cabezo-and-co-the-best-windsurfing-spots-on-tenerife/",
+      "https://web.kite-and-windsurfing-guide.com/en/spots/kiteboarding-windsurfing-sup/bahia-de-el-medano-playa-sur-tenerife-islas-canarias.html",
+      "https://wannakitesurf.com/spot/Europe/Canary/Tenerife/El_Medano_-_South_Beach/"
+    ]
+  },
+  "Pozo Izquierdo, Gran Canaria, Spain": {
+    "name": "Pozo Izquierdo",
+    "aliases": [
+      "Pozo",
+      "El Arenal",
+      "Playa de Pozo Izquierdo"
+    ],
+    "lat": 27.82178,
+    "lon": -15.42335,
+    "country": "Spain",
+    "water": "sea",
+    "facing_deg": 110,
+    "sports": [
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Reference trade wind (alisio). Cross-onshore from the left. Funnelled by the island's relief, it is often very strong in summer (sometimes up to ~50 kn). Makes downwind wave riding technical."
+      },
+      {
+        "sector": "NNE",
+        "quality": "ok",
+        "note": "Northerly variant of the trade wind; usable but less established than NE."
+      },
+      {
+        "sector": "ENE",
+        "quality": "ok",
+        "note": "Usable trade wind, more onshore."
+      },
+      {
+        "sector": "E",
+        "quality": "marginal",
+        "note": "Winter trade wind shifts east: lighter, less funnelled at Pozo. Southern spots (Bahía Feliz, Playa del Águila) are often better then."
+      },
+      {
+        "sector": "W",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Launch from the main beach, El Arenal, in front of the Centro Internacional de Windsurfing (car parks, shops, schools). The beach is unofficially reserved for windsurfers. Entry and exit over loose dark lava boulders, so booties are recommended. Swimmers belong in the sheltered Playa del Ribanzo cove, behind the jetties.",
+    "tide_notes": "At high tide the wave breaks directly on the rocky shore, which makes entry and exit tricky and risks gear damage. At low tide the water is often choppy and messier without swell. With an Atlantic swell the waves can get big.",
+    "hazards": "Loose lava boulders at the water's edge; shorebreak on rocks at high tide; very strong, gusty wind; big waves when swell meets wind. Expert spot. Wave riders and PWA events crowd the water in summer. Don't swim beyond the Ribanzo jetties: risk of being hit by a windsurfer.",
+    "rules": "Kitesurfing is reported as prohibited in Pozo Izquierdo bay; kiters use Salinas de Tenefé (Pozo south) instead. Venue of the PWA Windsurf World Cup (usually July–August), when the water is reserved for the event.",
+    "season": "Year-round, best May–September (strongest trade winds June–August); calmer, more easterly winds in winter.",
+    "sources": [
+      "https://www.hellocanaryislands.com/windsurfing/gran-canaria/windsurfing-at-pozo-izquierdo",
+      "https://www.surf-magazin.de/en/spots-and-areas/international/spain/pozo-vargas-and-co-the-best-windsurfing-spots-on-gran-canaria/",
+      "https://kitejungle.com/kite-places/spain/salinas-tenefe-pozo-izquierdo",
+      "https://www.gran-canaria-info.com/en/blog/gran-canaria-beaches-pozo-izquierdo-beach"
+    ]
+  }
+}
