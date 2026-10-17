@@ -1,0 +1,46 @@
+{
+  "id": "garda-windsurf",
+  "q": "Lohnt sich morgen Windsurfen in Torbole am Gardasee? 80 kg, Segel 5,3 und 6,5. Wann Pelèr, wann Ora, welches Segel?",
+  "sans": "**Kurz gesagt:** Eher grenzwertig. Die einzige echte Chance gibt es morgen früh mit dem Pelèr, und auch die ist nicht sicher. Eine Ora wird es morgen praktisch nicht geben. Nimm das **6,5**.\n\n*(Ich antworte auf Französisch, weil meine Einstellungen das so verlangen.)*\n\n## Prévision pour Torbole, dimanche 18/10\n\nLes modèles ne sont pas d'accord entre eux :\n\n| Modèle | Pelèr (vent du N) le matin | Après-midi |\n|---|---|---|\n| **AROME HD** (1,3 km, le meilleur pour le relief du lac) | **10–13 kn**, rafales 14–18 kn, de **05h à 10h** env. | Vent du N qui reste à 8–9 kn, aucune Ora |\n| **ICON-CH1** (MeteoSwiss) | Arrive plus tard, **5–7 kn** avec rafales à 12–15 kn entre 09h et 11h | pas de données |\n| **ICON-D2** | Presque pas de vent (2–4 kn) | 3–4 kn |\n\n## Pelèr\n- **Créneau : environ 07h–10h**, d'après AROME. Il faiblit dès 11h.\n- L'heure exacte compte peu : il faut surtout savoir s'il va vraiment s'établir. ICON-D2 ne le voit presque pas et ICON-CH1 le voit faible et tardif.\n- AROME prévoit aussi une reprise du vent du nord vers 18–21h. Mais le soleil se couche vers 18h30, donc ce créneau ne sert à rien.\n\n## Ora\n- **Elle ne viendra probablement pas.** Le ciel est couvert à 95–100 %, quelques gouttes sont possibles et le flux reste au nord toute la journée.\n- Sans soleil sur les pentes, la brise thermique ne se forme pas. Mi-octobre, l'Ora est de toute façon faible.\n\n## Quelle voile pour 80 kg\n- **6,5 m².** Avec 10–13 kn et des rafales jusqu'à 18 kn, c'est la bonne taille. Pour planer, il te faut une planche d'au moins 115–125 l.\n- **5,3 m²** seulement si le vent tient vraiment au-dessus de 18–20 kn, ce qu'aucun modèle ne prévoit.\n- Si le Pelèr reste en dessous de 10 kn, même la 6,5 ne suffira pas pour planer avec 80 kg.\n\n## Ce que je te conseille\nRegarde les stations de vent en direct à Torbole vers **06h30–07h00**. Si elles indiquent au moins 10 kn du nord, vas-y tout de suite avec la 6,5. Sinon, ça ne vaut pas le coup. L'après-midi ne promet rien.\n\nSources :\n- [Open-Meteo API (AROME HD, ICON-D2, ICON-CH1)](https://open-meteo.com/)\n- [Windfinder Torbole](https://www.windfinder.com/forecast/torbole)\n- [Windy.app Torbole](https://windy.app/de/forecast2/spot/769309/Torbole)\n- [Gardasee.de Windprognose](https://www.gardasee.de/windprognose)",
+  "avec": "**Non, demain (dimanche 18/10) ne vaut probablement pas le déplacement.** Aucun des 7 modèles ne prévoit de vent navigable à Torbole.\n\n## Prévision pour dimanche\n\n| Créneau | Moyenne des modèles | Rafales | Direction |\n|---|---|---|---|\n| 05–10 h (fenêtre du Pelèr) | 2–3 nds | 6–7 nds (AROME jusqu'à 15) | E–NNE |\n| 11–15 h (montée de l'Ora) | 2–3 nds | 5–7 nds | NNE, pas de sud |\n| 15–19 h | 2–3 nds | 6–8 nds | NE–E |\n\n- **Pelèr :** les modèles ne prévoient qu'un léger souffle de nord-est tôt le matin. Les rafales d'AROME à 12–15 nds vers 9–10 h sont des pointes isolées, pas un vrai Pelèr. Un bon Pelèr a besoin d'un gradient de pression nord-sud net derrière un front froid, et ce n'est pas le cas demain.\n- **Ora :** aucun modèle ne montre de bascule au sud l'après-midi. Mi-octobre, l'Ora est de toute façon plus faible et moins fiable qu'en été, avec souvent 8 à 14 nds au mieux.\n- **Fiabilité :** les modèles sont en désaccord à chaque heure, et les rafales font presque trois fois le vent moyen. Le vent sera donc irrégulier. Ces modèles ont une maille assez large et rendent mal les vents thermiques du lac de Garde. Il reste donc une petite chance d'avoir mieux que prévu, mais rien ne permet de compter dessus.\n\n## Choix de la voile si le vent se lève (pour 80 kg)\n\n- **6,5 :** à partir d'environ 14–15 nds réguliers, jusqu'à 19–20 nds. C'est la voile habituelle pour l'Ora (sud, l'après-midi).\n- **5,3 :** à partir d'environ 19–20 nds, jusqu'à 25–27 nds. C'est la voile du Pelèr (nord, le matin), qui souffle souvent à 20–30 nds les bons jours.\n- Avec des rafales qui font trois fois le vent moyen comme demain, il vaudrait mieux gréer petit.\n\n**Mon conseil :** demain matin vers 7 h, regarde une station en direct (par exemple Torbole ou Riva sur Windfinder ou Holfuy). En dessous de 12 nds de nord à ce moment-là, le Pelèr ne viendra pas. Si tu es souple sur la date, je peux regarder les prochains jours pour trouver un vrai Pelèr derrière un front.\n\n---\n\nPetit service pour les prochains riders : la fiche « Circolo Surf Torbole » de windext ne contient presque rien. Voici ce que j'ai supposé, corrige-moi si c'est faux :\n- la plage fait face au SSO (environ 200°) ;\n- le Pelèr (N–NNE) souffle le matin, jusque vers 10–11 h, et il est side-offshore ;\n- l'Ora (S–SSO) souffle à partir de midi environ, et elle est side-onshore.\n\nSi tu confirmes, j'enregistre la fiche. Et si tu y vas quand même, dis-moi combien de vent tu as eu, ça servira à évaluer les modèles.",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 1,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "Pour 80 kg, conseiller la 6,5 à 10–13 kn avec une planche de 115–125 l est optimiste. Planer à 10–12 kn demande plutôt 7,5–8,5 m² et 140 l ou plus. Avec la 6,5 et environ 120 l, il faut en pratique 14–15 kn ou plus de vent établi. La réponse se contredit d'ailleurs à moitié avec « en dessous de 10 kn, même la 6,5 ne suffira pas ».",
+        "« Vas-y tout de suite avec la 6,5 » dès 10 kn de nord à 7 h incite à partir dans un vent marginal.",
+        "Aucune mention de sécurité : le Pelèr est side-offshore/offshore depuis la plage de Torbole, donc risque de dérive si le vent tombe vers 10–11 h comme prévu. Rien non plus sur l'eau froide d'octobre (environ 16–18 °C, combinaison 4/3 ou plus), sur les rafales de 14–18 kn pour 10 kn de moyenne, ni sur les règles locales (interdiction du kite dans le Trentin, distances au rivage).",
+        "Le coucher du soleil le 18/10 à Torbole est vers 18 h 20–18 h 25 CEST, pas 18 h 30. L'écart est mineur et la conclusion reste valable.",
+        "La réponse annonce « Pelèr : créneau environ 07h–10h », alors que son tableau AROME indique 05h–10h. L'incohérence est légère, mais on comprend qu'avant 7 h il fait nuit (lever du soleil vers 7 h 25).",
+        "Elle ne dit rien de l'orientation de la plage (face au S–SSO) ni du lieu de départ (Conca d'Oro ou Circolo Surf Torbole).",
+        "Le mélange des langues est maladroit : l'intro est en allemand, puis la réponse passe au français avec une justification méta (« mes paramètres »)."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 2,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 2,
+      "errors": [
+        "Les dates sont justes : le samedi 17/10/2026 est suivi du dimanche 18/10. Il n'y a pas de marée sur le lac de Garde, donc rien à signaler sur ce point.",
+        "« Le Pelèr souffle souvent à 20–30 nds les bons jours » est exagéré. À Torbole, un Pelèr typique fait plutôt 15–25 nds ; 30 nds reste exceptionnel, par exemple en cas de foehn ou de forte poussée du nord derrière un front.",
+        "« Avec des rafales qui font trois fois le vent moyen, il vaudrait mieux gréer petit » n'a pas de sens quand le vent moyen est de 2–3 nds. Le ratio rafale/moyenne n'est pas pertinent en dessous du seuil de planing.",
+        "La réponse ne relève pas que le Pelèr est side-offshore à Torbole : elle le met seulement dans les « suppositions » de fin. Avec un vent irrégulier, cela compte pour la sécurité : risque de dérive vers le large et, dans un vent faible et instable, de finir à la godille.",
+        "Rien sur l'eau froide à mi-octobre (environ 16–18 °C) : il faut une combinaison 4/3 ou 5/4. Rien non plus sur la règle locale : le kite est interdit dans la partie trentine, Torbole et Riva comprises, et les heures d'accès y sont réglementées.",
+        "La fin, avec la fiche windext, la demande de confirmation de l'orientation et l'appel à un retour pour « évaluer les modèles », est du méta-contenu interne. C'est du remplissage pour le rider.",
+        "La réponse est entièrement en français, sans rien dire du fait que la question était posée en allemand.",
+        "La couverture nuageuse n'est pas évoquée, alors que c'est l'argument clé pour dire que l'Ora ne s'établira pas."
+      ]
+    },
+    "winner": "sans",
+    "why": "B s'appuie sur une comparaison par modèle mieux sourcée (AROME HD contre ICON) et sur un argument physique clair contre l'Ora (ciel couvert), avec un critère de décision précis le matin même ; A reste plus prudente et cohérente sur les tailles de voile mais se perd en méta-contenu, et aucune des deux ne traite correctement le caractère offshore du Pelèr ni l'eau froide."
+  },
+  "seconds": 92
+}

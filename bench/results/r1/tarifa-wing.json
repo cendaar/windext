@@ -1,0 +1,47 @@
+{
+  "id": "tarifa-wing",
+  "q": "¿Merece la pena salir con el wing en Tarifa (Los Lances) mañana? Peso 72 kg, tengo un ala de 4 y una de 5,5 m. Horario, tamaño y seguridad.",
+  "sans": "**Non, ça ne vaut pas le coup demain (dimanche 18 octobre).** Il n'y aura presque pas de vent.\n\n## Prévisions pour Los Lances, demain\n\n| Heure | Vent moyen | Rafales | Direction |\n|---|---|---|---|\n| 07–11 h | 1–4 nds | 5–9 nds | variable, **pluie** (jusqu'à 2,4 mm/h vers 9 h) |\n| 12–15 h | 2–5 nds | 7–12 nds | tourne de S à SO, puis O/NO |\n| 16–17 h | **~5 nds** (le maximum) | ~10 nds | SO |\n| 18–21 h | 1–2 nds | <7 nds | ça tombe |\n\n- **Houle** : environ 0,7 m de l'ouest, période de 8 à 9 s. Ça fait de petites vagues propres, mais sans vent ça ne sert à rien.\n- **Ciel** : couvert toute la journée.\n- **Les modèles sont d'accord** : ECMWF et ICON-EU donnent tous les deux un vent moyen inférieur à 5 nds. ECMWF voit au mieux quelques rafales à 12 nds vers 14 h, mais avec un vent moyen d'environ 3 nds.\n\n## Taille d'aile (72 kg)\n\n- **5,5 m²** : il te faut au moins environ 12 à 14 nds réguliers pour décoller sans t'épuiser au pumping, même avec un grand foil. Demain, il en manque à peu près 7 à 10.\n- **4 m²** : inutile demain. Garde-la pour les jours de 18 nds et plus.\n- Si tu sors quand même pour t'entraîner (manœuvres d'aile, pumping), prends la 5,5 avec ton plus grand foil. Ne t'attends pas à voler de façon régulière.\n\n## Sécurité\n\n- **Le vent faible est le principal danger.** Il te laisse sans traction loin du bord. Si le vent tourne vers l'est ou le nord-est (offshore à Los Lances), il t'éloigne de la plage. Reste près du bord et sois capable de rentrer en ramant ou à la nage.\n- **Pluie le matin** : elle peut venir avec des grains et des rafales soudaines. Si tu entends du tonnerre, ne va pas à l'eau.\n- Avec un ciel couvert en octobre, l'eau et l'air sont plus froids. Prends une combinaison d'au moins 3/2 mm.\n- Ne sors pas seul et préviens quelqu'un de ton horaire.\n\n## Recommandation\n\nSi tu veux une seconde chance, regarde demain matin les observations en direct (station de Tarifa ou Valdevaqueros sur Windguru ou Windy). Ne pars que si tu vois **au moins 12 à 14 nds réguliers** sur une direction stable. Les modèles ratent parfois un petit thermique l'après-midi, mais c'est peu probable avec ce ciel couvert. Mieux vaut garder tes forces pour le prochain Levante ou Poniente.\n\nDonnées : Open-Meteo (modèles ECMWF IFS et ICON-EU, et modèle de vagues), consultées aujourd'hui, 17 octobre 2026.",
+  "avec": "**Non, ça ne vaut pas le coup demain (dimanche 18 octobre).** Il n'y aura presque pas de vent à Los Lances.\n\n## Prévision pour demain (moyenne de 5 modèles : AROME, ICON, ECMWF, GFS, UKMO)\n\n| Créneau | Vent moyen | Rafales | Direction |\n|---|---|---|---|\n| 08h–12h | 2–4 nds | 6–7 nds | ESE à SE (petit Levante résiduel) |\n| 13h–18h | 3–4 nds | 7–8 nds | S à SSW (onshore) |\n| 19h–20h | 4 nds | 8–9 nds | ESE |\n\n- **Ce qu'il faut pour sortir :** à 72 kg, il te faut au moins 12–13 nœuds réguliers avec la 5,5 m, et 18–20 nœuds avec la 4 m. Demain, le vent ne dépasse jamais 5 nœuds de moyenne. Même avec un très grand foil, tu ne décolleras pas.\n- **Fiabilité :** tous les modèles annoncent un vent faible (écart de 1 à 5 nœuds entre eux). Ils hésitent sur la direction, mais pas sur le fait qu'il n'y aura pas de vent.\n- **Rafales irrégulières :** les rafales font environ le double du vent moyen. Même un petit souffle sera troué et inutilisable.\n- **Mer :** houle d'ouest-nord-ouest de 0,7 m, période de 9 s, eau à 21 °C.\n\n## Les jours suivants\nJ'ai cherché un créneau entre 12 et 35 nœuds sur les **5 prochains jours** : **il n'y en a aucun**. C'est une période calme sur le détroit.\n\n## Sécurité, pour quand le vent reviendra\n- **Levante** (vent d'est) : il souffle side-off et en rafales à Los Lances. Le vent est plus fort et plus régulier près de Tarifa, plus faible et plus irrégulier vers Valdevaqueros. Avec la 4 m dans le Levante, le vent te pousse vers le large : ne sors pas sans pouvoir revenir à la rame.\n- **Poniente** (vent d'ouest) : side/side-on, plus régulier, avec du clapot et des vagues. C'est la condition la plus sûre pour le wing.\n- **Marée** : le marnage est faible. Les horaires viennent d'un modèle non calibré ; vérifie la table officielle du port de Tarifa si besoin.\n\n**Mon conseil :** reste à terre demain, ou va faire du SUP ou du surf si la houle de 0,7 m te tente. Regarde de nouveau la prévision dans 2 ou 3 jours.\n\n---\n\nCe spot n'existe pas encore dans la base windext. Voici ce que j'ai trouvé sur Los Lances :\n- La plage fait face au **sud-ouest (~215°)**.\n- Le Levante y souffle side-off et le Poniente side/side-on.\n- Les mises à l'eau principales sont Río Jara, le terrain de foot et Los Carriles.\n- En haute saison, la pratique est limitée à Los Lances Norte.\n\nEst-ce que ça correspond à ce que tu connais ? Si tu confirmes ou corriges, j'enregistre la fiche pour les prochains riders.\n\nSources :\n- [Kitefun Tarifa – Los Lances](https://kitefuntarifa.com/en/kitesurf-spots-tarifa/kitesurf-spot-los-lances.html)\n- [Kitefun Tarifa – Guide wing foil spots Tarifa](https://en.kitefuntarifa.com/blog/guide-wing-foil-spots-tarifa.html)\n- [Alex Pastor Kite Club – Wingfoil in Tarifa guide](https://alexpastorkiteclub.com/blog/wingfoil/wingfoil-in-tarifa-guide/)",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 2,
+      "concision": 4,
+      "errors": [
+        "La question est posée en espagnol, mais la réponse est en français.",
+        "La date est juste : dimanche 18/10. Les données de prévision (Open-Meteo ECMWF/ICON) sont plausibles mais ne peuvent pas être vérifiées. Les rafales jusqu'à 12 nds sur un vent moyen de 2 à 5 nds traduisent surtout une instabilité liée aux grains.",
+        "Aucune information de marée n'est donnée, alors que la question porte sur la sécurité. Il faudrait citer la table officielle de Tarifa (IHM/maree.info) et mentionner les courants du détroit.",
+        "Les connaissances locales sont minces : pas d'orientation de la plage (SO), pas de points de mise à l'eau (Río Jara, Balneario, Valdevaqueros), et rien sur les régimes Levante/Poniente au-delà d'une mention. Rien non plus sur les zones réglementées et les couloirs de mise à l'eau.",
+        "Le danger offshore est cité pour l'E/NE, mais le Levante y est surtout side-off (direction ESE), avec une dérive vers le large et le détroit. Ce point est à préciser.",
+        "Le seuil de 12 à 14 nds pour la 5,5 m à 72 kg et de 18 nds et plus pour la 4 m est correct. Le conseil d'un entraînement en pumping près du bord est pertinent.",
+        "La réponse renvoie à l'observation en direct (stations Tarifa/Valdevaqueros) avec un seuil clair, et signale le risque de grains et d'orage. C'est un bon point."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 3,
+      "uncertainty": 3,
+      "actionability": 4,
+      "local_knowledge": 4,
+      "concision": 2,
+      "errors": [
+        "La question est posée en espagnol, mais la réponse est en français. Le rider devrait recevoir une réponse en espagnol.",
+        "La date est juste : le 18/10/2026 est bien un dimanche, puisque le 17 est un samedi. En revanche, la prévision d'un vent moyen de 2 à 5 nds ne peut pas être vérifiée de façon indépendante. L'affirmation « aucun créneau entre 12 et 35 nds sur 5 jours » n'est appuyée par aucune source ni aucun modèle cité.",
+        "La phrase « Les rafales font environ le double du vent moyen » n'a pas d'intérêt quand le vent moyen est de 3 nds. Ce remplissage ne change pas la décision.",
+        "Il n'y a aucun horaire de marée. La réponse reconnaît même s'appuyer sur un « modèle non calibré » au lieu de consulter la table officielle de Tarifa. Le marnage à Tarifa peut atteindre environ 1,5 à 2 m en vives-eaux : il n'est pas négligeable, notamment à cause des courants du détroit.",
+        "L'eau à 21 °C est optimiste pour la mi-octobre à Los Lances. Elle tourne plutôt autour de 18 à 20 °C et peut chuter avec l'upwelling de Levante. Aucun conseil de combinaison n'est donné.",
+        "La consigne de sécurité sur le Levante est confuse : « Avec la 4 m… ne sors pas sans pouvoir revenir à la rame ». Il faudrait plutôt dire que le Levante est side-off et peut emporter vers le large et le détroit, rappeler les courants et l'intérêt d'un bateau de sécurité, et conseiller de ne pas sortir seul.",
+        "Aucun moyen de décider sur place n'est proposé, comme les observations en direct d'une station ou d'une webcam.",
+        "Le bloc de fin pour enregistrer la fiche du spot dans la base windext alourdit la réponse et ne sert pas le rider.",
+        "Les infos locales sont justes : la plage est orientée SO (~215°), le Levante y est side-off et le Poniente side-on, et les mises à l'eau sont bien Río Jara, le terrain de foot et Los Carriles."
+      ]
+    },
+    "winner": "sans",
+    "why": "B est plus utile pour décider : il donne un seuil clair à vérifier en direct le jour même, signale les grains, la pluie et le froid, et reste plus concis, même s'il manque de connaissances locales et d'infos de marée."
+  },
+  "seconds": 77
+}

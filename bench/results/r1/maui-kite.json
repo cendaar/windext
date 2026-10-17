@@ -1,0 +1,45 @@
+{
+  "id": "maui-kite",
+  "q": "Kanaha, Maui, tomorrow: what time does the trade wind fill in, how strong, and which kite for 75 kg (8, 10, 12 m)?",
+  "sans": "Prévisions pour **Kanaha, samedi 18 octobre 2026**, tirées du modèle Open-Meteo et du bulletin NWS de Kahului :\n\n**Résumé : l'alizé s'établit vers 10 h–11 h, souffle à 16–20 nœuds de midi à 16 h, et une 10 m est la bonne voile pour toi.**\n\n## Quand ça rentre\n| Heure | Vent moyen | Rafales (modèle) | Direction |\n|---|---|---|---|\n| 7 h | ~11 kt | 20 | ENE (68°) |\n| 9 h | ~14 kt | 28 | ENE (62°) |\n| **11 h** | **~18 kt** | 34 | ENE (62°) |\n| **12 h–16 h** | **18–19 kt** (pic) | 36–38 | ENE (61–65°) |\n| 17 h | ~17,5 kt | 35 | ENE (68°) |\n| 18 h et après | ~15 kt | 28–32 | E (71–74°) |\n\n- **Démarrage** : utilisable dès 9 h–10 h (14–16 kt). Le vent est bien établi à partir de **11 h**.\n- **Meilleur créneau** : **12 h à 16 h**, puis il baisse doucement après 17 h.\n- **Direction** : ENE, donc side-onshore à Kanaha. C'est la configuration classique.\n\n## Force\n- Le NWS annonce un vent de NE à **13–20 mph (11–17 kt), avec des rafales à 28 mph (~24 kt)**.\n- Le modèle Open-Meteo est un peu plus fort, avec **19 kt de moyenne au pic**. Ses rafales à 35 kt et plus sont presque sûrement exagérées : ce modèle surestime souvent les rafales. Compte plutôt sur **des rafales de 24 à 28 kt**.\n- Attends-toi à **16–20 kt en moyenne l'après-midi**, avec un vent irrégulier, comme toujours avec l'alizé à Kanaha.\n\n## Quelle voile pour 75 kg\n- **10 m : le choix principal.** Elle couvre 16–22 kt, donc tout le pic de la journée.\n- **12 m** : seulement le matin (avant 11 h) ou en fin de journée vers 15 kt. Avec une planche twin-tip standard, elle sera trop puissante en début d'après-midi.\n- **8 m** : prends-la dans la voiture. Si le vent moyen dépasse 22 kt ou si les rafales arrivent régulièrement à 28 kt et plus, ce que l'effet d'accélération local de Kanaha produit parfois, passe à la 8.\n\nEn pratique : **gonfle la 10 m vers 11 h et garde la 8 m prête.**\n\n## À savoir\n- Kanaha a des règles de zones et d'horaires pour le kite (zone Kite Beach, priorité aux windsurfers le matin). Vérifie les panneaux sur place ou demande aux locaux.\n- Ces prévisions datent d'aujourd'hui, la veille. Regarde le vent réel demain matin sur iKitesurf/WeatherFlow (station de Kanaha) ou Windguru.\n\nSources :\n- [Open-Meteo, prévision horaire 20,90 N / 156,43 W](https://api.open-meteo.com/v1/forecast?latitude=20.90&longitude=-156.43&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m&wind_speed_unit=kn&timezone=Pacific/Honolulu&start_date=2026-10-18&end_date=2026-10-18)\n- [NWS, prévision pour Kahului / Kanaha](https://forecast.weather.gov/MapClick.php?lat=20.896&lon=-156.437&unit=0&lg=english&FcstType=text&TextType=1)",
+  "avec": "## Kanaha, dimanche 18 octobre\n\nLes trade winds sont déjà là dès le matin, mais elles prennent leur vraie force vers 10 h–11 h. Le pic se situe entre 12 h et 16 h, ensuite le vent baisse doucement vers 17 h–18 h. Il vient de l'ENE, donc side-on pour une plage orientée NNE, ce qui correspond à la direction classique de Kanaha.\n\n| Heure | Moyenne des modèles | Rafales | Fiabilité |\n|---|---|---|---|\n| 9 h | 13 kn | 25 kn | moyenne |\n| 11 h | 15 kn | 27 kn | faible |\n| 12 h–16 h | **16–17 kn** | 28–29 kn | faible |\n| 17 h | 15 kn | 29 kn | moyenne |\n\n**Ce qu'il faut savoir sur cette prévision :**\n- Elle date du run de vendredi 16 h 47. Revérifiez demain matin.\n- Le modèle ICON est seul à prévoir 9–11 kn de NNE. Il fait baisser la moyenne. Sans lui, les autres modèles (AROME, ECMWF, UKMO, GFS) donnent plutôt **17–19 kn l'après-midi**.\n- Les rafales prévues sont presque le double du vent moyen (facteur 1,9). Attendez-vous à des trous et à des pics. L'ECMWF annonce des rafales jusqu'à 37 kn vers 13 h–14 h. C'est sans doute exagéré pour des trades, mais restez prudent.\n- La mer est calme côté nord : une houle de 0,7 m de sud. La marée haute est à 10 h 06 (+0,3 m).\n\n## Quelle aile pour 75 kg\n\n- **Choix principal : la 10 m.** C'est la bonne taille pour 17–20 kn, et elle reste gérable si les rafales montent à 25 kn et plus.\n- **La 12 m** si les balises de 11 h affichent moins de 15 kn établis, c'est-à-dire si le scénario ICON se confirme.\n- **La 8 m** si le vent établi dépasse 22–23 kn, ou si les rafales vous surtoilent nettement. Prenez-la dans la voiture.\n\nAvant de choisir, regardez les balises live de Kanaha vers 10 h 30. Prenez l'aile adaptée au vent établi, pas aux rafales.\n\n## Règles locales à respecter\n- **Pas de kite avant 11 h** : c'est la règle du comté. Le créneau utile va donc de 11 h à 17 h environ, au coucher du soleil (17 h 59) au plus tard.\n- **Ne dépassez pas 125 ft (environ 38 m) au-dessus de la mer**, à cause de l'aéroport de Kahului. Le kite est interdit dans le couloir d'approche, au bout de la piste, côté Spreckelsville.\n- Ne passez jamais votre aile au-dessus de personnes qui ne font pas de kite.\n\n## Une petite faveur\nKanaha n'est pas encore dans la base windext, et la prévision est analysée avec l'orientation que j'ai estimée. Pouvez-vous confirmer ou corriger ces points ?\n- La plage fait face au NNE, environ 15°.\n- Les bons vents sont les trades d'ENE à NE.\n- Le vent de sud (kona) est offshore et donc dangereux.\n- Le départ se fait à Kite Beach, à l'extrémité ouest du parc.\n- Il y a du récif peu profond sur l'inside.\n\nSi c'est juste, j'ajoute la fiche pour les prochains riders.\n\nSources :\n- [Kiteforum – Kanaha Park](https://se.kiteforum.com/kitesurf/spot/maui____kanaha_park)\n- [Kiteforum – Kaa Point](https://se.kiteforum.com/kitesurf/spot/maui___kaa_point)\n- [Star-Bulletin – règles kite Maui](https://archives.starbulletin.com/2003/09/21/news/story8.html)\n- [Big Wave Dave – Kite Boarding at Kanaha](https://bigwavedave.ca/forums/topic.html?p=37260)",
+  "judged": {
+    "sans": {
+      "accuracy": 2,
+      "safety": 2,
+      "uncertainty": 3,
+      "actionability": 3,
+      "local_knowledge": 2,
+      "concision": 4,
+      "errors": [
+        "Mauvaise date : demain est le dimanche 18 octobre 2026, pas le samedi (le samedi, c'est aujourd'hui, le 17).",
+        "Règle locale fausse : il n'y a pas de « priorité aux windsurfers le matin ». La règle de Maui County, dite du « 11 o'clock rule », réserve l'eau aux nageurs et aux pêcheurs avant 11 h. Ni le kite ni le windsurf ne sont autorisés avant cette heure.",
+        "Il conseille la 12 m « le matin (avant 11 h) » et dit le vent « utilisable dès 9 h–10 h ». C'est interdit à Kanaha : le créneau légal commence à 11 h.",
+        "Il oublie la limite de hauteur liée à l'aéroport de Kahului : l'aile ne doit pas dépasser 125 ft (environ 38 m) au-dessus de la mer. Il ne parle pas non plus de la zone interdite dans l'axe de la piste.",
+        "Rien sur la sécurité : le récif peu profond de l'inside, le vent de sud (kona) qui est offshore, et l'heure du coucher du soleil (environ 18 h HST) pour finir la session.",
+        "Pas d'information sur la marée ni sur l'état de la mer.",
+        "Il affirme qu'il y a un « effet d'accélération local » qui ferait monter les rafales à 28 kt et plus, sans aucune source.",
+        "Il ne dit pas quand vérifier le vent réel le jour même ni quel seuil précis doit faire changer d'aile, alors que B propose de regarder les balises vers 10 h 30."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 5,
+      "uncertainty": 5,
+      "actionability": 4,
+      "local_knowledge": 4,
+      "concision": 2,
+      "errors": [
+        "La marée haute annoncée à 10 h 06 (+0,3 m) n'a pas pu être vérifiée dans une table officielle (NOAA, station de Kahului). Il faut la considérer comme non vérifiée.",
+        "Il parle d'une mer calme côté nord avec une houle de 0,7 m de sud, mais une houle de sud n'arrive pas sur la côte nord. En octobre, il faut surtout surveiller la houle de NW, et il n'en dit rien.",
+        "« Trades d'ENE, side-on pour une plage orientée NNE » : avec un vent ENE et une plage face au NNE, le vent est plutôt side-shore à side-on. Ça reste correct, mais c'est approximatif.",
+        "La section « Une petite faveur », qui demande au rider de valider la fiche du spot, ne sert à rien pour sa question. Elle rallonge la réponse et donne l'impression qu'il ne connaît pas le spot.",
+        "Le tableau s'arrête à 17 h, sans tendance pour le reste de l'après-midi. La colonne de fiabilité n'est pas expliquée.",
+        "Pas de seuil chiffré de rafales pour passer de la 10 m à la 8 m, seulement « si les rafales vous surtoilent nettement »."
+      ]
+    },
+    "winner": "avec",
+    "why": "B donne la bonne date (dimanche) et les règles officielles de Kanaha, vérifiées : pas de navigation avant 11 h et aile sous 125 ft à cause de l'aéroport. Il explique aussi clairement l'incertitude des modèles et comment décider sur place, alors que A se trompe de jour et propose une 12 m le matin, ce qui est interdit à Kanaha."
+  },
+  "seconds": 94
+}

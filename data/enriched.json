@@ -1914,5 +1914,1494 @@
       "https://kitejungle.com/kite-places/spain/salinas-tenefe-pozo-izquierdo",
       "https://www.gran-canaria-info.com/en/blog/gran-canaria-beaches-pozo-izquierdo-beach"
     ]
+  },
+  "Guincho, Portugal": {
+    "name": "Guincho",
+    "aliases": [
+      "Praia do Guincho",
+      "Guincho Beach"
+    ],
+    "lat": 38.73166,
+    "lon": -9.47414,
+    "country": "Portugal",
+    "water": "sea",
+    "facing_deg": 270,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Reference direction: the summer Nortada blows side-shore and is strengthened by a thermal effect from the Sintra hills. Usually 15-25 kn, sometimes 35-40 kn, and often gusty."
+      },
+      {
+        "sector": "NNW",
+        "quality": "best",
+        "note": "Side-shore to slightly cross-on from the right. This is the typical summer thermal direction."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Cross-onshore from the right. Rideable, but the sea gets rougher with swell."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Cross-onshore. Expect a gusty thermal that swings between WNW and NW."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Listed as a working direction in spot guides. It is onshore, so expect heavy waves and shorebreak."
+      },
+      {
+        "sector": "NNE",
+        "quality": "marginal",
+        "note": "On very hot days the wind veers cross-offshore NNE. It is very gusty."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "Offshore. When it gets too hot the wind can turn NE/E and then die completely."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Wide sandy beach about 100 m deep with plenty of space. Launch in the middle of the beach, north or south of the central rocks. You can exit at either end. Keep to the northern side so you stay out of the surfers' way.",
+    "tide_notes": "Mid-low to mid-high tide is best: waves break on the outside and leave flat planing water between sets. At high tide the shorebreak and waves can be very powerful.",
+    "hazards": "Rocks at both ends and in the middle of the beach, on the sand and in the water. Strong currents and rip currents: one narrow rip in the middle of the beach running out at an angle, another next to the rocks. Heavy swell and shorebreak. Gusty wind. Busy with surfers. Suited to intermediate and expert riders.",
+    "rules": "",
+    "season": "May-September (July-August best). Usable April-October.",
+    "sources": [
+      "https://se.kiteforum.com/kitesurf/spot/guincho",
+      "https://kitejungle.com/kite-places/portugal/praia-do-guincho",
+      "https://waterwind.it/new/en/windsurfing/spots/spots-reviews/265-world-other-countries/976-praia-do-guincho-portugal.html"
+    ]
+  },
+  "Lagoa de Óbidos, Portugal": {
+    "name": "Lagoa de Óbidos",
+    "aliases": [
+      "Óbidos Lagoon",
+      "Lagoa de Óbidos Este",
+      "Bom Sucesso",
+      "Foz do Arelho (lagoon side)"
+    ],
+    "lat": 39.41,
+    "lon": -9.2,
+    "country": "Portugal",
+    "water": "lagoon",
+    "facing_deg": null,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Summer Nortada thermal, usually 15-20 kn, starts around 1 pm; hills funnel it down the lagoon, venturi effect strengthens it. Steady and reliable."
+      },
+      {
+        "sector": "NNW",
+        "quality": "best",
+        "note": "Nortada variant, funnelled down the lagoon; described as cross-shore."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Works; cross-onshore at Foz do Arelho."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Cross-shore at Foz do Arelho; one of its reference directions."
+      },
+      {
+        "sector": "S",
+        "quality": "marginal",
+        "note": "Land wind, mostly off-season; gusty."
+      },
+      {
+        "sector": "E",
+        "quality": "marginal",
+        "note": "Rideable on the lagoon but gusty; strengthened by nearby hills."
+      }
+    ],
+    "launch_notes": "Most riders launch near Foz do Arelho on the lagoon side. In summer, when kiting is banned in the estuary and northern lagoon, use the windsurf school area ('Este') or Praia do Bom Sucesso / Vau on the far bank. North end near Bom Sucesso: sandy beach, flat water, beginners. Inside lagoon: pebble beach. Respect the school/teaching zone and ride upwind of it.",
+    "tide_notes": "Tidal lagoon; mid to high tide preferred. Low tide exposes sandbanks: long fins catch, you may end up walking, and the top of the lagoon is unusable. Inside the lagoon it works on both tides but gets choppy with strong current at high tide. At Foz do Arelho, high tide brings a heavy shore break on the ocean side.",
+    "hazards": "Strong currents at the estuary mouth. Sandbars and very shallow water at low tide. Sea urchins and seaweed inside the lagoon (wear booties). Gusty winds from S and E. Ocean-side shore break at Foz do Arelho can be big and powerful in swell. Many swimmers in summer.",
+    "rules": "Seasonal ban: kiting prohibited in the estuary and northern lagoon in summer (TheKiteSpot gives 15 Jun-15 Sep for the top of the lagoon). Kiting not officially allowed at Foz do Arelho in high summer due to swimmers. Designated kite/wingfoil zones and a teaching zone exist.",
+    "season": "April to October; June to September for the most reliable Nortada.",
+    "sources": [
+      "https://locations.thekitespot.com/locations/kitesurf-obidos-lagoon-portugal",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/lagoa-de-obidos-regiao-centro-portugal.html",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/foz-do-arelho-regiao-centro-portugal.html"
+    ]
+  },
+  "Esposende, Portugal": {
+    "name": "Esposende – Cávado River / Ofir",
+    "aliases": [
+      "Esposende, Cavado River",
+      "Rio Cávado",
+      "Ofir",
+      "Restinga de Ofir"
+    ],
+    "lat": 41.525,
+    "lon": -8.787,
+    "country": "Portugal",
+    "water": "estuary",
+    "facing_deg": 45,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Nortada, the summer north wind boosted by afternoon thermals. Flat water in the river. Reported as weaker than at Viana do Castelo."
+      },
+      {
+        "sector": "NNW",
+        "quality": "best",
+        "note": "Summer thermal flow, mostly N to NW according to the guides."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Common summer direction (around 292-306° in monthly statistics). Usable in the river and on the sea side."
+      }
+    ],
+    "launch_notes": "Main launch: the sand beach at the tip of the Ofir spit, inside the nature reserve on the south bank of the Cávado across from the town. Kite schools run boat transfers from Esposende. By land it is a long walk from the beach parking, up to an hour. You can also launch from the town side. The river gets crowded with beginners, so give school lessons room.",
+    "tide_notes": "Tidal estuary. At low tide the flat-water area shrinks to a small shallow zone. At high tide the current can be strong and there is shore break on the sea side.",
+    "hazards": "Strong tidal current at certain times of the high tide. Shore break at high tide. Waves on the sea side, medium between Ofir's two breakwaters and bigger with swell. The river spot is crowded with beginners. Boat traffic from the school shuttles.",
+    "rules": "A marked kite zone is in place during the summer months. The narrow road from the town to the beach closes seasonally. Check with the local schools for current zoning.",
+    "season": "April to October. Best from May or June to September, when the thermal Nortada blows.",
+    "sources": [
+      "https://locations.thekitespot.com/locations/kitesurf-esposende-cavado-river-portugal",
+      "https://kitejungle.com/kite-places/portugal/ofir-esposende",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/ofir-regiao-norte-portugal.html",
+      "https://lapointcamps.com/blog/kite-surf-sup-and-wake-in-esposende"
+    ]
+  },
+  "Lake Garda Torbole, Italy": {
+    "name": "Torbole (Conca d'Oro), Lake Garda",
+    "aliases": [
+      "Torbole sul Garda",
+      "Conca d'Oro",
+      "Molo Paradiso",
+      "Circolo Surf Torbole"
+    ],
+    "lat": 45.8718,
+    "lon": 10.8725,
+    "country": "Italy",
+    "water": "lake",
+    "facing_deg": 225,
+    "sports": [
+      "windsurf",
+      "wingfoil",
+      "kitesurf",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "S",
+        "quality": "best",
+        "note": "Ora: thermal southerly, from roughly 12-13h until late afternoon on sunny days, March-October. Typically 20-25 kn on good days, with up to 1 m of chop. It strengthens towards the north of the lake. Clouds or low pressure weaken it."
+      },
+      {
+        "sector": "SSW",
+        "quality": "best",
+        "note": "Ora sector, side-on to onshore along the north shore. Main direction for slalom, freeride and the One Hour Classic crossings to Casa della Trota."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Pelèr: strong northerly from dawn to mid-morning (about 7-11h, varies by season), strongest in the north (Torbole, Malcesine). Side-off near the beach, so the wind is gusty close to shore."
+      },
+      {
+        "sector": "NNE",
+        "quality": "marginal",
+        "note": "Pelèr sector, side-off to offshore from the beach. Experienced riders only, and the morning kite windows apply."
+      }
+    ],
+    "launch_notes": "Windsurf and wing launch from Conca d'Oro / Molo Paradiso or from the Circolo Surf Torbole beach. There is a large lawn to rig on, a bar and parking nearby. The beach is pebbly, with a rubber mat to protect gear. Wind is steadier 50-70 m out. To avoid crowds, go upwind towards the tunnel or cross to Casa della Trota. Kitesurf: shore launches are not allowed. You must use an official boat lift service (Surf Segnana Torbole, Sailing Du Lac Riva) and stay at least 200 m from shore.",
+    "tide_notes": "",
+    "hazards": "Very crowded water in front of Conca d'Oro in summer. Public ferries (stay 200 m away). Regattas and race courses. Pebble beach. Gusty, side-off wind near shore in Pelèr. Ora chop up to about 1 m.",
+    "rules": "Garda Trentino kite rules: official lift service only, at least 200 m from shore and from public transport boats, no kiting during regattas, good weather only, wind up to 16 m/s. 1 Mar-9 Oct: kiting allowed from sunrise to 10:30 and from 16:30 to sunset, banned at midday, and only in designated areas after 18:00. 10 Oct-28 Feb: allowed from sunrise to sunset everywhere in Garda Trentino.",
+    "season": "March-October for the Ora. Spring (April-June) has better wind and fewer crowds. Summer is the most crowded.",
+    "sources": [
+      "https://gardatrentino.it/en/outdoor/water-sports/kitesurfing",
+      "https://360gardalife.com/en/magazine/where-to-windsurf-lake-garda-spot-freestyle/",
+      "https://www.waterwind.it/new/en/windsurfing/spots/spots-reviews/249-torbole-northern-garda-lake-italy.html"
+    ]
+  },
+  "Lo Stagnone, Marsala, Sicily, Italy": {
+    "name": "Lo Stagnone",
+    "aliases": [
+      "Stagnone di Marsala",
+      "Laguna dello Stagnone",
+      "Riserva naturale Isole dello Stagnone",
+      "Birgi"
+    ],
+    "lat": 37.8443,
+    "lon": 12.46476,
+    "country": "Italy",
+    "water": "lagoon",
+    "facing_deg": 270,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Maestrale/Mistral, the main summer direction, often thermally boosted, about 16-20 kn from spring to autumn. Flat water behind the salt-pan walls and Isola Lunga."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Part of the Maestrale/thermal sector. Flat, shallow water."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Tramontana works. Northerly wind pushes water south, so some areas get shallower."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Listed as working by spot guides. Onshore at east-shore launches."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Listed as working by spot guides."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Works. Southerly wind raises the water level slightly."
+      },
+      {
+        "sector": "SE",
+        "quality": "ok",
+        "note": "Scirocco, warm and gusty, can go over 30 kn (big-air days). Mostly in spring and autumn."
+      },
+      {
+        "sector": "E",
+        "quality": "marginal",
+        "note": "Not documented by sources. Estimated from beach orientation: offshore at the east-shore launches (Birgi and Contrada Spagnola schools). Confirm locally."
+      }
+    ],
+    "launch_notes": "Launch from the school/kite-centre areas on the east shore (Birgi and Contrada Spagnola, e.g. Kite Club Marsala, Pro Kite, the 'Kiter Wiese' at Santa Maria in the north). Firm sand or grass rigging areas, knee- to waist-deep water. A kite pass from the centres is usually needed. Advanced riders ride further out and leave the inner zone to students.",
+    "tide_notes": "Practically no tide. Water level depends on wind: northerlies push water south (shallower spots), southerlies raise it slightly. Usually max about 1 m, often under 50 cm.",
+    "hazards": "Very shallow water (often under 50 cm): be careful with jumps and falls. Muddy, silty bottom with seagrass, reeds, rocks and shells that can cut: wear booties. Occasional jellyfish. Gusty Scirocco. Crowded in summer, with many schools and students.",
+    "rules": "Nature reserve (since 1984) and Natura 2000 SIC/ZPS. Kiting is regulated by Capitaneria di Porto Marsala ordinances (zones and entry/exit corridors). Ride beyond 300 m from shore, 200 m inside the reserve. Helmet, buoyancy vest and line cutter required. Hydrofoils banned. Minimum age 14. Legal status contested since 2024 (Legambiente says kiting conflicts with the reserve rules).",
+    "season": "High season June-September (daily thermal wind). Mid season April-May and October (often stronger wind). Kiting possible March-November.",
+    "sources": [
+      "https://locations.thekitespot.com/locations/kitesurf-marsala-lo-stagnone-sicily-italy",
+      "https://matosurf.com/en/destinations/lo-stagnone/",
+      "http://www.iksurfmag.com/?p=26038",
+      "https://tp24.it/2024/07/05/cronaca/legambiente-announces-kitesurfing-ban-in-marsala-s-stagnone-lagoon/205960"
+    ]
+  },
+  "Porto Pollo, Sardinia, Italy": {
+    "name": "Porto Pollo",
+    "aliases": [
+      "Portu Puddu",
+      "Isola dei Gabbiani",
+      "Isuledda"
+    ],
+    "lat": 41.1899,
+    "lon": 9.3253,
+    "country": "Italy",
+    "water": "sea",
+    "facing_deg": null,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Ponente, the main summer wind. A jet effect through the Strait of Bonifacio speeds it up; usually 15-30 kn (4-8 Bft). Cross to cross-onshore from the left in the west (kite) bay. The bay downwind of the isthmus stays flat."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Reference sector between Ponente and Mistral. You get bump & jump on the windward side of the isthmus and flat water on the lee side."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Mistral. Can go over 30 kn, with gusts to around 40 kn, and can build waves up to about 2 m. For experienced riders."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Tramontana. Often weaker, around 10 kn on average according to the regional tourist board."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "Levante is listed as a working wind, using the bay on the other side of the isthmus. Not confirmed for the west kite bay, where it may blow side-off or offshore. Check locally."
+      },
+      {
+        "sector": "S",
+        "quality": "forbidden",
+        "note": "Inferred, not stated by any source: the spot is on the north coast, so a south wind blows off the mainland (offshore)."
+      }
+    ],
+    "launch_notes": "Sandy beaches on both sides of the narrow sand isthmus that joins Isola dei Gabbiani to the mainland. Kite zone: the west bay, on the left side of the peninsula, about 10 min walk from the windsurf centres. It has a big open launch beach and a mobile kite centre. Windsurf zone: the other bay, with direct launch from the centres (Sporting Club Sardinia, MB-Pro Center). Several car parks near the isthmus. Kites and windsurfers use separate zones, so stay in yours.",
+    "tide_notes": "Very small Mediterranean tide. The kite beach is described as mainly unaffected by tides.",
+    "hazards": "Very crowded in the summer holidays. The isthmus splits the area, so it divides the two zones. Strong Mistral days bring chop and waves up to about 2 m in the windward bay. Shore break is none to slight. Swimmers are in marked zones.",
+    "rules": "Kitesurfing and windsurfing have separate zones. Kiting and windsurfing are not allowed in the marked swimming areas of both bays. No specific municipal ordinance (Comune di Palau) was found online, so check with the local centres.",
+    "season": "April to October/November. The most planing days are in April-May and October-November; June-September is peak season with reliable thermally boosted Ponente. Water is around 16°C in April (4/5 mm wetsuit).",
+    "sources": [
+      "https://www.windfinder.com/spotguide/porto_pollo",
+      "https://www.surf-magazin.de/en/spots-and-areas/international/italy/spot-guide-windsurfing-spot-porto-pollo-in-sardinia/",
+      "https://www.sportif.travel/destinations/133/Greece_and_Mediterranean/Sardinia_-_Porto_Pollo",
+      "https://sardegnaturismo.it/it/esplora/porto-pollo"
+    ]
+  },
+  "Prasonisi, Rhodes, Greece": {
+    "name": "Prasonisi",
+    "aliases": [
+      "Prasonissi",
+      "Prassonisi",
+      "Prasonisi Beach"
+    ],
+    "lat": 35.8813,
+    "lon": 27.7633,
+    "country": "Greece",
+    "water": "sea",
+    "facing_deg": 285,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Meltemi, sped up by a local venturi. Typically 15-30 kn in summer. Onshore on the west (wave) side, strong cross/side-offshore on the east (flat) side."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Onshore to cross-onshore on the west wave beach. The east side stays flat."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Meltemi variant. Cross-onshore on the west beach."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Meltemi from the north. Side-shore on the west beach, offshore on the east beach."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Onshore on the west wave beach."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore on the west wave beach. The next stop downwind is open sea."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore on the west wave beach."
+      }
+    ],
+    "launch_notes": "Sand tombolo with two back-to-back bays. Kiters mainly use the west wave/onshore beach. Windsurf and wing schools (e.g. Procenter, Prasonisi Windsurf Centre) work on the east flat-water beach in cross-offshore wind. A shallow, standable strip about 20 m wide runs along the sandbar. In July-August the east side is crowded with windsurf students in the afternoons, so keep clear of the teaching area.",
+    "tide_notes": "Tide range is negligible in this part of the Mediterranean. The level changes with the seasons: in winter the water covers the sandbar, in summer the sand strip is exposed.",
+    "hazards": "East side: very strong offshore wind downwind of the spot, with drift out to open sea. West side: steep, punchy waves of 1-2 m or more over the sandbar, with moderate shorebreak. Coral heads reported in the launch area. Shallow channel between the two beaches. Fast windsurfers close to shore. The centres run a rescue boat and a manned watchtower during opening hours.",
+    "rules": "",
+    "season": "May to mid-October. Best June-September; strongest and most consistent in July-August (Meltemi). Facilities close outside roughly April-October.",
+    "sources": [
+      "https://boards.co.uk/travel/world-travel/prasonisi-greece.html",
+      "https://charlieontravel.com/?p=16821",
+      "https://www.sportif.travel/destinations/88/Greece_and_Mediterranean/Rhodes_-_Prasonisi"
+    ]
+  },
+  "Vassiliki, Lefkada, Greece": {
+    "name": "Vassiliki",
+    "aliases": [
+      "Vasiliki",
+      "Vass",
+      "Vassiliki Bay",
+      "Ponti"
+    ],
+    "lat": 38.63,
+    "lon": 20.602,
+    "country": "Greece",
+    "water": "sea",
+    "facing_deg": 180,
+    "sports": [
+      "windsurf",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Afternoon thermal 'Eric': cross-shore from the right (starboard tack out). Usually 15-20 kn and F5-6, with F7 and 25-30 kn days not unusual. Clouds over the western mountains signal that it is coming."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "The NW gradient wind boosts Eric. It comes over the spit on the west side of the bay, so expect gusts."
+      },
+      {
+        "sector": "NW",
+        "quality": "marginal",
+        "note": "Gusts strongly down over the long spit that closes the bay to the west. Side-off and gusty near Ponti."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Gentle onshore sea breeze (F1-2) from about 10:00. Good for beginners and light-wind freestyle on the shallow sandbar."
+      },
+      {
+        "sector": "N",
+        "quality": "forbidden",
+        "note": "Offshore: the beach faces south, so north wind blows out to sea."
+      }
+    ],
+    "launch_notes": "The pebble beach at the north of the bay, between Vassiliki village (east) and Ponti (west), is lined with windsurf centres. It is waist-deep with a sand bottom and a sandbar about 50 m out, which is good for beach starts. Launch from the centres' sections. The bay is very busy in season, with 100+ sailors at once.",
+    "tide_notes": "Tidal range is negligible, so the tide does not matter. Sources report no tide and no hidden obstacles under the surface.",
+    "hazards": "Crowded water in season. Strong gusts off the western spit in NW wind. The wind can drop completely in the evening, leaving sailors stranded and needing rescue. Yachts anchor off Ponti. Ferries to Kefalonia/Ithaca use Vassiliki harbour on the east side in summer.",
+    "rules": "Kitesurfing is banned in Vassiliki all year. The nearest kite spot on Lefkada is Agios Ioannis (Milos beach) in the north.",
+    "season": "Late May to October. June, July and August are the most consistent for Eric. May and September are quieter with less wind.",
+    "sources": [
+      "https://www.surf-magazin.de/en/spots-and-areas/international/greece/vasiliki-milos-and-co-the-best-windsurfing-spots-on-lefkada/",
+      "https://web.kite-and-windsurfing-guide.com/europe/greece/lefkada-ionian-islands.html",
+      "https://boards.co.uk/travel/world-travel/vassiliki-greece.html",
+      "https://www.windsurf.co.uk/micro-guide-ocean-elements-vassiliki-lefkas-greece"
+    ]
+  },
+  "Brouwersdam, Netherlands": {
+    "name": "Brouwersdam",
+    "aliases": [
+      "Brouwersdam Noordzeezijde",
+      "Brouwersdam Ouddorp",
+      "Renesse / Brouwersdam"
+    ],
+    "lat": 51.7625,
+    "lon": 3.854,
+    "country": "Netherlands",
+    "water": "sea",
+    "facing_deg": 300,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "SSW",
+        "quality": "ok",
+        "note": "Listed as ideal by local school KBC; side-shore along the dam."
+      },
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Reference direction with W/NW, from Atlantic lows over the British Isles."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Side-on to onshore; choppy North Sea conditions."
+      },
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Onshore; stronger wind = more chop. Waves mainly at high tide in stormy W-NW."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Onshore; most common strong-wind direction after low pressure moves east."
+      },
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Onshore; offshore sandbars about 5 km out limit swell to about 1 m."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Side-on."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Listed as working by Windfinder and KBC; side-shore along the dam."
+      },
+      {
+        "sector": "NNE",
+        "quality": "ok",
+        "note": "Listed as ideal by KBC; nearly parallel to the shore."
+      },
+      {
+        "sector": "ESE",
+        "quality": "forbidden",
+        "note": "Offshore on the North Sea side. Schools move to the Grevelingen side (Bruinisse) instead."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore on the North Sea side. Schools move to the Grevelingen side (Bruinisse) instead."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore on the North Sea side. Schools move to the Grevelingen side (Bruinisse) instead."
+      }
+    ],
+    "launch_notes": "Main launch is on the North Sea beach around the middle of the 6.5 km dam. The kite zone, marked by yellow buoys, runs south to the beach pavilion De Kous. The beach at the north end, near the parking by the water, is for windsurfing only. A bay past the slipway at the north end of the dam is tolerated for kiting but not officially allowed. Free parking, large rigging space, shallow shoreline.",
+    "tide_notes": "Low tide gives flat water and standing depth in the shallows, good for learning. High tide brings small waves and a stronger current. Waves only build at high tide in stormy W to NW wind.",
+    "hazards": "Chop builds with onshore wind. Stronger current at high tide. Very busy on windy weekends, with schools, windsurfers and beach users. Respect the buoyed zones and swimmers.",
+    "rules": "Kitesurfing is only allowed in the signposted kite zone on the North Sea side of the dam, marked by yellow buoys up to pavilion De Kous. A 2013 Goeree-Overflakkee decree banned kiting along the coast apart from this Brouwersdam strip; it expired in July 2023. Check the current local signs.",
+    "season": "Apr-May and Sep-Oct are best; usable all year. Schools operate roughly late March to early November.",
+    "sources": [
+      "https://web.kite-and-windsurfing-guide.com/europe/netherlands.html",
+      "https://www.kiteboarding-club.com/en/brouwersdam/",
+      "https://www.kiteboarding-club.com/en/kite-school-brouwersdam-faq/",
+      "https://lokaleregelgeving.overheid.nl/CVDR307403/1"
+    ]
+  },
+  "Wijk aan Zee, Netherlands": {
+    "name": "Wijk aan Zee",
+    "aliases": [
+      "Wijk aan Zee Noordpier",
+      "Noordpier",
+      "De HangOut Kitespot"
+    ],
+    "lat": 52.4825,
+    "lon": 4.5813,
+    "country": "Netherlands",
+    "water": "sea",
+    "facing_deg": 285,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Cross-shore. Gives the biggest waves at the spot."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Gives the cleanest waves, which wrap around the 400 m harbour wall. Needs more wind, and the pier may block some of it."
+      },
+      {
+        "sector": "WSW",
+        "quality": "ok",
+        "note": ""
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Onshore to cross-onshore. Expect choppy conditions."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "The most common wind direction here. The beach also takes swell from SW to N."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Windfinder lists the De HangOut kitespot as working in northerly winds."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore. KNRM has rescued kiters here after the wind suddenly turned offshore."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Launch from the beach north of the Noordpier, near the beach bars and surf schools. The car park is behind the dunes, so expect a long walk to the beach. Guides mention two more launches further north along the coast. Local schools include Kiteflow and Ozlines. The spot is often crowded with windsurfers and kitesurfers, so keep your distance.",
+    "tide_notes": "Waves depend heavily on the tide and can build sharply at high water. Plan your session around the tide.",
+    "hazards": "Rip currents close to the jetty. Crowded with windsurfers, kiters and surfers. A sudden turn to offshore wind has led to KNRM rescues. Water pollution has been reported near the industrial harbour and steel works. Theft from cars has been reported.",
+    "rules": "",
+    "season": "Rideable all year. Waves are usually smaller in summer.",
+    "sources": [
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/wijk-aan-zee-noord-holland-netherlands.html",
+      "https://www.windfinder.com/forecast/wijk_aan_zee_de_hangout_kitespot",
+      "https://www.surf-forecast.com/breaks/Wijkaan-Zee-Noordpier",
+      "https://www.nhnieuws.nl/nieuws/267982/kitesurfers-uit-zee-gered-bij-wijk-aan-zee-wind-draaide-plotseling-naar-aflandig"
+    ]
+  },
+  "Fehmarn Gold, Germany": {
+    "name": "Fehmarn Gold",
+    "aliases": [
+      "Gold / Fehmarn",
+      "Gold Fehmarn",
+      "Strand Gold"
+    ],
+    "lat": 54.4246,
+    "lon": 11.0972,
+    "country": "Germany",
+    "water": "sea",
+    "facing_deg": 240,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Reference direction. Flat to small chop, short and steep, waves rarely above 0.5 m. Large shallow area where you can stand."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Reference direction. Works well in south to west winds."
+      },
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Best direction according to surf-magazin. The headland 2 km upwind blocks the bigger waves in W to NW winds."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Usable. The headland upwind keeps the water fairly flat."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Usable. The headland upwind keeps the water fairly flat."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "surf-magazin gives south to west to NNW as the working range."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Works. You can sail across to the opposite peninsula, but the water in between is too deep to stand."
+      },
+      {
+        "sector": "N",
+        "quality": "marginal",
+        "note": "surf-magazin lists north as working, but it is outside the main S-NNW range."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "surf-magazin says easterly winds do not work (offshore here). One kite blog says Gold works in E, so check locally."
+      }
+    ],
+    "launch_notes": "Big parking area about 100 m from the water. You get to the water over a grass meadow. Kiters usually launch further right, windsurfers increasingly on the left. Kiters have their own zone. Watch out for the groyne to the left of the entrance (it is visible). Tim's Beach (school and rental), toilets and Café Achterndiek are on site.",
+    "tide_notes": "No real tide (Baltic). The water is less than 1.5 m deep over a large area, so wind-driven water level changes affect how deep it is.",
+    "hazards": "Rocky dike and groyne areas, plus a groyne next to the entrance. Shallow water with seagrass. Very crowded in summer, so collisions are a risk. Water gets too deep to stand between Gold and the opposite peninsula.",
+    "rules": "Separate kite zone. Follow right-of-way rules and sail with foresight, especially with summer crowds. Parking fee in summer.",
+    "season": "",
+    "sources": [
+      "https://www.windfinder.com/spotguide/gold",
+      "https://www.surf-magazin.de/spots/fehmarn-gold/",
+      "https://www.surf-magazin.de/en/spots-and-areas/baltic-sea/fehmarn-guide-the-best-windsurfing-spots-on-fehmarn/"
+    ]
+  },
+  "St. Peter-Ording, Germany": {
+    "name": "St. Peter-Ording",
+    "aliases": [
+      "Sankt Peter-Ording",
+      "SPO",
+      "Ording",
+      "Ordinger Strand",
+      "Böhl",
+      "Böhler Strand",
+      "Südstrand"
+    ],
+    "lat": 54.336,
+    "lon": 8.587,
+    "country": "Germany",
+    "water": "sea",
+    "facing_deg": 270,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Works at Südstrand and Böhl lagoon areas."
+      },
+      {
+        "sector": "SSW",
+        "quality": "ok",
+        "note": "Side-on; usable on all beaches."
+      },
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Cross-onshore. Best for the wave in front of Ording. SW storms bring the best wave riding. Ideal for the Südstrand lagoon."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Prevailing direction; the spot works best."
+      },
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Onshore to cross-onshore. Good at the main beach and Südstrand."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Cross-onshore; good at all beaches."
+      },
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Very good at Ording/FKK beach and Böhl, especially in the last two hours of the rising tide."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Side-shore; works at the main beach (SW to N range)."
+      },
+      {
+        "sector": "SE",
+        "quality": "marginal",
+        "note": "Side-off. Guides list Südstrand/Böhl as working from SE, but use caution."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore. Kiters should never go out in offshore wind. Windsurfers sometimes ride it because the beach is so wide, but there is a drift risk."
+      }
+    ],
+    "launch_notes": "Main area is Ordinger Strand, reached by car over a dike crossing. You can park and rig directly on the beach (parking fee). Kite zones lie left and right of the swimming area in front of the beach car park, marked with white/yellow buoys. Kiting in the swim zone is banned. Areas are shared with windsurfers: keep your distance and keep launch zones clear. Böhler Strand (south) is best for beginners: wide standing area, less traffic, but a longer walk.",
+    "tide_notes": "Very tide-dependent. Shallow tideways form at low tide (good for beginners). Higher water brings waves on the outer sandbanks. Südstrand lagoon and Böhl only work about 2 h before to 2 h after high tide; at low water the sea runs out too far to ride. Distance from parking to the water can reach about 500 m. Storm surges can flood the beach car park.",
+    "hazards": "Strong tidal current: runs north on the rising tide and south on the falling tide. Drift risk rises when wind and current line up. Reaching the outer sandbanks takes experience and fitness. The wave off Ording breaks unpredictably. Little real shorebreak thanks to the sandbanks. Can get crowded at the main beach at peak times.",
+    "rules": "Kitesurfing only inside the buoyed kite zones on either side of the swimming area. Kiting in the bathing zone is prohibited. Overnight camping and BBQs on the beach are prohibited. The beach lies at the edge of the Schleswig-Holstein Wadden Sea National Park.",
+    "season": "Late March to early June and September to November. Windiest months: March, April, June, September, October, November. Year-round when not frozen.",
+    "sources": [
+      "https://www.surf-magazin.de/en/spots-and-areas/north-sea/area-info-windsurfing-in-st-peter-ording/",
+      "https://www.kitemana.com/en-no/info/blog/kitespot-st-peter-ording-in-germany-1593",
+      "https://iksurfmag.com/travel-guides/europe/germany/sankt-peter-ording"
+    ]
+  },
+  "Sylt Westerland, Germany": {
+    "name": "Sylt Westerland (Brandenburger Strand)",
+    "aliases": [
+      "Westerland",
+      "Brandenburger Strand",
+      "Westerland Hauptstrand"
+    ],
+    "lat": 54.9065,
+    "lon": 8.3015,
+    "country": "Germany",
+    "water": "sea",
+    "facing_deg": 275,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Sideshore along the west coast; at 20 kn and more it is a fun wave session (surf-magazin)."
+      },
+      {
+        "sector": "NNE",
+        "quality": "best",
+        "note": "Sideshore, cited with N as a reference direction for 20 kn+ sessions."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Open North Sea; onshore leaning, so conditions are challenging with big shorebreak."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Straight onshore, typically 15-35 kn; rough, demanding conditions for experienced riders only."
+      },
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Sideshore from S-SW at 20 kn+ gives good wave riding."
+      },
+      {
+        "sector": "S",
+        "quality": "best",
+        "note": "Sideshore, cited with SW as a reference direction."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Fully offshore at Westerland."
+      }
+    ],
+    "launch_notes": "Launch and land on Brandenburger Strand, the main beach in front of the Westerland promenade (GKA Kite World Cup and Windsurf World Cup venue). Keep clear of swimming zones and of the groynes on the west side. Check the information boards on the beach for current zones. Parking behind the dike gets crowded in summer.",
+    "tide_notes": "Runs cleanest around low tide: shorebreak and wave height near the shore stay moderate, and small flat-water pools form in places. As the tide rises the sets reach the shore and the shorebreak can get extreme at high tide. Tidal range is larger in westerly winds and at spring tides.",
+    "hazards": "Powerful, mast-breaking shorebreak; short standing area; noticeable current across the whole area; stone groynes in the water (the remaining one is marked with yellow crosses). Wear a helmet and impact vest. Crowded in summer.",
+    "rules": "Inside the Schleswig-Holstein Wadden Sea National Park area. Seasonal bathing zones: with a green or yellow flag, windsurfing is restricted in the guarded bathing areas; with a red flag, water access is unrestricted. Stay out of swimming zones and away from groynes. Follow the zoning shown on beach signs.",
+    "season": "Apr-Jun and Sep-Oct are best; windiest Oct-Mar.",
+    "sources": [
+      "https://www.surf-magazin.de/en/spots-and-areas/north-sea/spot-guide-windsurfing-on-sylt-the-flat-water-and-wave-spots-at-a-glance/",
+      "https://www.kitemana.com/en-gb/info/blog/kitespot-sylt-1586",
+      "https://www.festivalsindeutschland.de/festival/gka-kite-world-cup-sylt"
+    ]
+  },
+  "Hvide Sande, Denmark": {
+    "name": "Hvide Sande",
+    "aliases": [
+      "Hvide Sande Nord",
+      "Westwind Nord",
+      "Ringkøbing Fjord / Hvide Sande Nord"
+    ],
+    "lat": 56.0203,
+    "lon": 8.1291,
+    "country": "Denmark",
+    "water": "lagoon",
+    "facing_deg": 90,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "The reference wind per guides: westerlies with some north in them. Blows side-off/offshore over the dune strip, so it is gusty near shore and steadier further out. Shallow water reaches ~800 m out, and in an emergency you drift across to the fjord's far shore."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Westerlies with a northerly component work best. Gusty near shore. Choppy wind waves build further out in strong wind."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Usable on the fjord. Strong NW–N is also the wave-riding direction on the North Sea side at the south mole, for experts only."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Works, but the Hvide Sande Syd spot (55.9854, 8.1385) is rated better in SW."
+      },
+      {
+        "sector": "E",
+        "quality": "marginal",
+        "note": "Onshore. The local guide (Westwind) lists onshore winds as a hazard."
+      }
+    ],
+    "launch_notes": "Fjord-side spot north of Hvide Sande, signposted for windsurfing. Large paid car park a few metres from a grass rigging area and a small sandy beach. Facilities: Westwind centre (school, rental, shop, showers, toilets, storage boxes). Busy with windsurfers, and kiters are asked to keep out of their way.",
+    "tide_notes": "The fjord is brackish and shallow, fed with seawater through the Hvide Sande sluice/harbour opening. It is mostly standing to chest depth. Ringkøbing Fjord is not really tidal.",
+    "hazards": "Fishing nets and net poles. Bathers, dogs and children near shore. Short, unpleasant chop further out in strong wind. Gusts near shore in westerlies. At Hvide Sande Syd it gets very shallow near shore (risk of grounding, fin strikes). North Sea side: strong currents, always running outward along both harbour piers, can be life-threatening.",
+    "rules": "No formal kite zones are listed for Hvide Sande Nord. Windsurfing and kitesurfing are banned at the 'Betweens' spot between the harbour moles on the North Sea side.",
+    "season": "April–November. March–May and September–November are the windiest; summer winds are lighter. You always need a wetsuit.",
+    "sources": [
+      "https://westwind.dk/en/pages/westwind-spot-guide-ringkoebing-fjord",
+      "https://www.surf-magazin.de/en/spots-and-areas/international/denmark/spot-guide-ringkobing-fjord-the-best-spots-around-hvide-sande-and-bork-havn/",
+      "https://se.kiteforum.com/kitesurf/spot/ringkobing_fjord___hvide_sande_nord"
+    ]
+  },
+  "Camber Sands, England": {
+    "name": "Camber Sands (Broomhill)",
+    "aliases": [
+      "Camber",
+      "Broomhill Sands",
+      "Kite Beach Camber"
+    ],
+    "lat": 50.9299,
+    "lon": 0.8136,
+    "country": "United Kingdom",
+    "water": "sea",
+    "facing_deg": 160,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Prevailing direction, cross-onshore from the right looking out to sea."
+      },
+      {
+        "sector": "SSW",
+        "quality": "best",
+        "note": "Cross-onshore; works well."
+      },
+      {
+        "sector": "S",
+        "quality": "best",
+        "note": "Onshore; guides say any wind with 'S' in it works (ESE to WSW)."
+      },
+      {
+        "sector": "WSW",
+        "quality": "ok",
+        "note": "Cross-shore; usable, quoted as the western limit of the working range."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Listed as a working direction by local guides; close to side-shore."
+      },
+      {
+        "sector": "SSE",
+        "quality": "ok",
+        "note": "Onshore, usable."
+      },
+      {
+        "sector": "SE",
+        "quality": "ok",
+        "note": "Listed as a working direction."
+      },
+      {
+        "sector": "ESE",
+        "quality": "marginal",
+        "note": "Eastern limit of the working range; for easterlies the council points riders to Greatstone instead."
+      },
+      {
+        "sector": "NW",
+        "quality": "forbidden",
+        "note": "Offshore. Council: 'Do not use this area' in northwesterlies."
+      },
+      {
+        "sector": "N",
+        "quality": "forbidden",
+        "note": "Offshore; water sports not advised in offshore winds. Use Greatstone in northerlies."
+      }
+    ],
+    "launch_notes": "Launch in the designated Water Sports Zone in front of Broomhill Sands car park (free parking, Lydd Road, home of The Kitesurf Centre). Teaching zone runs from the black/white flag west to the first houses; freeride zone runs from the flag east to the MOD range. Kiting is banned at the Dunes end of Camber. Launch at least 50m (local guide: 75m) from people and hard hazards, ideally at the water's edge.",
+    "tide_notes": "Very tidal (spring range around 8m). No kiting from 2.5–3 hours before to 2.5–3 hours after high tide, because the water reaches the sea defence wall and there is no launch area left. Flat tidal pools form on the rising and falling tide. Shore break and strong currents at high tide.",
+    "hazards": "Sea defence wall and steps, granite rock boulders, wooden groynes, two shipwrecks at the east end (visible at low tide), MOD live firing range to the east, shore break and strong currents around high tide.",
+    "rules": "Only fly inside the designated kite zones, and keep to the separate teaching and freeride zones. Third-party insurance is required. No kiting at the Dunes end. Do not ride or enter the water in front of the MOD range when red flags are flying. No riding around high tide (council: 3 h either side). Water sports are not advised in offshore winds.",
+    "season": "Main riding season is March to November, busiest June to September (SW winds plus afternoon summer sea breezes). The windiest months are October to April.",
+    "sources": [
+      "https://www.rother.gov.uk/leisure-and-events/beaches-and-coastline/camber-sands",
+      "https://iksurfmag.com/travel-guides/europe/united-kingdom/camber-sands",
+      "https://locations.thekitespot.com/locations/kitesurf-camber-sands-united-kingdom",
+      "https://thekitesurfcentre.com/about/location"
+    ]
+  },
+  "Hunstanton, England": {
+    "name": "Hunstanton",
+    "aliases": [
+      "Old Hunstanton",
+      "Hunstanton Beach",
+      "Old Hunstanton Beach"
+    ],
+    "lat": 52.95172,
+    "lon": 0.49548,
+    "country": "United Kingdom",
+    "water": "sea",
+    "facing_deg": 300,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Prevailing wind on the west-facing beach. Short fetch over The Wash, so the water stays flat."
+      },
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Listed as one of the best directions. Flat water, good for freestyle and beginners."
+      },
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Listed as one of the best directions (northern end of the SSW–N working range)."
+      },
+      {
+        "sector": "SSW",
+        "quality": "ok",
+        "note": "Southern limit of the working range (SSW through W to N)."
+      },
+      {
+        "sector": "WSW",
+        "quality": "ok",
+        "note": "Inside the SSW–N working range."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Inside the SSW–N working range."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Inside the SSW–N working range."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Inside the SSW–N working range."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore for a W/NW-facing beach (deduced from the orientation; no guide states it explicitly)."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore for a W/NW-facing beach (deduced from the orientation; no guide states it explicitly)."
+      }
+    ],
+    "launch_notes": "Main beach in front of the town (New Hunstanton) at low tide. Old Hunstanton at mid to high tide: north of the resort, no sea wall, car park, toilets and café on site. Kite Eze (IKO school) teaches at Old Hunstanton, PE36 6JL. Sand bars and shallow flat water make it a good place to learn.",
+    "tide_notes": "Can be sailed at all tides; medium tidal range. Low tide: flat lagoon behind the sandbar, good for freestyle but shallow. Mid tide: shallow and choppier. High tide on the main beach: water against the 4 m sea defences between wooden groynes, dangerous for kiters. Go to Old Hunstanton at high tide. The flood comes in fast over the sandbanks and can cut people off.",
+    "hazards": "4 m sea wall and old wooden groynes at high tide on the main beach. Sandbars and very shallow water at low tide. Fast incoming tide can strand people on the sandbanks. Strong unpredictable gusts: a kiter was lifted about 20 ft and seriously injured at Old Hunstanton. No lifeguards at Old Hunstanton.",
+    "rules": "",
+    "season": "",
+    "sources": [
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/hunstanton-east-north-east-england-great-britain.html",
+      "https://bigsalty.com/en/windsurfing/guide/113/",
+      "https://www.beachlets.co.uk/?p=112980",
+      "https://hmcoastguard.uk/news/kitesurfers-20-foot-fall-race-against-time-and-tide-north-norfolk-coastguards"
+    ]
+  },
+  "Rhosneigr, Wales": {
+    "name": "Rhosneigr",
+    "aliases": [
+      "Traeth Crigyll",
+      "Rhosneigr Town Beach",
+      "Traeth Llydan",
+      "Broad Beach"
+    ],
+    "lat": 53.2325,
+    "lon": -4.5195,
+    "country": "United Kingdom (Wales)",
+    "water": "sea",
+    "facing_deg": 245,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "S",
+        "quality": "best",
+        "note": "Reference direction: cross-shore with wind funnelling down the coast, deep water and swell running along the beach. The classic big-air setup."
+      },
+      {
+        "sector": "SSW",
+        "quality": "best",
+        "note": "Ideal for sideshore wave riding."
+      },
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Prevailing wind, which speeds up between Wales and Ireland. Sideshore to cross-onshore wave conditions."
+      },
+      {
+        "sector": "WSW",
+        "quality": "ok",
+        "note": "Onshore. Inside the SW–NW range that guides list as rideable."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Onshore. Inside the SW–NW range that guides list as rideable."
+      },
+      {
+        "sector": "WNW",
+        "quality": "ok",
+        "note": "Inside the SW–NW range that guides list as rideable."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Guides say NW can give very good wave conditions."
+      },
+      {
+        "sector": "N",
+        "quality": "marginal",
+        "note": "Windsurf guides call N a good wave direction, but it runs side to side-off on a beach facing WSW. Check on site."
+      },
+      {
+        "sector": "NE",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore. Blows over the village, so it is very gusty and full of holes."
+      }
+    ],
+    "launch_notes": "Kitesurfers mostly use Traeth Crigyll, the northern town beach, and launch along Glan-y-Môr Road. At high tide there is a wind shadow near Glan-y-Môr Road, so launch further south near Funsport. Launch and ride well away from the rocks that split the two beaches. Surfers mostly use Traeth Llydan (Broad Beach) to the south. Parking on Glan-y-Môr Road and Beach Road fills early; park around the edges of the grass areas.",
+    "tide_notes": "Rideable at all tides. Mid-tide is best: clean kickers and swell, plus room to rig. At high tide the beach is narrow and rigging space gets tight. From mid to low tide rocks are exposed, and windsurf guides warn of submerged rocks near high water. The best waves come on the incoming tide.",
+    "hazards": "Strong rip and submerged rocks at the southern end of the bay. Rocks between Traeth Crigyll and Traeth Llydan. The river that cuts across the beach halfway up (near the dunes) has a strong rip after heavy rain. Wind shadow at high tide near Glan-y-Môr Road. Keep clear of sailing lanes marked by yellow buoys. Can get crowded on good days.",
+    "rules": "Anglesey Council seashore byelaws set an 8-knot speed limit for craft. Traeth Llydan is a launch site where launching fees apply to powered craft. No overnight van parking on Glan-y-Môr Road; campervans and motorhomes are restricted from 12:00 to 08:00.",
+    "season": "Windy all year. Spring and summer are milder. Best sessions come with S–SW wind and swell.",
+    "sources": [
+      "https://www.northernwatersports.co.uk/pages/rhosneigr-kitesurfing-spot-guide",
+      "https://rhosneigr.co.uk/rhosneigr-anglesey-windsurfing/",
+      "https://rhosneigr.co.uk/best-kitesurfing-beaches-in-anglesey/",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/rhosneigr-wales-bristol-channel-great-britain.html"
+    ]
+  },
+  "Dakhla lagoon, Morocco": {
+    "name": "Dakhla lagoon",
+    "aliases": [
+      "Dakhla Bay",
+      "Baie de Dakhla",
+      "Dakhla Attitude",
+      "PK25",
+      "Dakhla camps"
+    ],
+    "lat": 23.89922,
+    "lon": -15.77952,
+    "country": "Morocco",
+    "water": "lagoon",
+    "facing_deg": 130,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NNE",
+        "quality": "best",
+        "note": "Prevailing trade wind, side-shore over the lagoon. Usually 15-25 kn, stronger Apr-Sep (up to 35 kn), often lighter in the morning and picking up in the early afternoon."
+      },
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Prevailing trade wind, side-shore along the lagoon. Funnelled and gusty near the dunes."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Part of the trade wind sector, side to side-on."
+      },
+      {
+        "sector": "S",
+        "quality": "marginal",
+        "note": "Rare (about 1-2 times a year, per IKSURFMAG)."
+      },
+      {
+        "sector": "NW",
+        "quality": "forbidden",
+        "note": "Estimated offshore at the west-shore camps, based on beach orientation; not confirmed by a source."
+      }
+    ],
+    "launch_notes": "Launch from the kite camps on the western shore of the lagoon (Dakhla Attitude on its point, PK25, Westpoint, Lagoon Village...), about 25-30 min from town. Each camp has its own beach, school, rental and rescue. If you ride without staying at a camp, get a rescue voucher. Speed Spot (east shore, about 23.87895,-15.74894) is reached by 4x4/boat or by riding across; little or no assistance there.",
+    "tide_notes": "Rideable at all tides. Low tide: flat, standing-depth water for about 300 m from the beach; expect a carry of up to about 350 m, and some areas get very shallow. High tide: deeper water and chop, especially in strong wind. Tides are bigger at full and new moon. Speed Spot only works around low tide, when a sandbank of about 600 m forms across the wind.",
+    "hazards": "Gusty wind, worse near the dunes and around full moon. Chop at high tide. Very shallow areas and exposed sandbanks at low tide. Sharp shell fragments on the beach (boots recommended). Busy in peak summer. Strong current in the channel inside Dragon Island if riding to Speed Spot. Remote site with limited rescue outside the camps.",
+    "rules": "No specific kite rules reported (common sense). Part of Dakhla Bay is a Ramsar wetland and an Important Bird Area (ZICO); oyster farms sit on the lagoon edges.",
+    "season": "Year-round (about 300-340 windy days a year). Strongest Apr-Sep, peak Jun-Aug. Nov-Apr has lighter wind, good for beginners. Weakest in Dec-Jan.",
+    "sources": [
+      "https://www.iksurfmag.com/travel-guides/africa/morocco/dakhla/",
+      "https://locations.thekitespot.com/locations/kitesurf-dakhla-morocco",
+      "https://www.surf-magazin.de/en/spots-and-areas/international/overseas/up-and-coming-spot-of-the-month-dakhla-lagoon/",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/dakhla-pk25-dakhla-sahara-occidental-morocco.html"
+    ]
+  },
+  "Essaouira, Morocco": {
+    "name": "Essaouira Bay",
+    "aliases": [
+      "Essaouira",
+      "Baie d'Essaouira",
+      "Mogador",
+      "Essaouira Plage"
+    ],
+    "lat": 31.50005,
+    "lon": -9.76805,
+    "country": "Morocco",
+    "water": "sea",
+    "facing_deg": 265,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Main summer trade wind (Alizé/Charki) direction, made stronger by the afternoon thermal. 20-30+ kn in Jul-Aug, side to side-onshore along the 5 km arc."
+      },
+      {
+        "sector": "NNE",
+        "quality": "best",
+        "note": "Trade-wind variant. Guides call it cross to cross-onshore. Often stronger in the afternoon."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Side-onshore. Gusty near the medina because the town wind shadow disturbs it."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Wannakitesurf lists NW side-onshore as a reference direction. Very gusty close to the city because buildings disturb the flow."
+      },
+      {
+        "sector": "NE",
+        "quality": "marginal",
+        "note": "Guides list NE as the trade direction, but given the beach orientation it is likely side-off, especially in the mornings. Check on site."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Mostly winter. Less predictable and sometimes slightly cross-offshore in the morning before it turns onshore."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Winter secondary wind. Less reliable than the summer trades."
+      }
+    ],
+    "launch_notes": "Launch from the long, wide sandy beach south of the medina walls, in front of the schools and rental centres in the middle and downwind part of the bay. Rig away from horse and camel tours, tourists and locals. Stay out of the swimming zones. Do not launch near the town at the north end, where wind is gusty and rocks are hidden.",
+    "tide_notes": "Works at all tides on a sandy bottom, but guides rate high tide best. At high tide the small river-mouth lagoon at the south end of the bay fills with flat, glassy water for freestyle, with room for only a few riders.",
+    "hazards": "Hidden rocks and very gusty wind near the town and harbour (north/right side). Launching and landing are dangerous on strong days because of gusts. The beach is crowded with horse and camel tours, swimmers and other watercraft, especially at weekends. Mogador island shelters the bay from swell. Waves get bigger to the south, where the island stops blocking them, and in spring/autumn reach 1-2 m. Current is weak (<1 kn).",
+    "rules": "",
+    "season": "Rideable all year. Most reliable from April to September, with a peak in July-August (about 90% windy days, often 25-30+ kn). Main season runs May to October.",
+    "sources": [
+      "https://locations.thekitespot.com/locations/kitesurf-essaouira-bay-morocco",
+      "http://en.wannakitesurf.com/spot/Africa/Morocco/Essaouira_Bay/",
+      "https://alexpastorkiteclub.com/blog/kitesurf/kitesurfing-in-essaouira-morocco-a-complete-guide/"
+    ]
+  },
+  "Cumbuco, Ceará, Brazil": {
+    "name": "Cumbuco",
+    "aliases": [
+      "Praia do Cumbuco",
+      "Cumbuco Beach"
+    ],
+    "lat": -3.63077,
+    "lon": -38.71958,
+    "country": "Brazil",
+    "water": "sea",
+    "facing_deg": 35,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "E",
+        "quality": "best",
+        "note": "Trade wind with thermal boost from the dunes, often stronger in the afternoon. Cross-onshore from the right."
+      },
+      {
+        "sector": "ESE",
+        "quality": "best",
+        "note": "Average direction of the SE trades. Cross to cross-onshore from the right, usually 15-25 kn from Aug to Dec."
+      },
+      {
+        "sector": "SE",
+        "quality": "ok",
+        "note": "Usual morning direction, side to side-offshore, before it turns side-onshore in the afternoon. Be careful when it is gusty near shore."
+      },
+      {
+        "sector": "SSE",
+        "quality": "marginal",
+        "note": "Side-offshore. Guides say to move to other spots north or south of Cumbuco when it goes offshore."
+      },
+      {
+        "sector": "S",
+        "quality": "forbidden",
+        "note": "Offshore at the main beach."
+      }
+    ],
+    "launch_notes": "Main kite zone is on the beach in front of the Eco Paradise hotel, where most kiters gather. The beach is wide, so you can move about 150 m up or downwind to find space. It gets busier with obstacles near the village center. The usual downwinder goes to Lagoa do Cauipe (about 6 km downwind) for flat water.",
+    "tide_notes": "Main beach is described as not tide dependent. Sandbanks further out make small waves. The size of the Cauipe lagoon depends on water level (rainy season), not on the tide.",
+    "hazards": "Chop and small shorebreak, sandbanks offshore. Current of 1-2 kn. Swimmers and other boats in the water. Crowded on weekends and in peak season, especially at Cauipe lagoon. Theft of gear and valuables reported.",
+    "rules": "",
+    "season": "June to February. Best from August to December, kiteable almost every day (10-14 m kites). Little wind from March to May (rainy season).",
+    "sources": [
+      "http://en.wannakitesurf.com/spot/South_America/Brazil/Ceara/Cumbuco/",
+      "https://www.mackiteboarding.com/news/kiteboarding-travel-guide-cumbuco-brazil-destinations-ep-18/",
+      "https://s2as.com/blogs/news/kitesurfing-in-cumbuco-brazil"
+    ]
+  },
+  "Jericoacoara, Brazil": {
+    "name": "Jericoacoara (Preá)",
+    "aliases": [
+      "Jeri",
+      "Praia do Preá",
+      "Prea",
+      "Jericoacoara & Preá",
+      "Barrinha"
+    ],
+    "lat": -2.8135,
+    "lon": -40.4076,
+    "country": "Brazil",
+    "water": "sea",
+    "facing_deg": 10,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "E",
+        "quality": "best",
+        "note": "Reference trade wind, cross-shore from the right along the Preá–Jericoacoara strip. Typically 16–35 kn in season, blowing until sunset."
+      },
+      {
+        "sector": "ESE",
+        "quality": "best",
+        "note": "Frequent trade direction, cross to slightly cross-offshore from the right. Listed as a working direction by spot guides."
+      },
+      {
+        "sector": "ENE",
+        "quality": "ok",
+        "note": "Cross-onshore, usable along the beach strip."
+      },
+      {
+        "sector": "NE",
+        "quality": "ok",
+        "note": "Cross-onshore, usable."
+      },
+      {
+        "sector": "NNE",
+        "quality": "ok",
+        "note": "Listed as a working direction (thekitespot). Close to onshore."
+      },
+      {
+        "sector": "SE",
+        "quality": "marginal",
+        "note": "Side-offshore at the beach. Listed by windy.app, but it gets gusty and drifts riders out to sea."
+      },
+      {
+        "sector": "S",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SSW",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "The main kite launch is on the wide, flat sandy beach at Preá, home to most schools and kite centers. You can kite anywhere along the 14 km strip from Barrinha to Preá. Preá→Jeri is a short downwinder. The landing near the Jeri sunset dune is not for beginners, and wind in front of Jeri is gusty. Flat-water lagoons downwind: Guriú (medium to high tide), Tatajuba, and Barra Grande (low tide).",
+    "tide_notes": "The ocean beach works at all tides. Low tide gives shallower, flat-to-choppy water. Rising and high tide bring kickers and small waves. The lagoons depend on the tide: Guriú works at medium–high tide, Barra Grande is best at low tide, and Tatajuba changes size with the tide. Check depth before trying tricks.",
+    "hazards": "Sand buggies and 4x4s drive along the beach and may not see lines or gear. Medium alongshore current (1–2 kn). Near Jericoacoara village: boats, rocks and buildings close to the beach, and gusty wind off the dune. Very crowded in peak season.",
+    "rules": "The beach is in Jericoacoara National Park (ICMBio). Kiting and kite landing are banned on Jeri's main beach, which is reserved for windsurfers. A kite zone lies past the sunset dune, and windsurfing is banned within 500 m of shore in that zone. Kite/windsurf schools need a 12-month park authorization (ICMBio portaria, 2016).",
+    "season": "July to January (peak August–January, 20–38 kn). February is mid-season. Lighter winds March–June.",
+    "sources": [
+      "https://locations.thekitespot.com/locations/kitesurf-jericoacoara-prea-brazil",
+      "https://www.mackiteboarding.com/news/kiteboarding-travel-guide-jericoacoara-brazil-destinations-ep-12/",
+      "https://windy.app/forecast2/spot/67447/Prea%20Beach,%20Brazil%20(Praia%20do%20Pre%C3%A1)",
+      "https://www.opovo.com.br/noticias/economia/2016/08/novas-regras-para-windsurf-e-kitesurf-em-jericoacoara.html"
+    ]
+  },
+  "Barra Grande, Piauí, Brazil": {
+    "name": "Barra Grande",
+    "aliases": [
+      "Barra Grande do Piauí",
+      "Praia de Barra Grande",
+      "Barra Grande (Cajueiro da Praia)"
+    ],
+    "lat": -2.90978,
+    "lon": -41.41863,
+    "country": "Brazil",
+    "water": "sea",
+    "facing_deg": 15,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "E",
+        "quality": "best",
+        "note": "Steady trade wind, typically 18-24 kn (range 15-35 kn), side-shore to side-on from the right (starboard). Stronger in the afternoon."
+      },
+      {
+        "sector": "ENE",
+        "quality": "best",
+        "note": "Side-on starboard, the reference direction in the season."
+      },
+      {
+        "sector": "ESE",
+        "quality": "ok",
+        "note": "Side-shore. Usable trade-wind variant."
+      },
+      {
+        "sector": "NE",
+        "quality": "ok",
+        "note": "More onshore. Choppier, harder to get upwind of the shallows."
+      },
+      {
+        "sector": "SE",
+        "quality": "marginal",
+        "note": "Some guides call SE the main direction, but on this north-facing coast it turns side-off and gusty. Check on site."
+      },
+      {
+        "sector": "S",
+        "quality": "forbidden",
+        "note": "Offshore."
+      },
+      {
+        "sector": "SW",
+        "quality": "forbidden",
+        "note": "Offshore."
+      }
+    ],
+    "launch_notes": "Wide sandy beach about 4-5 km long in front of the village (Cajueiro da Praia municipality), with several kite schools and pousadas along it. Launch from the beach in front of the schools. Give learners room in the shallows. Downwinders run to nearby lagoons (Barrinha, Mangue) and further on to the river mouth area (Macapá).",
+    "tide_notes": "Very tide-dependent. Mid to low tide gives flat, waist-deep water, and lagoons/pools form on the sea side: ideal for beginners and freestyle. Right at low tide some areas get too shallow. High tide makes the water deeper and choppy, with small waves on the outer sandbank.",
+    "hazards": "Shallow sandbanks: jumping or falling in very shallow water near the edges risks injury. Shore break of about 2 m over the outer sandbank at higher tides. Sandy bottom, little current reported. Spot guides mention visible hazards without saying what they are.",
+    "rules": "",
+    "season": "July to January (most consistent August to December, peak in August-September)",
+    "sources": [
+      "https://wannakitesurf.com/spot/South_America/Brazil/Piaui/Barra_Grande/",
+      "https://vvanat.fr/blog/bresil-kite-surf-barra-grande/",
+      "https://bahia.ws/en/guia-de-turismo-barra-grande-no-piaui/",
+      "https://www.windfinder.com/windstatistics/barra_grande"
+    ]
   }
 }

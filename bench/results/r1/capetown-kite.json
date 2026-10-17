@@ -1,0 +1,46 @@
+{
+  "id": "capetown-kite",
+  "q": "Kiting at Bloubergstrand, Cape Town tomorrow. 85 kg, 7, 9 and 12 m. Will the south-easter blow, when, and what size?",
+  "sans": "Oui, du vent est prévu demain (dimanche 18 octobre), mais ce ne sera pas un vrai south-easter. Les modèles donnent un vent **de sud (160–185°)** sous un ciel **couvert à 100 %**, avec peut-être une petite bruine l'après-midi. Ça ressemble à un sud nuageux, pas au SE classique ciel bleu avec la nappe sur la Table. La session reste jouable, mais le vent sera plus faible et plus irrégulier qu'un vrai SE.\n\n**Ce que disent les modèles (Open-Meteo, vent moyen / rafales en nœuds) :**\n\n| Heure | ECMWF | ICON | UKMO | GFS |\n|---|---|---|---|---|\n| 10h | 9 / 21 | 7 / 15 | 10 / 21 | 8 / 13 |\n| 12h | 10 / 22 | 10 / 21 | 11 / 22 | 9 / 13 |\n| 14h | 12 / 23 | 8 / 17 | 10 / 21 | 9 / 13 |\n| **15–17h** | **12 / 24** | **11–13 / 22–25** | 9–11 / 17–22 | 10–11 / 14 |\n| 19h | 9 / 19 | 11 / 23 | 7 / 13 | 7 / 13 |\n| 21h | 7 / 14 | 9 / 19 | 5 / 8 | 6 / 12 |\n\n**Quand y aller :** entre **13h et 18h**, avec le pic entre 15h et 17h. Le matin, il y a trop peu de vent (8–10 nœuds). Le vent retombe nettement après 19–20h. La plupart des modèles le voient faiblir dès 19h, seul ICON le garde à environ 11 nœuds jusqu'à 19h.\n\n**Taille d'aile pour 85 kg :**\n- **12 m : c'est l'aile à prendre.** Les modèles annoncent 10–12 nœuds de vent moyen, et ils sous-estiment souvent Blouberg, où le vent accélère le long de la côte. Sur place, on peut raisonnablement attendre 13–17 nœuds, et le 12 m couvre bien cette plage.\n- **9 m : garde-le dans la voiture.** Si à l'arrivée tu mesures 18 nœuds ou plus de vent établi, passe au 9.\n- **7 m : inutile demain.**\n\n**À savoir :**\n- **Rafales très fortes par rapport au vent moyen** (environ 22–25 nœuds pour 11–12 de moyenne). Attends-toi à des trous puis des rafales, surtout en décollant et en atterrissant. Si le vent reste en rafales, prends ton 12 m avec un bon dépower, pas un 12 m sous-toilé dans les trous.\n- Un vent de sud à Blouberg souffle à peu près parallèle à la plage, légèrement vers le large. C'est correct, mais vérifie qu'il ne tourne pas trop vers le large.\n- Le ciel couvert rend l'air plus lourd et le vent un peu moins régulier qu'un SE par grand beau.\n- Ce sont les prévisions d'aujourd'hui (17 octobre). Avant de partir, regarde demain matin Windguru ou Windfinder et une webcam de Blouberg, ou les relevés de la station de l'aéroport de Cape Town, pour voir si le vent se met vraiment en place vers midi.\n\nBonne session !\n\nSources : [Open-Meteo API](https://open-meteo.com/) (modèles ECMWF IFS, ICON, UKMO, GFS ; point -33.80, 18.46)",
+  "avec": "Pas de vrai south-easter demain, **dimanche 18 octobre**. Les modèles annoncent un vent de **S à SSE, faible et très rafaleux**, et non le Cape Doctor établi à 25 nœuds et plus.\n\n## Prévisions pour Bloubergstrand, dimanche 18/10\n\n| Créneau | Vent moyen / rafales | Direction | Accord entre modèles |\n|---|---|---|---|\n| 06h–10h | 8–10 / 15–19 nds | S → SSE | moyen (écart de 4 à 6 nds) |\n| 11h–14h | 9–10 / 18–19 nds | S–SSE | bon |\n| **15h–18h** | **10–11 / 19–21 nds** | **S** | **bon (écart de 2 à 4 nds)** |\n| après 19h | 7–9 / 15–17 nds | S | baisse |\n\n- **Le meilleur moment est entre 15h et 18h.** C'est le pic de la journée, et les cinq modèles sont d'accord. Ça correspond aussi au schéma habituel ici, où le vent forcit à partir de 16h.\n- **Les rafales vont presque du simple au double** : moyenne de 10 nœuds, pointes à 20. L'air est plus froid que la mer (14 °C contre 16,5 °C) et le vent est nettement plus fort en altitude. Tu auras donc des trous, puis des rafales qui te surtoilent d'un coup.\n- **La houle de SO fait 2,3 à 2,6 m avec une période de 11 s.** Le shorebreak à Blouberg sera costaud. Si ton aile tombe dans les vagues dans 10 nœuds de vent, c'est la galère assurée. C'est le principal risque de la journée.\n\n## Taille d'aile (85 kg)\n\n- **12 m** : c'est la seule qui peut marcher. Même avec elle, tu seras juste sous-toilé dans la moyenne et bien toilé dans les rafales. Prends une grande planche ou un foil si tu en as un.\n- **9 m** : seulement si le vrai SE se lève quand même, avec 18 nœuds réguliers ou plus.\n- **7 m** : tu peux la laisser à la maison.\n\nÀ Blouberg, le SE est réputé plus fort que ce qu'annoncent les modèles globaux, à cause de l'accélération autour de Table Mountain. Va voir les capteurs en direct vers 13h–14h avant de partir. Sunset Beach, au sud de la zone, reçoit le vent plus tôt et plus fort.\n\nPrévois une combinaison 4/3 au minimum. La mer annoncée est à 16,5 °C, mais elle est souvent plus froide quand le SE souffle, à cause de la remontée d'eau froide.\n\n## Un petit service pour les prochains riders\n\nBloubergstrand n'a pas encore de fiche dans la base windext. J'ai calculé ces prévisions avec une plage **orientée OSO, vers 250°**. Dans cette hypothèse, le S et le SE arrivent side-shore par la gauche, et tout vent d'E est offshore. D'après les guides, les spots sont Sunset, Dolphin, Kite et Doodles Beach, avec un départ classique en downwind vers le nord depuis Sunset. Si tu me confirmes ou corriges ces infos (orientation, mise à l'eau, dangers), j'enregistre la fiche.\n\nSources :\n- [The Kite Spot – Blouberg](https://locations.thekitespot.com/locations/kitesurf-blougbergstrand-cape-town-south-africa)\n- [windy.app – Tableview/Blouberg](https://windy.app/forecast2/spot/635969/Tableview%2FBlouberg+strand)",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 2,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 2,
+      "concision": 3,
+      "errors": [
+        "Je n'ai fait aucune recherche web, donc je n'ai pas vérifié les valeurs des modèles. Seul le jour est confirmé : dimanche 18 octobre 2026 est correct.",
+        "Erreur d'orientation : la plage de Blouberg fait face à l'OSO, vers 250°. Un vent de S (160 à 185°) y est side-on, pas « légèrement vers le large ». Un vent offshore viendrait d'environ 070°, c'est-à-dire de l'E ou de l'ENE.",
+        "Aucune mention de la houle ni du shorebreak, alors que Blouberg est exposé aux houles de SO. Pour une session à 10 nœuds, c'est un risque majeur.",
+        "Aucune mention du froid. L'eau de l'Atlantique fait 12 à 15 °C, et l'upwelling la refroidit encore quand le SE souffle. Il fallait recommander au minimum une 4/3, voire une 5/4.",
+        "Les marées ne sont pas mentionnées.",
+        "L'ajustement à « 13 à 17 nœuds sur place » est spéculatif. L'accélération du SE autour de Table Mountain ne s'applique pas vraiment à un vent de S sous ciel couvert, et ce chiffre pousse à surestimer le vent.",
+        "L'idée que « le ciel couvert rend l'air plus lourd » est douteuse. Ce qui se passe réellement, c'est que la couverture nuageuse supprime l'effet thermique de l'après-midi, ce qui va contre le renforcement annoncé.",
+        "Elle conseille la station de l'aéroport de Cape Town, qui est à l'intérieur des terres et peu représentative. Une station ou une webcam à Blouberg ou Sunset Beach serait plus utile.",
+        "Les points forts : le tableau multi-modèles est transparent et montre bien la dispersion, et le conseil d'aller voir en direct le lendemain est bon."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 4,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "Je n'ai fait aucune recherche web, donc je n'ai pas vérifié les prévisions de vent et de houle pour le 18/10. Seuls les faits fixes ont été contrôlés : dimanche 18 octobre 2026 est correct, puisque le 17 est un samedi.",
+        "Les marées ne sont pas mentionnées. Le marnage à Table Bay est d'environ 1,5 à 2 m. À marée basse, le shorebreak est plus creux et certaines zones rocheuses autour de Blouberg se découvrent. Il faudrait donner les horaires de pleine mer et de basse mer, par exemple ceux de SAN Hydrographic Office ou de tide-forecast.",
+        "« Le 12 m est la seule qui peut marcher » avec 10 à 11 nœuds de moyenne pour 85 kg : c'est trop optimiste. Avec un twintip, ça ne déjauge pas vraiment en dessous d'environ 12 à 13 nœuds. La réponse aurait dû dire clairement que, si le vent reste sous 12 nœuds, c'est foil ou pas de session.",
+        "La section « Un petit service / fiche windext » n'apporte rien au rider : c'est du remplissage qui ressemble à un outil interne.",
+        "L'orientation à environ 250° (OSO) est juste, et le SE side-shore venant de la gauche aussi. En revanche, la réponse oublie de préciser que le S, à 70° de l'onshore, arrive side-on. C'est plutôt rassurant, mais ce n'est pas dit.",
+        "La houle de 2,3 à 2,6 m pour 11 s n'est pas sourcée, et je ne l'ai pas vérifiée. L'avertissement sur le shorebreak reste pertinent."
+      ]
+    },
+    "winner": "avec",
+    "why": "A couvre mieux les risques propres au spot (shorebreak avec la houle de SO, eau froide d'upwelling, rafales liées à l'instabilité de l'air) et donne une orientation de plage juste, alors que B se trompe en disant que le S est légèrement offshore et oublie la houle et le froid."
+  },
+  "seconds": 89
+}

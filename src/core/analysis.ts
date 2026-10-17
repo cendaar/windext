@@ -78,14 +78,19 @@ export function gustDiagnostics(fc: Forecast, hours: HourSummary[]): string[] {
   const out: string[] = []
   const daytime = fc.hours.filter(h => { const hr = +h.time.slice(11, 13); return hr >= 8 && hr <= 20 })
   if (!daytime.length) return out
-  const avgGF = mean(hours.filter(h => +h.time.slice(11, 13) >= 8 && +h.time.slice(11, 13) <= 20).map(h => h.gustFactor).filter(v => v > 0))
-  if (avgGF >= 1.8) out.push(`Gust factor ${r1(avgGF)}: gusts nearly double the mean wind, expect holes and overpowered spikes.`)
+  const dayH = hours.filter(h => +h.time.slice(11, 13) >= 8 && +h.time.slice(11, 13) <= 20)
+  const avgGF = mean(dayH.map(h => h.gustFactor).filter(v => v > 0))
+  const avgSpeed = mean(dayH.map(h => h.speed))
+  const fromLand = dayH.filter(h => h.shore === 'offshore' || h.shore === 'side-off').length / Math.max(1, dayH.length) >= 0.5
+  if (avgSpeed < 8) out.push(`Light wind (${r1(avgSpeed)} kn on average): gust ratios are meaningless at this strength.`)
+  else if (avgGF >= 1.8) out.push(`Gust factor ${r1(avgGF)}: gusts nearly double the mean wind, expect holes and overpowered spikes.`)
   else if (avgGF >= 1.4) out.push(`Gust factor ${r1(avgGF)}: moderately gusty.`)
   else out.push(`Gust factor ${r1(avgGF)}: steady wind.`)
   const temps = daytime.map(h => h.temp).filter((v): v is number => v != null)
   if (fc.seaTemp != null && temps.length) {
     const delta = r1(fc.seaTemp - mean(temps))
-    if (delta >= 2) out.push(`Air ${r1(mean(temps))}°C over sea ${fc.seaTemp}°C (sea warmer by ${delta}°C): unstable marine layer, convective gusts bring faster air down from altitude.`)
+    if (delta >= 2 && fromLand) out.push(`Wind mostly from the land here: gusts are mechanical (relief, buildings, turbulence), strongest and most irregular near the shore; the sea-air difference is not the cause.`)
+    else if (delta >= 2) out.push(`Air ${r1(mean(temps))}°C over sea ${fc.seaTemp}°C (sea warmer by ${delta}°C): unstable marine layer, convective gusts bring faster air down from altitude.`)
     else if (delta <= -3) out.push(`Air warmer than the sea by ${-delta}°C: stable layer, wind at the surface may stay below forecast, especially near shore.`)
   }
   const cape = daytime.map(h => h.cape).filter((v): v is number => v != null)

@@ -3,6 +3,9 @@ import { z } from 'zod'
 import { fetchForecast, geocode, MODEL_LABELS, defaultModels } from './openmeteo.js'
 import { summarizeHour, findWindows, gustDiagnostics, renderTable, compass, COMPASS, tideEvents, renderTides, renderSea, daylightMap, weekday, tideRange, significantTides } from './analysis.js'
 import { nearestStation, noaaTides } from './noaa.js'
+import { dayVerdict, type Rider } from './verdict.js'
+import { renderVerdict } from './verdict-i18n.js'
+import { nwsAlerts, isBlocking } from './alerts.js'
 import type { Forecast } from './openmeteo.js'
 import type { Store, SpotCard, WindQuality } from './store.js'
 
@@ -11,9 +14,15 @@ export const INSTRUCTIONS = `windext: multi-model wind forecasts for wind sports
 WORKFLOW
 1. find_spot with the place or spot name. It returns known cards (status seed, community or verified; kind spot or school) and geocoding results.
 2. Pass the card's spot_id to spot_forecast and ride_windows. The forecast is then read against the beach orientation and the spot's known good and forbidden wind sectors.
-3. A 'seed' card comes from OpenStreetMap: position and sports only, orientation possibly estimated from the coastline. A 'school' card is a club, school or shop, not the launch itself. In both cases, and whenever no card exists: search the web yourself for the spot guide (beach orientation, launch area, working and forbidden wind directions, hazards, tide, rules, season). Summarise the facts, ask the user to confirm or correct them (locals know better than guides), then call submit_spot with the confirmed card and the source URLs. Never skip the confirmation. Do this gently, once per spot, as a favour to the next rider, not as a chore.
+3. A 'seed' card comes from OpenStreetMap: position and sports only, orientation possibly estimated from the coastline. A 'school' card is a club, school or shop, not the launch itself. In both cases, and whenever no card exists: search the web yourself for the spot guide (beach orientation, launch area, working and forbidden wind directions, hazards, tide, rules, season). Summarise the facts, ask the user to confirm or correct them (locals know better than guides), then call submit_spot with the confirmed card and the source URLs. Never skip the confirmation.
 4. Treat 'seed' and 'community' cards as useful but unverified; say so whenever safety depends on them. A coastline-estimated orientation is a guess: confirm it with the user before relying on it for offshore warnings.
 5. If the user mentions having ridden a spot ("I was there yesterday, it was 20 knots"), thank them and note that session reports will soon be recorded to score the models.
+
+ANSWER FORMAT (riders read this on a phone in the car park)
+- Open with the VERDICT line of the day asked, as given by spot_forecast: yes / maybe / no, the window, the gear size, and the windext score out of 10. Do not soften or contradict it unless you found an official warning or a hard fact it could not know.
+- Then 2 to 4 short lines on why (the verdict's reasons), then the decision rule for the morning when the verdict is maybe, then the safety points that apply to this spot. Under 250 words unless the user asks for detail. No per-model table unless asked.
+- If there is no spot card, ask at most ONE short sentence at the very end ("Do you know this spot? Tell me if the beach faces N and I will save it for the next riders."). Never add it for a professional or school question, and never more than once per conversation.
+- Official warnings (OFFICIAL WARNINGS line) override everything: say it first.
 
 READING THE TABLE AS A RIDER
 - MEAN is the model consensus. SPREAD is the disagreement in knots: <= 4 reliable, 4-8 confirm on the morning run, > 8 do not plan on it. AGREE summarises both speed and direction agreement.
@@ -107,7 +116,7 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
     if (cards.length) out.push(`Known spots:\n${cards.map(fmtCard).join('\n')}`)
     else out.push('No spot card in the database for this query.')
     if (geo.length) out.push(`Geocoding:\n${geo.map(p => `${p.name}, ${p.admin}, ${p.country}: lat ${p.lat}, lon ${p.lon}`).join('\n')}`)
-    if (!cards.some(c => c.status !== 'seed' && c.kind === 'spot')) out.push('Next step: search the web for this spot\'s guide (beach orientation, launch, working wind directions, hazards, tide, rules), confirm the facts with the user, then call submit_spot. This is what makes the next rider\'s forecast better.')
+    if (!cards.some(c => c.status !== 'seed' && c.kind === 'spot')) out.push('Next step: search the web for this spot\'s guide (beach orientation, launch, working wind directions, hazards, tide, rules), confirm the facts with the user, then call submit_spot. Keep it to one sentence at the end of your answer.')
     return { content: [{ type: 'text', text: out.join('\n\n') }] }
   })
 
@@ -157,7 +166,10 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
       days: z.number().int().min(1).max(7).default(2).describe('Forecast days (default 2). Use 1 for a single day question, 3 for a weekend; ask for 7 only when the user wants the whole week, it costs ~4000 tokens.'),
       start_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional().describe('First day, YYYY-MM-DD. Default today.'),
       facing_deg: z.number().min(0).max(360).optional().describe('Overrides the spot card orientation. Direction the beach faces, towards the water.'),
-      sport: z.enum(['kitesurf', 'windsurf', 'wingfoil', 'sailing', '']).default('').describe('What the user rides, for statistics only'),
+      sport: z.enum(['kitesurf', 'windsurf', 'wingfoil', 'sailing', '']).default('').describe('What the user rides; drives the verdict and gear size'),
+      weight_kg: z.number().min(30).max(150).optional().describe('Rider weight, for the gear size. Ask if unknown; default 75.'),
+      sizes: z.array(z.number().positive().max(25)).optional().describe('Gear the rider owns: kite or wing sizes in m, windsurf sails in m2, e.g. [9, 12]'),
+      level: z.enum(['beginner', 'intermediate', 'expert']).optional(),
       models: z.array(z.string()).optional().describe(`Override the model list. Open-Meteo ids such as ${Object.keys(MODEL_LABELS).join(', ')}.`),
       hours_from: z.number().int().min(0).max(23).default(6), hours_to: z.number().int().min(0).max(23).default(21),
     },
@@ -189,7 +201,15 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
     const tides = await tideText(c2, lat, lon, fc, a.days)
     const tideBlock = tides ? `\n\nTides${c2?.tide_notes ? ` (spot note: ${c2.tide_notes})` : ''}:\n${tides}` : ''
     const sea = renderSea(fc)
-    return { content: [{ type: 'text', text: `${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}${sea ? `\n\nSea state (daytime):\n${sea}` : ''}${tideBlock}` }] }
+    const alerts = await nwsAlerts(lat, lon)
+    const sport = a.sport === 'sailing' || a.sport === '' ? 'kitesurf' : a.sport
+    const rider: Rider = { sport, weightKg: a.weight_kg ?? 75, sizes: a.sizes?.length ? a.sizes : sport === 'kitesurf' ? [9, 12] : sport === 'wingfoil' ? [4, 5.5] : [5, 6.5], level: a.level ?? 'intermediate' }
+    const profileNote = a.weight_kg && a.sizes?.length ? '' : ` (default profile: ${rider.weightKg} kg, ${rider.sizes.join(' and ')} ${rider.sport === 'windsurf' ? 'm2' : 'm'}; ask the rider and call again for a personal answer)`
+    const verdicts = (['today', 'tomorrow'] as const).map(day => renderVerdict(dayVerdict(fc, rider, { day, facing: facing ?? null, card: c2, alerts: alerts.map(x => ({ event: x.event, blocking: isBlocking(x.event) })) }), 'en'))
+      .filter(v => fc.hours.some(h => h.time.startsWith(v.date)))
+    const verdictBlock = `VERDICT (${rider.sport}${profileNote}):\n${verdicts.map(v => `${v.day} ${v.date}: ${v.headline} windext score ${v.score}/10. ${v.reasons.join(' ')}`).join('\n')}`
+    const alertBlock = alerts.length ? `OFFICIAL WARNINGS (US National Weather Service): ${alerts.map(x => `${x.event}${x.ends ? ` until ${x.ends.slice(0, 16).replace('T', ' ')}` : ''}`).join('; ')}\n` : ''
+    return { content: [{ type: 'text', text: `${alertBlock}${verdictBlock}\n\n${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}${sea ? `\n\nSea state (daytime):\n${sea}` : ''}${tideBlock}` }] }
   })
 
   server.registerTool('ride_windows', {

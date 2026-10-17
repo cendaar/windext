@@ -6,6 +6,7 @@ import { setCache } from './core/openmeteo.js'
 import { estimateFacing } from './core/coastline.js'
 import { landingPage, privacyPage, spotsPage } from './pages.js'
 import { pickLang, LANGS } from './i18n.js'
+import { handleApi } from './api.js'
 import ICON_SVG from '../assets/icon.svg'
 import ICON_PNG from '../assets/icon-256.png'
 
@@ -38,6 +39,7 @@ export default {
       await server.connect(transport)
       return transport.handleRequest(request)
     }
+    if (url.pathname.startsWith('/v1/')) { setCache(new KVCache(env.CACHE)); const r = await handleApi(request, url, new D1Store(env.DB), env.DB); if (r) return r }
     if (url.pathname === '/health') return new Response('ok')
     if (url.pathname === '/icon.svg') return new Response(ICON_SVG, { headers: { 'content-type': 'image/svg+xml', 'cache-control': 'public, max-age=86400' } })
     if (url.pathname === '/icon-256.png') return new Response(ICON_PNG, { headers: { 'content-type': 'image/png', 'cache-control': 'public, max-age=86400' } })

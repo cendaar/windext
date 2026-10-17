@@ -8,11 +8,6 @@ import { MemoryStore } from '../src/core/store.js'
 import { Client } from '@modelcontextprotocol/sdk/client/index.js'
 import { InMemoryTransport } from '@modelcontextprotocol/sdk/inMemory.js'
 
-const [ca, cb] = InMemoryTransport.createLinkedPair()
-await createServer(new MemoryStore()).connect(cb)
-const client = new Client({ name: 'sweep', version: '0' }); await client.connect(ca)
-const tool = async (name: string, args: any) => ((await client.callTool({ name, arguments: args })) as any).content[0].text as string
-
 type Kind = 'sea' | 'lagoon' | 'lake' | 'river' | 'microtidal'
 export const SPOTS: { name: string; lat: number; lon: number; kind: Kind; facing?: number; noaa?: string }[] = [
   // Europe
@@ -60,6 +55,12 @@ export const SPOTS: { name: string; lat: number; lon: number; kind: Kind; facing
   { name: 'Takapuna NZ', lat: -36.79, lon: 174.775, kind: 'sea', facing: 90 },
   { name: 'Nadi Fiji (date line)', lat: -17.77, lon: 177.38, kind: 'sea', facing: 270 },
 ]
+
+if (process.argv[1]?.endsWith('sweep.ts')) {
+const [ca, cb] = InMemoryTransport.createLinkedPair()
+await createServer(new MemoryStore()).connect(cb)
+const client = new Client({ name: 'sweep', version: '0' }); await client.connect(ca)
+const tool = async (name: string, args: any) => ((await client.callTool({ name, arguments: args })) as any).content[0].text as string
 
 const angDiff = (a: number, b: number) => { const d = Math.abs(a - b) % 360; return d > 180 ? 360 - d : d }
 
@@ -123,3 +124,5 @@ for (const s of SPOTS) {
 }
 console.log(`\n==== ${issues.length} issue(s) on ${SPOTS.length} spots ====\n${issues.join('\n')}`)
 await client.close(); process.exit(0)
+
+}

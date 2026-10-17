@@ -1,0 +1,45 @@
+{
+  "id": "wissant-berck",
+  "q": "Dimanche, kite à Wissant ou à Berck ? 75 kg, 9 et 12 m. Dis-moi lequel et pourquoi.",
+  "sans": "**Ni l'un ni l'autre, d'après les prévisions actuelles.** Dimanche 18 octobre, il n'y a pas assez de vent pour naviguer, même avec ta 12 m.\n\n| | Vent moyen | Rafales | Direction | Ciel / mer |\n|---|---|---|---|---|\n| **Wissant** | 2 à 6 nœuds | 5 à 13 nœuds | N-NE, puis variable | Pluie jusqu'à 14 h, houle d'environ 1,3 m |\n| **Berck** | 4 à 7 nœuds (max vers 14 h) | 10 à 15 nœuds | N-NE | Sec, environ 12 °C, mer d'environ 0,7 m |\n\n**Pourquoi c'est non :**\n- À 75 kg, une 12 m demande en général **au moins 14 à 15 nœuds de vent moyen** pour bien planer. Ici on est autour de 6 nœuds. Seules les rafales atteignent 15 nœuds, et ça ne suffit pas pour tenir une session.\n- Avec ce vent de N-NE, ça souffle de la terre vers la mer (« side-off ») à Wissant et de biais à Berck. Si le vent tombe et que l'aile ne vole plus, ce vent te pousse vers le large. C'est risqué en conditions faibles.\n\n**Si tu tiens absolument à choisir : Berck.** Il y a un peu plus de vent, il ne pleut pas et la mer est plus calme. Ça reste au mieux une sortie en foil ou une séance pour travailler le pilotage de l'aile, pas du kite en twin-tip. D'après le modèle, la marée est haute vers 16-17 h, ce qui tombe avec la fin de la petite fenêtre de vent.\n\n**Conseil :** regarde à nouveau Windguru et Windy samedi soir. Ces prévisions viennent d'un seul modèle (Open-Meteo), et à moins de 48 h un front peut encore se décaler. Si le moyen passe au-dessus de 15 nœuds quelque part, je réévalue avec toi.\n\nSources : [Open-Meteo Forecast API](https://open-meteo.com/), [Open-Meteo Marine API](https://open-meteo.com/en/docs/marine-weather-api)",
+  "avec": "**Ni l'un ni l'autre, a priori.** Dimanche 18 octobre, il n'y a pas assez de vent pour ton 12 m à 75 kg, et la direction ne convient à aucun des deux spots. Si tu tiens absolument à y aller, **Wissant est le seul pari possible**, et seulement en fin de journée.\n\n**Pourquoi**\n\n| | Wissant | Berck |\n|---|---|---|\n| Vent moyen (moyenne des modèles) | 5 à 9 nds jusqu'à 16 h, puis 9 à 11 nds entre 17 h et 18 h | 6 à 8 nds toute la journée |\n| Direction | NE le matin (side/side-off), N à NNE en fin d'après-midi (side-on) | NNE à NE, side-off sur une plage orientée ouest |\n| Fiabilité | Très faible : écart de 10 à 14 nds entre modèles | Faible : écart de 6 à 10 nds |\n| Rafales | Presque le double du vent moyen (averses) | Idem |\n| Mer | 1,2 à 1,5 m de NNE | 0,7 à 0,8 m |\n\n- **Ce qu'il te faut :** avec 75 kg, il faut environ 14 à 15 nds établis pour sortir le 12 m, et plus de 20 nds pour le 9 m. Aucun des deux spots ne s'en approche en moyenne.\n- **Berck ne marche pas :** le vent est faible et vient de terre en travers (side-off). En cas de pépin ou de trou de vent, tu dérives vers le large. Avec un régime instable comme celui-là, je n'irais pas.\n- **Wissant, en fin de journée seulement :** le vent passe au nord, donc côté mer et en travers de la plage. Deux modèles (AROME et KNMI) donnent 15 à 17 nds entre 17 h et 18 h, ce qui suffirait pour le 12 m. Mais ICON et UKMO ne donnent que 3 à 5 nds, et le soleil se couche à 18 h 54. La fenêtre serait donc d'une heure au mieux, et très incertaine.\n- **Des rafales irrégulières :** la mer est à 16,8 °C et l'air à 11 °C, ce qui rend l'atmosphère instable avec des averses. Attends-toi à des coups de vent suivis de trous, donc un ride irrégulier même si le vent rentre.\n\n**Ce que je te conseille :** revérifie demain matin le run AROME de 6 h et les balises en direct (Wissant / Cap Gris-Nez). Si AROME maintient plus de 15 nds de N vers 17 h et que la balise le confirme en début d'après-midi, va à Wissant avec le **12 m**. Sinon, reste chez toi.\n\n**Limites de cette analyse :**\n- **Orientation des plages :** il n'existe pas de fiche fiable pour ces deux spots dans la base windext. J'ai pris environ NW (325°) pour Wissant et W (275°) pour Berck. Corrige-moi si tu connais mieux, je peux enregistrer les fiches pour les prochains riders.\n- **Marées :** les horaires viennent d'un modèle non calibré. Indicativement, la basse mer serait vers 11 h et la pleine mer vers 17 h. Vérifie sur maree.info avant de partir.",
+  "judged": {
+    "sans": {
+      "accuracy": 2,
+      "safety": 2,
+      "uncertainty": 3,
+      "actionability": 3,
+      "local_knowledge": 1,
+      "concision": 4,
+      "errors": [
+        "La lecture de la direction est fausse à Berck. La plage est orientée ouest (vers 275°), donc un vent de N-NE y souffle side-off, voire offshore en biais. Ce n'est pas un simple vent « de biais ». À Wissant (plage orientée NNW), du N-NE est plutôt side, voire side-on quand il tourne au N, pas franchement side-off. Les deux spots sont en quelque sorte inversés.",
+        "Le choix de secours (« Berck ») contredit son propre avertissement de sécurité : elle oriente le rider vers le spot où le vent faible est le plus nettement side-off, avec un risque de dérive vers le large.",
+        "Elle ne mentionne pas l'éventuelle fenêtre de fin d'après-midi à Wissant, où le vent passe au N (side-on) et où certains modèles montent à 15-17 nœuds. Le diagnostic repose sur un seul modèle (Open-Meteo), sans comparaison entre modèles.",
+        "La marée à Berck est presque juste : PM 17h12 d'après maree.info, la réponse dit 16-17h. Elle ne signale pas les mortes-eaux (coefficients 37/32) et ne donne aucun horaire pour Wissant.",
+        "Elle ne parle ni du coucher du soleil (vers 18h50), ni du froid et de la combinaison, ni de l'instabilité de l'air (averses, rafales irrégulières) au-delà des chiffres de rafales.",
+        "Aucune connaissance locale : pas d'orientation explicite, rien sur la mise à l'eau, les zones autorisées ou les régimes de vent du cap Gris-Nez et de la baie d'Authie.",
+        "Le conseil de « regarder samedi soir » est maladroit puisqu'on est déjà samedi. Il manque une règle de décision concrète pour le jour même (balise, run AROME du matin)."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 5,
+      "uncertainty": 5,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "Les dates sont exactes : le dimanche 18 octobre 2026 tombe bien un dimanche.",
+        "Les horaires de marée à Wissant sont approximatifs et légèrement en avance. Le jour est encadré par Berck (PM 17h12, BM 11h38) et Gravelines (PM 18h16, BM 12h27) d'après maree.info. À Wissant, il faut plutôt compter une PM vers 17h40-18h et une BM vers 12h. La réponse annonce environ 11h et 17h, mais renvoie quand même vers maree.info.",
+        "Elle ne précise pas que c'est une marée de mortes-eaux (coefficients 37/32). Le marnage est donc faible : l'estran découvre peu et le courant reste modéré, ce qui compte pour la sécurité et le choix de la mise à l'eau.",
+        "Elle n'indique ni l'endroit de mise à l'eau ni les règles locales : zone de kite autorisée à Wissant (secteur et période réglementés) et zone dédiée à Berck, à l'écart des phoques de la baie d'Authie.",
+        "Elle n'aborde pas le froid. Avec une mer à 16,8 °C, de l'air à 11 °C et des averses, il faut une combinaison 4/3 ou 5/4 et un équipement adapté à une session en fin de journée près du coucher du soleil.",
+        "Les orientations retenues (Wissant vers 325°, Berck vers 275°) sont correctes. La lecture de la direction est juste : NE side/side-off le matin à Wissant, N side-on en fin de journée, NNE à NE side-off à Berck.",
+        "La réponse est un peu longue, avec une note interne sur la base windext sans intérêt pour le rider."
+      ]
+    },
+    "winner": "avec",
+    "why": "A lit correctement la direction du vent par rapport à chaque plage, identifie la seule fenêtre plausible (Wissant en fin de journée, vent de N side-on) et donne une règle de décision claire à partir de plusieurs modèles, tandis que B se trompe sur l'orientation et recommande Berck, le spot le plus side-off."
+  },
+  "seconds": 97
+}

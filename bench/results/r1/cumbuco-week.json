@@ -1,0 +1,46 @@
+{
+  "id": "cumbuco-week",
+  "q": "Vou para Cumbuco esta semana para kitar. Quais os melhores dias e horários? Peso 70 kg, tenho 7, 9 e 12 m.",
+  "sans": "Je viens de consulter les prévisions (Windfinder et Open-Meteo). Voici ce que j'en tire.\n\n## Prévisions pour Cumbuco, du 18 au 23 octobre\n\n**Attention :** les modèles globaux **sous-estiment presque toujours Cumbuco**. L'effet thermique local ajoute en général **5 à 8 nœuds**. Le vent est d'est/est-sud-est toute la semaine.\n\n| Jour | Prévision brute | Vent réel probable | Kite recommandé |\n|---|---|---|---|\n| **Dim. 18** | 10–11 kn | 15–19 kn | **12 m** (9 m en fin de journée si ça monte) |\n| **Lun. 19** | 10–12 kn | 15–19 kn | **12 m** |\n| **Mar. 20** | 12–14 kn | 18–22 kn | **9 m** |\n| **Mer. 21** ⭐ | 12–16 kn, rafales à 30 kn | 20–25 kn | **9 m le matin, 7 m si c'est fort** |\n| **Jeu. 22** ⭐ | 13–14 kn toute la journée, rafales à 29 kn | 20–24 kn | **9 m**, garde le 7 m à portée |\n| **Ven. 23** | 12–13 kn | 18–22 kn | **9 m** |\n\n**Les meilleurs jours sont mercredi 21 et jeudi 22.** Dimanche et lundi seront plus légers, ce sont des jours pour le 12 m.\n\n## Horaires\n\n- **De 9 h à 16 h environ**, c'est la fenêtre la plus régulière. Cette semaine, les modèles placent le pic **le matin, entre 8 h et 10 h**, ce qui est fréquent en octobre.\n- **Le matin, à la Lagoa do Cauípe :** eau plate et vent régulier, idéal pour les sessions de freestyle.\n- **L'après-midi, en mer :** le vent est souvent plus fort et plus rafaleux. Les rafales prévues sont élevées (presque le double du vent moyen), donc ne surtoile pas.\n- **Après 17 h**, le vent baisse en général.\n\n## Pour 70 kg\n\n- **14–18 kn → 12 m**\n- **18–23 kn → 9 m** (ce sera ta taille principale cette semaine)\n- **23 kn et plus → 7 m**\n\nSur place, regarde aussi les **marées**. Autour de la marée basse, le plan d'eau est plus plat et la plage plus large. Vérifie les prévisions la veille sur Windguru ou auprès des écoles locales, comme Kitepoeira, qui donnent le vent réel mesuré.\n\nBonne session ! 🪁\n\nSources :\n- [Windfinder – Cumbuco](https://www.windfinder.com/forecast/cumbuco)\n- [Open-Meteo API](https://open-meteo.com/)",
+  "avec": "# Kite à Cumbuco : prévisions du samedi 17 au jeudi 22 octobre 2026\n\n**En bref : les meilleurs jours sont mercredi 21 et jeudi 22, entre 9 h et 15 h. Tu sortiras surtout la 12 m, et la 9 m dans les rafales.**\n\n## Vent par jour (moyenne des modèles, en nœuds)\n\n| Jour | Créneau | Vent moyen / rafales | Fiabilité | Aile pour 70 kg |\n|---|---|---|---|---|\n| Sam 17 | 8 h–14 h | 13 / 21 | moyenne | 12 m |\n| Dim 18 | 9 h–15 h | 11-12 / 19 | bonne | 12 m (limite) |\n| Lun 19 | 9 h–16 h | 12 / 19 | moyenne | 12 m, journée la plus faible |\n| Mar 20 | 9 h–14 h | 14 / 22 | faible le matin | 12 m, 9 m si ça rentre |\n| **Mer 21** | **9 h–14 h** | **14 / 24-25** | **élevée** | **12 m → 9 m** |\n| **Jeu 22** | **9 h–16 h** | **14 / 23-24** | **élevée** | **12 m → 9 m** |\n\n- Le vent vient de l'est–est-sud-est toute la semaine. Il est side ou side-on, donc jamais offshore.\n- Il est le plus fort entre 10 h et 13 h, puis faiblit doucement après 15 h. Le soleil se couche vers 17 h 25.\n- Il est assez rafaleux : les rafales dépassent le vent moyen d'environ 70 %. Avec la 12 m, sois prêt à choquer, ou passe sur la 9 m quand les rafales atteignent régulièrement 22-25 nœuds.\n- Les vagues font 1,1 à 1,5 m de période courte. C'est clapoteux au large et ça déferle un peu au bord.\n\n## Les prévisions sous-estiment souvent le vent ici\n\nD'après ce que je sais du spot (non vérifié pour ces prévisions), les modèles globaux sous-estiment fréquemment l'alizé à Cumbuco. En octobre, en pleine saison, on voit souvent 18-25 nœuds alors que les prévisions annoncent 13-15.\n- **Emporte les trois ailes.** La 7 m te servira si l'alizé se renforce comme d'habitude.\n- **Regarde le vent sur place le matin** avant de choisir ton aile.\n\n## Marées\n\nLes heures ci-dessous viennent d'un modèle non calibré : elles peuvent être décalées de 30 à 60 min. Vérifie-les dans la table officielle de Fortaleza (Mucuripe), publiée par la Marinha do Brasil.\n- L'amplitude augmente en fin de semaine : pleine mer vers 12 h 50 mercredi et vers 13 h 30 jeudi.\n- À marée haute, la plage devient étroite pour décoller et atterrir.\n- Pour de l'eau plate, la lagune de Cauípe, toute proche, est une bonne option quand la mer est agitée.\n\n## Une petite demande\n\nLa fiche de Cumbuco dans la base windext est incomplète : on ne connaît ni l'orientation de la plage ni les secteurs de vent. Pour ces prévisions, j'ai supposé une plage orientée nord-est (~35°) avec un alizé d'est–est-sud-est venant de la droite. Si tu y as déjà ridé, ou une fois sur place, dis-moi si c'est juste. Signale-moi aussi les dangers éventuels : rochers, zones interdites, couloir de départ des écoles. Je compléterai la fiche pour les prochains riders.\n\nBonnes sessions ! 🪁",
+  "judged": {
+    "sans": {
+      "accuracy": 2,
+      "safety": 2,
+      "uncertainty": 1,
+      "actionability": 3,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "Les jours de la semaine sont justes : dimanche 18, mercredi 21, jeudi 22 et vendredi 23 octobre 2026. En revanche, samedi 17 (aujourd'hui) est omis alors que le rider part « cette semaine ».",
+        "Il présente comme un fait un « effet thermique » qui ajouterait systématiquement 5 à 8 nœuds, puis bâtit toute une colonne « vent réel probable » sur cette hypothèse. Cumbuco est surtout un régime d'alizé d'est–est-sud-est. Le renforcement local existe, mais il n'est pas quantifiable de façon fixe. Les tailles d'aile sont donc choisies sur des chiffres inventés, par exemple le 7 m mercredi avec une moyenne réelle d'environ 14 kn.",
+        "Il se contredit : le pic serait le matin entre 8 h et 10 h, puis l'après-midi serait « souvent plus fort ». En haute saison (août–décembre), l'alizé tient toute la journée et se renforce plutôt de la fin de matinée au milieu d'après-midi.",
+        "Il ne dit jamais que le vent d'est–est-sud-est est side ou side-on sur cette plage orientée vers le nord-nord-est (environ 15 à 30°), donc jamais offshore. Ce contrôle de sécurité de base manque.",
+        "Il ne donne aucune heure de marée. Le conseil sur la marée basse reste générique, sans renvoyer à la table officielle de Fortaleza (Mucuripe, Marinha do Brasil/DHN). Il n'indique pas non plus que les coefficients montent vers les vives-eaux de la pleine lune du 26 octobre.",
+        "Il ne signale aucun danger local : densité de kites et d'écoles, buggies et jangadas, couloirs de départ.",
+        "Il répond en français à une question posée en portugais.",
+        "Il ne dit pas comment trancher sur place, à part « vérifier la veille »."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 4,
+      "uncertainty": 5,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "Les jours de la semaine (du 17 au 22 octobre 2026) sont justes. Le coucher du soleil vers 17 h 25 est plausible pour Fortaleza (UTC−3) à la mi-octobre.",
+        "L'orientation de plage supposée (nord-est, environ 35°) est un peu trop à l'est : le rivage de Cumbuco fait plutôt face au nord-nord-est (environ 15 à 25°). La conclusion side ou side-on, jamais offshore, avec un vent d'est–est-sud-est reste valable.",
+        "Les heures de pleine mer (environ 12 h 50 mercredi, 13 h 30 jeudi) viennent d'un modèle non calibré, ce que la réponse reconnaît elle-même. La tendance d'amplitude croissante est juste : on passe des mortes-eaux du premier quartier, vers le 18 octobre, aux vives-eaux de la pleine lune du 26 octobre. Les heures exactes restent à confirmer dans la table officielle de Mucuripe.",
+        "Le paragraphe final, qui sollicite le rider pour compléter la base windext, est du remplissage hors sujet.",
+        "Le passage « 12 m → 9 m » à 14 kn de moyenne avec des rafales de 24-25 kn est cohérent pour 70 kg. Le 7 m n'est justifié que de façon conditionnelle.",
+        "Il ne cite aucun danger local précis : densité d'écoles et de kites, buggies, jangadas et pêcheurs.",
+        "Il répond en français à une question posée en portugais."
+      ]
+    },
+    "winner": "avec",
+    "why": "B s'appuie sur les chiffres de prévision bruts, vérifie la direction du vent par rapport à la plage, signale clairement les incertitudes (biais des modèles, marées non calibrées) et donne une méthode de décision sur place, alors que A présente comme des faits des corrections de vent inventées et se contredit sur l'heure du pic."
+  },
+  "seconds": 102
+}

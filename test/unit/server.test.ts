@@ -32,7 +32,7 @@ describe('server surface', () => {
 describe('find_spot', () => {
   it('falls back to geocoding and tells Claude to research and submit', async () => {
     const { text } = await call('find_spot', { query: 'Ouistreham' })
-    expect(text).toMatch(/No spot card/); expect(text).toMatch(/lat 49.27566, lon -0.2591/); expect(text).toMatch(/search the web.*submit_spot/); expect(text).toMatch(/next rider/)
+    expect(text).toMatch(/No spot card/); expect(text).toMatch(/lat 49.27566, lon -0.2591/); expect(text).toMatch(/search the web.*submit_spot/); expect(text).toMatch(/one sentence/)
   })
   it('returns the card once submitted, by name, alias or proximity to the geocoded place', async () => {
     expect((await call('submit_spot', riva)).text).toMatch(/created with status community/)
@@ -57,7 +57,7 @@ describe('submit_spot validation', () => {
 describe('spot_forecast', () => {
   it('works from raw coordinates without orientation and says so', async () => {
     const { text } = await call('spot_forecast', { lat: 49.2757, lon: -0.2591, days: 1, start_date: '2026-10-18' })
-    expect(text).toMatch(/^Issued (Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day \d{4}-\d{2}-\d{2} \d{2}:\d{2} local/); expect(text).toMatch(/-- Sun 2026-10-18 \(sun 08:26-19:05\) --/); expect(text).toMatch(/Sea state \(daytime\):\n2026-10-18: waves 0.8-1.3 m from N, 5 s/)
+    expect(text).toMatch(/^VERDICT \(kitesurf \(default profile: 75 kg, 9 and 12 m/); expect(text).toMatch(/windext score \d+\/10/); expect(text).toMatch(/\nIssued (Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day \d{4}-\d{2}-\d{2} \d{2}:\d{2} local/); expect(text).toMatch(/-- Sun 2026-10-18 \(sun 08:26-19:05\) --/); expect(text).toMatch(/Sea state \(daytime\):\n2026-10-18: waves 0.8-1.3 m from N, 5 s/)
     expect(text).toMatch(/Beach orientation unknown/); expect(text.split('\n').filter(l => /^\d\d:\d\d/.test(l)).join()).not.toMatch(/onshore|offshore/); expect(text).toMatch(/Models: AROME\/ARPEGE, ICON, ECMWF 9km, GFS, UKMO, KNMI, DMI/)
     expect(text.split('\n').filter(l => /^\d\d:\d\d/.test(l))).toHaveLength(16) // 06..21
   })

@@ -1,0 +1,14 @@
+[
+  { "id": "ouistreham-kite", "q": "Ça vaut le coup d'aller kiter à Ouistreham demain ? Je fais 80 kg, j'ai une 9 m et une 12 m. Créneau, taille d'aile, sécurité." },
+  { "id": "tarifa-wing", "q": "¿Merece la pena salir con el wing en Tarifa (Los Lances) mañana? Peso 72 kg, tengo un ala de 4 y una de 5,5 m. Horario, tamaño y seguridad." },
+  { "id": "leucate-windsurf", "q": "Je fais de la planche à voile à Leucate, demain c'est jouable ? 85 kg, voiles 4,7 et 5,8. Quelle voile, quel créneau, quels dangers ?" },
+  { "id": "leucate-school", "q": "Je dirige une école de kite à Leucate. Est-ce que je maintiens les cours débutants demain matin, et à partir de quelle heure j'annule ? J'ai besoin d'une décision argumentée pour mes moniteurs." },
+  { "id": "hatteras-kite", "q": "Kiting at Cape Hatteras tomorrow, ocean side near the fishing pier: worth it? 78 kg, 9 and 12 m kites. Best window, size, tide and safety." },
+  { "id": "cumbuco-week", "q": "Vou para Cumbuco esta semana para kitar. Quais os melhores dias e horários? Peso 70 kg, tenho 7, 9 e 12 m." },
+  { "id": "garda-windsurf", "q": "Lohnt sich morgen Windsurfen in Torbole am Gardasee? 80 kg, Segel 5,3 und 6,5. Wann Pelèr, wann Ora, welches Segel?" },
+  { "id": "capetown-kite", "q": "Kiting at Bloubergstrand, Cape Town tomorrow. 85 kg, 7, 9 and 12 m. Will the south-easter blow, when, and what size?" },
+  { "id": "dakhla-weekend", "q": "On part à Dakhla ce week-end, on kite dans la lagune. Quels créneaux samedi et dimanche, et quel rôle joue la marée ? 65 kg, ailes 7 et 9 m." },
+  { "id": "maui-kite", "q": "Kanaha, Maui, tomorrow: what time does the trade wind fill in, how strong, and which kite for 75 kg (8, 10, 12 m)?" },
+  { "id": "brouwersdam-wing", "q": "Morgen wingen op de Brouwersdam? 82 kg, wings 4,5 en 6 m. Welke kant (Noordzee of Grevelingen), welk tijdstip en welke maat?" },
+  { "id": "wissant-berck", "q": "Dimanche, kite à Wissant ou à Berck ? 75 kg, 9 et 12 m. Dis-moi lequel et pourquoi." }
+]

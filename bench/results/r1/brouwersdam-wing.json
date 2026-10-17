@@ -1,0 +1,42 @@
+{
+  "id": "brouwersdam-wing",
+  "q": "Morgen wingen op de Brouwersdam? 82 kg, wings 4,5 en 6 m. Welke kant (Noordzee of Grevelingen), welk tijdstip en welke maat?",
+  "sans": "**En bref** : côté **Grevelingen**, **entre 8 h et 11 h**, avec la **6 m**. C'est une session limite : vérifie le vent mesuré en direct avant de partir.\n\n**Prévisions pour dimanche 18 octobre (Brouwersdam)**\n\n| Heure | KNMI | ICON | ECMWF | Direction |\n|---|---|---|---|---|\n| 07–08 h | 11–15 kn (rafales 17–23) | 10–12 kn | 5 kn | NE (40–50°) |\n| 09–10 h | 11–12 kn (rafales 19–23) | 9–10 kn | 6–7 kn | NE |\n| 11–13 h | 7–9 kn, **pluie** (environ 2,7 mm/h) | environ 10 kn | 7 kn | NE à ENE |\n| à partir de 14 h | 3–7 kn | 6–9 kn | 4–6 kn | tourne à l'E/SE, il faiblit |\n\n**Côté : Grevelingen**\n- Avec un vent de NE, il souffle à peu près parallèlement à la digue des deux côtés. Côté mer du Nord, il risque de devenir légèrement offshore (side-off), avec un clapot et une houle résiduelle d'environ 1,5 m au large. Avec un vent faible et rafaleux, c'est une mauvaise combinaison.\n- Le Grevelingen offre un plan d'eau plat, sans courant de marée notable et sans risque d'offshore. C'est l'idéal pour se lever en foil avec peu de vent.\n\n**Heure : de 8 h à environ 11 h**\n- C'est le seul créneau où le vent atteint à peu près 10–15 kn. Vers 11 h, la pluie arrive et le vent retombe.\n- L'après-midi, il n'y a quasiment plus rien : le vent tourne à l'est et descend à 3–7 kn.\n\n**Taille : 6 m**\n- À 82 kg avec 10–14 kn rafaleux, la 4,5 m sera trop petite. Prends la 6 m et un grand foil (front wing de 1 500 cm² ou plus si tu en as un).\n- La 4,5 m ne servirait que si les rafales de 20 kn et plus annoncées par le KNMI se confirment et durent. Ça paraît peu probable.\n\n**Mises en garde**\n- Les modèles ne sont pas d'accord. ECMWF ne prévoit que 5–7 kn toute la journée, ce qui voudrait dire qu'on ne peut pas wingfoiler. Vérifie le vent mesuré en direct vers 7 h 30 (station Brouwersdam sur Windfinder ou Windguru) avant de te mettre en route. Si la moyenne est sous 10 kn, ça n'en vaut sans doute pas la peine.\n- L'air sera à environ 11 °C, et l'eau est fraîche à la mi-octobre. Prévois une combinaison 4/3 ou 5/4, des chaussons et éventuellement une cagoule.\n\nCes chiffres viennent d'Open-Meteo (modèles KNMI, ICON et ECMWF). Les marées viennent de l'API marine d'Open-Meteo : pleine mer vers 7 h et basse mer vers 14 h côté mer du Nord.\n\nSources : [Open-Meteo Forecast API](https://open-meteo.com/en/docs), [Open-Meteo Marine API](https://open-meteo.com/en/docs/marine-weather-api)",
+  "avec": "**Mon conseil : le côté Grevelingen, de 9h à 12h environ, avec la 6 m.**\n\nPrévisions pour dimanche 18 octobre, 7 modèles, sortie du 17 à 04h48 :\n\n| Heure | Vent moyen / rafales (moyenne des modèles) | Direction | Écart entre modèles |\n|---|---|---|---|\n| 08h–11h | 12–13 / 17–19 nds | NE | 6,5–9 nds (peu fiable) |\n| 12h–13h | 10 / 16 nds | NE | 4–5 nds |\n| à partir de 14h | 7–8 / 12–14 nds | tourne E puis ESE | élevé |\n\n**Quel côté : Grevelingen**\n- Côté Noordzee, le vent de NE est latéral à side-off. L'après-midi, il passe à l'est, donc offshore de ce côté. Il y aura aussi 0,8 à 1,3 m de houle du nord. C'est à éviter.\n- Côté Grevelingen, le vent de NE est latéral-onshore, et onshore quand il passe à l'est. L'eau est plate et il n'y a presque pas de marée. C'est plus sûr, surtout avec un vent faible et irrégulier.\n\n**Quand : de 9h à 12h**\n- Le soleil se lève à 08h13. C'est le seul créneau avec environ 12–13 nds.\n- Après 13h, le vent descend à 10 nds puis 7–8 nds. Ça ne suffit plus pour wingfoiler à 82 kg.\n\n**Quelle taille : 6 m, sans hésiter**\n- À 82 kg avec 12–13 nds de moyenne, la 4,5 m est trop petite.\n- Prends ton plus gros foil (ou ta planche la plus volumineuse) pour décoller facilement dans les trous.\n- Le vent sera assez rafaleux (rafales environ 1,6 fois le vent moyen) : l'eau de mer à 15,8 °C est plus chaude que l'air à 11,7 °C. Attends-toi à des pics à 18–19 nds et à des trous sous 10 nds.\n\n**Attention :**\n- Les modèles divergent sur deux tiers des heures, notamment sur l'intensité. GFS et UKMO annoncent 14–19 nds, AROME et ICON plutôt 9–10 nds.\n- Vérifie la mise à jour de demain matin et une station en direct au Brouwersdam avant de prendre la route.\n- Pour info, la marée côté mer (modèle approximatif, à recouper avec un annuaire officiel) : pleine mer vers 07h11, basse mer vers 13h33.\n\n**Une petite demande :** le Brouwersdam n'a pas encore de fiche dans la base windext. J'ai supposé que la plage côté Noordzee fait face au NO et celle côté Grevelingen au SE. Est-ce que ça correspond à ce que tu connais ? As-tu un spot de mise à l'eau précis, ou des zones interdites ou des dangers à signaler ? Si tu confirmes, je crée la fiche pour les prochains riders.",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 4,
+      "uncertainty": 5,
+      "actionability": 5,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "Les dates sont correctes : le samedi 17/10/2026 est bien suivi du dimanche 18/10. En revanche, le tableau commence à 07–08 h alors que le soleil se lève vers 08h13 CEST à Ouddorp (l'heure d'été court jusqu'au 25/10). Une session ne peut pas commencer avant environ 8h15 ; le créneau 8 h–11 h est donc en pratique un créneau 8h15–11 h.",
+        "Les marées viennent de l'API marine d'Open-Meteo et sont données sans réserve. Il fallait renvoyer aux tables officielles de Rijkswaterstaat (getij.rws.nl / waterinfo, station Brouwershavense Gat 08). Je n'ai pas pu accéder à ces tables pour vérifier les heures PM ~7h / BM ~14h. Elles restent plausibles pour une marée semi-diurne (environ 6h20 entre PM et BM).",
+        "Dire que le NE souffle « parallèle des deux côtés » est approximatif. La digue est orientée environ NNE–SSO. Le NE est donc side-shore à side-on côté Grevelingen, et side-off côté Noordzee. La réponse ne précise pas non plus que le vent E/SE de l'après-midi devient franchement offshore côté mer du Nord.",
+        "« Sans risque d'offshore » côté Grevelingen est juste pour ce scénario NE→E/SE. Mais la réponse ne précise pas où se mettre à l'eau, ni les zones réservées kite/wing, ni que le lac peut être désert hors saison (pas de secours).",
+        "Le rider a posé sa question en néerlandais et reçoit une réponse en français."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 3,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "Elle donne l'air à 11,7 °C et l'eau à 15,8 °C, mais ne recommande aucune protection contre le froid : ni combinaison 4/3–5/4, ni chaussons, ni cagoule. C'est une omission de sécurité à la mi-octobre.",
+        "Elle ne mentionne pas la pluie de la fin de matinée, que d'autres modèles (KNMI) prévoient. Ce passage pluvieux fait chuter le vent dans le créneau 11–12 h qu'elle recommande.",
+        "Le créneau 9h–12h est un peu tardif. Le vent est le plus fort entre 8h15 et 10 h, et il baisse dès 12–13 h selon son propre tableau (10/16 nds). Il valait mieux recommander de démarrer au lever du soleil.",
+        "Elle demande au rider de confirmer l'orientation des plages et parle d'une base interne (« windext »). C'est du remplissage qui montre un manque de connaissance du spot, alors que son hypothèse est juste (côté Noordzee face au NO/O, côté Grevelingen face au SE/E).",
+        "Elle reste vague sur le foil (« ton plus gros foil ») et ne donne aucun seuil go/no-go chiffré à vérifier sur la station en direct (par exemple : moyenne inférieure à 10 nds = pas la peine).",
+        "Le rider a posé sa question en néerlandais et reçoit une réponse en français. Bon point en revanche : les marées sont présentées comme approximatives, à recouper avec un annuaire officiel."
+      ]
+    },
+    "winner": "sans",
+    "why": "Les deux réponses recommandent le même bon choix (Grevelingen, la matinée, la 6 m), mais A est plus complète sur la sécurité (froid, pluie) et donne un critère clair pour décider le jour même (seuil de 10 nds), tandis que B oublie le froid et ajoute une demande inutile au rider."
+  },
+  "seconds": 130
+}
