@@ -45,9 +45,20 @@ describe('fetchForecast', () => {
     const fc = await fetchForecast({ lat: 46.5, lon: 6.5, days: 1 })
     expect(fc.seaTemp).toBeNull(); expect(fc.waveHeight).toEqual([])
   })
-  it('throws on an HTTP error from the forecast API', async () => {
-    vi.stubGlobal('fetch', async () => new Response('bad', { status: 400 }))
-    await expect(fetchForecast({ lat: 1, lon: 2, days: 1 })).rejects.toThrow(/HTTP 400/)
+  it('retries once, then throws when there is no stale copy', async () => {
+    let n = 0
+    vi.stubGlobal('fetch', async () => { n++; return new Response('bad', { status: 503 }) })
+    await expect(fetchForecast({ lat: 1, lon: 2, days: 1 })).rejects.toThrow(/HTTP 503/)
+    expect(n).toBeGreaterThanOrEqual(2)
+  })
+  it('serves the stale copy and flags it when the service is overloaded', async () => {
+    const mem = new Map<string, any>()
+    setCache({ async get(k) { return mem.get(k) ?? null }, async put(k, v) { mem.set(k, v) } })
+    vi.stubGlobal('fetch', stubOpenMeteo().fetch)
+    const fresh = await fetchForecast({ lat: 1, lon: 2, days: 1 }); expect(fresh.stale).toBeUndefined()
+    for (const k of [...mem.keys()]) if (!k.startsWith('stale:')) mem.delete(k)   // fresh cache expired
+    vi.stubGlobal('fetch', async () => new Response('overloaded', { status: 503 }))
+    const old = await fetchForecast({ lat: 1, lon: 2, days: 1 }); expect(old.stale).toBe(true); expect(old.hours).toHaveLength(24)
   })
   it('serves from the cache and fills it on a miss', async () => {
     const mem = new Map<string, any>(); const puts: number[] = []
@@ -56,7 +67,7 @@ describe('fetchForecast', () => {
     const s = stubOpenMeteo(); vi.stubGlobal('fetch', s.fetch)
     await fetchForecast({ lat: 1, lon: 2, days: 1 }); const n = s.urls.length
     await fetchForecast({ lat: 1.0004, lon: 2, days: 1 })   // same 3-decimal cell -> cache hit
-    expect(s.urls.length).toBe(n); expect(puts.every(t => t >= 60)).toBe(true); expect(mem.size).toBe(3)
+    expect(s.urls.length).toBe(n); expect(puts.every(t => t >= 60)).toBe(true); expect(mem.size).toBe(6)   // fresh + stale copy per URL
   })
 })
 

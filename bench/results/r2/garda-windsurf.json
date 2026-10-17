@@ -1,0 +1,45 @@
+{
+  "id": "garda-windsurf",
+  "q": "Lohnt sich morgen Windsurfen in Torbole am Gardasee? 80 kg, Segel 5,3 und 6,5. Wann Pelèr, wann Ora, welches Segel?",
+  "sans": "D'après les prévisions, ça ne vaut pas le coup demain (dimanche 18 octobre) à Torbole. Les deux modèles que j'ai consultés ne prévoient quasiment pas de vent.\n\n| Heure | Open-Meteo | Windfinder |\n|---|---|---|\n| matin (6–10 h) | 2–4 kn, rafales ≤ 6 kn, E/NE | 2–3 kn, NE |\n| midi (11–14 h) | ~2 kn, direction variable | 2–3 kn, E/SE |\n| après-midi (15–18 h) | 2–4 kn, S/SO | ~3 kn, SE |\n\nIl fera environ 14–22 °C, sans pluie, avec beaucoup de nuages.\n\n**Pourquoi ni le Pelèr ni l'Ora ne vont souffler :**\n- **Pelèr (vent du nord, tôt le matin) :** il a besoin d'une nuit claire et fraîche, et idéalement d'un écart de pression nord-sud au-dessus des Alpes. La nuit sera presque entièrement couverte et le vent prévu est faible, d'est. On ne voit aucun signe de Pelèr.\n- **Ora (vent du sud, l'après-midi) :** c'est un vent thermique qui a besoin de beaucoup de soleil. En octobre, il est déjà nettement plus faible, et avec 50–100 % de nuages, il ne se lèvera probablement pas vraiment. Les modèles globaux sous-estiment souvent l'Ora, mais un faible rotor S/SO de 16 à 18 h donnerait au mieux 8–12 kn. Ce n'est pas assez pour planer avec tes voiles.\n\n**Pour une prochaine fois (80 kg) :**\n- **Horaires typiques en automne :**\n  - Pelèr : de l'aube jusqu'à 10–11 h environ.\n  - Ora : de 12–13 h jusqu'à 16–17 h environ. En octobre, elle démarre plus tard et s'arrête plus tôt.\n- **6,5 m² :** à partir d'environ 14–15 kn jusqu'à environ 20 kn. C'est souvent la bonne voile pour une Ora normale.\n- **5,3 m² :** à partir d'environ 20–22 kn. C'est la voile typique pour un Pelèr fort ou une Ora d'été soutenue.\n- **En dessous d'environ 12–13 kn,** tu ne planeras qu'avec une grande planche ou en foil.\n\n**Conclusion :** demain, ça vaut à peine le déplacement, à moins de faire du SUP ou d'avoir du matériel de foil. Regarde à nouveau ce soir les prévisions locales de [Windfinder](https://www.windfinder.com/forecast/torbole) ou de [Meteotrentino](https://www.meteotrentino.it). La nuit compte aussi : si elle devient nettement plus claire que prévu, il pourrait y avoir un faible Pelèr le matin.\n\nSources : [Open-Meteo](https://open-meteo.com), [Windfinder Torbole](https://www.windfinder.com/forecast/torbole)",
+  "avec": "**Ma réponse : probablement pas.** Les prévisions pour demain, dimanche 18 octobre, montrent presque pas de vent à Torbole.\n\n**Prévisions**\n\n| Source | Matin (Pelèr ?) | Après-midi (Ora ?) |\n|---|---|---|\n| Windfinder (Torbole) | NNE 2–3 kn | SE 3 kn max. |\n| ICON-D2 (Open-Meteo) | E/NE 2–4 kn, rafales ≤ 6 kn | S/SSO 3–4 kn, rafales ≤ 5 kn |\n\nLa journée sera surtout couverte et douce, avec 17 °C même la nuit. Le Pelèr a besoin d'un flux de nord frais et sec, souvent après le passage d'un front, et ici il n'y en a pas. L'Ora a besoin de beaucoup de soleil sur la plaine du Pô, et les nuages vont l'étouffer. Les modèles sous-estiment un peu le vent thermique au nord du lac. Même avec ça, il n'y a aucun signe de vent pour planer.\n\n**Pour la prochaine fois (règles générales, en octobre)**\n- **Pelèr** : du lever du jour jusqu'à environ 10 h ou 11 h. Il souffle bien un matin clair après une nuit froide, avec une pression plus haute au nord des Alpes. Il donne souvent 15 à 25 kn.\n- **Ora** : en automne, d'environ 13 h jusqu'à 16 h ou 17 h. Elle est plus courte et plus faible qu'en été, souvent 12 à 18 kn, et seulement par temps ensoleillé.\n- **Choix de la voile pour 80 kg** :\n  - **6,5** : environ 14 à 20 kn. C'est la voile habituelle pour l'Ora d'automne.\n  - **5,3** : à partir d'environ 20 kn, en régime soutenu. C'est la voile typique pour un bon Pelèr.\n  - En dessous d'environ 13 kn, ce sera difficile de planer avec la 6,5, selon ta planche.\n\n**Conseil** : jette un œil le matin même au vent mesuré en direct, par exemple sur les stations de Torbole ou Riva sur Windfinder. Si tu vois du nord à plus de 12 kn vers 7 h, c'est que les modèles se sont trompés. Avec les données actuelles, je n'irais pas exprès à Torbole demain.\n\nNote : le serveur MCP `windext` n'a pas pu se connecter (ENOTFOUND). J'ai donc utilisé des sources publiques. Si tu le relances, je peux revérifier les données.\n\nSources :\n- [Windfinder Torbole](https://www.windfinder.com/forecast/torbole)\n- [Open-Meteo API (ICON-D2)](https://open-meteo.com/)",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 1,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "« faible rotor S/SO » est un emploi incorrect du terme. Un rotor est un tourbillon sous le vent d'un relief, alors qu'il s'agit ici d'une faible brise thermique de sud qui s'installe.",
+        "Le chiffre de 8–12 kn pour l'Ora, avec 50–100 % de nuages, est avancé sans justification et paraît trop optimiste. Dans ces conditions, on attend plutôt 5–8 kn.",
+        "Une maximale de 22 °C est haute pour Torbole mi-octobre par temps couvert. Une valeur de 16–19 °C serait plus vraisemblable.",
+        "Aucune consigne de sécurité : température de l'eau d'environ 16–18 °C et combinaison, rafales du Pelèr, trafic des ferries, risque de pétole loin du bord.",
+        "Le régime de l'Ora en automne n'est pas expliqué (plus courte, souvent inexistante sans soleil), et il manque un critère objectif pour décider le matin même, comme le seuil d'A (« nord > 12 kn vers 7 h » mesuré en direct).",
+        "Réponse en français alors que la question est posée en allemand.",
+        "Points positifs : renvoi à Meteotrentino, la source locale pertinente, et alternatives réalistes (SUP, foil) adaptées à une journée sans vent."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 1,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "« 17 °C même la nuit » est peu crédible à Torbole mi-octobre. Les minimales nocturnes tournent normalement autour de 9–13 °C, et une nuit aussi douce devrait au minimum être présentée comme une anomalie à vérifier.",
+        "Pelèr « souvent 15 à 25 kn » est un peu optimiste comme valeur typique. Un Pelèr normal donne plutôt 12–20 kn, et plus de 20 kn correspond surtout à une situation post-frontale bien marquée (foehn de nord).",
+        "Aucune consigne de sécurité : eau à environ 16–18 °C en octobre (combinaison 4/3 ou 5/4 conseillée), rafales et trous de vent du Pelèr près de la côte de Torbole, trafic des ferries et des voiliers, journée sans vent avec risque de dériver loin de la plage.",
+        "Rien de précis sur le spot : pas de mention du port de Torbole ni du centre de surf, ni de la forte canalisation du Pelèr dans la vallée du Sarca, ni de l'Ora qui remonte depuis le sud (de Malcesine vers Riva).",
+        "La remarque sur l'échec de connexion du serveur MCP « windext » est du bruit technique sans intérêt pour un rider.",
+        "Réponse en français alors que la question est posée en allemand. Ce n'est pas adapté au rider, même si c'est imposé par le système.",
+        "Point vérifié et correct : le 18 octobre 2026 tombe bien un dimanche. Les marées ne s'appliquent pas à un lac, et les deux réponses ont raison de ne pas en parler."
+      ]
+    },
+    "winner": "sans",
+    "why": "Les deux réponses arrivent au même verdict juste (pas de vent), mais B est un peu plus précise heure par heure, cite une source locale (Meteotrentino) et propose des alternatives, alors qu'A contient une température nocturne invraisemblable et du bruit technique ; A garde toutefois un meilleur critère de décision pour le matin même."
+  },
+  "seconds": 316
+}

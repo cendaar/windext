@@ -50,20 +50,38 @@ export interface Forecast {
   waves: { height: number | null; dir: number | null; period: number | null }[]
   sun: { date: string; sunrise: string; sunset: string }[]   // local times, 'HH:MM'
   issued: string                 // local time at the forecast location when fetched, 'YYYY-MM-DD HH:MM'
+  stale?: boolean                // served from a copy up to 24 h old because the weather service was unavailable
   utcOffsetSeconds: number
 }
 
+/** Open-Meteo GET with a fresh cache (30 min), one retry, then a stale copy (up to 24 h) when the service is overloaded. */
 async function getJson(url: string): Promise<any> {
   const hit = await cache.get(url)
   if (hit) return hit
-  const res = await fetch(url, { headers: { 'User-Agent': 'windext-mcp (https://github.com/cendaar/windext)' } })
-  if (!res.ok) throw new Error(`Open-Meteo HTTP ${res.status}: ${await res.text()}`)
-  const data = await res.json()
-  await cache.put(url, data, CACHE_TTL)
-  return data
+  let lastError: unknown
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': 'windext-mcp (https://github.com/cendaar/windext)' } })
+      if (!res.ok) throw new Error(`Open-Meteo HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`)
+      const data = await res.json()
+      await cache.put(url, data, CACHE_TTL)
+      await cache.put('stale:' + url, data, 24 * 3600)
+      return data
+    } catch (e) {
+      lastError = e
+      if (attempt === 0) await new Promise(r => setTimeout(r, 800))
+    }
+  }
+  const stale = await cache.get('stale:' + url)
+  if (stale) { staleServed = true; return stale }
+  throw lastError
 }
 
+/** True when the last fetchForecast had to use a stale copy. */
+let staleServed = false
+
 export async function fetchForecast(opts: { lat: number; lon: number; days: number; models?: string[]; startDate?: string }): Promise<Forecast> {
+  staleServed = false
   const models = opts.models?.length ? opts.models : defaultModels(opts.lat, opts.lon)
   const base = { latitude: opts.lat.toFixed(3), longitude: opts.lon.toFixed(3), timezone: 'auto', wind_speed_unit: 'kn' }
   const range: Record<string, string> = opts.startDate
@@ -108,7 +126,7 @@ export async function fetchForecast(opts: { lat: number; lon: number; days: numb
   const sun = ((c.daily?.time ?? []) as string[]).map((date, i) => ({ date, sunrise: String(c.daily.sunrise?.[i] ?? '').slice(11, 16), sunset: String(c.daily.sunset?.[i] ?? '').slice(11, 16) }))
   const off = Number(m.utc_offset_seconds ?? 0)
   const issued = new Date(Date.now() + off * 1000).toISOString().slice(0, 16).replace('T', ' ')
-  return { lat: opts.lat, lon: opts.lon, timezone: m.timezone, models: kept, dropped: models.filter(x => !kept.includes(x)), hours, seaTemp: sst, waveHeight: s?.hourly?.wave_height ?? [], seaLevel: s?.hourly?.sea_level_height_msl ?? [], waves, sun, issued, utcOffsetSeconds: off }
+  return { stale: staleServed || undefined, lat: opts.lat, lon: opts.lon, timezone: m.timezone, models: kept, dropped: models.filter(x => !kept.includes(x)), hours, seaTemp: sst, waveHeight: s?.hourly?.wave_height ?? [], seaLevel: s?.hourly?.sea_level_height_msl ?? [], waves, sun, issued, utcOffsetSeconds: off }
 }
 
 export async function geocode(name: string): Promise<{ name: string; admin: string; country: string; lat: number; lon: number }[]> {

@@ -1,0 +1,46 @@
+{
+  "id": "maui-kite",
+  "q": "Kanaha, Maui, tomorrow: what time does the trade wind fill in, how strong, and which kite for 75 kg (8, 10, 12 m)?",
+  "sans": "Je regroupe les prévisions trouvées (NWS et Windfinder). Voici la synthèse pour **demain, dimanche 18 octobre 2026, à Kanaha** :\n\n## Vent\n\n- **Régime :** alizé établi, orienté est-nord-est (environ 65–75°), donc side-on à Kanaha. Pas de risque de vent du sud ni de pétole. Selon le NWS, l'alizé est « modéré à soutenu » et va se renforcer en début de semaine.\n- **Prévision du modèle (Windfinder)** :\n\n  | Heure | Vent moyen | Rafales |\n  |---|---|---|\n  | 08h | 13 nds | 18 |\n  | 11h | 12 nds | 16 |\n  | 14h | 12 nds | 16 |\n  | 17h | 13 nds | 18 |\n  | 20h | 14 nds | 20 |\n\n- **Mer (NWS Coastal Waters)** : vent d'est jusqu'à 20 nds sur la côte au vent de Maui, et 20–25 nds d'ENE dans les canaux Pailolo et Alenuihaha.\n\n## Heure d'établissement et force réelle\n\nLes grilles des modèles lissent le vent. À Kanaha, l'alizé se combine à l'accélération entre les volcans et au thermique de la vallée centrale. En pratique, avec ce genre de configuration :\n- **le matin (avant ~11h)** : 10–14 nds, irrégulier ;\n- **le vent s'établit entre 11h et midi** ;\n- **le pic se situe entre 13h et 17h, autour de 15–20 nds avec des rafales vers 22–24 nds.** C'est une estimation de ma part, à partir des modèles et des 20–25 nds annoncés dans les canaux. Ce ne sont pas des chiffres mesurés.\n\nÀ ma connaissance, le kite n'est pas autorisé avant 11h dans la zone de Kanaha, ce qui tombe bien avec l'arrivée du vent. Vérifiez quand même le règlement sur place.\n\n## Quelle aile pour 75 kg ?\n\n- **10 m : l'aile de la journée.** Elle couvre bien 15–22 nds, ce qui correspond à l'après-midi attendu.\n- **12 m :** seulement si le vent reste autour de 12–15 nds, comme l'indiquent les modèles bruts, ou pour une session tôt ou en fin de journée.\n- **8 m :** pas nécessaire demain, sauf si le capteur dépasse régulièrement 24–25 nds. Ça pourrait plutôt arriver en début de semaine, quand l'alizé se renforce.\n\n**Mon conseil :** prenez la 10 et la 12 dans le coffre. Regardez le capteur de Kanaha (iWindsurf ou Windfinder report) vers 11h. Si le vent moyen est à 16 nds ou plus, sortez la 10 ; s'il est sous 15 nds, la 12.\n\nCes prévisions datent de vendredi soir, et Open-Meteo n'a pas répondu, je n'ai donc pas pu croiser un troisième modèle. Revérifiez demain matin.\n\nSources :\n- [NWS Honolulu – Area Forecast Discussion](https://forecast.weather.gov/product.php?site=HFO&issuedby=HFO&product=AFD)\n- [NWS Honolulu – Coastal Waters Forecast](https://forecast.weather.gov/product.php?site=HFO&issuedby=HFO&product=CWF)\n- [NWS hourly forecast (grille HFO 214,126)](https://api.weather.gov/gridpoints/HFO/214,126/forecast/hourly)\n- [Windfinder – Maui / Kanaha](https://www.windfinder.com/forecast/maui_kanaha)\n- [Windfinder – rapport temps réel Kanaha](https://es.windfinder.com/report/maui_kanaha)\n- [Windy.app – Kanaha Beach](https://windy.app/forecast2/spot/60944/Kanaha+Beach)",
+  "avec": "**Demain, dimanche 18 octobre : peut-être (score windext 4/10).** Les alizés d'ENE devraient souffler entre 15 et 17 nœuds de moyenne, avec des rafales jusqu'à 28 nœuds. Prends le **8 m**.\n\n**Heures et force du vent**\n- **Avant 11 h :** le vent s'installe dès 8-9 h (12-14 nœuds). Mais à Kanaha, la règle locale interdit le kite avant 11 h, et elle ne figure pas dans la fenêtre 9 h-18 h du verdict. En pratique, ta session commence à **11 h**.\n- **11 h-15 h :** c'est le pic, avec 15-17 nœuds de moyenne et des rafales de 28 nœuds. Les modèles divergent le plus entre 12 h et 14 h : de 10 à 21 nœuds selon le modèle.\n- **Après 15 h :** le vent faiblit doucement vers 14 nœuds jusqu'au coucher du soleil (17 h 59).\n- **Direction :** ENE, la meilleure pour ce spot, en side-shore.\n\n**Le choix du kite**\n- **8 m :** c'est celui que recommande le verdict pour 75 kg. Les rafales font presque le double du vent moyen : avec plus grand, tu seras surtoispé dans les rafales.\n- **10 m :** à garder dans la voiture si le vent mesuré reste autour de 12-14 nœuds sans grosses rafales.\n- **12 m :** trop grand demain.\n\n**Ce qu'il faut vérifier le matin**\nRegarde la station live vers 7 h. Si elle montre au moins 12 nœuds de moyenne et des rafales sous 28 nœuds, tu y vas.\n\n**Sécurité**\n- Le vent est irrégulier près du bord, avec des trous et des rafales. Le récif est coupant et la plage est bondée : fais-toi aider pour décoller.\n- Il est interdit de voler dans le couloir de la piste de l'aéroport, et le kite doit rester sous 125 ft (environ 38 m).\n- Ces informations viennent d'une fiche « seed », non vérifiée par des riders locaux.\n\nTu connais Kanaha ? Si tu peux confirmer l'orientation et les règles de la fiche (plage orientée nord, ENE/NE idéal, interdiction avant 11 h), j'aimerais l'enregistrer dans la base communautaire.",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 3,
+      "uncertainty": 5,
+      "actionability": 5,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "Il ne parle ni de l'interdiction dans le couloir de la piste de l'aéroport de Kahului (zone de 2 miles sur 1 à Spreckelsville), ni de la limite de hauteur de 125 ft liée à la dérogation FAA. Ce sont des règles essentielles à Kanaha.",
+        "Rien non plus sur le récif, la plage bondée, l'aide au décollage, ni sur le vent irrégulier près du bord.",
+        "« Pas de risque de vent du sud ni de pétole » est trop affirmatif pour une prévision faite la veille.",
+        "Le pic de 15-20 nds (rafales 22-24) est une extrapolation à partir des vents annoncés dans les canaux. Elle est honnêtement présentée comme une estimation, mais les modèles bruts disent 12-13 nds.",
+        "La règle du 11 h est donnée avec réserve (« à ma connaissance »), alors qu'elle est bien établie par le règlement du comté de Maui.",
+        "La réponse est un peu longue (tableau et liste de sources), même si tout reste utile.",
+        "Points justes : dimanche 18 octobre, ENE à environ 70°, side-on sur la plage nord, la 10 m comme aile de la journée avec la 12 m en secours (cohérent pour 75 kg à 12-20 nds), et une règle de décision claire selon le capteur à 11 h."
+      ]
+    },
+    "avec": {
+      "accuracy": 2,
+      "safety": 4,
+      "uncertainty": 3,
+      "actionability": 2,
+      "local_knowledge": 4,
+      "concision": 3,
+      "errors": [
+        "Le choix d'aile ne colle pas avec le vent annoncé. Pour 75 kg avec 15-17 nds de moyenne, il faut une 10-12 m. Une 8 m convient plutôt à 22-28 nds établis. Même en tenant compte des rafales à 28 nds, la recommander comme aile principale fait sortir le rider sous-toilé pendant la majeure partie de la session.",
+        "Garder la 10 m « si le vent reste autour de 12-14 nds » est incohérent : à 12-14 nds, 75 kg demandent une 12 m. Écarter la 12 m comme « trop grande demain » contredit les 12-14 nds annoncés après 15 h et avant 11 h.",
+        "Des rafales à 28 nds pour 15-17 nds de moyenne, soit un rapport de 1,7, c'est peu crédible sous un alizé établi. Aucune source n'est citée, et l'écart des modèles (10 à 21 nds) montre que ce chiffre n'est pas fiable.",
+        "Jargon interne qui n'est pas expliqué au rider : « score windext 4/10 », « verdict », « fenêtre 9h-18h du verdict », « fiche seed ».",
+        "La demande finale d'enregistrer les infos dans une « base communautaire » est du remplissage, sans rapport avec la question.",
+        "Faute de frappe : « surtoispé » au lieu de « surtoilé ».",
+        "Points vérifiés et justes : dimanche 18 octobre 2026, la règle de Kanaha qui interdit le kite avant 11 h, la limite FAA de 125 ft, l'interdiction dans le couloir de la piste à Spreckelsville, la direction ENE side-shore sur une plage orientée nord, et un coucher du soleil vers 18 h HST (17 h 59 est plausible).",
+        "Il ne précise pas que le kite n'est autorisé qu'entre le lever et le coucher officiels du soleil, ni la priorité des nageurs, pêcheurs et pirogues."
+      ]
+    },
+    "winner": "sans",
+    "why": "B donne des tailles d'aile cohérentes avec 75 kg et le vent prévu, cite ses sources, signale ses incertitudes et propose une règle de décision claire, alors que la 8 m de A est sous-dimensionnée pour 15-17 nds malgré une meilleure couverture des règles de sécurité locales."
+  },
+  "seconds": 173
+}

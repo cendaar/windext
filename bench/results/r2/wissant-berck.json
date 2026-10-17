@@ -1,0 +1,43 @@
+{
+  "id": "wissant-berck",
+  "q": "Dimanche, kite à Wissant ou à Berck ? 75 kg, 9 et 12 m. Dis-moi lequel et pourquoi.",
+  "sans": "**Berck, avec la 12 m, mais le vent sera probablement trop faible pour une vraie session.** La 9 m peut rester dans le coffre.\n\n**Pourquoi Berck plutôt que Wissant :**\n\n1. **L'orientation du vent.** Dimanche, il vient du nord-nord-est (entre 20 et 40°).\n   - À Berck, la côte est orientée nord-sud : ce vent arrive donc parallèle à la plage (side-shore). Il souffle à plat sur la mer, sans obstacle, et reste propre et régulier.\n   - À Wissant, le même vent passe par-dessus le Cap Blanc-Nez. Ça le rend irrégulier : AROME prévoit environ 12 nœuds de vent moyen pour des rafales de 20 à 22 nœuds, soit presque le double. Avec un vent aussi haché, une 12 m tombe dans les trous, puis vous arrache dans les rafales.\n2. **La météo.** À Wissant, la matinée sera pluvieuse, avec des grains orageux vers 8–10 h (rafales de 35 nœuds). Berck devrait rester sec presque toute la journée.\n3. **La mer.** Les vagues feront environ 0,7 m à Berck contre 1,3 m à Wissant. C'est plus confortable par vent faible.\n\n**Ce qui pose problème : la force du vent.**\n\n| Berck (modèle AROME) | Vent moyen | Rafales |\n|---|---|---|\n| 9 h – 14 h | 8–10 nœuds | 13–14 nœuds |\n| **15 h** | **15 nœuds** | 20 nœuds |\n| 16 h – 17 h | 9–11 nœuds | 16–19 nœuds |\n\nÀ 75 kg, une 12 m demande en gros 14 nœuds réguliers avec une planche twin-tip. Seule une fenêtre courte, vers **14 h 30 – 16 h**, pourrait être navigable. Elle tombe bien avec la marée : basse mer vers 11 h, pleine mer vers 17 h, donc vous naviguerez à marée montante.\n\nLes modèles ne sont pas d'accord entre eux. ECMWF ne donne que 8 nœuds à 15 h, et le modèle par défaut d'Open-Meteo prévoit moins de 8 nœuds toute la journée. Le pic de 15 nœuds n'apparaît que dans AROME. C'est le modèle le plus fiable à court terme sur la Côte d'Opale, mais il n'en montre qu'une seule heure.\n\n**Mon conseil :** regardez AROME samedi soir ou dimanche matin. S'il donne toujours 13 nœuds ou plus vers 15 h, allez à Berck avec la 12 m. S'il tombe à 10–11 nœuds, ça ne vaut le déplacement qu'avec un foil, ou une grande planche et une aile de 14–15 m.\n\nSources : [Open-Meteo (AROME, ECMWF, modèle par défaut)](https://open-meteo.com/) et [Open-Meteo Marine](https://open-meteo.com/en/docs/marine-weather-api), prévisions pour le dimanche 18 octobre 2026.",
+  "avec": "**Dimanche 18/10 : aucun des deux. Windext donne 0/10 à Wissant comme à Berck.** Si tu dois absolument choisir, Wissant reste un peu moins mauvais, mais ça ne vaut pas le trajet.\n\n**Pourquoi**\n- **Pas assez de vent pour ton matos.** La moyenne des modèles tourne autour de 7 nœuds, avec 9 au mieux vers 14 h à Wissant. À 75 kg, ta 12 m demande environ 13-14 nœuds.\n- **Berck ne fonctionne pas avec ce vent.** Il vient du NNE/NE, donc de terre (side-off ou offshore) toute la journée sur une plage orientée ouest. Ce secteur est interdit sur la fiche du spot.\n- **Wissant se retrouve en side-shore droite (NE).** C'est jouable sur le papier, mais il y a des rafales vers le Blanc-Nez. Il passe offshore (E) vers 10-12 h puis le soir.\n- **Les modèles ne sont pas d'accord à Wissant.** KNMI et DMI voient 15-18 nœuds de N en fin d'après-midi (17-18 h), alors que les autres restent sous 10 nœuds. Le temps est à averses : chaque grain apporte une rafale puis un trou.\n\n**Règle pour le matin à Wissant :** n'y va que si les balises réelles affichent au moins 13 nœuds établis, avec une direction N à NW, en début d'après-midi. Si ça reste NE-E ou en dessous de 12 nœuds, laisse tomber.\n\n**Sécurité :** ne navigue pas si le vent passe E ou SE (offshore, avec le rail de navigation du détroit au large). Méfie-toi des grains.\n\nLes fiches des deux spots sont au statut « seed », donc pas encore vérifiées. Je n'ai pas pu récupérer les marées (service surchargé). Si tu y vas, regarde l'annuaire SHOM ou maree.info.",
+  "judged": {
+    "sans": {
+      "accuracy": 3,
+      "safety": 1,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 2,
+      "concision": 4,
+      "errors": [
+        "Erreur majeure d'orientation : la plage de Berck est orientée ouest (normale à environ 270°). Un vent de 20 à 40° y est donc side-off, pas « parallèle/side-shore ». Il vient de terre, il est turbulent et il pousse vers le large. Le seul créneau vraiment side-shore est la pointe AROME de 15 h, orientée à 348°.",
+        "Dire que le vent est « propre et régulier, sans obstacle » à Berck est faux : il traverse la côte et les dunes. Les rafales AROME (13–20 kn pour 8–10 de moyenne) montrent un vent aussi haché qu'à Wissant.",
+        "Aucune mise en garde sur le side-off/offshore, le risque de dérive au large ni l'eau froide (environ 14–15 °C mi-octobre, combinaison 4/3 ou 5/4). La réponse envoie le rider sur le spot le moins sûr.",
+        "Les chiffres sont vérifiés et corrects : AROME à Berck donne 15,1 kn à 15 h (rafales 20) et 8–10 kn le reste de la journée. ECMWF donne 8 kn à 15 h. À Wissant, AROME prévoit 12 kn de moyenne, 19–22 kn en rafales et un grain le matin (35 kn vers 8–9 h).",
+        "Les marées sont correctes : à Berck (maree.info), basse mer à 11 h 38 et pleine mer à 17 h 12. Il manque le coefficient (32–37, mortes-eaux), qui limite le courant.",
+        "La comparaison des vagues (0,7 m contre 1,3 m) n'a pas été vérifiée. Elle compte de toute façon peu face au problème de direction."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 4,
+      "concision": 4,
+      "errors": [
+        "« 9 kn au mieux à Wissant » sous-estime le vent : AROME donne 11–12 kn de 13 h à 16 h (rafales 19–22), ECMWF environ 9,5 kn. La réponse ne cite pas AROME, le modèle le plus fiable à courte échéance sur la Côte d'Opale.",
+        "Le « 0/10 Windext » et la mention « secteur interdit sur la fiche » ne sont pas vérifiables, et les fiches sont elles-mêmes au statut « seed ». Le fond reste juste : un vent de NE est side-off/offshore à Berck.",
+        "Le passage à l'est entre 10 et 12 h à Wissant est confirmé par AROME (84° à 10 h, 65° à 11 h).",
+        "Il ne donne pas les marées : à Berck, basse mer à 11 h 38 et pleine mer à 17 h 12, coefficient 32–37. À Wissant, l'estran est large à marée basse et la mer remonte vite près du Blanc-Nez.",
+        "Il ne parle ni de l'eau froide d'octobre ni de l'équipement adapté (foil, grande aile) comme solution par petit temps.",
+        "Il exige un vent N à NW à Wissant. C'est trop strict : un NNE de 20 à 40° y est side-shore, donc navigable s'il y a assez de force."
+      ]
+    },
+    "winner": "avec",
+    "why": "B identifie correctement que le NNE/NE est side-off à Berck (plage orientée ouest) et side-shore à Wissant, alors que A envoie le rider à Berck en présentant à tort ce vent comme side-shore, malgré des chiffres AROME et des marées exacts."
+  },
+  "seconds": 132
+}

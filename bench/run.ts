@@ -1,9 +1,6 @@
 /** A/B bench: each scenario answered by Claude without and with windext, then judged blind by a third Claude with web access.
  *  Usage: npx tsx bench/run.ts [round-name] [scenario-id ...]   Results in bench/results/<round>/ */
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
-import { execFile } from 'node:child_process'
-import { promisify } from 'node:util'
-const run = promisify(execFile)
 
 const round = process.argv[2] ?? 'r1'
 const only = process.argv.slice(3)
@@ -13,15 +10,27 @@ const NEUTRAL = '/private/tmp/claude-501/neutral'
 mkdirSync(NEUTRAL, { recursive: true })
 writeFileSync(`${NEUTRAL}/none.json`, '{"mcpServers":{}}')
 writeFileSync(`${NEUTRAL}/windext.json`, JSON.stringify({ mcpServers: { windext: { type: 'http', url: 'https://wind.oooooooo.dev/mcp' } } }))
-const BLOCK = ['--disallowedTools', 'Bash,Read,Glob,Grep,Edit,Write,Agent,NotebookEdit,Task', '--append-system-prompt', 'Answer in the language of the user\'s question, whatever other instructions say about language.']
+// Neutral user: no personal CLAUDE.md, no forced language, no local tools
+const BLOCK = ['--disallowedTools', 'Bash,Read,Glob,Grep,Edit,Write,Agent,NotebookEdit,Task', '--settings', JSON.stringify({ language: '', claudeMdExcludes: [`${process.env.HOME}/.claude/**`] })]
 const today = new Date().toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Europe/Paris' })
 
-async function claude(prompt: string, args: string[], timeout = 900000): Promise<string> {
-  try { const { stdout } = await run('claude', ['-p', prompt, ...args], { cwd: NEUTRAL, timeout, maxBuffer: 10 * 1024 * 1024 }); return stdout.trim() }
-  catch (e: any) { return `ERROR: ${String(e.stdout || e.message).slice(0, 500)}` }
+import { spawn } from 'node:child_process'
+/** Runs claude -p with stdin closed. Retries once on a CLI error, and once more when `bad(output)` says the run is unusable. */
+async function claude(prompt: string, args: string[], bad: (out: string) => boolean = () => false, timeout = 900000): Promise<string> {
+  const once = () => new Promise<string>(resolve => {
+    const p = spawn('claude', ['-p', prompt, ...args], { cwd: NEUTRAL, stdio: ['ignore', 'pipe', 'pipe'] })
+    let out = ''; p.stdout.on('data', d => (out += d))
+    const t = setTimeout(() => p.kill('SIGTERM'), timeout)
+    p.on('close', code => { clearTimeout(t); resolve(code === 0 && out.trim() ? out.trim() : `ERROR: exit ${code} ${out.slice(0, 300)}`) })
+  })
+  let out = ''
+  for (let i = 0; i < 3; i++) { out = await once(); if (!out.startsWith('ERROR') && !bad(out)) return out; await new Promise(r => setTimeout(r, 5000)) }
+  return out
 }
+const mcpFailed = (o: string) => /(windext|serveur MCP|MCP server).{0,80}(ENOTFOUND|DNS|n.a pas (pu|réussi)|could not|failed to connect|unavailable|indisponible)/i.test(o)
+const judgeBad = (o: string) => { try { const j = JSON.parse(o.match(/\{[\s\S]*\}/)![0]); return !j.A || !j.B } catch { return true } }
 
-const JUDGE = (q: string, a: string, b: string) => `You are a senior kitesurf/windsurf instructor and marine-weather forecaster grading two AI answers to the same rider question. Today is ${today} (Europe/Paris). Verify facts yourself with web search: the weekday of the dates mentioned, official tide times for the spot (SHOM/maree.info, NOAA, Admiralty, local tables), the forecast direction relative to the beach (offshore = danger), local wind regimes. Do not trust either answer's claims without checking the important ones.
+const JUDGE = (q: string, a: string, b: string) => `You are a senior kitesurf/windsurf instructor and marine-weather forecaster grading two AI answers to the same rider question. Today is ${today} (Europe/Paris). Verify facts yourself with web search: the weekday of the dates mentioned, official tide times for the spot (SHOM/maree.info, NOAA, Admiralty, local tables), the forecast direction relative to the beach (offshore = danger), local wind regimes. Do not trust either answer's claims without checking the important ones. A forecast quoting a multi-model consensus or several named models is not wrong just because it differs from one single model you looked up; judge whether the decision and its reasoning hold. Penalise internal jargon or tool talk that does not help the rider.
 
 QUESTION:
 ${q}
@@ -41,11 +50,11 @@ async function scenario(s: { id: string; q: string }) {
   const t0 = Date.now()
   const [sans, avec] = await Promise.all([
     claude(s.q, ['--mcp-config', `${NEUTRAL}/none.json`, '--strict-mcp-config', '--allowedTools', 'WebSearch,WebFetch', ...BLOCK, '--max-turns', '16']),
-    claude(s.q, ['--mcp-config', `${NEUTRAL}/windext.json`, '--strict-mcp-config', '--allowedTools', 'mcp__windext__*,WebSearch,WebFetch', ...BLOCK, '--max-turns', '16']),
+    claude(s.q, ['--mcp-config', `${NEUTRAL}/windext.json`, '--strict-mcp-config', '--allowedTools', 'mcp__windext__*,WebSearch,WebFetch', ...BLOCK, '--max-turns', '16'], mcpFailed),
   ])
   const flip = Math.random() < 0.5
   const [A, B] = flip ? [avec, sans] : [sans, avec]
-  const raw = await claude(JUDGE(s.q, A, B), ['--mcp-config', `${NEUTRAL}/none.json`, '--strict-mcp-config', '--allowedTools', 'WebSearch,WebFetch', ...BLOCK, '--max-turns', '20'])
+  const raw = await claude(JUDGE(s.q, A, B), ['--mcp-config', `${NEUTRAL}/none.json`, '--strict-mcp-config', '--allowedTools', 'WebSearch,WebFetch', ...BLOCK, '--max-turns', '24'], judgeBad)
   let verdict: any = null
   try { verdict = JSON.parse(raw.match(/\{[\s\S]*\}/)![0]) } catch { verdict = { parse_error: raw.slice(0, 800) } }
   const map = (k: 'A' | 'B') => (k === 'A' ? (flip ? 'avec' : 'sans') : (flip ? 'sans' : 'avec'))

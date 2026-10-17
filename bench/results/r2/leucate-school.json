@@ -1,0 +1,10 @@
+{
+  "id": "leucate-school",
+  "q": "Je dirige une école de kite à Leucate. Est-ce que je maintiens les cours débutants demain matin, et à partir de quelle heure j'annule ? J'ai besoin d'une décision argumentée pour mes moniteurs.",
+  "sans": "ERROR: Command failed: claude -p Je dirige une école de kite à Leucate. Est-ce que je maintiens les cours débutants demain matin, et à partir de quelle heure j'annule ? J'ai besoin d'une décision argumentée pour mes moniteurs. --mcp-config /private/tmp/claude-501/neutral/none.json --strict-mcp-config --allowedTools WebSearch,WebFetch --disallowedTools Bash,Read,Glob,Grep,Edit,Write,Agent,NotebookEdit,Task --append-system-prompt Answer in the language of the user's question, whatever other instructions ",
+  "avec": "ERROR: Command failed: claude -p Je dirige une école de kite à Leucate. Est-ce que je maintiens les cours débutants demain matin, et à partir de quelle heure j'annule ? J'ai besoin d'une décision argumentée pour mes moniteurs. --mcp-config /private/tmp/claude-501/neutral/windext.json --strict-mcp-config --allowedTools mcp__windext__*,WebSearch,WebFetch --disallowedTools Bash,Read,Glob,Grep,Edit,Write,Agent,NotebookEdit,Task --append-system-prompt Answer in the language of the user's question, whatever ",
+  "judged": {
+    "parse_error": "ERROR: Command failed: claude -p You are a senior kitesurf/windsurf instructor and marine-weather forecaster grading two AI answers to the same rider question. Today is Saturday, 17 October 2026 (Europe/Paris). Verify facts yourself with web search: the weekday of the dates mentioned, official tide times for the spot (SHOM/maree.info, NOAA, Admiralty, local tables), the forecast direction relative to the beach (offshore = danger), local wind regimes. Do not trust either answer's claims without checking"
+  },
+  "seconds": 4510
+}

@@ -1,0 +1,44 @@
+{
+  "id": "cumbuco-week",
+  "q": "Vou para Cumbuco esta semana para kitar. Quais os melhores dias e horários? Peso 70 kg, tenho 7, 9 e 12 m.",
+  "sans": "ERROR: Command failed: claude -p Vou para Cumbuco esta semana para kitar. Quais os melhores dias e horários? Peso 70 kg, tenho 7, 9 e 12 m. --mcp-config /private/tmp/claude-501/neutral/none.json --strict-mcp-config --allowedTools WebSearch,WebFetch --disallowedTools Bash,Read,Glob,Grep,Edit,Write,Agent,NotebookEdit,Task --append-system-prompt Answer in the language of the user's question, whatever other instructions say about language. --max-turns 16\nWarning: no stdin data received in 3s, proceeding wi",
+  "avec": "ERROR: Command failed: claude -p Vou para Cumbuco esta semana para kitar. Quais os melhores dias e horários? Peso 70 kg, tenho 7, 9 e 12 m. --mcp-config /private/tmp/claude-501/neutral/windext.json --strict-mcp-config --allowedTools mcp__windext__*,WebSearch,WebFetch --disallowedTools Bash,Read,Glob,Grep,Edit,Write,Agent,NotebookEdit,Task --append-system-prompt Answer in the language of the user's question, whatever other instructions say about language. --max-turns 16\nWarning: no stdin data received i",
+  "judged": {
+    "sans": {
+      "accuracy": 0,
+      "safety": 0,
+      "uncertainty": 0,
+      "actionability": 0,
+      "local_knowledge": 0,
+      "concision": 0,
+      "errors": [
+        "La réponse est un message d'erreur de la CLI (« Command failed … no stdin data received ») et ne contient aucun contenu destiné au rider.",
+        "Aucun jour ni horaire recommandé pour la semaine du 17/10/2026.",
+        "Aucun élément local : alizés d'E à ESE, side-shore à side-onshore, plus forts l'après-midi en pleine saison (octobre), avec la plage et la lagune de Cauípe comme spots principaux.",
+        "Aucune taille d'aile proposée pour 70 kg : 9 m par défaut, 7 m quand le vent est fort, 12 m le matin ou les jours faibles.",
+        "Ni les marées ni le shore-break ne sont abordés.",
+        "Aucune consigne de sécurité, aucun niveau de confiance de la prévision, et rien pour décider le jour même."
+      ]
+    },
+    "avec": {
+      "accuracy": 0,
+      "safety": 0,
+      "uncertainty": 0,
+      "actionability": 0,
+      "local_knowledge": 0,
+      "concision": 0,
+      "errors": [
+        "La réponse est un message d'erreur de la CLI (« Command failed … no stdin data received ») et ne contient aucun contenu destiné au rider.",
+        "Aucun jour ni horaire recommandé pour la semaine qui commence le samedi 17/10/2026 (date vérifiée : c'est bien un samedi).",
+        "Le régime local n'est pas mentionné : à Cumbuco (Ceará, Brésil), la saison des alizés va d'environ juillet à janvier et octobre en est le pic. Le vent est d'E à ESE, side-shore à side-onshore sur la plage orientée nord-ouest. Il est plus faible le matin, se renforce l'après-midi (souvent 18 à 28 nœuds) et une composante thermique peut prolonger la session jusqu'au coucher du soleil.",
+        "Aucun choix d'aile : pour 70 kg dans ce régime, la 9 m sert de base, la 7 m pour les après-midis à plus de 25 nœuds et la 12 m pour les matinées ou les jours faibles.",
+        "Les marées ne sont pas abordées. Leur marnage semi-diurne, d'environ 2 à 3 m en vives-eaux, modifie le shore-break et le plan d'eau de la plage. La lagune de Cauípe, en eau plate, est moins sensible à la marée.",
+        "Aucune consigne de sécurité : rafales de l'après-midi, shore-break, vigilance en vives-eaux, buggys et jangadas sur la plage, zones de mise à l'eau encombrées, risque d'insolation et de coups de soleil.",
+        "Le niveau de confiance de la prévision n'est pas indiqué, et rien n'explique comment trancher le jour même."
+      ]
+    },
+    "winner": "tie",
+    "why": "Les deux réponses ne sont que des messages d'erreur de la CLI sans aucun contenu, donc aucune ne peut l'emporter."
+  },
+  "seconds": 1160
+}

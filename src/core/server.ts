@@ -23,6 +23,7 @@ ANSWER FORMAT (riders read this on a phone in the car park)
 - Then 2 to 4 short lines on why (the verdict's reasons), then the decision rule for the morning when the verdict is maybe, then the safety points that apply to this spot. Under 250 words unless the user asks for detail. No per-model table unless asked.
 - If there is no spot card, ask at most ONE short sentence at the very end ("Do you know this spot? Tell me if the beach faces N and I will save it for the next riders."). Never add it for a professional or school question, and never more than once per conversation.
 - Official warnings (OFFICIAL WARNINGS line) override everything: say it first.
+- Speak as a forecaster, not as a tool: give the score as a plain rating ("5/10"), never mention spot-card statuses, percentages of hours, "the tool", "windext says" or how the verdict is computed. If the verdict is no, do not then offer a window "if you go anyway"; offer the alternative spot when the verdict names one.
 
 READING THE TABLE AS A RIDER
 - MEAN is the model consensus. SPREAD is the disagreement in knots: <= 4 reliable, 4-8 confirm on the morning run, > 8 do not plan on it. AGREE summarises both speed and direction agreement.
@@ -197,7 +198,7 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
         await store.archiveForecast(rows)
       }
     } catch { /* statistics must never break a forecast */ }
-    const head = `Issued ${weekday(fc.issued)} ${fc.issued} local (${fc.timezone}); check the weekday the user named against the table headers.\n${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}${fc.dropped?.length ? ` (not available here: ${fc.dropped.map(m => MODEL_LABELS[m] ?? m).join(', ')})` : ''}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
+    const head = `${fc.stale ? 'WARNING: the weather service is overloaded; this forecast is an older copy (up to 24 h). Say so.\n' : ''}Issued ${weekday(fc.issued)} ${fc.issued} local (${fc.timezone}); check the weekday the user named against the table headers.\n${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}${fc.dropped?.length ? ` (not available here: ${fc.dropped.map(m => MODEL_LABELS[m] ?? m).join(', ')})` : ''}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
     const tides = await tideText(c2, lat, lon, fc, a.days)
     const tideBlock = tides ? `\n\nTides${c2?.tide_notes ? ` (spot note: ${c2.tide_notes})` : ''}:\n${tides}` : ''
     const sea = renderSea(fc)
@@ -205,7 +206,8 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
     const sport = a.sport === 'sailing' || a.sport === '' ? 'kitesurf' : a.sport
     const rider: Rider = { sport, weightKg: a.weight_kg ?? 75, sizes: a.sizes?.length ? a.sizes : sport === 'kitesurf' ? [9, 12] : sport === 'wingfoil' ? [4, 5.5] : [5, 6.5], level: a.level ?? 'intermediate' }
     const profileNote = a.weight_kg && a.sizes?.length ? '' : ` (default profile: ${rider.weightKg} kg, ${rider.sizes.join(' and ')} ${rider.sport === 'windsurf' ? 'm2' : 'm'}; ask the rider and call again for a personal answer)`
-    const verdicts = (['today', 'tomorrow'] as const).map(day => renderVerdict(dayVerdict(fc, rider, { day, facing: facing ?? null, card: c2, alerts: alerts.map(x => ({ event: x.event, blocking: isBlocking(x.event) })) }), 'en'))
+    const nearby = await store.nearbySpots(lat, lon, 30, 20).catch(() => [])
+    const verdicts = (['today', 'tomorrow'] as const).map(day => renderVerdict(dayVerdict(fc, rider, { day, facing: facing ?? null, card: c2, nearby, alerts: alerts.map(x => ({ event: x.event, blocking: isBlocking(x.event) })) }), 'en'))
       .filter(v => fc.hours.some(h => h.time.startsWith(v.date)))
     const verdictBlock = `VERDICT (${rider.sport}${profileNote}):\n${verdicts.map(v => `${v.day} ${v.date}: ${v.headline} windext score ${v.score}/10. ${v.reasons.join(' ')}`).join('\n')}`
     const alertBlock = alerts.length ? `OFFICIAL WARNINGS (US National Weather Service): ${alerts.map(x => `${x.event}${x.ends ? ` until ${x.ends.slice(0, 16).replace('T', ' ')}` : ''}`).join('; ')}\n` : ''

@@ -14,7 +14,7 @@ export type Status = 'go' | 'check' | 'no'
 export const CODES = [
   // blockers and safety first: they decide the verdict and must always be visible
   'ALERT', 'NIGHT_ONLY', 'DAY_OVER', 'STORM', 'OFFSHORE', 'FORBIDDEN', 'TOO_STRONG', 'BEGINNER_TOO_STRONG', 'TOO_LIGHT', 'TOO_LIGHT_FOR_GEAR',
-  'GUSTY_DANGER', 'SIDE_OFF_EXPERT', 'MODELS_DISAGREE', 'CHECK_RULE', 'ONSHORE_WAVES',
+  'ALT_SPOT', 'GUSTY_DANGER', 'SIDE_OFF_EXPERT', 'MODELS_DISAGREE', 'CHECK_RULE', 'ONSHORE_WAVES',
   // then the character of the wind and the timing
   'MODELS_AGREE', 'GUSTY', 'STEADY', 'SHOWERS', 'BUILDS_LATE', 'DROPS_EARLY', 'SHORT_WINDOW', 'TIDE_HIGH', 'TIDE_LOW',
   'SIDE_IDEAL', 'ONSHORE', 'UNSTABLE_SEA', 'LONG_WINDOW', 'GEAR_BETWEEN', 'COLD', 'DARK_SOON', 'NO_ORIENTATION',
@@ -72,9 +72,19 @@ export function sessionScore(p: { hours: number; speed: number; gust: number; id
   return Math.max(1, Math.min(10, Math.round(10 * (0.3 * length + 0.7 * fit) * gust * conf * shore)))
 }
 
+/** A nearby known spot where wind from `dir` is side or side-on (and not a forbidden sector). */
+export function alternativeSpot(dir: number, nearby: (SpotCard & { distance_km: number })[] = [], excludeId?: string): { name: string; km: number } | null {
+  const ang = (a: number, b: number) => { const d = Math.abs(a - b) % 360; return d > 180 ? 360 - d : d }
+  const ok = nearby
+    .filter(n => n.id !== excludeId && n.kind === 'spot' && n.facing_deg != null && n.distance_km > 0.5)
+    .filter(n => { const q = n.wind.find(w => w.sector === compass(dir))?.quality; if (q === 'forbidden' || q === 'marginal') return false; if (q === 'best' || q === 'ok') return true; const d = ang(dir, n.facing_deg!); return d > 30 && d <= 100 })
+    .sort((a, b) => a.distance_km - b.distance_km)
+  return ok[0] ? { name: ok[0].name, km: Math.round(ok[0].distance_km) } : null
+}
+
 interface HourEval { s: HourSummary; ok: boolean; why: Code | null; storm: boolean; cape: number; precip: number }
 
-export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 'tomorrow'; facing?: number | null; card?: SpotCard | null; nowLocal?: string; tide?: { time: string; type: 'high' | 'low' }[]; alerts?: { event: string; blocking: boolean }[] }): DayVerdict {
+export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 'tomorrow'; facing?: number | null; card?: SpotCard | null; nowLocal?: string; tide?: { time: string; type: 'high' | 'low' }[]; alerts?: { event: string; blocking: boolean }[]; nearby?: (SpotCard & { distance_km: number })[] }): DayVerdict {
   const nowLocal = opts.nowLocal ?? fc.issued                      // 'YYYY-MM-DD HH:MM' at the spot
   const today = nowLocal.slice(0, 10)
   const date = opts.day === 'today' ? today : (() => { const d = new Date(today + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + 1); return d.toISOString().slice(0, 10) })()
@@ -143,6 +153,12 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
     const avg = { speed: r0(mean(all.map(s => s.speed))), gust: r0(mean(all.map(s => s.gust))), dir: compass(mean(all.map(s => s.dir))) }
     const peak = all.reduce((a, b) => (b.speed > a.speed ? b : a))
     const reasons: Reason[] = [{ code: main, vars: { speed: avg.speed, gust: avg.gust, peak: r0(peak.speed), peakTime: hm(peak.time), min: r0(range.min), max: r0(range.max), dir: avg.dir } }]
+    if ((main === 'OFFSHORE' || main === 'FORBIDDEN') && opts.nearby?.length) {
+      const blockedHours = evals.filter(e => e.why === main)
+      const alt = alternativeSpot(mean(blockedHours.map(e => e.s.dir)), opts.nearby, opts.card?.id)
+      const strongEnough = mean(blockedHours.map(e => e.s.speed)) >= range.min
+      if (alt && strongEnough) { codes.add('ALT_SPOT'); reasons.push({ code: 'ALT_SPOT', vars: { dir: avg.dir, alt: alt.name, km: alt.km } }) }
+    }
     // Single rideable hour: say so, it is useful
     if (best.length === 1) { codes.add('SHORT_WINDOW'); reasons.push({ code: 'SHORT_WINDOW', vars: { start: hm(best[0].s.time), end: `${String(hourOf(best[0].s.time) + 1).padStart(2, '0')}:00` } }) }
     const disagree = all.filter(s => s.agreement === 'low').length / all.length >= 0.5
@@ -205,6 +221,7 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
   const score = sessionScore({ hours: w.length, speed: effKn, gust: avg.gust, idealKn: (rider.sport === 'kitesurf' ? 2.2 : rider.sport === 'wingfoil' ? 1.05 : 1.45) * rider.weightKg / pick, gustFactor: gf, confidence, shore: midShore, level: rider.level })
   // A plain yes needs a decent score: below 5 the session is rideable but not worth driving for without checking
   const status: Status = confidence === 'low' || risky || score < 5 || (w.length <= 2 && confidence !== 'high') ? 'check' : 'go'
+  if (midShore === 'side-off' && opts.nearby?.length) { const alt = alternativeSpot(mean(w.map(x => x.dir)), opts.nearby, opts.card?.id); if (alt) add('ALT_SPOT', { dir: avg.dir, alt: alt.name, km: alt.km }) }
   if (status === 'check') add('CHECK_RULE', { min: r0(range.min), max: r0(Math.min(range.max, avg.gust + 5)), checkTime: checkAt(+start.slice(0, 2)) })
   if (blocking) add('ALERT', { event: blocking.event })
   // Order: priority list

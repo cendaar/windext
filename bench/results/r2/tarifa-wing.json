@@ -1,0 +1,45 @@
+{
+  "id": "tarifa-wing",
+  "q": "¿Merece la pena salir con el wing en Tarifa (Los Lances) mañana? Peso 72 kg, tengo un ala de 4 y una de 5,5 m. Horario, tamaño y seguridad.",
+  "sans": "**Non, ça ne vaut pas le coup demain (dimanche 18 octobre) à Los Lances : il n'y aura quasiment pas de vent.**\n\n### Prévisions pour Tarifa, de 8 h à 20 h\nJ'ai consulté trois modèles via Open-Meteo, et ils sont d'accord :\n\n| Modèle | Vent moyen | Rafales | Direction |\n|---|---|---|---|\n| Best match | 0 à 5 kn | 5 à 10 kn | variable, ouest/sud-ouest l'après-midi |\n| ECMWF | 1 à 6 kn | 7 à 13 kn | est faible le matin, puis variable |\n| ICON | 0 à 5 kn | 5 à 11 kn | sud-ouest/ouest faible |\n\n- **Pluie** : des averses entre 6 h et 11 h (2 à 3 mm/h au pire).\n- **Mer** : environ 0,7 m de houle d'ouest, période de 8 à 10 s. Température de l'air autour de 21 °C, eau autour de 21 °C.\n- Ni le Levante ni le Poniente ne sont établis. C'est une journée de transition.\n\n### Horaire\nIl n'y a pas de bon créneau. Au mieux, entre 15 h et 18 h, il y aura un léger thermique d'ouest à 4 ou 5 kn, avec des rafales à 10 kn.\n\n### Taille d'aile (72 kg)\n- **5,5 m²** : il faut au moins 13 ou 14 kn établis pour bien voler en foil, sauf avec une grande planche et un grand foil (et un très bon pumping). Demain, c'est loin du compte.\n- **4 m²** : il faut au moins 18 à 20 kn. Inutilisable demain.\n\n### Sécurité\n- Avec un vent aussi faible et variable, le risque est de ne pas pouvoir remonter au vent. À Tarifa, le courant du détroit peut alors t'emporter. Si tu sors quand même, reste près du bord et face à la zone de baignade surveillée.\n- Il risque d'y avoir des averses, voire de l'orage, le matin. Ne sors pas sous un ciel instable.\n- Regarde les balises en temps réel avant de partir (Windguru station Tarifa, ou Windy). Les modèles se trompent parfois de quelques nœuds, mais ici l'écart est trop grand pour que ça change la décision.\n\n**Mon conseil** : fais plutôt du SUP, du paddle ou repose-toi. Regarde lundi et les jours suivants, un Levante ou un Poniente revient souvent assez vite à Tarifa. Si tu veux, je regarde les prévisions de la semaine.\n\nSources :\n- [Open-Meteo Forecast API](https://open-meteo.com/en/docs) (modèles best match, ECMWF IFS 0.25°, ICON)\n- [Open-Meteo Marine API](https://open-meteo.com/en/docs/marine-weather-api)",
+  "avec": "**Verdict pour demain, dimanche 18/10 : non. Score windext 0/10.** Il n'y a pas assez de vent : 3 nœuds en moyenne, 4 au mieux vers 11h. Aucun créneau ne marche, même avec ta 5,5.\n\n**Pourquoi**\n- **Vent :** les rafales montent à 8-14 nœuds au maximum, et seulement par moments. En wing, à 72 kg, il faut une moyenne d'environ 12-14 nœuds pour la 5,5 et d'environ 18-20 nœuds pour la 4.\n- **Direction :** elle reste indécise toute la journée. Le matin, c'est un léger Levante side-off (vent qui part de la plage vers le large). L'après-midi, le vent passe au S/SW, donc onshore (de la mer vers la plage). Il n'y a ni vrai Levante ni vrai Poniente.\n- **Fiabilité :** les modèles se contredisent sur 88 % des heures. Ils sont d'accord sur un seul point : il y aura très peu de vent.\n\n**Sécurité, si tu y vas quand même pour voir**\n- **Averses et orages possibles** (CAPE jusqu'à 1020 J/kg) : chaque averse peut amener une rafale soudaine, suivie d'un calme plat. Sors de l'eau dès qu'un grain arrive.\n- **Vent faible et side-off le matin :** il risque de te laisser dériver au large sans pouvoir remonter.\n- **Houle :** 0,7 m de WNW toutes les 9 s, avec un peu de shore break au départ.\n- **Marée :** la fiche du spot dit qu'on peut naviguer à tous les niveaux de marée, donc ce n'est pas un problème.\n- **Lagune protégée de La Charca :** la navigation y est interdite.\n\nÀ noter : la fiche du spot vient d'OpenStreetMap et n'a pas été vérifiée. Ici, ça ne change rien au verdict, puisque le vent manque, quelle que soit sa direction.\n\nGarde ta session pour un autre jour. Si tu veux, je regarde les prochains jours pour trouver le prochain Levante ou Poniente. Et si tu connais bien Los Lances, dis-moi si la fiche (plage orientée SW, Levante side-off à gauche, Poniente side-on à droite) est juste : je l'enregistrerai comme fiche confirmée.",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 4,
+      "uncertainty": 4,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "Langue : la question est posée en espagnol, mais la réponse est en français.",
+        "L'eau à « environ 21 °C » est probablement surestimée. À Tarifa, en octobre, elle tourne plutôt autour de 18-20 °C, et le détroit peut la refroidir par remontée d'eau froide (upwelling). B ne dit rien de la combinaison à prévoir.",
+        "Le conseil « face à la zone de baignade surveillée » est discutable : la surveillance des plages s'arrête généralement mi-septembre, et en octobre il n'y a sans doute plus de sauveteurs.",
+        "Marée : B n'en parle pas du tout, ni horaires ni effet sur la largeur de la plage à Los Lances.",
+        "B ne donne pas l'orientation de la plage (face au SW). Il ne dit pas que le Levante y est side-off et dangereux, ni que la lagune de La Charca est interdite à la navigation.",
+        "Le reste est juste et cohérent avec Open-Meteo : vent moyen de 0 à 5 kn, rafales jusqu'à environ 10 kn, averses entre 6h et 11h, léger vent d'W l'après-midi entre 15h et 18h, houle d'environ 0,7 m d'W."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 3,
+      "actionability": 3,
+      "local_knowledge": 4,
+      "concision": 2,
+      "errors": [
+        "Langue : la question est posée en espagnol, mais la réponse est en français.",
+        "La date est juste (le dimanche 18/10/2026 est bien le lendemain du samedi 17). En revanche, le pic de vent est mal placé : selon Open-Meteo (best match), il est d'environ 4,9 kn vers 16h, avec des rafales d'environ 10 kn vers 17h. A le met à 4 kn vers 11h. Les rafales « jusqu'à 14 kn » sont aussi plus fortes que ce que donne le modèle principal (8 à 10 kn).",
+        "Le CAPE de 1020 J/kg n'est pas sourcé : le modèle best match donne au plus environ 480 J/kg. A ne dit pas non plus que les averses tombent surtout entre 8h et 11h, alors que c'est précisément le créneau à éviter.",
+        "Marée : aucun horaire ni coefficient pour Tarifa. A s'appuie seulement sur une fiche OSM qu'il dit lui-même non vérifiée. Il aurait fallu au moins citer la table de Tarifa (marnage d'environ 1 à 2 m, plage plus étroite à marée haute).",
+        "A ne parle pas du courant du détroit, qui est le vrai danger à Los Lances quand on dérive avec peu de vent.",
+        "Le jargon interne (« Score windext », « 88 % des heures ») et la demande de valider la fiche du spot alourdissent la réponse sans aider le rider.",
+        "Il n'y a aucune source, et A ne conseille pas de vérifier une balise en temps réel le jour même.",
+        "Les seuils de matériel (12-14 kn pour la 5,5 m, 18-20 kn pour la 4 m à 72 kg) sont corrects. L'orientation du spot est juste : plage face au SW, Levante side-off, Poniente side-on."
+      ]
+    },
+    "winner": "sans",
+    "why": "B donne des chiffres qui correspondent à Open-Meteo, un créneau, des tailles d'aile adaptées et des conseils de sécurité locaux (courant du détroit, balises en direct) avec ses sources, alors que A est plus long, plein de jargon interne et place mal le pic de vent."
+  },
+  "seconds": 81
+}

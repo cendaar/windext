@@ -5,6 +5,7 @@ import type { DayVerdict, Code } from './verdict.js'
 type Templates = Record<'GO' | 'CHECK_W' | 'CHECK' | 'NO' | Code | 'TODAY' | 'TOMORROW', string>
 
 const en: Templates = {
+  ALT_SPOT: 'Wind from {dir}: {alt}, {km} km away, works better in this direction.',
   ALERT: 'Official warning in force: {event}. Stay off the water.',
   CHECK_RULE: 'Go if the live station shows at least {min} knots on average, with gusts under {max}, at {checkTime}.',
   TODAY: 'Today', TOMORROW: 'Tomorrow',
@@ -45,6 +46,7 @@ const en: Templates = {
 }
 
 const fr: Templates = {
+  ALT_SPOT: 'Vent de {dir} : {alt}, à {km} km, marche mieux dans cette direction.',
   ALERT: 'Avis officiel en cours : {event}. Reste à terre.',
   CHECK_RULE: 'Vas-y si la station affiche au moins {min} nœuds de moyenne, rafales sous {max}, à {checkTime}.',
   TODAY: "Aujourd'hui", TOMORROW: 'Demain',
@@ -85,6 +87,7 @@ const fr: Templates = {
 }
 
 const de: Templates = {
+  ALT_SPOT: 'Wind aus {dir}: {alt}, {km} km entfernt, funktioniert bei dieser Richtung besser.',
   ALERT: 'Offizielle Warnung aktiv: {event}. Bleib an Land.',
   CHECK_RULE: 'Fahr los, wenn die Messstation um {checkTime} mindestens {min} Knoten im Mittel zeigt, Böen unter {max}.',
   TODAY: 'Heute', TOMORROW: 'Morgen',
@@ -125,6 +128,7 @@ const de: Templates = {
 }
 
 const es: Templates = {
+  ALT_SPOT: 'Viento del {dir}: {alt}, a {km} km, funciona mejor con esta dirección.',
   ALERT: 'Aviso oficial en vigor: {event}. Quédate en tierra.',
   CHECK_RULE: 'Ve si la estación marca al menos {min} nudos de media, con rachas por debajo de {max}, a las {checkTime}.',
   TODAY: 'Hoy', TOMORROW: 'Mañana',
@@ -165,6 +169,7 @@ const es: Templates = {
 }
 
 const pt: Templates = {
+  ALT_SPOT: 'Vento de {dir}: {alt}, a {km} km, funciona melhor nesta direção.',
   ALERT: 'Aviso oficial em vigor: {event}. Fica em terra.',
   CHECK_RULE: 'Vai se a estação marcar pelo menos {min} nós de média, com rajadas abaixo de {max}, às {checkTime}.',
   TODAY: 'Hoje', TOMORROW: 'Amanhã',
@@ -205,6 +210,7 @@ const pt: Templates = {
 }
 
 const it: Templates = {
+  ALT_SPOT: 'Vento da {dir}: {alt}, a {km} km, funziona meglio con questa direzione.',
   ALERT: 'Avviso ufficiale in corso: {event}. Resta a terra.',
   CHECK_RULE: 'Vai se la stazione segna almeno {min} nodi di media, con raffiche sotto i {max}, alle {checkTime}.',
   TODAY: 'Oggi', TOMORROW: 'Domani',
@@ -245,6 +251,7 @@ const it: Templates = {
 }
 
 const nl: Templates = {
+  ALT_SPOT: 'Wind uit {dir}: {alt}, {km} km verderop, werkt beter bij deze richting.',
   ALERT: 'Officiële waarschuwing van kracht: {event}. Blijf aan land.',
   CHECK_RULE: 'Ga als het meetstation om {checkTime} minstens {min} knopen gemiddeld aangeeft, vlagen onder {max}.',
   TODAY: 'Vandaag', TOMORROW: 'Morgen',

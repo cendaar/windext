@@ -1,0 +1,48 @@
+{
+  "id": "brouwersdam-wing",
+  "q": "Morgen wingen op de Brouwersdam? 82 kg, wings 4,5 en 6 m. Welke kant (Noordzee of Grevelingen), welk tijdstip en welke maat?",
+  "sans": "**Prévision pour demain (dimanche 18 octobre 2026), Brouwersdam** (Open-Meteo, en nœuds) :\n\n| Heure | Vent | Rafales | Direction |\n|---|---|---|---|\n| 08h | 8 | 18 | NE (38°) |\n| 09h | 11,5 | 20 | NE (54°) |\n| 10h | 10,5 | 20 | ENE (67°), petite pluie |\n| 11h | 9,5 | 19 | NE, pluie |\n| 12h–19h | 5–8 | 10–15 | tourne E/ESE |\n\n**Mon conseil :** journée limite. Ça ne vaut le coup qu'en wingfoil avec un grand foil, et seulement le matin.\n\n- **Côté : Grevelingen.** Avec un vent de NE (parallèle à la digue), le côté Grevelingen est side-shore à légèrement side-on, sur une eau plate et sans marée. Côté Noordzee, le vent est side-shore à side-off, avec 1,5 m de vagues de 6 s et une marée basse vers 13–14h. C'est peu agréable dans un vent aussi faible et rafaleux. À partir de midi, le vent passe ESE, donc **offshore côté Noordzee** : à éviter.\n- **Horaire : environ 8h30–10h30.** Le soleil se lève vers 8h15 et la pluie arrive vers 10h–11h. Ensuite, le vent tombe sous les 8 nœuds et la journée est finie.\n- **Taille : 6 m**, sans hésiter. À 82 kg avec 9–12 nœuds de vent établi, la 4,5 m ne suffira pas. Prends ton plus grand foil avant (≥ 1500 cm²) et une planche avec du volume. Le vent est très rafaleux (rafales presque au double du vent moyen) : attends-toi à du pumping entre les rafales.\n\n**À vérifier demain matin :** les mesures en direct (Windfinder/Windguru, station Brouwersdam ou Brouwershavense Gat). Ce modèle a une maille grossière. Si tu vois moins de 11–12 nœuds établis à 8h, ça ne vaut probablement pas le déplacement.\n\nSources :\n- [Open-Meteo Forecast API](https://api.open-meteo.com/v1/forecast?latitude=51.76&longitude=3.85&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m&wind_speed_unit=kn&timezone=Europe/Amsterdam)\n- [Open-Meteo Marine API](https://marine-api.open-meteo.com/v1/marine?latitude=51.77&longitude=3.80&hourly=wave_height,wave_period,sea_level_height_msl&timezone=Europe/Amsterdam)",
+  "avec": "**Verdict pour demain, dimanche 18 octobre : NON côté Noordzee (windext 0/10). Côté Grevelingen, c'est un PEUT-ÊTRE pour une courte fenêtre, environ 09:00–12:00, avec la 6 m.**\n\n**Pourquoi pas la Noordzee**\n- Le vent vient du NE à ENE, puis tourne à l'E et à l'ESE l'après-midi. Sur la plage côté mer, orientée WNW, c'est side-off puis offshore. Ces directions sont interdites sur la fiche du spot.\n\n**Pourquoi la Grevelingen peut marcher**\n- Je suis passé moi-même sur l'orientation côté lac (environ ESE). Avec ce vent, ça donne du side-shore le matin et du side-on vers midi. Le score de l'outil reste à 0, mais c'est parce qu'il garde les secteurs interdits de la Noordzee.\n- Moyenne des modèles : 12–13 nœuds de 09:00 à 11:00, rafales à 17–18 nœuds. Ça tombe à environ 10 nœuds dès 12:00, puis à 8–9 nœuds l'après-midi.\n- Les modèles sont très partagés. UKMO et DMI annoncent 15–17 nœuds, ECMWF seulement 8–9.\n- Sur le lac, pas de marée ni de houle. Le chop de 1 m venant du N reste sur la Noordzee.\n\n**Taille de wing (82 kg)**\n- **6 m** : 12–13 nœuds, c'est juste. Il te faut un grand foil et un bon pumping.\n- **4,5 m** : trop petite demain, sauf si UKMO a raison et que ça dépasse 16–17 nœuds en moyenne.\n\n**Règle pour demain matin**\n- Regarde le vent réel à la station du Brouwersdam vers 08:30–09:00.\n- Moyenne ≥ 13 nœuds de NE/ENE : vas-y côté Grevelingen avec la 6 m, et sois à l'eau avant 10:00.\n- Moyenne < 11 nœuds : laisse tomber.\n\n**Sécurité**\n- Côté Noordzee, l'après-midi est franchement offshore : n'y va pas, même si le vent forcit le soir.\n- Le vent passe sur la digue, donc il sera rafaleux près du bord (facteur de rafale 1,5).\n- L'eau est à environ 16 °C et l'air à 12 °C : prends une combinaison 4/3 ou 5/4.\n\nLa fiche du Brouwersdam est une fiche « seed » (non vérifiée) qui ne décrit que le côté Noordzee. Peux-tu me confirmer où tu mets à l'eau côté Grevelingen et dans quelle direction regarde cette plage ? Je pourrai alors ajouter ce côté à la fiche.",
+  "judged": {
+    "sans": {
+      "accuracy": 5,
+      "safety": 3,
+      "uncertainty": 4,
+      "actionability": 5,
+      "local_knowledge": 4,
+      "concision": 4,
+      "errors": [
+        "La question est posée en néerlandais, mais la réponse est en français.",
+        "Les données horaires correspondent exactement à Open-Meteo : 08h 8 nœuds / 18 / 38°, 09h 11,5 / 20 / 54°, 10h 10,5 / 20 / 67°, etc. Le lever du soleil vers 8h15 (08:13) est correct. La houle de 1,5 m pour 6 s et la basse mer vers 13–14h (minimum vers 14h) sont aussi correctes.",
+        "Aucune mention du froid ni de la combinaison, alors que l'eau est à environ 15,6 °C. Rien non plus sur le fait de ne pas partir seul quand le vent faiblit et devient instable.",
+        "La réponse ne parle que d'un seul modèle à maille grossière, sans comparer plusieurs modèles. Elle le reconnaît, mais n'indique pas l'ampleur de l'incertitude.",
+        "Elle ne précise pas où mettre à l'eau côté Grevelingen. Elle ne rappelle pas non plus les zones balisées et règles locales du Brouwersdam.",
+        "Le seuil « moins de 11–12 nœuds établis à 8h » ne colle pas avec sa propre prévision, qui donne 8 nœuds à 8h. Il vaudrait mieux vérifier vers 9h.",
+        "Le conseil d'un foil avant de 1500 cm² ou plus est pertinent à 82 kg par 9–12 nœuds, avec une 6 m à la limite."
+      ]
+    },
+    "avec": {
+      "accuracy": 3,
+      "safety": 4,
+      "uncertainty": 5,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 2,
+      "errors": [
+        "La question est posée en néerlandais, mais la réponse est en français.",
+        "La date est juste : le 18/10/2026 est bien un dimanche.",
+        "La moyenne de 12–13 nœuds entre 09:00 et 11:00 est optimiste. Le modèle Open-Meteo best-match donne 11,5 nœuds à 09h, 10,5 à 10h, 9,5 à 11h, puis seulement 5,1 nœuds à 12h. La fenêtre 09–12h est donc trop longue : en pratique, il faut viser 09–11h.",
+        "Les rafales réelles montent à 19–20 nœuds, pas 17–18. Le facteur de rafale est proche de 2, et non 1,5 comme annoncé.",
+        "La réponse parle d'un chop de 1 m côté Noordzee. La houle modélisée fait en réalité 1,4–1,5 m pour une période d'environ 6 s.",
+        "Elle ne donne ni l'heure de la marée ni le lever du soleil. Basse mer vers 14h et pleine mer vers 07h côté Noordzee ; lever du soleil à 08:13 CEST. Le dimanche 18/10 est encore à l'heure d'été.",
+        "L'orientation de la plage côté Grevelingen est donnée comme « ESE ». Elle regarde plutôt vers le SE (environ 130–140°), parallèlement à la digue SW–NE. L'orientation côté Noordzee est plutôt NW que WNW.",
+        "« Le vent passe sur la digue » est faux pour un vent de NE, qui est parallèle à la digue. Le vent ne traverse la digue que côté Noordzee, quand il passe à l'E/ESE, donc offshore.",
+        "La réponse expose des éléments internes à l'outil : « windext 0/10 », fiche « seed », score qui reste à 0. Elle se termine aussi par une question au rider. C'est du remplissage qui n'aide pas la décision.",
+        "Points positifs : conseil de combinaison 4/3 ou 5/4 avec une eau à 15,6 °C, désaccord entre modèles bien expliqué (UKMO/DMI contre ECMWF), règle de décision claire selon la station à 08:30."
+      ]
+    },
+    "winner": "sans",
+    "why": "Les chiffres de B (vent, rafales, direction, marée, houle, lever du soleil) sont vérifiés exacts, et sa fenêtre 8h30–10h30 côté Grevelingen avec la 6 m est plus réaliste. A surestime le vent moyen, étire la fenêtre jusqu'à 12h et ajoute du jargon d'outil inutile, même s'il est meilleur sur le froid et l'incertitude entre modèles."
+  },
+  "seconds": 88
+}

@@ -171,3 +171,18 @@ describe('check time', () => {
     expect(v.reasons.find(r => r.code === 'CHECK_RULE')!.vars.checkTime).toBe('11:00')
   })
 })
+
+describe('alternative spot', () => {
+  const near = (name: string, facing: number, km: number, wind: SpotCard['wind'] = []) => ({ ...card(wind), id: name, name, facing_deg: facing, distance_km: km })
+  it('suggests the closest known spot where an offshore wind is side-shore', () => {
+    const v = V(fc(() => ({ s: 18, d: 300 })), { facing: 100, nearby: [near('Far lagoon', 200, 20), near('Lagoon', 210, 4), near('Wrong beach', 110, 2)] })
+    expect(v.reasons[0].code).toBe('OFFSHORE'); expect(v.reasons.find(r => r.code === 'ALT_SPOT')!.vars).toEqual({ dir: 'WNW', alt: 'Lagoon', km: 4 })
+  })
+  it('respects the alternative card sectors and needs enough wind', () => {
+    expect(V(fc(() => ({ s: 18, d: 300 })), { facing: 100, nearby: [near('Lagoon', 210, 4, [{ sector: 'WNW', quality: 'forbidden', note: '' }])] }).codes).not.toContain('ALT_SPOT')
+    expect(V(fc(() => ({ s: 8, d: 300 })), { facing: 100, nearby: [near('Lagoon', 210, 4)] }).codes).not.toContain('ALT_SPOT')
+  })
+  it('also suggests one on a side-off day', () => {
+    expect(V(fc(() => ({ s: 17, d: 135 })), { nearby: [near('Other', 45, 6)] }).codes).toContain('ALT_SPOT')
+  })
+})

@@ -1,0 +1,45 @@
+{
+  "id": "capetown-kite",
+  "q": "Kiting at Bloubergstrand, Cape Town tomorrow. 85 kg, 7, 9 and 12 m. Will the south-easter blow, when, and what size?",
+  "sans": "Oui, il y aura du vent demain (dim. 18/10), mais ce ne sera probablement pas un vrai south-easter classique. Prends surtout le **12 m**, avec le 9 m en réserve.\n\n**Ce que disent les modèles** (Open-Meteo : ECMWF, ICON, UKMO, GFS, point Blouberg)\n\n| Heure | Vent moyen | Rafales | Direction |\n|---|---|---|---|\n| 08–11 h | 8–11 kn | 15–22 kn | S–SSE (160–175°) |\n| **12–18 h** | **10–13 kn** | **20–26 kn** | **S (175–190°)** |\n| 19–21 h | baisse à 5–8 kn | 12–18 kn | S |\n\n**Comment je le lis**\n- **Direction plein sud (≈180°), pas SE (130–150°).** Le ciel sera couvert presque toute la journée, à 85–100 % jusqu'à 16 h environ. On n'a donc pas le schéma typique du Cape Doctor avec ciel bleu et nappe sur Table Mountain. On dirait plutôt un flux de sud lié à un système qui passe, et ce flux profite moins de l'accélération thermique.\n- Les modèles globaux sous-estiment souvent le vent réel sur la plage de Blouberg. L'écart entre le vent moyen (≈12 kn) et les rafales (≈24 kn) le confirme. Sur l'eau, je m'attends à **environ 15–20 kn l'après-midi**, en rafales.\n- **Créneau : 13 h – 17 h**, avec le pic vers 14–16 h. Le matin, c'est trop faible et irrégulier.\n- Plein sud à Blouberg, ça donne du side/side-on. C'est praticable et sûr pour revenir à la plage.\n- Lundi, ça s'arrête : le vent tourne à l'ouest/nord-ouest à 7–9 kn, donc pas de kite.\n\n**Taille pour 85 kg**\n- **12 m** : c'est l'aile de base pour 14–20 kn.\n- **9 m** : seulement si le capteur indique plus de 20–22 kn de moyenne. C'est possible si le sud se renforce en fin d'après-midi.\n- **7 m** : inutile demain.\n\n**À vérifier demain matin**\n- La station de Blouberg en temps réel sur Windfinder/Windguru vers 11–12 h.\n- L'apparition de la nappe sur Table Mountain et d'éclaircies : si elles arrivent, le vent tourne SSE et monte, et le 9 m devient plus probable.\n- Le ciel : s'il reste couvert, le vent restera modéré et en rafales, donc garde le 12 m.\n\nSources :\n- [Open-Meteo – ECMWF/GFS, Blouberg](https://api.open-meteo.com/v1/forecast?latitude=-33.80&longitude=18.46&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m&wind_speed_unit=kn&timezone=Africa%2FJohannesburg&start_date=2026-10-18&end_date=2026-10-18&models=best_match,ecmwf_ifs025,gfs_seamless)\n- [Open-Meteo – ICON/UKMO, Blouberg](https://api.open-meteo.com/v1/forecast?latitude=-33.81&longitude=18.42&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m,cloud_cover&wind_speed_unit=kn&timezone=Africa%2FJohannesburg&start_date=2026-10-18&end_date=2026-10-19&models=icon_seamless,ukmo_seamless,ecmwf_aifs025)",
+  "avec": "## Prévision pour Bloubergstrand, dimanche 18 octobre\n\n**Oui, du vent, mais un south-easter léger à modéré, et plutôt orienté plein Sud (175–190°) que vraiment SE.**\n\n| Créneau | Vent moyen (modèles) | Rafales | Ce qu'on peut attendre sur la plage* |\n|---|---|---|---|\n| 06h–09h | 8–10 kn | 14–18 kn | Pas assez pour naviguer |\n| 10h–12h | 9–11 kn | 19–23 kn | Ça se lève, juste |\n| **13h–17h** | **11–12,5 kn** | **23–26 kn** | **~15–20 kn, le meilleur créneau** |\n| 18h–19h | 8–11 kn | 18–25 kn | Ça baisse |\n| après 20h | < 7 kn | — | Fini |\n\n\\*ECMWF et ICON sont d'accord : le pic est vers 14h–17h. GFS est plus faible, avec seulement 8–10 kn toute la journée. À Blouberg, les modèles globaux sous-estiment régulièrement le south-easter, à cause de l'accélération autour de la Table Mountain. Les rafales prévues sont presque le double du vent moyen, ce qui montre une forte influence de la terre dans le modèle. Le vent réel sur l'eau se situe donc souvent entre les deux valeurs. C'est une estimation, pas une mesure.\n\n## Quelle aile (85 kg)\n\n- **12 m** : l'aile à prendre en premier. Elle couvre 14–20 kn, ce qui est le scénario le plus probable pour l'après-midi.\n- **9 m** : seulement si le vent dépasse vraiment 20 kn établis. Ça peut arriver si l'ICON a raison vers 15h–17h. Garde-la en réserve.\n- **7 m** : laisse-la dans la voiture. Aucun modèle n'annonce les 25 kn et plus qu'il faudrait pour elle.\n\n## Conseils\n\n- Arrive vers **12h30–13h** et observe le vent avant de gréer. Si le matin ressemble au scénario GFS (vent faible et irrégulier), la session risque d'être molle.\n- Avec des rafales autour de 25 kn pour une moyenne de 12 kn, le vent sera **irrégulier**. Sur la 12 m, garde de la marge sur le depower.\n- Regarde la veille au soir et le matin même les relevés en direct (station de Blouberg/Big Bay sur Windguru ou iKitesurf) et l'aspect de la « nappe » sur la Table Mountain. Plus elle est épaisse, plus le SE est établi.\n\nÀ noter : le serveur MCP `windext` n'a pas réussi à se connecter (erreur DNS sur `wind.oooooooo.dev`). J'ai donc récupéré directement les données des modèles. Relance-le si tu veux une prévision spécifique au spot.\n\nSources :\n- [Open-Meteo, données modèles ECMWF / GFS / ICON (-33.81, 18.44)](https://api.open-meteo.com/v1/forecast?latitude=-33.81&longitude=18.44&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m&wind_speed_unit=kn&timezone=Africa%2FJohannesburg&start_date=2026-10-18&end_date=2026-10-18&models=ecmwf_ifs025,gfs_seamless,icon_seamless)\n- [Open-Meteo, best match (-33.80, 18.46)](https://api.open-meteo.com/v1/forecast?latitude=-33.80&longitude=18.46&hourly=wind_speed_10m,wind_gusts_10m,wind_direction_10m&wind_speed_unit=kn&timezone=Africa%2FJohannesburg&start_date=2026-10-18&end_date=2026-10-18)\n\nBonne session ! 🪁",
+  "judged": {
+    "sans": {
+      "accuracy": 4,
+      "safety": 2,
+      "uncertainty": 4,
+      "actionability": 5,
+      "local_knowledge": 3,
+      "concision": 4,
+      "errors": [
+        "Les chiffres du tableau correspondent bien aux sorties Open-Meteo vérifiées : ECMWF ≈11,5 kn avec rafales à 24,5 kn, ICON ≈12,7 kn avec rafales à 26,6 kn, direction 175–193° de 12 h à 17 h. Le tableau ne signale pas que GFS reste à 8–10 kn avec des rafales de 13–15 kn toute la journée. Ce désaccord entre modèles est le principal facteur d'incertitude, et il est passé sous silence.",
+        "La nébulosité est un peu surestimée. ECMWF descend à 64–72 % entre 13 h et 15 h, donc le ciel n'est pas couvert à « 85–100 % jusqu'à 16 h ». Seul GFS reste à 100 %.",
+        "Pour lundi, la réponse annonce un vent « O/NO 7–9 kn ». Les modèles donnent plutôt de l'OSO (243–264°), entre 3 et 9 kn selon le modèle et l'heure.",
+        "« Plein sud = side/side-on » est approximatif. La plage de Blouberg est orientée à peu près vers l'ouest, donc un vent de 180° y souffle side-shore depuis la gauche. Rien n'est dit sur la dérive vers le nord, vers Melkbos, en cas de casse.",
+        "Le texte ne dit pas qu'une rafale à 24–26 kn sous une 12 m, pour 85 kg, est un vrai coup de surpuissance. Il ne conseille ni de garder de la marge sur le depower, ni de vérifier le quick release.",
+        "Rien sur l'eau froide du Benguela (environ 12–15 °C en octobre, prévoir une 4/3 ou une 5/4), ni sur les rochers à Kite Beach et Big Bay, ni sur la houle de shorebreak.",
+        "Aucune mention de grande planche pour le scénario bas autour de 12–14 kn, alors que c'est ce qu'annonce GFS."
+      ]
+    },
+    "avec": {
+      "accuracy": 4,
+      "safety": 3,
+      "uncertainty": 5,
+      "actionability": 4,
+      "local_knowledge": 3,
+      "concision": 3,
+      "errors": [
+        "Les données sont fidèles : ECMWF et ICON donnent un pic entre 14 h et 17 h, GFS reste à 8–10 kn. En revanche, le créneau 06h–09h annoncé à 8–10 kn ignore ICON, qui ne donne que 5–7 kn.",
+        "Le titre « south-easter léger à modéré » contredit aussitôt « plutôt plein Sud ». Avec 175–193°, ce n'est pas un south-easter, et il aurait fallu le dire aussi clairement que A.",
+        "Le paragraphe sur l'échec du serveur MCP windext est du remplissage technique inutile pour le rider.",
+        "Aucune indication sur l'orientation par rapport à la plage : le S est side-shore à Blouberg, et un passage au SE devient side-off. La dérive vers le nord n'est pas mentionnée non plus.",
+        "Rien sur l'eau froide (12–15 °C, combinaison 4/3 ou 5/4), ni sur les rochers ou le choix entre Kite Beach et Big Bay pour la mise à l'eau, ni sur la houle.",
+        "Rien sur l'évolution de lundi, alors que le vent passe à l'OSO et faiblit, ce qui ferme la fenêtre.",
+        "La réponse explique l'écart rafales/vent moyen par l'accélération autour de la Table Mountain. Or ce phénomène concerne surtout le SE, pas un flux de sud sous un ciel couvert."
+      ]
+    },
+    "winner": "sans",
+    "why": "Les deux réponses rapportent correctement les modèles et donnent la même recommandation (12 m de 13 h à 17 h, 9 m en réserve), mais A dit plus clairement que ce n'est pas un vrai south-easter et ajoute des critères de décision pour le jour même ainsi que la tendance de lundi, tandis que B est meilleure sur le désaccord GFS et le depower mais dilue son message avec la note MCP et un titre contradictoire."
+  },
+  "seconds": 344
+}

@@ -39,9 +39,10 @@ export async function verdictFor(store: Store, q: URLSearchParams) {
   if (st) { try { tide = (await noaaTides(st.id, fc.hours[0].time.slice(0, 10), 2)).map(e => ({ time: e.time.replace(' ', 'T'), type: e.type })) } catch { /* model below */ } }
   if (!tide.length && tideRange(fc.seaLevel) >= 0.3 && card?.tide_offset_min != null) tide = significantTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel, card.tide_offset_min)).map(e => ({ time: e.time.replace(' ', 'T'), type: e.type }))
   const alerts = await nwsAlerts(lat, lon)
-  const days = (['today', 'tomorrow'] as const).map(day => renderVerdict(dayVerdict(fc, rider, { day, facing, card, tide, alerts: alerts.map(x => ({ event: x.event, blocking: isBlocking(x.event) })) }), lang))
+  const nearby = await store.nearbySpots(lat, lon, 30, 20).catch(() => [])
+  const days = (['today', 'tomorrow'] as const).map(day => renderVerdict(dayVerdict(fc, rider, { day, facing, card, tide, nearby, alerts: alerts.map(x => ({ event: x.event, blocking: isBlocking(x.event) })) }), lang))
   try { await store.logRequest({ spot_id: card?.id ?? null, lat, lon, day: days[0].date, sport: rider.sport }) } catch { /* stats never block */ }
-  return { alerts: alerts.map(x => x.event), spot: card ? { id: card.id, name: card.name, status: card.status, facing_deg: card.facing_deg } : { lat, lon }, issued: fc.issued, timezone: fc.timezone, models: fc.models, lang, rider, days }
+  return { stale: !!fc.stale, alerts: alerts.map(x => x.event), spot: card ? { id: card.id, name: card.name, status: card.status, facing_deg: card.facing_deg } : { lat, lon }, issued: fc.issued, timezone: fc.timezone, models: fc.models, lang, rider, days }
 }
 
 export async function handleApi(request: Request, url: URL, store: Store, db?: D1Database): Promise<Response | null> {
