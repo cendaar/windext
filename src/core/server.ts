@@ -1,7 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { z } from 'zod'
 import { fetchForecast, geocode, MODEL_LABELS, defaultModels } from './openmeteo.js'
-import { summarizeHour, findWindows, gustDiagnostics, renderTable, compass, COMPASS } from './analysis.js'
+import { summarizeHour, findWindows, gustDiagnostics, renderTable, compass, COMPASS, tideEvents, renderTides } from './analysis.js'
 import type { Store, SpotCard, WindQuality } from './store.js'
 
 export const INSTRUCTIONS = `windext: multi-model wind forecasts for wind sports (kitesurf, windsurf, wingfoil, sailing) plus an open, community-built database of spots. Every question a rider asks makes the next answer better: forecasts are archived, spot cards are shared, and session reports will score the models spot by spot.
@@ -18,7 +18,7 @@ READING THE TABLE AS A RIDER
 - By lead time: within 48 h trust the fine regional model (AROME HD in France and W-Europe, ICON-D2 in Germany and the Alps, UKMO in the UK, KNMI/DMI on the North Sea, HRRR in the US); 2 to 5 days ECMWF; beyond, only the trend. GFS is the coarsest, a tie-breaker.
 - Gust factor (gust / mean): < 1.3 steady, 1.3-1.6 normal, 1.6-1.9 tiring, >= 1.9 unsafe for beginners even if the mean looks fine. The diagnosis lines explain the cause (sea warmer than air, showers, shear, model disagreement).
 - Shore relation: offshore is dangerous for kite and wing without rescue cover, say it explicitly; side-off is for experts; side and side-on are ideal; onshore with waves is hard to launch. A card's 'forbidden' sector overrides everything: the spot does not work that day.
-- Tide: when the card has tide notes, apply them; on the Atlantic and Channel coasts a falling tide plus offshore wind is the worst combination.
+- Tide: spot_forecast includes model tide times (approximate); the tides tool gives more days. When the card has tide notes, apply them; on the Atlantic and Channel coasts a falling tide plus offshore wind is the worst combination.
 - Gear, as orders of magnitude for a 75 kg rider, scaled by weight: kite 12 kn 12-14 m, 16 kn 10-12 m, 20 kn 8-9 m, 25 kn 7 m; wing 12 kn 6 m, 18 kn 4.5-5 m, 25 kn 3.5-4 m; windsurf 15 kn 6.5-7 m2, 20 kn 5.5 m2, 25 kn 4.7 m2. Ask the weight if unknown.
 - Units are knots. Answer in the user's language.`
 
@@ -161,7 +161,9 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
       }
     } catch { /* statistics must never break a forecast */ }
     const head = `${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
-    return { content: [{ type: 'text', text: `${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}` }] }
+    const tides = renderTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel))
+    const tideBlock = tides ? `\n\nTides (model sea level vs mean, +/- 20 min, not for navigation${c2?.tide_notes ? `; spot note: ${c2.tide_notes}` : ''}):\n${tides}` : ''
+    return { content: [{ type: 'text', text: `${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}${tideBlock}` }] }
   })
 
   server.registerTool('ride_windows', {
@@ -186,6 +188,19 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
     if (!w.length) return { content: [{ type: 'text', text: `No window between ${a.min_kn} and ${a.max_kn} kn in the next ${a.days} day(s)${card ? ` at ${card.name}` : ''} (models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}).` }] }
     const lines = w.map(x => { const q = card ? sectorQuality(card, COMPASS.indexOf(x.dir) * 22.5) : undefined; return `${x.start.slice(0, 10)} ${x.start.slice(11, 16)}-${x.end.slice(11, 16)} (${x.hours}h): ${x.avgSpeed} kn mean, gusts ${x.avgGust}, ${x.dir}${x.shore ? ' ' + x.shore : ''}${q ? ` [spot: ${q}]` : ''}, agreement ${x.agreement}` })
     return { content: [{ type: 'text', text: lines.join('\n') }] }
+  })
+
+  server.registerTool('tides', {
+    title: 'Tide times',
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
+    description: 'High and low water times and heights (vs mean sea level) for a coastal spot, from the Open-Meteo marine model. Approximate (+/- 20 min), free, worldwide; not for navigation. Empty for lakes.',
+    inputSchema: { spot_id: SpotId, lat: Lat.optional(), lon: Lon.optional(), days: z.number().int().min(1).max(7).default(3), start_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional() },
+  }, async (a) => {
+    const { card, lat, lon } = await resolve(a)
+    const fc = await fetchForecast({ lat, lon, days: a.days, startDate: a.start_date, models: ['gfs_seamless'] })
+    const t = renderTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel))
+    if (!t) return { content: [{ type: 'text', text: 'No tidal signal here (inland water or no marine model coverage).' }] }
+    return { content: [{ type: 'text', text: `${card ? `${card.name}. ` : ''}Local time (${fc.timezone}). Heights vs mean sea level.\n${t}${card?.tide_notes ? `\nSpot note: ${card.tide_notes}` : ''}` }] }
   })
 
   server.registerTool('list_models', {

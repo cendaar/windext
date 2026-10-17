@@ -5,6 +5,8 @@ import { KVCache } from './core/cache.js'
 import { setCache } from './core/openmeteo.js'
 import { estimateFacing } from './core/coastline.js'
 import { landingPage, privacyPage, spotsPage } from './pages.js'
+import ICON_SVG from '../assets/icon.svg'
+import ICON_PNG from '../assets/icon-256.png'
 
 interface Env { DB: D1Database; CACHE: KVNamespace }
 
@@ -36,6 +38,8 @@ export default {
       return transport.handleRequest(request)
     }
     if (url.pathname === '/health') return new Response('ok')
+    if (url.pathname === '/icon.svg') return new Response(ICON_SVG, { headers: { 'content-type': 'image/svg+xml', 'cache-control': 'public, max-age=86400' } })
+    if (url.pathname === '/icon-256.png') return new Response(ICON_PNG, { headers: { 'content-type': 'image/png', 'cache-control': 'public, max-age=86400' } })
     if (url.pathname === '/spots.json') {
       const r = await env.DB.prepare("SELECT id, name, lat, lon, country, water, facing_deg, status, sports, updated_at FROM spots ORDER BY updated_at DESC LIMIT 5000").all()
       return Response.json({ licence: 'CC BY-SA 4.0', count: r.results.length, spots: r.results }, { headers: { 'cache-control': 'public, max-age=600' } })

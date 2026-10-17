@@ -4,12 +4,12 @@ const esc = (s: unknown) => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&a
 const nf = (n: number) => new Intl.NumberFormat('en').format(n)
 
 /* Layout: one 68ch reading column; the forecast table is the only element allowed to run wider.
-   Palette: chart-paper ground with a cool slate bias, deep ink, a teal "fair wind" accent, a signal red reserved for offshore/forbidden. */
+   Palette: chart-paper ground with a cool slate bias, deep ink, a windsock-orange accent, a crimson reserved for offshore/forbidden/low agreement. */
 const STYLE = `
-:root{--bg:#f2f4f6;--bg-2:#e7ebef;--fg:#13202a;--muted:#5a6b78;--line:#cfd7de;--accent:#0b7a78;--accent-ink:#ffffff;--warn:#b8402a;--good:#1f7a3a;--mono-bg:#0f1c25;--mono-fg:#dbe6ee;
+:root{--bg:#f2f4f6;--bg-2:#e7ebef;--fg:#13202a;--muted:#5a6b78;--line:#cfd7de;--accent:#d9541f;--accent-ink:#ffffff;--warn:#b4294a;--good:#1f7a3a;--mono-bg:#0f1c25;--mono-fg:#dbe6ee;
 --display:"Bricolage Grotesque","Avenir Next","Helvetica Neue",Arial,sans-serif;--body:"IBM Plex Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a22;--bg-2:#14232d;--fg:#e6edf2;--muted:#93a4b0;--line:#27404d;--accent:#35b8b2;--accent-ink:#06211f;--warn:#ff8a6b;--good:#5fd38a;--mono-bg:#07121a;--mono-fg:#d4e2ea;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1a22;--bg-2:#14232d;--fg:#e6edf2;--muted:#93a4b0;--line:#27404d;--accent:#35b8b2;--accent-ink:#06211f;--warn:#ff8a6b;--good:#5fd38a;--mono-bg:#07121a;--mono-fg:#d4e2ea;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a22;--bg-2:#14232d;--fg:#e6edf2;--muted:#93a4b0;--line:#27404d;--accent:#ff8a4d;--accent-ink:#1a0d05;--warn:#ff7b9c;--good:#5fd38a;--mono-bg:#07121a;--mono-fg:#d4e2ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1a22;--bg-2:#14232d;--fg:#e6edf2;--muted:#93a4b0;--line:#27404d;--accent:#ff8a4d;--accent-ink:#1a0d05;--warn:#ff7b9c;--good:#5fd38a;--mono-bg:#07121a;--mono-fg:#d4e2ea;color-scheme:dark}
 *{box-sizing:border-box}html{height:100%}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
 a{color:var(--accent)}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .wrap{max-width:68rem;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:0}
@@ -62,7 +62,7 @@ const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link 
 
 const LOGO = `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 11h14a4 4 0 1 0-4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M4 17h20a4 4 0 1 1-4 4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M4 23h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>`
 
-const shell = (title: string, body: string, desc: string) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}">${FONTS}<style>${STYLE}</style></head><body><div class="wrap">
+const shell = (title: string, body: string, desc: string) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/icon-256.png">${FONTS}<style>${STYLE}</style></head><body><div class="wrap">
 <header class="top"><a class="brand" href="/">${LOGO}windext</a><nav class="links"><a href="/#install">Install</a><a href="/#how">How it reads wind</a><a href="/spots">Spots</a><a href="/spots.json">Open data</a><a href="https://github.com/baptisterousseau/windext">GitHub</a></nav></header>
 ${body}
 <footer><span>windext is free and open. Weather data © <a href="https://open-meteo.com">Open-Meteo</a> (CC BY 4.0). Spot data © OpenStreetMap contributors (ODbL) and the windext community (CC BY-SA 4.0).</span><span><a href="/privacy">Privacy</a> · <a href="https://wind.oooooooo.dev/mcp">MCP endpoint</a></span></footer>
@@ -100,6 +100,7 @@ export function landingPage(stats: { spots: number; enriched: number; forecasts:
   <div class="cols">
     <div><h3>Windguru shows you one model at a time</h3><p>Switching between AROME, ICON and GFS tabs and averaging in your head is the ritual of every rider. windext does the comparison in one call, in knots, and says plainly when the models disagree.</p></div>
     <div><h3>Gusts are the whole story</h3><p>A 15 knot mean with 30 knot gusts is not a 15 knot day. windext computes the gust factor and explains the cause: cold air over a warm sea, showers, wind shear, or simply a forecast nobody trusts yet.</p></div>
+    <div><h3>Tides, included</h3><p>High and low water for any coastal spot, from the marine model, without a paid tide service. Approximate to twenty minutes, which is what you need to know whether the sandbank is still there at 15:00.</p></div>
     <div><h3>Direction only means something at a spot</h3><p>North-east is side-on at Ouistreham and offshore somewhere else. With the spot's orientation and its known sectors, the forecast says onshore, side, or forbidden, instead of a number of degrees.</p></div>
   </div>
 </section>
@@ -157,7 +158,7 @@ export function landingPage(stats: { spots: number; enriched: number; forecasts:
   function field(px,py,t){var a=Math.sin(px*0.006+t*0.4)*0.6+Math.cos(py*0.008-t*0.3)*0.5+0.9;var s=1.1+0.5*Math.sin(px*0.01+py*0.01+t*0.7);return{a:a,s:s}}
   for(var i=0;i<N;i++)P.push({x:Math.random()*W,y:Math.random()*H,l:Math.random()*80});
   var t=0;x.fillStyle='rgba(15,28,37,1)';x.fillRect(0,0,W,H);
-  function frame(){t+=0.016;x.fillStyle='rgba(15,28,37,0.08)';x.fillRect(0,0,W,H);x.strokeStyle='rgba(53,184,178,0.55)';x.lineWidth=1.2;
+  function frame(){t+=0.016;x.fillStyle='rgba(15,28,37,0.08)';x.fillRect(0,0,W,H);x.strokeStyle='rgba(255,138,77,0.5)';x.lineWidth=1.2;
     for(var i=0;i<N;i++){var p=P[i],f=field(p.x,p.y,t),nx=p.x+Math.cos(f.a)*f.s*1.6,ny=p.y+Math.sin(f.a)*f.s*1.6;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(nx,ny);x.stroke();p.x=nx;p.y=ny;p.l--;if(p.l<0||p.x<0||p.x>W||p.y<0||p.y>H){p.x=Math.random()*W;p.y=Math.random()*H;p.l=40+Math.random()*80}}
     requestAnimationFrame(frame)}
   requestAnimationFrame(frame);

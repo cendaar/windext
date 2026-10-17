@@ -22,7 +22,7 @@ describe('server surface', () => {
   it('sends instructions and annotates every tool with title and read-only/destructive hints', async () => {
     expect(client.getInstructions()).toBe(INSTRUCTIONS)
     const tools = (await client.listTools()).tools
-    expect(tools.map(t => t.name).sort()).toEqual(['find_spot', 'list_models', 'ride_windows', 'spot_forecast', 'spot_info', 'submit_spot'])
+    expect(tools.map(t => t.name).sort()).toEqual(['find_spot', 'list_models', 'ride_windows', 'spot_forecast', 'spot_info', 'submit_spot', 'tides'])
     for (const t of tools) { expect(t.title, t.name).toBeTruthy(); expect(typeof t.annotations?.readOnlyHint, t.name).toBe('boolean'); expect(typeof t.annotations?.destructiveHint, t.name).toBe('boolean') }
     expect(tools.find(t => t.name === 'submit_spot')!.annotations!.readOnlyHint).toBe(false)
   })
@@ -99,6 +99,21 @@ describe('ride_windows', () => {
     expect((await call('ride_windows', { spot_id: 'ouistreham-riva-bella', days: 1, allow_offshore: true })).text).toMatch(/SW offshore/)
     vi.stubGlobal('fetch', stubOpenMeteo({ speed: () => 6 }).fetch)
     expect((await call('ride_windows', { lat: 1, lon: 2, days: 1 })).text).toMatch(/No window between 12 and 35 kn/)
+  })
+})
+
+describe('tides', () => {
+  it('lists high and low waters for a coastal spot and appends them to spot_forecast with the spot note', async () => {
+    await call('submit_spot', { ...riva, tide_notes: 'ride 2h around HW' })
+    const { text } = await call('tides', { spot_id: 'ouistreham-riva-bella', days: 1 })
+    expect(text).toMatch(/Ouistreham Riva-Bella\. Local time/); expect(text).toMatch(/HW 03:00 \(\+2 m\)/); expect(text).toMatch(/LW 09:1\d \(-2 m\)/); expect(text).toMatch(/Spot note: ride 2h around HW/)
+    const f = await call('spot_forecast', { spot_id: 'ouistreham-riva-bella', days: 1, hours_from: 9, hours_to: 9 })
+    expect(f.text).toMatch(/Tides \(model sea level.*spot note: ride 2h around HW\):\n2026-10-18: HW 03:00/)
+  })
+  it('says so on a lake', async () => {
+    vi.stubGlobal('fetch', stubOpenMeteo({ marine: 'fail' }).fetch)
+    expect((await call('tides', { lat: 46.5, lon: 6.5 })).text).toMatch(/No tidal signal/)
+    const f = await call('spot_forecast', { lat: 46.5, lon: 6.5, days: 1, hours_from: 9, hours_to: 9 }); expect(f.text).not.toMatch(/Tides/)
   })
 })
 

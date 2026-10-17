@@ -20,7 +20,7 @@ export function contextPayload(o: FakeOpts = {}) {
   return { timezone: 'Europe/Paris', hourly: { time: base.hourly.time, temperature_2m: Array(n).fill(o.temp ?? 12), precipitation: base.hourly.time.map((_: string, i: number) => (o.precip ?? (() => 0))(i % 24)), cape: Array(n).fill(o.cape ?? 0), cloud_cover: Array(n).fill(50), wind_speed_80m: base.hourly.time.map((_: string, i: number) => (o.speed80 ?? (() => 16))(i % 24)) } }
 }
 export function marinePayload(sst: number | null = 17, n = 24) {
-  return { hourly: { time: Array(n).fill('x'), sea_surface_temperature: Array(n).fill(sst), wave_height: Array(n).fill(1) } }
+  return { hourly: { time: Array(n).fill('x'), sea_surface_temperature: Array(n).fill(sst), wave_height: Array(n).fill(1), sea_level_height_msl: Array.from({ length: n }, (_, i) => Math.round(2 * Math.cos(2 * Math.PI * (i - 3) / 12.42) * 100) / 100) } }
 }
 
 /** Installs a fetch stub routing Open-Meteo URLs to the payloads. Returns the list of requested URLs. */

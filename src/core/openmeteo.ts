@@ -45,6 +45,7 @@ export interface Forecast {
   hours: Hour[]
   seaTemp: number | null
   waveHeight: (number | null)[]
+  seaLevel: (number | null)[]   // tide height vs mean sea level, metres, hourly (Open-Meteo marine model, approximate)
 }
 
 async function getJson(url: string): Promise<any> {
@@ -67,7 +68,7 @@ export async function fetchForecast(opts: { lat: number; lon: number; days: numb
   const multi = new URLSearchParams({ ...base, ...range, hourly: 'wind_speed_10m,wind_gusts_10m,wind_direction_10m', models: models.join(',') })
   // Context variables from the finest model available (first in list): instability, rain, shear.
   const ctx = new URLSearchParams({ ...base, ...range, hourly: 'temperature_2m,precipitation,cape,cloud_cover,wind_speed_80m', models: models[0] })
-  const marine = new URLSearchParams({ latitude: base.latitude, longitude: base.longitude, timezone: 'auto', ...range, hourly: 'sea_surface_temperature,wave_height' })
+  const marine = new URLSearchParams({ latitude: base.latitude, longitude: base.longitude, timezone: 'auto', ...range, hourly: 'sea_surface_temperature,wave_height,sea_level_height_msl' })
 
   const [m, c, s] = await Promise.all([
     getJson(`https://api.open-meteo.com/v1/forecast?${multi}`),
@@ -89,7 +90,7 @@ export async function fetchForecast(opts: { lat: number; lon: number; days: numb
     }
   })
   const sst = s?.hourly?.sea_surface_temperature?.find((v: number | null) => v != null) ?? null
-  return { lat: opts.lat, lon: opts.lon, timezone: m.timezone, models, hours, seaTemp: sst, waveHeight: s?.hourly?.wave_height ?? [] }
+  return { lat: opts.lat, lon: opts.lon, timezone: m.timezone, models, hours, seaTemp: sst, waveHeight: s?.hourly?.wave_height ?? [], seaLevel: s?.hourly?.sea_level_height_msl ?? [] }
 }
 
 export async function geocode(name: string): Promise<{ name: string; admin: string; country: string; lat: number; lon: number }[]> {
