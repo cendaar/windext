@@ -4355,5 +4355,249 @@
       "https://kitesurfinglessonsvietnam.com/en/the-river-vung-tau-kitesurfing-spot",
       "https://www.windfinder.com/spotguide/vung_tau"
     ]
+  },
+  "Étang de Leucate Le Goulet (kitesurf lagoon side), France": {
+    "name": "Étang de Leucate – Le Goulet (lagoon side)",
+    "aliases": [
+      "Le Goulet",
+      "Leucate Le Goulet",
+      "Étang de Leucate / Salses-Leucate lagoon",
+      "Wesh Center spot"
+    ],
+    "lat": 42.91346,
+    "lon": 3.02,
+    "country": "France",
+    "water": "lagoon",
+    "facing_deg": 200,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Tramontane, the reference wind: blows 200+ days/yr, often F6-9, strong and gusty. Le Goulet is said to be the first spot to get it. Flat water even at F6-7. Guides call it offshore here, so beware of drifting out into the lagoon."
+      },
+      {
+        "sector": "NNW",
+        "quality": "ok",
+        "note": "Tramontane variant. Strong, gusty, offshore-ish; flat water."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Listed as a working direction for the lagoon in general (ultimatefrance). No spot-specific detail."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Listed as a working direction for the lagoon in general (ultimatefrance). No spot-specific detail."
+      },
+      {
+        "sector": "SE",
+        "quality": "ok",
+        "note": "Marin (onshore sea wind): often moderate, flat water on the lagoon according to local guides."
+      }
+    ],
+    "launch_notes": "Lagoon spot at the far north end of the Étang de Leucate, near Leucate village, by the Wesh Center Crew base (school, rental, bar). Free dirt car park behind the centre, paid motorhome area; it fills up quickly in high season. Shallow water: ankle-deep for about 50 m, then waist- to chest-deep. Approximate beach orientation (sunset view, S-SW): confirm locally. Beginner-friendly.",
+    "tide_notes": "Mediterranean lagoon with practically no tide. The water level varies with the season: after a hot summer it is low and there can be a lot of seaweed. The bottom is muddy, with algae.",
+    "hazards": "Oyster beds and the wooden posts marking them. Stones in the water. Gusty Tramontane up to 30-40 kn, accelerated by a venturi effect; it blows offshore, so there is a drift risk. Very shallow water (falls, fins). Crowded with windsurfers in the north zone. Protected bird area nearby (signposted).",
+    "rules": "Zoning: the northern part of Le Goulet is reserved for windsurfing, and kitesurfing is not allowed there. Designated kite zone further south towards Île de la Rascasse (mostly standing depth). Access to the protected bird area is banned (sign at the entrance). Kite and windsurf zones are separated; supervised in season.",
+    "season": "March-April and July-October; Tramontane all year round",
+    "sources": [
+      "https://www.ultimatefrance.com/?p=5582",
+      "https://waterwind.it/new/en/windsurfing/spots/spots-reviews/262-france/369-leucate-le-goulet-france.html",
+      "https://www.surf-magazin.de/en/spots-and-areas/international/france/south-of-france-leucate-the-up-and-coming-windsurfing-spot-of-the-month/",
+      "https://vvanat.fr/blog/planche-a-voile-port-leucate/"
+    ]
+  },
+  "Gruissan étang de Mateille, France": {
+    "name": "Gruissan – Étang de Mateille",
+    "aliases": [
+      "Mateille",
+      "Base nautique de Mateille",
+      "Akila Gruissan – Pôle Étang"
+    ],
+    "lat": 43.11808,
+    "lon": 3.11957,
+    "country": "France",
+    "water": "lagoon",
+    "facing_deg": null,
+    "sports": [
+      "windsurf",
+      "wingfoil",
+      "sailing",
+      "kitesurf"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "marginal",
+        "note": "Tramontane, the dominant wind (often blows 3–6 days in a row, April–October). On this small lagoon riders describe it as sheltered, gusty and unstable."
+      },
+      {
+        "sector": "WNW",
+        "quality": "marginal",
+        "note": "Tramontane sector. Gusty and unstable on the lagoon, same as NW."
+      },
+      {
+        "sector": "S",
+        "quality": "best",
+        "note": "Local wing riders call the spot 'legendary' when the 'grec' blows. One source describes this wind as southerly, but in Occitan 'grec' usually means NE, so check the direction locally."
+      }
+    ],
+    "launch_notes": "Easy entry from several access points on the shallow lagoon shore. The Akila Gruissan Pôle Étang school (base nautique de Mateille) works here, with a kids' sailing area. The spot is small and pond-like, with many beginners and school groups, so give learners room.",
+    "tide_notes": "",
+    "hazards": "Very shallow water. Small water area that gets crowded with beginners, school groups, catamarans, paddleboards and kayaks.",
+    "rules": "",
+    "season": "April to mid-October (the school is open about April to early November)",
+    "sources": [
+      "https://www.tourisme-occitanie.com/akila-nautic-gruissan-pole-etang/gruissan",
+      "https://srokacompany.com/en/blogs/news/wingfoil-destination-in-gruissan",
+      "https://vvanat.fr/blog/la-planche-a-voile-gruissan/"
+    ]
+  },
+  "Étang de Thau Sète Mèze windsurf, France": {
+    "name": "Étang de Thau – Pont-Levis (Sète)",
+    "aliases": [
+      "Pont Levis",
+      "Pont-Levis Sète",
+      "Étang de Thau Sète",
+      "Thau lagoon",
+      "Mèze (Le Taurus)"
+    ],
+    "lat": 43.4018,
+    "lon": 3.65663,
+    "country": "France",
+    "water": "lagoon",
+    "facing_deg": 315,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil",
+      "sailing"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Tramontane, the main wind. Onshore at Pont-Levis. Often strong. Water stays flat behind the sandbank (toc)."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Part of the main Tramontane/NW range. Onshore to cross-onshore with flat water."
+      },
+      {
+        "sector": "W",
+        "quality": "ok",
+        "note": "Works well. One guide calls it the best direction for chop/waves in the open lagoon."
+      },
+      {
+        "sector": "SW",
+        "quality": "ok",
+        "note": "Summer thermal (SW). Guides say it works well in summer."
+      },
+      {
+        "sector": "S",
+        "quality": "ok",
+        "note": "Summer southerlies are reported as usable. Less favourable than SW–NW according to some guides."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "N/NE (locally called Mistral) is reported to work at Pont-Levis. Maldormir (Marseillan side) is the usual northerly alternative."
+      },
+      {
+        "sector": "E",
+        "quality": "marginal",
+        "note": "Less favourable. Strong easterlies are reported as not working well."
+      },
+      {
+        "sector": "SE",
+        "quality": "forbidden",
+        "note": "Offshore at the NW-facing launch. A strong SE quickly churns the lagoon and builds sizeable chop. It can also bring algae."
+      }
+    ],
+    "launch_notes": "Main launch is at Aire du Pont-Levis, Sète (free gravel car park, 2.2 m height barrier). From there it is about 800 m along the dike plus a short wade to the sandbank, roughly 15 min with gear. Kiters: only one kite at a time on the sandbank safe zone, priority to riders coming in, no jumping near the launch or the dike, leave bags on the dike. Mèze (Centre Nautique Le Taurus, north shore) is a quieter alternative with schools.",
+    "tide_notes": "Very small Mediterranean tide, but water level changes the width of the sandbank. Between the shore and the sandbank the water is 5–40 cm deep, about 1 m at most.",
+    "hazards": "Very shallow water and the sandbank (watch fins and foils). Sea urchins and stinging anemones, so booties are essential. No-go zone around the Sète hospital heliport next to the spot. Oyster/shellfish farming tables in the lagoon. Choppier water in the middle of the lagoon. Crowded in summer and at weekends. Car break-ins reported at the car park.",
+    "rules": "Natura 2000 area with nesting birds. Yellow buoys mark protected quiet zones in summer. Keep away from the second dike during nesting season. Area around the heliport is off limits (signposted). Kitesurf launch etiquette above applies.",
+    "season": "All year. September–June is considered best. The summer SW thermal makes July–August usable but crowded.",
+    "sources": [
+      "https://vvanat.fr/blog/magic-bruce-kitesurf-sete/",
+      "https://vvanat.fr/blog/planche-a-voile-etang-de-thau/",
+      "https://ultimatefrance.com/kitesurfing/south-france/sete-etang-de-thau",
+      "https://en.archipel-thau.com/kite-premium.html"
+    ]
+  },
+  "Almanarre Hyères (Gien side), France": {
+    "name": "Almanarre Hyères (Giens side)",
+    "aliases": [
+      "L'Almanarre",
+      "Plage de l'Almanarre",
+      "Almanarre - Zone de kite",
+      "Route du Sel"
+    ],
+    "lat": 43.053,
+    "lon": 6.13,
+    "country": "France",
+    "water": "sea",
+    "facing_deg": 250,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Onshore with chop and waves along the whole beach. Reference direction for the spot."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Mistral, often force 6-9: powerful and gusty, with waves that tend to close out. For experienced riders."
+      },
+      {
+        "sector": "NW",
+        "quality": "ok",
+        "note": "Mistral sector, side-on. Strong gusts."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Onshore, waves along the beach."
+      },
+      {
+        "sector": "SW",
+        "quality": "best",
+        "note": "Libeccio, up to about 20 kn. Onshore with waves."
+      },
+      {
+        "sector": "E",
+        "quality": "forbidden",
+        "note": "Offshore. Water is glassy but riders drift away from shore quickly. Some guides list it for experts only; the usual advice is to go to La Bergerie on the east side of the peninsula instead."
+      },
+      {
+        "sector": "SE",
+        "quality": "marginal",
+        "note": "Listed by some guides; side-offshore on this beach, so flat water with a drift risk."
+      }
+    ],
+    "launch_notes": "Launch only from the marked kite zone between beach accesses 16 and 21. The launch strip is about 150 m long and very narrow, with wooden dune fences (ganivelles) behind it and FFVL flag posts in summer. Launching and landing are tight and crowded on good days. Not recommended for beginners.",
+    "tide_notes": "Mediterranean, tide is negligible. Water gets deep quickly.",
+    "hazards": "Narrow beach that gets crowded. Some rocks to the right of the launch. Water gets deep fast. Close-out shore break in W/SW wind. Strong Mistral gusts. In easterly wind, offshore drift. Frequent car break-ins in the beach car parks.",
+    "rules": "From 15 June to 15 September, the town of Hyères limits kiting to the zone between accesses 16 and 21. Riding inside the 300 m coastal band is forbidden: use the marked channel to get past 300 m. A Beach Marshall is present and the municipal police can fine riders. From April to October, launching is allowed only through the kite channels (Almanarre or Mérou).",
+    "season": "October to April (best). Summer is restricted and crowded.",
+    "sources": [
+      "https://vvanat.fr/blog/kitesurf-almanarre-spot-carte/",
+      "https://www.ultimatefrance.com/kitesurfing/south-france/almanarre",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/l-almanarre-hyeres-provence-alpes-cote-d-azur-france.html",
+      "https://madeinmarseille.net/a-la-une-marseille/14282-meilleur-spot-planche-kitesurf-provence/"
+    ]
   }
 }

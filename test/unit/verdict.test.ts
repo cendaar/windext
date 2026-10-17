@@ -24,7 +24,8 @@ describe('sizing', () => {
   it('matches common charts', () => {
     expect(idealSize('kitesurf', 75, 16)).toBeCloseTo(10.3, 1)
     expect(idealSize('wingfoil', 75, 18)).toBeCloseTo(4.4, 1)
-    expect(idealSize('windsurf', 75, 20)).toBeCloseTo(5.4, 1)
+    expect(idealSize('windsurf', 75, 20)).toBeCloseTo(5.1, 1)
+    expect(riderRange({ sport: 'windsurf', weightKg: 85, sizes: [4.7, 5.8], level: 'expert' }).min).toBeCloseTo(15.8, 0)
   })
   it('derives the usable range from the quiver and caps it by level', () => {
     expect(riderRange(kite)).toEqual({ min: 12.8, max: 26.1 })
@@ -181,6 +182,8 @@ describe('alternative spot', () => {
   it('respects the alternative card sectors and needs enough wind', () => {
     expect(V(fc(() => ({ s: 18, d: 300 })), { facing: 100, nearby: [near('Lagoon', 210, 4, [{ sector: 'WNW', quality: 'forbidden', note: '' }])] }).codes).not.toContain('ALT_SPOT')
     expect(V(fc(() => ({ s: 8, d: 300 })), { facing: 100, nearby: [near('Lagoon', 210, 4)] }).codes).not.toContain('ALT_SPOT')
+    // a strong morning is enough even if the daily mean is light
+    expect(V(fc(h => ({ s: h >= 9 && h <= 11 ? 17 : 11, d: 300 })), { facing: 100, nearby: [near('Lagoon', 210, 4)] }).codes).toContain('ALT_SPOT')
   })
   it('also suggests one on a side-off day', () => {
     expect(V(fc(() => ({ s: 17, d: 135 })), { nearby: [near('Other', 45, 6)] }).codes).toContain('ALT_SPOT')

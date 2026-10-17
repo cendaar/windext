@@ -36,19 +36,23 @@ export interface DayVerdict {
   codes: Code[]               // every code that applied, for tests and statistics
 }
 
+/** Kite and wing: m² per (kg/kn). Windsurf calibrated so 85 kg is powered on a 5.8 m² at about 20 kn and planes from about 16 kn. */
+export const sizeFactor = (sport: Sport) => (sport === 'kitesurf' ? 2.2 : sport === 'wingfoil' ? 1.05 : 1.35)
+
 /** Size that gives an average rider normal power at `kn` knots. Rules of thumb, tuned to common charts. */
 export function idealSize(sport: Sport, weightKg: number, kn: number): number {
-  const k = sport === 'kitesurf' ? 2.2 : sport === 'wingfoil' ? 1.05 : 1.45
+  const k = sizeFactor(sport)
   return (k * weightKg) / Math.max(kn, 1)
 }
 export const unitFor = (sport: Sport): 'm' | 'm²' => (sport === 'windsurf' ? 'm²' : 'm')
 
 /** Wind range the rider's quiver covers: from the biggest gear stretched 15% to the smallest gear held 25% beyond its ideal. */
 export function riderRange(r: Rider): { min: number; max: number } {
-  const k = r.sport === 'kitesurf' ? 2.2 : r.sport === 'wingfoil' ? 1.05 : 1.45
+  const k = sizeFactor(r.sport)
   const big = Math.max(...r.sizes), small = Math.min(...r.sizes)
+  const stretch = r.sport === 'windsurf' ? 1.25 : 1.15   // a big board planes a sail well below its ideal wind
   const absoluteMin = r.sport === 'wingfoil' ? 9 : r.sport === 'kitesurf' ? 10 : 11
-  let min = Math.max(absoluteMin, (k * r.weightKg) / (big * 1.15))
+  let min = Math.max(absoluteMin, (k * r.weightKg) / (big * stretch))
   let max = (k * r.weightKg) / (small * 0.75)
   if (r.level === 'beginner') max = Math.min(max, 20)
   if (r.level === 'intermediate') max = Math.min(max, 30)
@@ -156,7 +160,7 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
     if ((main === 'OFFSHORE' || main === 'FORBIDDEN') && opts.nearby?.length) {
       const blockedHours = evals.filter(e => e.why === main)
       const alt = alternativeSpot(mean(blockedHours.map(e => e.s.dir)), opts.nearby, opts.card?.id)
-      const strongEnough = mean(blockedHours.map(e => e.s.speed)) >= range.min
+      const strongEnough = blockedHours.filter(e => e.s.speed >= range.min && e.s.speed <= range.max).length >= 2   // two good hours make the drive worth it
       if (alt && strongEnough) { codes.add('ALT_SPOT'); reasons.push({ code: 'ALT_SPOT', vars: { dir: avg.dir, alt: alt.name, km: alt.km } }) }
     }
     // Single rideable hour: say so, it is useful
@@ -218,7 +222,7 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
   }
 
   const risky = codes.has('GUSTY_DANGER') || codes.has('SIDE_OFF_EXPERT') && rider.level !== 'expert' || !!blocking
-  const score = sessionScore({ hours: w.length, speed: effKn, gust: avg.gust, idealKn: (rider.sport === 'kitesurf' ? 2.2 : rider.sport === 'wingfoil' ? 1.05 : 1.45) * rider.weightKg / pick, gustFactor: gf, confidence, shore: midShore, level: rider.level })
+  const score = sessionScore({ hours: w.length, speed: effKn, gust: avg.gust, idealKn: sizeFactor(rider.sport) * rider.weightKg / pick, gustFactor: gf, confidence, shore: midShore, level: rider.level })
   // A plain yes needs a decent score: below 5 the session is rideable but not worth driving for without checking
   const status: Status = confidence === 'low' || risky || score < 5 || (w.length <= 2 && confidence !== 'high') ? 'check' : 'go'
   if (midShore === 'side-off' && opts.nearby?.length) { const alt = alternativeSpot(mean(w.map(x => x.dir)), opts.nearby, opts.card?.id); if (alt) add('ALT_SPOT', { dir: avg.dir, alt: alt.name, km: alt.km }) }
