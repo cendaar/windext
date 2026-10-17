@@ -116,7 +116,7 @@ describe('tides', () => {
     const { text } = await call('tides', { spot_id: 'ouistreham-riva-bella', days: 1 })
     expect(text).toMatch(/calibrated for this spot \(\+50 min\)/); expect(text).toMatch(/HW 03:50/)
     expect((await call('spot_info', { spot_id: 'ouistreham-riva-bella' })).text).toMatch(/\[calibration \+50 min\]/)
-    expect((await call('tides', { lat: 49.2757, lon: -0.2591, days: 1 })).text).toMatch(/uncalibrated/)
+    expect((await call('tides', { lat: 49.2757, lon: -0.2591, days: 1 })).text).toMatch(/UNCALIBRATED/)
   })
   it('says so on a lake', async () => {
     vi.stubGlobal('fetch', stubOpenMeteo({ marine: 'fail' }).fetch)

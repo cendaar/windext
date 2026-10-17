@@ -1,0 +1,68 @@
+# France, Manche et Atlantique
+Ouistreham Riva-Bella, Normandy, France
+Merville-Franceville, Normandy, France
+Wissant, Pas-de-Calais, France
+Berck-sur-Mer, Pas-de-Calais, France
+Hardelot, Pas-de-Calais, France
+Dunkerque Malo-les-Bains, France
+Le Crotoy, Baie de Somme, France
+Cabourg, Normandy, France
+Siouville, Cotentin, France
+Saint-Malo, Brittany, France
+Penthièvre, Quiberon, Brittany, France
+La Torche, Brittany, France
+Lacanau, Gironde, France
+Hossegor, Landes, France
+La Tranche-sur-Mer, Vendée, France
+Les Sables-d'Olonne, Vendée, France
+# France, Méditerranée
+Leucate La Franqui, France
+Leucate Plage, France
+Gruissan, Aude, France
+Port-la-Nouvelle, Aude, France
+Almanarre, Hyères, France
+Beauduc, Camargue, France
+Saint-Cyprien, Pyrénées-Orientales, France
+Carro, Martigues, France
+# Europe
+Tarifa Los Lances, Spain
+Tarifa Valdevaqueros, Spain
+El Médano, Tenerife, Spain
+Pozo Izquierdo, Gran Canaria, Spain
+Sotavento, Fuerteventura, Spain
+Guincho, Portugal
+Lagoa de Óbidos, Portugal
+Esposende, Portugal
+Lake Garda Torbole, Italy
+Lo Stagnone, Marsala, Sicily, Italy
+Porto Pollo, Sardinia, Italy
+Prasonisi, Rhodes, Greece
+Vassiliki, Lefkada, Greece
+Brouwersdam, Netherlands
+Wijk aan Zee, Netherlands
+Fehmarn Gold, Germany
+St. Peter-Ording, Germany
+Sylt Westerland, Germany
+Hvide Sande, Denmark
+Camber Sands, England
+Hunstanton, England
+Rhosneigr, Wales
+# World
+Dakhla lagoon, Morocco
+Essaouira, Morocco
+Cumbuco, Ceará, Brazil
+Jericoacoara, Brazil
+Barra Grande, Piauí, Brazil
+Cabarete Kite Beach, Dominican Republic
+Langebaan, South Africa
+Cape Town Kite Beach Bloubergstrand, South Africa
+Le Morne, Mauritius
+Mui Ne, Vietnam
+Boracay Bulabog, Philippines
+Hood River, Oregon, USA
+Kite Beach Maui Kanaha, Hawaii, USA
+Cape Hatteras Kite Point, North Carolina, USA
+Sherman Island, California, USA
+Safaga Soma Bay, Egypt
+El Gouna, Egypt
+Vung Tau, Vietnam
