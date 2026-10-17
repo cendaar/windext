@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { MemoryStore, slugify, distanceKm, type SpotInput } from '../../src/core/store.js'
 
-const card = (over: Partial<SpotInput> = {}): SpotInput => ({ name: 'Ouistreham Riva-Bella', aliases: ['riva'], lat: 49.2865, lon: -0.2605, country: 'France', water: 'sea', facing_deg: 15, facing_source: 'user', sports: ['kitesurf'], tide_notes: '', hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [{ sector: 'NE', quality: 'best', note: '' }], ...over })
+const card = (over: Partial<SpotInput> = {}): SpotInput => ({ name: 'Ouistreham Riva-Bella', aliases: ['riva'], lat: 49.2865, lon: -0.2605, country: 'France', water: 'sea', facing_deg: 15, facing_source: 'user', sports: ['kitesurf'], tide_notes: '', tide_offset_min: null, hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [{ sector: 'NE', quality: 'best', note: '' }], ...over })
 
 describe('slugify', () => {
   it('strips accents and punctuation', () => { expect(slugify('Plage de la Franqui, Leucate')).toBe('plage-de-la-franqui-leucate'); expect(slugify('Étang de Thau')).toBe('etang-de-thau'); expect(slugify('  Tarifa -- Los Lances ')).toBe('tarifa-los-lances') })

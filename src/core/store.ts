@@ -7,7 +7,7 @@ export interface SpotCard {
   id: string; name: string; aliases: string[]
   lat: number; lon: number; country: string; water: string
   facing_deg: number | null; facing_source: string
-  sports: string[]; tide_notes: string; hazards: string; rules: string; launch_notes: string; season: string
+  sports: string[]; tide_notes: string; tide_offset_min: number | null; hazards: string; rules: string; launch_notes: string; season: string
   kind: 'spot' | 'school'
   status: SpotStatus; sources: string[]; submissions: number; updated_at: string
   wind: { sector: string; quality: WindQuality; note: string }[]
@@ -39,7 +39,7 @@ type D1Row = Record<string, any>
 const rowToCard = (r: D1Row, wind: SpotCard['wind'] = []): SpotCard => ({
   id: r.id, name: r.name, aliases: r.aliases ? String(r.aliases).split('|').filter(Boolean) : [],
   lat: r.lat, lon: r.lon, country: r.country, water: r.water, facing_deg: r.facing_deg, facing_source: r.facing_source,
-  sports: r.sports ? String(r.sports).split('|').filter(Boolean) : [], tide_notes: r.tide_notes, hazards: r.hazards, rules: r.rules,
+  sports: r.sports ? String(r.sports).split('|').filter(Boolean) : [], tide_notes: r.tide_notes, tide_offset_min: r.tide_offset_min ?? null, hazards: r.hazards, rules: r.rules,
   launch_notes: r.launch_notes, season: r.season, kind: r.kind ?? 'spot', status: r.status, sources: r.sources ? String(r.sources).split('|').filter(Boolean) : [],
   submissions: r.submissions, updated_at: r.updated_at, wind,
 })
@@ -86,10 +86,10 @@ export class D1Store implements Store {
     const sources = Array.from(new Set([...(existing?.sources ?? []), ...card.sources]))
     const pick = (field: keyof SpotInput) => (card[field] as string) || (existing?.[field as keyof SpotCard] as string) || ''
     const stmts = [
-      this.db.prepare(`INSERT INTO spots (id, name, aliases, lat, lon, country, water, facing_deg, facing_source, sports, tide_notes, hazards, rules, launch_notes, season, status, sources, submissions, updated_at, kind)
-        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, 'community', ?16, 1, ?17, ?18)
-        ON CONFLICT(id) DO UPDATE SET name = excluded.name, aliases = excluded.aliases, country = excluded.country, water = excluded.water, facing_deg = COALESCE(excluded.facing_deg, spots.facing_deg), facing_source = excluded.facing_source, sports = excluded.sports, tide_notes = excluded.tide_notes, hazards = excluded.hazards, rules = excluded.rules, launch_notes = excluded.launch_notes, season = excluded.season, status = 'community', sources = excluded.sources, submissions = spots.submissions + 1, updated_at = excluded.updated_at, kind = excluded.kind`)
-        .bind(id, card.name, j(aliases), existing?.lat ?? card.lat, existing?.lon ?? card.lon, pick('country'), pick('water'), card.facing_deg ?? existing?.facing_deg ?? null, card.facing_deg != null ? card.facing_source : (existing?.facing_source ?? ''), j(card.sports.length ? card.sports : existing?.sports ?? []), pick('tide_notes'), pick('hazards'), pick('rules'), pick('launch_notes'), pick('season'), j(sources), now, card.kind ?? existing?.kind ?? 'spot'),
+      this.db.prepare(`INSERT INTO spots (id, name, aliases, lat, lon, country, water, facing_deg, facing_source, sports, tide_notes, hazards, rules, launch_notes, season, status, sources, submissions, updated_at, kind, tide_offset_min)
+        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, 'community', ?16, 1, ?17, ?18, ?19)
+        ON CONFLICT(id) DO UPDATE SET name = excluded.name, aliases = excluded.aliases, country = excluded.country, water = excluded.water, facing_deg = COALESCE(excluded.facing_deg, spots.facing_deg), facing_source = excluded.facing_source, sports = excluded.sports, tide_notes = excluded.tide_notes, hazards = excluded.hazards, rules = excluded.rules, launch_notes = excluded.launch_notes, season = excluded.season, status = 'community', sources = excluded.sources, submissions = spots.submissions + 1, updated_at = excluded.updated_at, kind = excluded.kind, tide_offset_min = COALESCE(excluded.tide_offset_min, spots.tide_offset_min)`)
+        .bind(id, card.name, j(aliases), existing?.lat ?? card.lat, existing?.lon ?? card.lon, pick('country'), pick('water'), card.facing_deg ?? existing?.facing_deg ?? null, card.facing_deg != null ? card.facing_source : (existing?.facing_source ?? ''), j(card.sports.length ? card.sports : existing?.sports ?? []), pick('tide_notes'), pick('hazards'), pick('rules'), pick('launch_notes'), pick('season'), j(sources), now, card.kind ?? existing?.kind ?? 'spot', card.tide_offset_min ?? null),
     ]
     if (card.wind.length) {
       stmts.push(this.db.prepare('DELETE FROM spot_wind WHERE spot_id = ?').bind(id))
@@ -129,7 +129,7 @@ export class MemoryStore implements Store {
   async submitSpot(card: SpotInput) {
     const near = (await this.nearbySpots(card.lat, card.lon, 0.5, 10)).filter(k => k.kind === (card.kind ?? 'spot')); const id = near[0]?.id ?? slugify(card.id ?? card.name)
     const prev = this.spots.get(id)
-    this.spots.set(id, { ...card, kind: card.kind ?? 'spot', id, status: 'community', submissions: (prev?.submissions ?? 0) + 1, updated_at: new Date().toISOString() })
+    this.spots.set(id, { ...card, tide_offset_min: card.tide_offset_min ?? prev?.tide_offset_min ?? null, kind: card.kind ?? 'spot', id, status: 'community', submissions: (prev?.submissions ?? 0) + 1, updated_at: new Date().toISOString() })
     return { id, action: prev ? 'updated' as const : 'created' as const, status: 'community' as const }
   }
   async logRequest() {}

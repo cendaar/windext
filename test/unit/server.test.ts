@@ -40,7 +40,7 @@ describe('find_spot', () => {
   })
   it('still answers when geocoding is down', async () => {
     vi.stubGlobal('fetch', async (u: string) => u.includes('geocoding') ? new Response('x', { status: 503 }) : new Response('{}'))
-    await store.submitSpot({ ...riva, aliases: [], tide_notes: '', hazards: '', rules: '', launch_notes: '', season: '', wind: [] } as any)
+    await store.submitSpot({ ...riva, aliases: [], tide_notes: '', tide_offset_min: null, hazards: '', rules: '', launch_notes: '', season: '', wind: [] } as any)
     const { text } = await call('find_spot', { query: 'ouistreham' }); expect(text).toMatch(/Known spots/); expect(text).not.toMatch(/Geocoding:/)
   })
 })
@@ -108,7 +108,14 @@ describe('tides', () => {
     const { text } = await call('tides', { spot_id: 'ouistreham-riva-bella', days: 1 })
     expect(text).toMatch(/Ouistreham Riva-Bella\. Local time/); expect(text).toMatch(/HW 03:00 \(\+2 m\)/); expect(text).toMatch(/LW 09:1\d \(-2 m\)/); expect(text).toMatch(/Spot note: ride 2h around HW/)
     const f = await call('spot_forecast', { spot_id: 'ouistreham-riva-bella', days: 1, hours_from: 9, hours_to: 9 })
-    expect(f.text).toMatch(/Tides \(model sea level.*spot note: ride 2h around HW\):\n2026-10-18: HW 03:00/)
+    expect(f.text).toMatch(/Tides \(model tide, uncalibrated.*spot note: ride 2h around HW\):\n2026-10-18: HW 03:00/)
+  })
+  it('applies and reports a submitted tide calibration', async () => {
+    await call('submit_spot', { ...riva, tide_offset_min: 50 })
+    const { text } = await call('tides', { spot_id: 'ouistreham-riva-bella', days: 1 })
+    expect(text).toMatch(/calibrated for this spot \(\+50 min\)/); expect(text).toMatch(/HW 03:50/)
+    expect((await call('spot_info', { spot_id: 'ouistreham-riva-bella' })).text).toMatch(/\[calibration \+50 min\]/)
+    expect((await call('tides', { lat: 49.2757, lon: -0.2591, days: 1 })).text).toMatch(/uncalibrated/)
   })
   it('says so on a lake', async () => {
     vi.stubGlobal('fetch', stubOpenMeteo({ marine: 'fail' }).fetch)
@@ -129,7 +136,7 @@ describe('seed cards and coastline estimate', () => {
     let calls = 0
     const [a, b] = InMemoryTransport.createLinkedPair()
     const st = new MemoryStore()
-    await st.submitSpot({ name: 'Seed beach', aliases: [], lat: 49.2757, lon: -0.2591, country: '', water: '', facing_deg: null, facing_source: 'seed', sports: ['kitesurf'], tide_notes: '', hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [] });
+    await st.submitSpot({ name: 'Seed beach', aliases: [], lat: 49.2757, lon: -0.2591, country: '', water: '', facing_deg: null, facing_source: 'seed', sports: ['kitesurf'], tide_notes: '', tide_offset_min: null, hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [] });
     (await st.getSpot('seed-beach'))!.status = 'seed'
     await createServer(st, { estimateFacing: async () => { calls++; return { facing_deg: 15, distance_m: 300 } } }).connect(b)
     const c = new Client({ name: 't2', version: '0' }); await c.connect(a)
@@ -144,8 +151,8 @@ describe('seed cards and coastline estimate', () => {
   it('does not estimate for schools or when the coastline is too far', async () => {
     let calls = 0
     const [a, b] = InMemoryTransport.createLinkedPair(); const st = new MemoryStore()
-    await st.submitSpot({ name: 'Kite school', kind: 'school', aliases: [], lat: 49.2757, lon: -0.2591, country: '', water: '', facing_deg: null, facing_source: 'seed', sports: ['kitesurf'], tide_notes: '', hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [] })
-    await st.submitSpot({ name: 'Inland lake', aliases: [], lat: 48.0, lon: 2.0, country: '', water: '', facing_deg: null, facing_source: 'seed', sports: ['windsurf'], tide_notes: '', hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [] })
+    await st.submitSpot({ name: 'Kite school', kind: 'school', aliases: [], lat: 49.2757, lon: -0.2591, country: '', water: '', facing_deg: null, facing_source: 'seed', sports: ['kitesurf'], tide_notes: '', tide_offset_min: null, hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [] })
+    await st.submitSpot({ name: 'Inland lake', aliases: [], lat: 48.0, lon: 2.0, country: '', water: '', facing_deg: null, facing_source: 'seed', sports: ['windsurf'], tide_notes: '', tide_offset_min: null, hazards: '', rules: '', launch_notes: '', season: '', sources: [], wind: [] })
     await createServer(st, { estimateFacing: async () => { calls++; return { facing_deg: 90, distance_m: 5000 } } }).connect(b)
     const c = new Client({ name: 't3', version: '0' }); await c.connect(a)
     const r1: any = await c.callTool({ name: 'spot_info', arguments: { spot_id: 'kite-school' } }); expect(r1.content[0].text).toMatch(/school\/club/); expect(r1.content[0].text).toMatch(/faces unknown/)

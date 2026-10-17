@@ -115,7 +115,7 @@ export function renderTable(fc: Forecast, hours: HourSummary[], opts: { from?: n
 export interface TideEvent { time: string; type: 'high' | 'low'; height: number }
 
 /** High and low waters from the hourly sea-level series, with a parabolic fit through each extremum (about +/- 20 min). */
-export function tideEvents(times: string[], level: (number | null)[]): TideEvent[] {
+export function tideEvents(times: string[], level: (number | null)[], offsetMin = 0): TideEvent[] {
   const out: TideEvent[] = []
   for (let i = 1; i < level.length - 1; i++) {
     const a = level[i - 1], b = level[i], c = level[i + 1]
@@ -126,7 +126,7 @@ export function tideEvents(times: string[], level: (number | null)[]): TideEvent
     const dt = denom === 0 ? 0 : 0.5 * (a - c) / denom          // hours offset of the vertex, in [-0.5, 0.5]
     const h = denom === 0 ? b : b - (a - c) * dt / 4
     const t = new Date(times[i] + (times[i].length === 16 ? ':00Z' : ''))
-    t.setUTCMinutes(t.getUTCMinutes() + Math.round(dt * 60))
+    t.setUTCMinutes(t.getUTCMinutes() + Math.round(dt * 60) + offsetMin)
     out.push({ time: t.toISOString().slice(0, 16).replace('T', ' '), type: isHigh ? 'high' : 'low', height: Math.round(h * 10) / 10 })
   }
   return out

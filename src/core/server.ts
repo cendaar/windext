@@ -18,7 +18,7 @@ READING THE TABLE AS A RIDER
 - By lead time: within 48 h trust the fine regional model (AROME HD in France and W-Europe, ICON-D2 in Germany and the Alps, UKMO in the UK, KNMI/DMI on the North Sea, HRRR in the US); 2 to 5 days ECMWF; beyond, only the trend. GFS is the coarsest, a tie-breaker.
 - Gust factor (gust / mean): < 1.3 steady, 1.3-1.6 normal, 1.6-1.9 tiring, >= 1.9 unsafe for beginners even if the mean looks fine. The diagnosis lines explain the cause (sea warmer than air, showers, shear, model disagreement).
 - Shore relation: offshore is dangerous for kite and wing without rescue cover, say it explicitly; side-off is for experts; side and side-on are ideal; onshore with waves is hard to launch. A card's 'forbidden' sector overrides everything: the spot does not work that day.
-- Tide: spot_forecast includes model tide times (approximate); the tides tool gives more days. When the card has tide notes, apply them; on the Atlantic and Channel coasts a falling tide plus offshore wind is the worst combination.
+- Tide: spot_forecast includes model tide times; the tides tool gives more days. The model tide is often 30-60 min early near harbours. If the user has the local port table, compare once and submit tide_offset_min with submit_spot: the spot is then calibrated for everyone. When the card has tide notes, apply them; on the Atlantic and Channel coasts a falling tide plus offshore wind is the worst combination.
 - Gear, as orders of magnitude for a 75 kg rider, scaled by weight: kite 12 kn 12-14 m, 16 kn 10-12 m, 20 kn 8-9 m, 25 kn 7 m; wing 12 kn 6 m, 18 kn 4.5-5 m, 25 kn 3.5-4 m; windsurf 15 kn 6.5-7 m2, 20 kn 5.5 m2, 25 kn 4.7 m2. Ask the weight if unknown.
 - Units are knots. Answer in the user's language.`
 
@@ -33,13 +33,15 @@ const fmtCard = (s: SpotCard & { distance_km?: number }) => {
     `  wind sectors: ${wind}`,
   ]
   if (s.launch_notes) lines.push(`  launch: ${s.launch_notes}`)
-  if (s.tide_notes) lines.push(`  tide: ${s.tide_notes}`)
+  if (s.tide_notes || s.tide_offset_min != null) lines.push(`  tide: ${s.tide_notes}${s.tide_offset_min != null ? ` [calibration ${s.tide_offset_min >= 0 ? '+' : ''}${s.tide_offset_min} min]` : ''}`)
   if (s.hazards) lines.push(`  hazards: ${s.hazards}`)
   if (s.rules) lines.push(`  rules: ${s.rules}`)
   if (s.season) lines.push(`  season: ${s.season}`)
   if (s.sources.length) lines.push(`  sources: ${s.sources.join(' ')}`)
   return lines.join('\n')
 }
+
+const tideCaveat = (card: SpotCard | null) => card?.tide_offset_min != null ? `model tide calibrated for this spot (${card.tide_offset_min >= 0 ? '+' : ''}${card.tide_offset_min} min), about +/- 15 min` : 'model tide, uncalibrated: often 30-60 min early inside harbours and estuaries; compare once with the local port table and submit tide_offset_min'
 
 const sectorQuality = (card: SpotCard | null, dir: number): WindQuality | undefined => card?.wind.find(w => w.sector === compass(dir))?.quality
 
@@ -114,11 +116,13 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
       sports: z.array(z.enum(['kitesurf', 'windsurf', 'wingfoil', 'sailing'])).default([]),
       kind: z.enum(['spot', 'school']).default('spot').describe('spot = a place to launch and ride; school = club, school or shop'),
       wind: z.array(z.object({ sector: z.enum(COMPASS as [string, ...string[]]), quality: z.enum(['best', 'ok', 'marginal', 'forbidden']), note: z.string().default('') })).default([]).describe('Which wind directions work. Use 16-point sectors.'),
-      launch_notes: z.string().default(''), tide_notes: z.string().default(''), hazards: z.string().default(''), rules: z.string().default(''), season: z.string().default(''),
+      launch_notes: z.string().default(''), tide_notes: z.string().default(''),
+      tide_offset_min: z.number().int().min(-180).max(180).optional().describe('Tide calibration: minutes to add to the model high/low water times so they match the local port table (e.g. +50 at Ouistreham). Set it after comparing the tides tool with an official table once.'),
+      hazards: z.string().default(''), rules: z.string().default(''), season: z.string().default(''),
       sources: z.array(z.string().url()).default([]).describe('URLs of the guides used'),
     },
   }, async (a) => {
-    const r = await store.submitSpot({ ...a, facing_deg: a.facing_deg ?? null, wind: a.wind.map(w => ({ ...w, note: w.note ?? '' })) })
+    const r = await store.submitSpot({ ...a, facing_deg: a.facing_deg ?? null, tide_offset_min: a.tide_offset_min ?? null, wind: a.wind.map(w => ({ ...w, note: w.note ?? '' })) })
     const msg = r.action === 'proposed' ? `Spot ${r.id} is verified; your change was queued for moderator review.` : `Spot ${r.id} ${r.action} with status ${r.status}. Thank the user: this card now helps every rider asking about this spot.`
     return { content: [{ type: 'text', text: msg }] }
   })
@@ -161,8 +165,8 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
       }
     } catch { /* statistics must never break a forecast */ }
     const head = `${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
-    const tides = renderTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel))
-    const tideBlock = tides ? `\n\nTides (model sea level vs mean, +/- 20 min, not for navigation${c2?.tide_notes ? `; spot note: ${c2.tide_notes}` : ''}):\n${tides}` : ''
+    const tides = renderTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel, c2?.tide_offset_min ?? 0))
+    const tideBlock = tides ? `\n\nTides (${tideCaveat(c2)}${c2?.tide_notes ? `; spot note: ${c2.tide_notes}` : ''}):\n${tides}` : ''
     return { content: [{ type: 'text', text: `${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}${tideBlock}` }] }
   })
 
@@ -198,9 +202,9 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
   }, async (a) => {
     const { card, lat, lon } = await resolve(a)
     const fc = await fetchForecast({ lat, lon, days: a.days, startDate: a.start_date, models: ['gfs_seamless'] })
-    const t = renderTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel))
+    const t = renderTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel, card?.tide_offset_min ?? 0))
     if (!t) return { content: [{ type: 'text', text: 'No tidal signal here (inland water or no marine model coverage).' }] }
-    return { content: [{ type: 'text', text: `${card ? `${card.name}. ` : ''}Local time (${fc.timezone}). Heights vs mean sea level.\n${t}${card?.tide_notes ? `\nSpot note: ${card.tide_notes}` : ''}` }] }
+    return { content: [{ type: 'text', text: `${card ? `${card.name}. ` : ''}Local time (${fc.timezone}). Heights vs mean sea level. ${tideCaveat(card)}.\n${t}${card?.tide_notes ? `\nSpot note: ${card.tide_notes}` : ''}` }] }
   })
 
   server.registerTool('list_models', {

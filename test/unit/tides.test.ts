@@ -22,6 +22,14 @@ describe('tideEvents', () => {
   })
 })
 
+describe('tide offset', () => {
+  it('shifts every event by the spot calibration', () => {
+    const ev = tideEvents(times, level, 50)
+    expect(ev[0].time).toBe('2026-10-18 03:20'); expect(ev[1].time).toBe('2026-10-18 09:33')
+    expect(tideEvents(times, level, -70)[0].time).toBe('2026-10-18 01:20')
+  })
+})
+
 describe('renderTides', () => {
   it('groups by day and prints HW/LW with signed heights', () => {
     const t = renderTides(tideEvents(times, level))
