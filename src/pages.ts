@@ -63,7 +63,7 @@ const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link 
 const LOGO = `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 11h14a4 4 0 1 0-4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M4 17h20a4 4 0 1 1-4 4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M4 23h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>`
 
 const shell = (title: string, body: string, desc: string) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/icon-256.png">${FONTS}<style>${STYLE}</style></head><body><div class="wrap">
-<header class="top"><a class="brand" href="/">${LOGO}windext</a><nav class="links"><a href="/#install">Install</a><a href="/#how">How it reads wind</a><a href="/spots">Spots</a><a href="/spots.json">Open data</a><a href="https://github.com/baptisterousseau/windext">GitHub</a></nav></header>
+<header class="top"><a class="brand" href="/">${LOGO}windext</a><nav class="links"><a href="/#install">Install</a><a href="/#how">How it reads wind</a><a href="/spots">Spots</a><a href="/spots.json">Open data</a><a href="https://github.com/cendaar/windext">GitHub</a></nav></header>
 ${body}
 <footer><span>windext is free and open. Weather data © <a href="https://open-meteo.com">Open-Meteo</a> (CC BY 4.0). Spot data © OpenStreetMap contributors (ODbL) and the windext community (CC BY-SA 4.0).</span><span><a href="/privacy">Privacy</a> · <a href="https://wind.oooooooo.dev/mcp">MCP endpoint</a></span></footer>
 </div></body></html>`
@@ -146,7 +146,7 @@ export function landingPage(stats: { spots: number; enriched: number; forecasts:
   <h2>Free for everyone, including us</h2>
   <div class="cols">
     <div><h3>No account, no tracking</h3><p>No sign-up, no API key, no cookies. windext stores facts about beaches, never about people. The <a href="/privacy">privacy page</a> says exactly what is kept.</p></div>
-    <div><h3>Open data, open code</h3><p>The spot database is published as <a href="/spots.json">spots.json</a> under CC BY-SA. The server is MIT-licensed on <a href="https://github.com/baptisterousseau/windext">GitHub</a>. Run your own if you prefer.</p></div>
+    <div><h3>Open data, open code</h3><p>The spot database is published as <a href="/spots.json">spots.json</a> under CC BY-SA. The server is MIT-licensed on <a href="https://github.com/cendaar/windext">GitHub</a>. Run your own if you prefer.</p></div>
     <div><h3>Built by a rider</h3><p>Made in Normandy by a kitesurfer who got tired of comparing model tabs on a phone in the car park. Corrections to a spot card are welcome, directly from a conversation.</p></div>
   </div>
 </section>

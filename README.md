@@ -42,6 +42,13 @@ npm run dev:worker  # local Worker on :8787
 npm run deploy      # Cloudflare Workers, route wind.oooooooo.dev
 ```
 
-## License
+## Licences
 
-MIT. Weather data © Open-Meteo, CC BY 4.0.
+- **Code**: MIT (see LICENSE).
+- **Spot database** (`/spots.json`, community cards): CC BY-SA 4.0. Credit windext and share improvements under the same licence.
+- **Seed spots**: © OpenStreetMap contributors, ODbL.
+- **Weather data**: © Open-Meteo, CC BY 4.0.
+
+## Privacy
+
+No accounts, no cookies, no personal data. Full policy: https://wind.oooooooo.dev/privacy

@@ -51,7 +51,7 @@ export interface Forecast {
 async function getJson(url: string): Promise<any> {
   const hit = await cache.get(url)
   if (hit) return hit
-  const res = await fetch(url, { headers: { 'User-Agent': 'windext-mcp (https://github.com/baptisterousseau/windext)' } })
+  const res = await fetch(url, { headers: { 'User-Agent': 'windext-mcp (https://github.com/cendaar/windext)' } })
   if (!res.ok) throw new Error(`Open-Meteo HTTP ${res.status}: ${await res.text()}`)
   const data = await res.json()
   await cache.put(url, data, CACHE_TTL)
