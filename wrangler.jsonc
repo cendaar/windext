@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "windext-mcp",
+  "main": "src/worker.ts",
+  "compatibility_date": "2025-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [{ "pattern": "wind.oooooooo.dev", "custom_domain": true }],
+  "observability": { "enabled": true }
+}
