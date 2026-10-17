@@ -78,7 +78,7 @@ describe('findWindows', () => {
 })
 
 describe('gustDiagnostics', () => {
-  const fc = (hours: Hour[], seaTemp: number | null = 17): Forecast => ({ lat: 0, lon: 0, timezone: 'UTC', models: ['a'], hours, seaTemp, waveHeight: [] })
+  const fc = (hours: Hour[], seaTemp: number | null = 17): Forecast => ({ lat: 0, lon: 0, timezone: 'UTC', models: ['a'], hours, seaTemp, waveHeight: [], seaLevel: [], waves: [], sun: [], issued: '2026-10-17 10:00', utcOffsetSeconds: 0 })
   const sum = (hs: Hour[]) => hs.map(h => summarizeHour(h)!)
   const day = (f: (h: number) => Hour) => Array.from({ length: 24 }, (_, h) => f(h))
   it('calls a steady wind steady and says nothing about the sea when air and sea match', () => {
@@ -110,17 +110,24 @@ describe('gustDiagnostics', () => {
 describe('renderTable', () => {
   it('renders one line per hour inside the bounds, with day headers and spot columns', () => {
     const hours = Array.from({ length: 48 }, (_, i) => hour(`2026-10-${18 + Math.floor(i / 24)}T${String(i % 24).padStart(2, '0')}:00`, { a: [10, 20, 20], b: [14, 24, 40] }))
-    const f: Forecast = { lat: 0, lon: 0, timezone: 'Europe/Paris', models: ['a', 'b'], hours, seaTemp: 17, waveHeight: [] }
+    const f: Forecast = { lat: 0, lon: 0, timezone: 'Europe/Paris', models: ['a', 'b'], hours, seaTemp: 17, waveHeight: [], seaLevel: [], waves: [], sun: [], issued: '2026-10-17 10:00', utcOffsetSeconds: 0 }
     const t = renderTable(f, hours.map(h => summarizeHour(h, 0)!), { from: 9, to: 10 })
     const lines = t.split('\n')
     expect(lines[1]).toBe('Time | a | b | MEAN | SPREAD | AGREE')
-    expect(lines.filter(l => l.startsWith('-- '))).toEqual(['-- 2026-10-18 --', '-- 2026-10-19 --'])
+    expect(lines.filter(l => l.startsWith('-- '))).toEqual(['-- Sun 2026-10-18 --', '-- Mon 2026-10-19 --'])
     expect(lines.filter(l => /^\d\d:\d\d/.test(l))).toHaveLength(4)
     expect(lines[3]).toBe('09:00 | 10/20 NNE | 14/24 NE | 12/22 NNE onshore | 4 | high')
   })
+  it('collapses to consensus-only rows after the first three days', () => {
+    const hours = Array.from({ length: 24 * 5 }, (_, i) => hour(`2026-10-${18 + Math.floor(i / 24)}T${String(i % 24).padStart(2, '0')}:00`, { a: [10, 20, 20], b: [14, 24, 40] }))
+    const f: Forecast = { lat: 0, lon: 0, timezone: 'UTC', models: ['a', 'b'], hours, seaTemp: null, waveHeight: [], seaLevel: [], waves: [], sun: [], issued: '2026-10-17 10:00', utcOffsetSeconds: 0 }
+    const lines = renderTable(f, hours.map(h => summarizeHour(h)!), { from: 9, to: 9 }).split('\n')
+    expect(lines[0]).toMatch(/From day 4 only the consensus is shown/)
+    expect(lines.filter(l => /^\d\d:\d\d/.test(l)).map(l => l.split(' | ').length)).toEqual([6, 6, 6, 4, 4])
+  })
   it('prints a dash for a model without data', () => {
     const h = { ...hour('2026-10-18T09:00', { a: [10, 20, 20] }), models: { a: { speed: 10, gust: 20, dir: 20 }, b: { speed: null, gust: null, dir: null } } }
-    const f: Forecast = { lat: 0, lon: 0, timezone: 'UTC', models: ['a', 'b'], hours: [h], seaTemp: null, waveHeight: [] }
+    const f: Forecast = { lat: 0, lon: 0, timezone: 'UTC', models: ['a', 'b'], hours: [h], seaTemp: null, waveHeight: [], seaLevel: [], waves: [], sun: [], issued: '2026-10-17 10:00', utcOffsetSeconds: 0 }
     expect(renderTable(f, [summarizeHour(h)!], { from: 9, to: 9 }).split('\n').pop()).toContain('| - |')
   })
 })

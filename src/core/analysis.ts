@@ -3,6 +3,9 @@ import { MODEL_LABELS } from './openmeteo.js'
 
 export const COMPASS = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
 export const compass = (deg: number) => COMPASS[Math.round(deg / 22.5) % 16]
+const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+export const weekday = (isoDate: string) => WEEKDAYS[new Date(isoDate.slice(0, 10) + 'T00:00:00Z').getUTCDay()]
+export const weekdayShort = (isoDate: string) => weekday(isoDate).slice(0, 3)
 const r1 = (v: number) => Math.round(v * 10) / 10
 const mean = (a: number[]) => a.reduce((s, v) => s + v, 0) / a.length
 const circMean = (degs: number[]) => {
@@ -46,11 +49,12 @@ export function summarizeHour(h: Hour, facing?: number): HourSummary | null {
 export interface Window { start: string; end: string; hours: number; avgSpeed: number; avgGust: number; dir: string; agreement: HourSummary['agreement']; shore?: HourSummary['shore'] }
 
 /** Contiguous runs where the model-mean wind sits inside [min,max] kn and the direction is usable. */
-export function findWindows(hours: HourSummary[], min: number, max: number, opts: { allowOffshore?: boolean; dayStart?: number; dayEnd?: number } = {}): Window[] {
-  const { allowOffshore = false, dayStart = 7, dayEnd = 21 } = opts
+export function findWindows(hours: HourSummary[], min: number, max: number, opts: { allowOffshore?: boolean; dayStart?: number; dayEnd?: number; daylight?: Record<string, [number, number]> } = {}): Window[] {
+  const { allowOffshore = false, dayStart = 7, dayEnd = 21, daylight } = opts
   const ok = (h: HourSummary) => {
     const hr = +h.time.slice(11, 13)
-    return h.speed >= min && h.speed <= max && hr >= dayStart && hr <= dayEnd && (allowOffshore || h.shore !== 'offshore')
+    const [from, to] = daylight?.[h.time.slice(0, 10)] ?? [dayStart, dayEnd]   // ride between sunrise and sunset when known
+    return h.speed >= min && h.speed <= max && hr >= from && hr <= to && (allowOffshore || h.shore !== 'offshore')
   }
   const out: Window[] = []; let run: HourSummary[] = []
   const flush = () => {
@@ -95,17 +99,20 @@ export function gustDiagnostics(fc: Forecast, hours: HourSummary[]): string[] {
 }
 
 /** Compact text rendering, built to cost few tokens. One line per hour, one column per model: speed/gust dir. */
-export function renderTable(fc: Forecast, hours: HourSummary[], opts: { from?: number; to?: number } = {}): string {
-  const { from = 6, to = 21 } = opts
+export function renderTable(fc: Forecast, hours: HourSummary[], opts: { from?: number; to?: number; fullDays?: number } = {}): string {
+  const { from = 6, to = 21, fullDays = 3 } = opts   // per-model columns for the first days only; beyond, the fine regional models have expired and the consensus is what matters
   const cols = fc.models.map(m => MODEL_LABELS[m] ?? m)
   const lines: string[] = []
-  lines.push(`Wind in knots, hourly, local time (${fc.timezone}). Cell = mean/gust dir. Last columns = model mean, spread between models, agreement.`)
+  const nDays = new Set(fc.hours.map(h => h.time.slice(0, 10))).size
+  lines.push(`Wind in knots, hourly, local time (${fc.timezone}). Cell = mean/gust dir. Last columns = model mean, spread between models, agreement.${nDays > fullDays ? ` From day ${fullDays + 1} only the consensus is shown.` : ''}`)
   lines.push(['Time', ...cols, 'MEAN', 'SPREAD', 'AGREE'].join(' | '))
-  let day = ''
+  let day = '', dayIndex = 0
   for (const h of fc.hours) {
     const hr = +h.time.slice(11, 13); if (hr < from || hr > to) continue
     const s = hours.find(x => x.time === h.time); if (!s) continue
-    const d = h.time.slice(0, 10); if (d !== day) { day = d; lines.push(`-- ${d} --`) }
+    const d = h.time.slice(0, 10); if (d !== day) { day = d; dayIndex++; const sun = (fc.sun ?? []).find(x => x.date === d); lines.push(`-- ${weekdayShort(d)} ${d}${sun?.sunrise ? ` (sun ${sun.sunrise}-${sun.sunset})` : ''} --`) }
+    const consensus = `${Math.round(s.speed)}/${Math.round(s.gust)} ${compass(s.dir)}${s.shore ? ' ' + s.shore : ''}`
+    if (dayIndex > fullDays) { lines.push([h.time.slice(11, 16), consensus, `${s.spread}`, s.agreement].join(' | ')); continue }
     const cells = fc.models.map(m => { const v = h.models[m]; return v.speed == null ? '-' : `${Math.round(v.speed)}/${Math.round(v.gust ?? v.speed)} ${compass(v.dir ?? 0)}` })
     lines.push([h.time.slice(11, 16), ...cells, `${Math.round(s.speed)}/${Math.round(s.gust)} ${compass(s.dir)}${s.shore ? ' ' + s.shore : ''}`, `${s.spread}`, s.agreement].join(' | '))
   }
@@ -137,4 +144,26 @@ export function renderTides(ev: TideEvent[]): string {
   const byDay = new Map<string, TideEvent[]>()
   for (const e of ev) { const d = e.time.slice(0, 10); if (!byDay.has(d)) byDay.set(d, []); byDay.get(d)!.push(e) }
   return [...byDay.entries()].map(([d, es]) => `${d}: ` + es.map(e => `${e.type === 'high' ? 'HW' : 'LW'} ${e.time.slice(11)} (${e.height >= 0 ? '+' : ''}${e.height} m)`).join(', ')).join('\n')
+}
+
+/** Daylight bounds per day (hour of sunrise rounded up, hour of sunset rounded down). */
+export function daylightMap(fc: Forecast): Record<string, [number, number]> {
+  const out: Record<string, [number, number]> = {}
+  for (const s of fc.sun ?? []) if (s.sunrise && s.sunset) out[s.date] = [Math.ceil(+s.sunrise.slice(0, 2) + (+s.sunrise.slice(3, 5)) / 60), Math.floor(+s.sunset.slice(0, 2) + (+s.sunset.slice(3, 5)) / 60)]
+  return out
+}
+
+/** One line per day: biggest waves of the daytime, with direction and period. Empty for inland water. */
+export function renderSea(fc: Forecast): string {
+  const byDay = new Map<string, { h: number; dir: number | null; period: number | null }[]>()
+  fc.hours.forEach((h, i) => {
+    const w = fc.waves?.[i]; if (!w || w.height == null) return
+    const hr = +h.time.slice(11, 13); if (hr < 7 || hr > 20) return
+    const d = h.time.slice(0, 10); if (!byDay.has(d)) byDay.set(d, []); byDay.get(d)!.push({ h: w.height, dir: w.dir, period: w.period })
+  })
+  if (!byDay.size) return ''
+  return [...byDay.entries()].map(([d, ws]) => {
+    const max = ws.reduce((a, b) => (b.h > a.h ? b : a)); const min = Math.min(...ws.map(w => w.h))
+    return `${d}: waves ${min.toFixed(1)}-${max.h.toFixed(1)} m${max.dir != null ? ` from ${compass(max.dir)}` : ''}${max.period != null ? `, ${Math.round(max.period)} s` : ''}`
+  }).join('\n')
 }

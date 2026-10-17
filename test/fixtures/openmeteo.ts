@@ -12,15 +12,16 @@ export function forecastPayload(o: FakeOpts = {}) {
     hourly[`wind_gusts_10m${suffix(m)}`] = time.map((_, i) => (o.gust ?? (() => 20))(m, i % 24))
     hourly[`wind_direction_10m${suffix(m)}`] = time.map((_, i) => (o.dir ?? (() => 20))(m, i % 24))
   }
-  return { timezone: 'Europe/Paris', hourly }
+  return { timezone: 'Europe/Paris', utc_offset_seconds: 7200, hourly }
 }
 export function contextPayload(o: FakeOpts = {}) {
   const base = forecastPayload({ ...o, models: ['x'] })
   const n = base.hourly.time.length
-  return { timezone: 'Europe/Paris', hourly: { time: base.hourly.time, temperature_2m: Array(n).fill(o.temp ?? 12), precipitation: base.hourly.time.map((_: string, i: number) => (o.precip ?? (() => 0))(i % 24)), cape: Array(n).fill(o.cape ?? 0), cloud_cover: Array(n).fill(50), wind_speed_80m: base.hourly.time.map((_: string, i: number) => (o.speed80 ?? (() => 16))(i % 24)) } }
+  const days = Array.from(new Set(base.hourly.time.map((t: string) => t.slice(0, 10))))
+  return { timezone: 'Europe/Paris', utc_offset_seconds: 7200, daily: { time: days, sunrise: days.map(d => `${d}T08:26`), sunset: days.map(d => `${d}T19:05`) }, hourly: { time: base.hourly.time, temperature_2m: Array(n).fill(o.temp ?? 12), precipitation: base.hourly.time.map((_: string, i: number) => (o.precip ?? (() => 0))(i % 24)), cape: Array(n).fill(o.cape ?? 0), cloud_cover: Array(n).fill(50), wind_speed_80m: base.hourly.time.map((_: string, i: number) => (o.speed80 ?? (() => 16))(i % 24)) } }
 }
 export function marinePayload(sst: number | null = 17, n = 24) {
-  return { hourly: { time: Array(n).fill('x'), sea_surface_temperature: Array(n).fill(sst), wave_height: Array(n).fill(1), sea_level_height_msl: Array.from({ length: n }, (_, i) => Math.round(2 * Math.cos(2 * Math.PI * (i - 3) / 12.42) * 100) / 100) } }
+  return { hourly: { time: Array(n).fill('x'), sea_surface_temperature: Array(n).fill(sst), wave_height: Array.from({ length: n }, (_, i) => 0.8 + 0.5 * ((i % 24) >= 12 ? 1 : 0)), wave_direction: Array(n).fill(10), wave_period: Array(n).fill(5), sea_level_height_msl: Array.from({ length: n }, (_, i) => Math.round(2 * Math.cos(2 * Math.PI * (i - 3) / 12.42) * 100) / 100) } }
 }
 
 /** Installs a fetch stub routing Open-Meteo URLs to the payloads. Returns the list of requested URLs. */

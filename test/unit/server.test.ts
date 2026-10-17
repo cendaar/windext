@@ -57,6 +57,7 @@ describe('submit_spot validation', () => {
 describe('spot_forecast', () => {
   it('works from raw coordinates without orientation and says so', async () => {
     const { text } = await call('spot_forecast', { lat: 49.2757, lon: -0.2591, days: 1, start_date: '2026-10-18' })
+    expect(text).toMatch(/^Issued (Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day \d{4}-\d{2}-\d{2} \d{2}:\d{2} local/); expect(text).toMatch(/-- Sun 2026-10-18 \(sun 08:26-19:05\) --/); expect(text).toMatch(/Sea state \(daytime\):\n2026-10-18: waves 0.8-1.3 m from N, 5 s/)
     expect(text).toMatch(/Beach orientation unknown/); expect(text.split('\n').filter(l => /^\d\d:\d\d/.test(l)).join()).not.toMatch(/onshore|offshore/); expect(text).toMatch(/Models: AROME\/ARPEGE, ICON, ECMWF 9km, GFS, UKMO, KNMI, DMI/)
     expect(text.split('\n').filter(l => /^\d\d:\d\d/.test(l))).toHaveLength(16) // 06..21
   })
@@ -90,7 +91,7 @@ describe('ride_windows', () => {
   it('finds the daytime window and tags it with the spot sector quality', async () => {
     await call('submit_spot', riva)
     const { text } = await call('ride_windows', { spot_id: 'ouistreham-riva-bella', days: 1, min_kn: 12, max_kn: 30 })
-    expect(text).toMatch(/07:00-21:00 \(15h\): 15 kn mean, gusts 20, NNE onshore \[spot: best\], agreement high/)
+    expect(text).toMatch(/^Sunday 2026-10-18 09:00-19:00 \(11h\): 15 kn mean, gusts 20, NNE onshore \[spot: best\], agreement high/)
   })
   it('drops hours in a forbidden sector, and reports no window when too light', async () => {
     await call('submit_spot', riva)

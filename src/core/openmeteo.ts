@@ -46,6 +46,10 @@ export interface Forecast {
   seaTemp: number | null
   waveHeight: (number | null)[]
   seaLevel: (number | null)[]   // tide height vs mean sea level, metres, hourly (Open-Meteo marine model, approximate)
+  waves: { height: number | null; dir: number | null; period: number | null }[]
+  sun: { date: string; sunrise: string; sunset: string }[]   // local times, 'HH:MM'
+  issued: string                 // local time at the forecast location when fetched, 'YYYY-MM-DD HH:MM'
+  utcOffsetSeconds: number
 }
 
 async function getJson(url: string): Promise<any> {
@@ -67,8 +71,8 @@ export async function fetchForecast(opts: { lat: number; lon: number; days: numb
 
   const multi = new URLSearchParams({ ...base, ...range, hourly: 'wind_speed_10m,wind_gusts_10m,wind_direction_10m', models: models.join(',') })
   // Context variables from the finest model available (first in list): instability, rain, shear.
-  const ctx = new URLSearchParams({ ...base, ...range, hourly: 'temperature_2m,precipitation,cape,cloud_cover,wind_speed_80m', models: models[0] })
-  const marine = new URLSearchParams({ latitude: base.latitude, longitude: base.longitude, timezone: 'auto', ...range, hourly: 'sea_surface_temperature,wave_height,sea_level_height_msl' })
+  const ctx = new URLSearchParams({ ...base, ...range, hourly: 'temperature_2m,precipitation,cape,cloud_cover,wind_speed_80m', daily: 'sunrise,sunset', models: models[0] })
+  const marine = new URLSearchParams({ latitude: base.latitude, longitude: base.longitude, timezone: 'auto', ...range, hourly: 'sea_surface_temperature,wave_height,wave_direction,wave_period,sea_level_height_msl' })
 
   const [m, c, s] = await Promise.all([
     getJson(`https://api.open-meteo.com/v1/forecast?${multi}`),
@@ -90,7 +94,11 @@ export async function fetchForecast(opts: { lat: number; lon: number; days: numb
     }
   })
   const sst = s?.hourly?.sea_surface_temperature?.find((v: number | null) => v != null) ?? null
-  return { lat: opts.lat, lon: opts.lon, timezone: m.timezone, models, hours, seaTemp: sst, waveHeight: s?.hourly?.wave_height ?? [], seaLevel: s?.hourly?.sea_level_height_msl ?? [] }
+  const waves = (s?.hourly?.wave_height ?? []).map((hgt: number | null, i: number) => ({ height: hgt, dir: s.hourly.wave_direction?.[i] ?? null, period: s.hourly.wave_period?.[i] ?? null }))
+  const sun = ((c.daily?.time ?? []) as string[]).map((date, i) => ({ date, sunrise: String(c.daily.sunrise?.[i] ?? '').slice(11, 16), sunset: String(c.daily.sunset?.[i] ?? '').slice(11, 16) }))
+  const off = Number(m.utc_offset_seconds ?? 0)
+  const issued = new Date(Date.now() + off * 1000).toISOString().slice(0, 16).replace('T', ' ')
+  return { lat: opts.lat, lon: opts.lon, timezone: m.timezone, models, hours, seaTemp: sst, waveHeight: s?.hourly?.wave_height ?? [], seaLevel: s?.hourly?.sea_level_height_msl ?? [], waves, sun, issued, utcOffsetSeconds: off }
 }
 
 export async function geocode(name: string): Promise<{ name: string; admin: string; country: string; lat: number; lon: number }[]> {

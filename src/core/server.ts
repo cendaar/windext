@@ -1,7 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { z } from 'zod'
 import { fetchForecast, geocode, MODEL_LABELS, defaultModels } from './openmeteo.js'
-import { summarizeHour, findWindows, gustDiagnostics, renderTable, compass, COMPASS, tideEvents, renderTides } from './analysis.js'
+import { summarizeHour, findWindows, gustDiagnostics, renderTable, compass, COMPASS, tideEvents, renderTides, renderSea, daylightMap, weekday } from './analysis.js'
 import type { Store, SpotCard, WindQuality } from './store.js'
 
 export const INSTRUCTIONS = `windext: multi-model wind forecasts for wind sports (kitesurf, windsurf, wingfoil, sailing) plus an open, community-built database of spots. Every question a rider asks makes the next answer better: forecasts are archived, spot cards are shared, and session reports will score the models spot by spot.
@@ -18,7 +18,10 @@ READING THE TABLE AS A RIDER
 - By lead time: within 48 h trust the fine regional model (AROME HD in France and W-Europe, ICON-D2 in Germany and the Alps, UKMO in the UK, KNMI/DMI on the North Sea, HRRR in the US); 2 to 5 days ECMWF; beyond, only the trend. GFS is the coarsest, a tie-breaker.
 - Gust factor (gust / mean): < 1.3 steady, 1.3-1.6 normal, 1.6-1.9 tiring, >= 1.9 unsafe for beginners even if the mean looks fine. The diagnosis lines explain the cause (sea warmer than air, showers, shear, model disagreement).
 - Shore relation: offshore is dangerous for kite and wing without rescue cover, say it explicitly; side-off is for experts; side and side-on are ideal; onshore with waves is hard to launch. A card's 'forbidden' sector overrides everything: the spot does not work that day.
-- Tide: spot_forecast includes model tide times; the tides tool gives more days. The model tide is often 30-60 min early near harbours. If the user has the local port table, compare once and submit tide_offset_min with submit_spot: the spot is then calibrated for everyone. When the card has tide notes, apply them; on the Atlantic and Channel coasts a falling tide plus offshore wind is the worst combination.
+- Tide: spot_forecast includes model tide times. When the spot is uncalibrated and the tide matters (Atlantic, Channel, North Sea), look up the official port table on the web once (SHOM/maree.info in France, Admiralty in the UK, NOAA in the US), quote the official times in your answer, and submit the difference as tide_offset_min with submit_spot so the spot is calibrated for everyone. Web tide tables are easy to misread: check the date and the port name before trusting one.
+- Dates: the forecast header gives the issue time and every day header carries its weekday. If the user names a wrong weekday ("Saturday the 18th" when the 18th is a Sunday), say so in one line and answer for the date they meant.
+- Daylight: day headers give sunrise and sunset; in autumn and winter the rideable window is shorter than the wind window, say it.
+- Sea state: the waves line tells whether the launch will be a shore-break fight or flat water; mention it for onshore days. When the card has tide notes, apply them; on the Atlantic and Channel coasts a falling tide plus offshore wind is the worst combination.
 - Gear, as orders of magnitude for a 75 kg rider, scaled by weight: kite 12 kn 12-14 m, 16 kn 10-12 m, 20 kn 8-9 m, 25 kn 7 m; wing 12 kn 6 m, 18 kn 4.5-5 m, 25 kn 3.5-4 m; windsurf 15 kn 6.5-7 m2, 20 kn 5.5 m2, 25 kn 4.7 m2. Ask the weight if unknown.
 - Units are knots. Answer in the user's language.`
 
@@ -133,7 +136,7 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
     description: 'Hourly wind forecast from several weather models at once (AROME, ICON, ECMWF, GFS, UKMO, plus KNMI/DMI in Europe), compiled into one compact table with model consensus, spread, agreement, gust factor and shore relation, followed by a diagnosis of why the wind is gusty or steady. Pass spot_id when known.',
     inputSchema: {
       spot_id: SpotId, lat: Lat.optional(), lon: Lon.optional(),
-      days: z.number().int().min(1).max(7).default(2).describe('Forecast days (default 2). Keep small: each day costs tokens.'),
+      days: z.number().int().min(1).max(7).default(2).describe('Forecast days (default 2). Use 1 for a single day question, 3 for a weekend; ask for 7 only when the user wants the whole week, it costs ~4000 tokens.'),
       start_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional().describe('First day, YYYY-MM-DD. Default today.'),
       facing_deg: z.number().min(0).max(360).optional().describe('Overrides the spot card orientation. Direction the beach faces, towards the water.'),
       sport: z.enum(['kitesurf', 'windsurf', 'wingfoil', 'sailing', '']).default('').describe('What the user rides, for statistics only'),
@@ -164,10 +167,11 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
         await store.archiveForecast(rows)
       }
     } catch { /* statistics must never break a forecast */ }
-    const head = `${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
+    const head = `Issued ${weekday(fc.issued)} ${fc.issued} local (${fc.timezone}); check the weekday the user named against the table headers.\n${card ? `Spot: ${card.name} [${card.status}]. ` : ''}${c2?.facing_source === 'coastline' && a.facing_deg == null ? 'Orientation estimated from the coastline, confirm it. ' : ''}Models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}. Sea temp: ${fc.seaTemp ?? 'n/a'}°C.${facing != null ? ` Beach faces ${compass(facing)}.` : ' Beach orientation unknown: no onshore/offshore analysis.'}`
     const tides = renderTides(tideEvents(fc.hours.map(h => h.time), fc.seaLevel, c2?.tide_offset_min ?? 0))
     const tideBlock = tides ? `\n\nTides (${tideCaveat(c2)}${c2?.tide_notes ? `; spot note: ${c2.tide_notes}` : ''}):\n${tides}` : ''
-    return { content: [{ type: 'text', text: `${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}${tideBlock}` }] }
+    const sea = renderSea(fc)
+    return { content: [{ type: 'text', text: `${head}\n\n${table}\n\nDiagnosis:\n${diag.map(d => '- ' + d).join('\n')}${sea ? `\n\nSea state (daytime):\n${sea}` : ''}${tideBlock}` }] }
   })
 
   server.registerTool('ride_windows', {
@@ -188,9 +192,9 @@ export function createServer(store: Store, options: ServerOptions = {}): McpServ
     const fc = await fetchForecast({ lat, lon, days: a.days })
     const hours = fc.hours.map(h => summarizeHour(h, facing)).filter((x): x is NonNullable<typeof x> => x != null)
       .filter(h => a.allow_offshore || sectorQuality(card, h.dir) !== 'forbidden')
-    const w = findWindows(hours, a.min_kn, a.max_kn, { allowOffshore: a.allow_offshore })
+    const w = findWindows(hours, a.min_kn, a.max_kn, { allowOffshore: a.allow_offshore, daylight: daylightMap(fc) })
     if (!w.length) return { content: [{ type: 'text', text: `No window between ${a.min_kn} and ${a.max_kn} kn in the next ${a.days} day(s)${card ? ` at ${card.name}` : ''} (models: ${fc.models.map(m => MODEL_LABELS[m] ?? m).join(', ')}).` }] }
-    const lines = w.map(x => { const q = card ? sectorQuality(card, COMPASS.indexOf(x.dir) * 22.5) : undefined; return `${x.start.slice(0, 10)} ${x.start.slice(11, 16)}-${x.end.slice(11, 16)} (${x.hours}h): ${x.avgSpeed} kn mean, gusts ${x.avgGust}, ${x.dir}${x.shore ? ' ' + x.shore : ''}${q ? ` [spot: ${q}]` : ''}, agreement ${x.agreement}` })
+    const lines = w.map(x => { const q = card ? sectorQuality(card, COMPASS.indexOf(x.dir) * 22.5) : undefined; return `${weekday(x.start)} ${x.start.slice(0, 10)} ${x.start.slice(11, 16)}-${x.end.slice(11, 16)} (${x.hours}h): ${x.avgSpeed} kn mean, gusts ${x.avgGust}, ${x.dir}${x.shore ? ' ' + x.shore : ''}${q ? ` [spot: ${q}]` : ''}, agreement ${x.agreement}` })
     return { content: [{ type: 'text', text: lines.join('\n') }] }
   })
 
