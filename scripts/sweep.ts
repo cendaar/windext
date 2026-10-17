@@ -56,7 +56,7 @@ export const SPOTS: { name: string; lat: number; lon: number; kind: Kind; facing
   { name: 'Nadi Fiji (date line)', lat: -17.77, lon: 177.38, kind: 'sea', facing: 270 },
 ]
 
-if (process.argv[1]?.endsWith('sweep.ts')) {
+if (/(^|\/)sweep\.ts$/.test(process.argv[1] ?? '')) {
 const [ca, cb] = InMemoryTransport.createLinkedPair()
 await createServer(new MemoryStore()).connect(cb)
 const client = new Client({ name: 'sweep', version: '0' }); await client.connect(ca)

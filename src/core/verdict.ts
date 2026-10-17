@@ -128,7 +128,9 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
 
   const all = evals.map(e => e.s)
   const showers = evals.some(e => e.cape >= 100 && e.precip >= 0.5)
-  const daySea = fc.seaTemp, dayAir = mean(usable.map(h => h.temp ?? 0))
+  const daySea = fc.seaTemp
+  const airs = usable.map(h => h.temp).filter((t): t is number => t != null)
+  const dayAir: number | null = airs.length ? mean(airs) : null
 
   if (best.length < 2) {
     // Why not? The most frequent blocker during daylight.
@@ -139,7 +141,7 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
     const peak = all.reduce((a, b) => (b.speed > a.speed ? b : a))
     const reasons: Reason[] = [{ code: main, vars: { speed: avg.speed, gust: avg.gust, peak: r0(peak.speed), peakTime: hm(peak.time), min: r0(range.min), max: r0(range.max), dir: avg.dir } }]
     // Single rideable hour: say so, it is useful
-    if (best.length === 1) { codes.add('SHORT_WINDOW'); reasons.push({ code: 'SHORT_WINDOW', vars: { start: hm(best[0].s.time), end: hm(best[0].s.time) } }) }
+    if (best.length === 1) { codes.add('SHORT_WINDOW'); reasons.push({ code: 'SHORT_WINDOW', vars: { start: hm(best[0].s.time), end: `${String(hourOf(best[0].s.time) + 1).padStart(2, '0')}:00` } }) }
     const disagree = all.filter(s => s.agreement === 'low').length / all.length >= 0.5
     if (disagree && (main === 'TOO_LIGHT_FOR_GEAR' || main === 'TOO_STRONG')) { codes.add('MODELS_DISAGREE'); reasons.push({ code: 'MODELS_DISAGREE', vars: { spread: r0(mean(all.map(s => s.spread))) } }) }
     const status: Status = disagree && (main === 'TOO_LIGHT_FOR_GEAR' || best.length === 1) ? 'check' : 'no'
@@ -152,7 +154,8 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
   // There is a window
   const w = best.map(e => e.s)
   const start = hm(w[0].time), end = hm(w[w.length - 1].time)
-  const endPlus = `${String(+end.slice(0, 2) + 1).padStart(2, '0')}:00`   // the last rideable hour lasts until the next one
+  const nextHour = `${String(+end.slice(0, 2) + 1).padStart(2, '0')}:00`   // the last rideable hour lasts until the next one, but not past sunset
+  const endPlus = sun?.sunset && sun.sunset < nextHour ? sun.sunset : nextHour
   const avg = { speed: r0(mean(w.map(s => s.speed))), gust: r0(mean(w.map(s => s.gust))), dir: compass(mean(w.map(s => s.dir))) }
   const gf = mean(w.map(s => s.gustFactor))
   const lowShare = w.filter(s => s.agreement === 'low').length / w.length
@@ -177,7 +180,7 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
   else if (gf < 1.35) add('STEADY', { speed: avg.speed })
   if (showers) add('SHOWERS', {})
   const midShore = w[Math.floor(w.length / 2)].shore
-  if (daySea != null && daySea - dayAir >= 3 && midShore !== 'offshore' && midShore !== 'side-off' && gf >= 1.5) add('UNSTABLE_SEA', { sea: r0(daySea), air: r0(dayAir) })
+  if (daySea != null && dayAir != null && daySea - dayAir >= 3 && midShore !== 'offshore' && midShore !== 'side-off' && gf >= 1.5) add('UNSTABLE_SEA', { sea: r0(daySea), air: r0(dayAir) })
   if (midShore === 'side' || midShore === 'side-on') add('SIDE_IDEAL', { dir: avg.dir })
   else if (midShore === 'onshore') { const waves = fc.waves.find((_, i) => fc.hours[i]?.time === w[0].time)?.height ?? 0; add(waves >= 1 ? 'ONSHORE_WAVES' : 'ONSHORE', { waves: Math.round(waves * 10) / 10 }) }
   else if (midShore === 'side-off') add('SIDE_OFF_EXPERT', { dir: avg.dir })
@@ -187,8 +190,7 @@ export function dayVerdict(fc: Forecast, rider: Rider, opts: { day: 'today' | 't
   if (w.length <= 2) add('SHORT_WINDOW', { start, end: endPlus })
   else if (w.length >= 6) add('LONG_WINDOW', { hours: w.length })
   if (sizes.length > 1 && Math.abs(pick - target) / target > 0.25) add('GEAR_BETWEEN', { size: pick })
-  const water = daySea ?? dayAir
-  if (Math.min(water, dayAir) <= 14) add('COLD', { water: r0(water), air: r0(dayAir) })
+  if (dayAir != null && daySea != null && Math.min(daySea, dayAir) <= 14) add('COLD', { water: r0(daySea), air: r0(dayAir) })
   if (dl[1] - hourOf(lastRideable) <= 0 && sun?.sunset) add('DARK_SOON', { sunset: sun.sunset })
   for (const t of opts.tide ?? []) {
     if (!t.time.startsWith(date)) continue

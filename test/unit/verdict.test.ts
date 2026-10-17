@@ -96,7 +96,7 @@ describe('dayVerdict', () => {
   })
   it('never starts before sunrise or ends after sunset', () => {
     const v = V(fc(() => ({ s: 17 })))
-    expect(v.window).toEqual({ start: '09:00', end: '20:00' }); expect(v.codes).toContain('DARK_SOON')
+    expect(v.window).toEqual({ start: '09:00', end: '19:05' }); expect(v.codes).toContain('DARK_SOON')   // capped at sunset
   })
   it('keeps a safety note when the orientation is unknown', () => {
     const v = V(fc(() => ({ s: 17 })), { facing: null })
@@ -146,5 +146,20 @@ describe('templates', () => {
     expect(fr.reasons.join(' ')).toMatch(/Vent de SO/)
     const w = renderVerdict(V(fc(() => ({ s: 17, d: 0 }), undefined, { waves: Array(48).fill({ height: 1.4, dir: 0, period: 6 }) })), 'fr')
     expect(w.reasons.join(' ')).toMatch(/1,4 m/)
+  })
+})
+
+describe('sweep regressions', () => {
+  it('a single rideable hour reads as one hour, not 09:00 to 09:00', () => {
+    const v = V(fc(h => ({ s: h === 9 ? 17 : 6, spread: 12 })))
+    const r = v.reasons.find(x => x.code === 'SHORT_WINDOW'); expect(r?.vars).toEqual({ start: '09:00', end: '10:00' })
+  })
+  it('missing air temperature never prints 0 °C nor a cold or sea-air line', () => {
+    const f = fc(() => ({ s: 16, g: 27 })); for (const h of f.hours) h.temp = null
+    const v = V(f, { facing: 90 }); expect(v.codes).not.toContain('UNSTABLE_SEA'); expect(v.codes).not.toContain('COLD')
+  })
+  it('the maybe headline does not repeat the check time, the rule carries it', () => {
+    const r = renderVerdict(V(fc(() => ({ s: 17, spread: 12 }))), 'en')
+    expect(r.headline).toBe('Maybe, 09:00 to 19:05 with the 9 m.'); expect(r.reasons.join(' ')).toMatch(/Go if the live station shows at least 13 knots/)
   })
 })
