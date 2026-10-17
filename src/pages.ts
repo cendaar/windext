@@ -1,4 +1,5 @@
 /** Public pages served by the Worker: landing, spots list, privacy policy. Plain HTML, no build step. */
+import { type Lang, LANGS, LANG_NAMES, t } from './i18n.js'
 
 const esc = (s: unknown) => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!))
 const nf = (n: number) => new Intl.NumberFormat('en').format(n)
@@ -16,7 +17,8 @@ a{color:var(--accent)}a:focus-visible,button:focus-visible{outline:3px solid var
 header.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.1rem;border-bottom:1px solid var(--line)}
 .brand{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none;color:var(--fg);display:flex;align-items:center;gap:.5rem}
 .brand svg{width:26px;height:26px}
-nav.links{display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.95rem}nav.links a{color:var(--muted);text-decoration:none}nav.links a:hover{color:var(--fg)}
+nav.links{display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.95rem;align-items:center}
+select.lang{background:var(--bg-2);color:var(--fg);border:1px solid var(--line);border-radius:.4rem;padding:.3rem .4rem;font:.85rem var(--body)}nav.links a{color:var(--muted);text-decoration:none}nav.links a:hover{color:var(--fg)}
 .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:2.5rem;align-items:center;padding-block:3.5rem 2.5rem}
 @media (max-width:860px){.hero{grid-template-columns:1fr;padding-block:2.2rem 1.5rem}}
 .eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600;margin:0 0 .9rem}
@@ -41,7 +43,7 @@ section{padding-block:2.6rem;border-top:1px solid var(--line)}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.6rem 2.2rem}
 .loop{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.4rem;counter-reset:step}
 .loop article{border-top:3px solid var(--accent);padding-top:.9rem}
-.loop article::before{counter-increment:step;content:"Step " counter(step);display:block;font:600 .75rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+.loop article::before{counter-increment:step;content:var(--step) " " counter(step);display:block;font:600 .75rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
 .chips{display:flex;flex-wrap:wrap;gap:.45rem;margin:.4rem 0 1rem}
 .chip{font:500 .82rem/1 var(--mono);padding:.42rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--fg);background:var(--bg-2)}
 .chip small{color:var(--muted);margin-left:.35rem}
@@ -62,11 +64,12 @@ const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link 
 
 const LOGO = `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 11h14a4 4 0 1 0-4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M4 17h20a4 4 0 1 1-4 4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M4 23h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>`
 
-const shell = (title: string, body: string, desc: string) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/icon-256.png">${FONTS}<style>${STYLE}</style></head><body><div class="wrap">
-<header class="top"><a class="brand" href="/">${LOGO}windext</a><nav class="links"><a href="/#install">Install</a><a href="/#how">How it reads wind</a><a href="/spots">Spots</a><a href="/spots.json">Open data</a><a href="https://github.com/cendaar/windext">GitHub</a></nav></header>
+const shell = (title: string, body: string, desc: string, lang: Lang = 'en', path = '/') => `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/icon-256.png">${FONTS}<style>${STYLE}</style></head><body><div class="wrap">
+${LANGS.map(l => `<link rel="alternate" hreflang="${l}" href="https://wind.oooooooo.dev${path === '/' ? (l === 'en' ? '/' : '/' + l) : path + '?lang=' + l}">`).join('')}
+<header class="top"><a class="brand" href="/${lang === 'en' ? '' : lang}">${LOGO}windext</a><nav class="links"><a href="/${lang === 'en' ? '' : lang}#install">${t(lang, 'nav.install')}</a><a href="/${lang === 'en' ? '' : lang}#how">${t(lang, 'nav.how')}</a><a href="/spots?lang=${lang}">${t(lang, 'nav.spots')}</a><a href="/spots.json">${t(lang, 'nav.data')}</a><a href="https://github.com/cendaar/windext">GitHub</a><select class="lang" id="lang" aria-label="Language">${LANGS.map(l => `<option value="${l}"${l === lang ? ' selected' : ''}>${LANG_NAMES[l]}</option>`).join('')}</select></nav></header>
 ${body}
-<footer><span>windext is free and open. Weather data © <a href="https://open-meteo.com">Open-Meteo</a> (CC BY 4.0). Spot data © OpenStreetMap contributors (ODbL) and the windext community (CC BY-SA 4.0).</span><span><a href="/privacy">Privacy</a> · <a href="https://wind.oooooooo.dev/mcp">MCP endpoint</a></span></footer>
-</div></body></html>`
+<footer><span>${t(lang, 'footer.credits')}</span><span><a href="/privacy">${t(lang, 'footer.privacy')}</a> · <a href="https://wind.oooooooo.dev/mcp">${t(lang, 'footer.endpoint')}</a></span></footer>
+</div><script>document.getElementById('lang').addEventListener('change',function(e){var l=e.target.value;location.href=${JSON.stringify(path)}==='/'?(l==='en'?'/':'/'+l):${JSON.stringify(path)}+'?lang='+l})</script></body></html>`
 
 const SAMPLE = `Spot: Ouistreham Riva-Bella. Models: <span class="k">AROME HD, ICON, ECMWF 9km, GFS, UKMO, KNMI, DMI</span>. Sea 16.9°C. Beach faces NNE.
 
@@ -82,77 +85,78 @@ Diagnosis
 - Showery regime (CAPE 230 J/kg): each shower brings a downdraft gust then a lull.
 - Models disagree on 88% of hours: re-check the morning run before driving.`
 
-export function landingPage(stats: { spots: number; enriched: number; forecasts: number; countries: number }): string {
+export function landingPage(stats: { spots: number; enriched: number; forecasts: number; countries: number }, lang: Lang = 'en'): string {
+  const T = (k: string) => t(lang, k)
   const body = `
 <section class="hero" style="border-top:0">
   <div>
-    <p class="eyebrow">A wind forecast connector for Claude and ChatGPT</p>
-    <h1>Every rider who asks makes the <em>next forecast</em> better.</h1>
-    <p class="lead">windext reads seven weather models at once for your spot, tells you how much they agree, why the wind will be gusty, and whether the direction works where you launch. Ask about a spot nobody has asked about yet, and your answer becomes the next rider's starting point.</p>
-    <div class="ctas"><a class="btn primary" href="#install">Add to Claude</a><a class="btn" href="#install">Add to ChatGPT</a><a class="btn" href="#how">See a real forecast</a></div>
-    <div class="stats"><div><b>${nf(stats.spots)}</b>spots known</div><div><b>${nf(stats.enriched)}</b>cards enriched by riders</div><div><b>${nf(stats.forecasts)}</b>forecasts served</div><div><b>7</b>models per spot</div></div>
+    <p class="eyebrow">${T('hero.eyebrow')}</p>
+    <h1>${T('hero.h1')}</h1>
+    <p class="lead">${T('hero.lead')}</p>
+    <div class="ctas"><a class="btn primary" href="#install">${T('cta.claude')}</a><a class="btn" href="#install">${T('cta.chatgpt')}</a><a class="btn" href="#how">${T('cta.sample')}</a></div>
+    <div class="stats"><div><b>${nf(stats.spots)}</b>${T('stats.spots')}</div><div><b>${nf(stats.enriched)}</b>${T('stats.enriched')}</div><div><b>${nf(stats.forecasts)}</b>${T('stats.forecasts')}</div><div><b>7</b>${T('stats.models')}</div></div>
   </div>
-  <div class="wind" aria-label="Animated wind field"><canvas id="wind" width="600" height="600"></canvas><div class="cap">wind field, 10 m, model consensus</div></div>
+  <div class="wind" aria-label="Animated wind field"><canvas id="wind" width="600" height="600"></canvas><div class="cap">${T('hero.cap')}</div></div>
 </section>
 
 <section id="why">
-  <h2>Why one model is never enough</h2>
+  <h2>${T('why.h2')}</h2>
   <div class="cols">
-    <div><h3>Windguru shows you one model at a time</h3><p>Switching between AROME, ICON and GFS tabs and averaging in your head is the ritual of every rider. windext does the comparison in one call, in knots, and says plainly when the models disagree.</p></div>
-    <div><h3>Gusts are the whole story</h3><p>A 15 knot mean with 30 knot gusts is not a 15 knot day. windext computes the gust factor and explains the cause: cold air over a warm sea, showers, wind shear, or simply a forecast nobody trusts yet.</p></div>
-    <div><h3>Tides, included</h3><p>High and low water for any coastal spot, from the marine model, without a paid tide service. Approximate to twenty minutes, which is what you need to know whether the sandbank is still there at 15:00.</p></div>
-    <div><h3>Direction only means something at a spot</h3><p>North-east is side-on at Ouistreham and offshore somewhere else. With the spot's orientation and its known sectors, the forecast says onshore, side, or forbidden, instead of a number of degrees.</p></div>
+    <div><h3>${T('why1.h3')}</h3><p>${T('why1.p')}</p></div>
+    <div><h3>${T('why2.h3')}</h3><p>${T('why2.p')}</p></div>
+    <div><h3>${T('why3.h3')}</h3><p>${T('why3.p')}</p></div>
+    <div><h3>${T('why4.h3')}</h3><p>${T('why4.p')}</p></div>
   </div>
 </section>
 
 <section id="how">
-  <h2>What Claude sees when you ask</h2>
-  <p>A real answer for Ouistreham, Normandy, on a showery north-easterly. Each cell is mean/gust in knots. The last three columns are what matter: the consensus, the spread between models, and how much to trust that hour.</p>
+  <h2>${T('how.h2')}</h2>
+  <p>${T('how.p')}</p>
   <div class="table"><pre>${SAMPLE}</pre></div>
-  <p class="note" style="margin-top:.8rem">About 600 tokens for a full day on seven models, so Claude keeps room to reason about your gear and the tide instead of drowning in numbers.</p>
+  <p class="note" style="margin-top:.8rem">${T('how.note')}</p>
 </section>
 
 <section id="loop">
-  <h2>The more it is used, the better it gets</h2>
-  <p>windext keeps an open database of spots. Nobody fills in forms. The knowledge arrives as a side effect of questions riders ask anyway.</p>
-  <div class="loop">
-    <article><h3>You ask about your spot</h3><p>If windext does not know it yet, Claude looks up the public guides, drafts the card (orientation, launch, working and forbidden directions, tide, hazards) and asks you to confirm. You are the local; guides are often wrong.</p></article>
-    <article><h3>Your answer is saved for the next rider</h3><p>The confirmed card is stored under an open licence. The next person asking about that beach gets a forecast that already knows where the wind must come from.</p></article>
-    <article><h3>Forecasts are kept, so models can be scored</h3><p>Every forecast is archived. Session reports ("I was there, it was 18 knots") will soon tell which model to trust at which spot. That is a dataset nobody has.</p></article>
+  <h2>${T('loop.h2')}</h2>
+  <p>${T('loop.p')}</p>
+  <div class="loop" style="--step:'${T('loop.step')}'">
+    <article><h3>${T('loop1.h3')}</h3><p>${T('loop1.p')}</p></article>
+    <article><h3>${T('loop2.h3')}</h3><p>${T('loop2.p')}</p></article>
+    <article><h3>${T('loop3.h3')}</h3><p>${T('loop3.p')}</p></article>
   </div>
-  <blockquote style="margin-top:1.6rem">You will never be asked to do extra work. Confirming one card, once, for the spot you know best, is the whole contribution. It takes a minute and it helps everyone who comes after you.</blockquote>
+  <blockquote style="margin-top:1.6rem">${T('loop.quote')}</blockquote>
 </section>
 
 <section id="models">
-  <h2>Models it reads</h2>
-  <p>Served by <a href="https://open-meteo.com">Open-Meteo</a>, which collects the national models and picks the finest one available at each location. Within 48 hours windext leans on the regional model; beyond three days, on ECMWF.</p>
+  <h2>${T('models.h2')}</h2>
+  <p>${T('models.p')}</p>
   <div class="chips">
     <span class="chip">AROME HD<small>1.5 km, France</small></span><span class="chip">ICON-D2<small>2 km, Central Europe</small></span><span class="chip">UKMO<small>2 km, UK</small></span><span class="chip">KNMI Harmonie<small>North Sea</small></span><span class="chip">DMI Harmonie<small>2 km, N-Europe</small></span><span class="chip">ECMWF IFS<small>9 km, global</small></span><span class="chip">GFS / HRRR<small>global, 3 km US</small></span><span class="chip">MET Norway<small>1 km, Nordics</small></span><span class="chip">MeteoSwiss<small>1 km, Alps</small></span><span class="chip">JMA, KMA, GEM, BOM<small>Asia, Canada, Australia</small></span>
   </div>
-  <p class="note">Worldwide. Outside Europe the regional slots fall back to the global models, so every spot still gets at least five independent forecasts.</p>
+  <p class="note">${T('models.note')}</p>
 </section>
 
 <section id="install">
-  <h2>Install in a minute, no account needed</h2>
+  <h2>${T('install.h2')}</h2>
   <div class="install">
-    <article><h3>Claude (desktop, web, mobile)</h3><p>Settings → Connectors → <b>Add custom connector</b>, paste the URL, no authentication.</p><code class="url" id="u1">https://wind.oooooooo.dev/mcp</code><button class="copy" type="button" data-copy="https://wind.oooooooo.dev/mcp">Copy URL</button></article>
-    <article><h3>ChatGPT</h3><p>Settings → Connectors → enable <b>Developer mode</b> → Create, paste the URL, no authentication.</p><code class="url" id="u2">https://wind.oooooooo.dev/mcp</code><button class="copy" type="button" data-copy="https://wind.oooooooo.dev/mcp">Copy URL</button></article>
-    <article><h3>Claude Code</h3><p>One command in the terminal.</p><code class="url" id="u3">claude mcp add --transport http windext https://wind.oooooooo.dev/mcp</code><button class="copy" type="button" data-copy="claude mcp add --transport http windext https://wind.oooooooo.dev/mcp">Copy command</button></article>
+    <article><h3>${T('install1.h3')}</h3><p>${T('install1.p')}</p><code class="url" id="u1">https://wind.oooooooo.dev/mcp</code><button class="copy" type="button" data-copy="https://wind.oooooooo.dev/mcp" data-copied="${T('install.copied')}">${T('install.copy')}</button></article>
+    <article><h3>${T('install2.h3')}</h3><p>${T('install2.p')}</p><code class="url" id="u2">https://wind.oooooooo.dev/mcp</code><button class="copy" type="button" data-copy="https://wind.oooooooo.dev/mcp" data-copied="${T('install.copied')}">${T('install.copy')}</button></article>
+    <article><h3>${T('install3.h3')}</h3><p>${T('install3.p')}</p><code class="url" id="u3">claude mcp add --transport http windext https://wind.oooooooo.dev/mcp</code><button class="copy" type="button" data-copy="claude mcp add --transport http windext https://wind.oooooooo.dev/mcp" data-copied="${T('install.copied')}">${T('install.copycmd')}</button></article>
   </div>
-  <p class="note" style="margin-top:1rem">Then just talk: "Should I go to Tarifa on Saturday? I ride a 9 m, 80 kg." Try the built-in prompts too: session check, compare two spots, weekend planner, gear advice, why is it gusty.</p>
+  <p class="note" style="margin-top:1rem">${T('install.note')}</p>
 </section>
 
 <section id="open">
-  <h2>Free for everyone, including us</h2>
+  <h2>${T('open.h2')}</h2>
   <div class="cols">
-    <div><h3>No account, no tracking</h3><p>No sign-up, no API key, no cookies. windext stores facts about beaches, never about people. The <a href="/privacy">privacy page</a> says exactly what is kept.</p></div>
-    <div><h3>Open data, open code</h3><p>The spot database is published as <a href="/spots.json">spots.json</a> under CC BY-SA. The server is MIT-licensed on <a href="https://github.com/cendaar/windext">GitHub</a>. Run your own if you prefer.</p></div>
-    <div><h3>Built by a rider</h3><p>Made in Normandy by a kitesurfer who got tired of comparing model tabs on a phone in the car park. Corrections to a spot card are welcome, directly from a conversation.</p></div>
+    <div><h3>${T('open1.h3')}</h3><p>${T('open1.p')}</p></div>
+    <div><h3>${T('open2.h3')}</h3><p>${T('open2.p')}</p></div>
+    <div><h3>${T('open3.h3')}</h3><p>${T('open3.p')}</p></div>
   </div>
 </section>
 <script>
 (function(){
-  document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.getAttribute('data-copy');var done=function(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1500)};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){window.getSelection().selectAllChildren(b.previousElementSibling)})}else{window.getSelection().selectAllChildren(b.previousElementSibling)}})});
+  document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.getAttribute('data-copy');var done=function(){var o=b.textContent;b.textContent=b.getAttribute('data-copied')||'Copied';setTimeout(function(){b.textContent=o},1500)};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){window.getSelection().selectAllChildren(b.previousElementSibling)})}else{window.getSelection().selectAllChildren(b.previousElementSibling)}})});
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var c=document.getElementById('wind');if(!c)return;var x=c.getContext('2d');var W=c.width,H=c.height,N=420,P=[];
   function field(px,py,t){var a=Math.sin(px*0.006+t*0.4)*0.6+Math.cos(py*0.008-t*0.3)*0.5+0.9;var s=1.1+0.5*Math.sin(px*0.01+py*0.01+t*0.7);return{a:a,s:s}}
@@ -164,18 +168,19 @@ export function landingPage(stats: { spots: number; enriched: number; forecasts:
   requestAnimationFrame(frame);
 })();
 </script>`
-  return shell('windext', body, 'Multi-model wind forecasts for kitesurf, windsurf, wingfoil and sailing, inside Claude and ChatGPT. Free, open, and better every time a rider asks.')
+  return shell('windext', body, T('meta.desc'), lang, '/')
 }
 
-export function spotsPage(rows: { id: string; name: string; country: string; kind: string; status: string; sports: string; facing_deg: number | null; lat: number; lon: number }[]): string {
-  const tr = rows.map(r => `<tr><td>${esc(r.name)}</td><td>${esc(r.country || '')}</td><td>${esc((r.sports || '').split('|').join(', '))}</td><td>${r.facing_deg == null ? '<span class="note">unknown</span>' : Math.round(r.facing_deg) + '°'}</td><td><span class="pill ${esc(r.status)}">${esc(r.status)}</span></td><td class="note">${r.lat.toFixed(3)}, ${r.lon.toFixed(3)}</td></tr>`).join('')
-  const body = `<section style="border-top:0"><p class="eyebrow">Open spot database</p><h2>${nf(rows.length)} spots, and counting</h2>
-<p>Seed cards come from OpenStreetMap and carry only a position. A card becomes <span class="pill community">community</span> when a rider confirms its orientation and wind sectors in a conversation, and <span class="pill verified">verified</span> after a moderator check. Ask Claude about your spot to add it; no form here on purpose.</p>
-<input class="filter" id="q" type="search" placeholder="Filter by name or country" aria-label="Filter spots">
-<div style="overflow-x:auto"><table class="spots" id="t"><thead><tr><th>Spot</th><th>Country</th><th>Sports</th><th>Faces</th><th>Status</th><th>Position</th></tr></thead><tbody>${tr}</tbody></table></div>
-<p class="note" style="margin-top:1rem">Download: <a href="/spots.json">spots.json</a> (CC BY-SA 4.0).</p></section>
+export function spotsPage(rows: { id: string; name: string; country: string; kind: string; status: string; sports: string; facing_deg: number | null; lat: number; lon: number }[], lang: Lang = 'en'): string {
+  const T = (k: string) => t(lang, k)
+  const tr = rows.map(r => `<tr><td>${esc(r.name)}</td><td>${esc(r.country || '')}</td><td>${esc((r.sports || '').split('|').join(', '))}</td><td>${r.facing_deg == null ? `<span class="note">${T('spots.unknown')}</span>` : Math.round(r.facing_deg) + '°'}</td><td><span class="pill ${esc(r.status)}">${esc(r.status)}</span></td><td class="note">${r.lat.toFixed(3)}, ${r.lon.toFixed(3)}</td></tr>`).join('')
+  const body = `<section style="border-top:0"><p class="eyebrow">${T('spots.eyebrow')}</p><h2>${t(lang, 'spots.h2', { n: nf(rows.length) })}</h2>
+<p>${T('spots.p')}</p>
+<input class="filter" id="q" type="search" placeholder="${T('spots.filter')}" aria-label="${T('spots.filter')}">
+<div style="overflow-x:auto"><table class="spots" id="t"><thead><tr><th>${T('spots.th.spot')}</th><th>${T('spots.th.country')}</th><th>${T('spots.th.sports')}</th><th>${T('spots.th.faces')}</th><th>${T('spots.th.status')}</th><th>${T('spots.th.pos')}</th></tr></thead><tbody>${tr}</tbody></table></div>
+<p class="note" style="margin-top:1rem">${T('spots.download')} <a href="/spots.json">spots.json</a> (CC BY-SA 4.0).</p></section>
 <script>(function(){var q=document.getElementById('q'),rows=[].slice.call(document.querySelectorAll('#t tbody tr'));q.addEventListener('input',function(){var v=q.value.toLowerCase();rows.forEach(function(r){r.hidden=v&&r.textContent.toLowerCase().indexOf(v)<0})})})();</script>`
-  return shell('windext spots', body, 'The open database of wind-sport spots behind windext.')
+  return shell('windext spots', body, T('spots.eyebrow'), lang, '/spots')
 }
 
 export function privacyPage(): string {

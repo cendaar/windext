@@ -5,6 +5,7 @@ import { KVCache } from './core/cache.js'
 import { setCache } from './core/openmeteo.js'
 import { estimateFacing } from './core/coastline.js'
 import { landingPage, privacyPage, spotsPage } from './pages.js'
+import { pickLang, LANGS } from './i18n.js'
 import ICON_SVG from '../assets/icon.svg'
 import ICON_PNG from '../assets/icon-256.png'
 
@@ -46,13 +47,16 @@ export default {
     }
     const html = (body: string) => new Response(body, { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'public, max-age=300' } })
     if (url.pathname === '/privacy') return html(privacyPage())
+    const lang = pickLang(url.pathname, url.searchParams.get('lang'), request.headers.get('accept-language'))
     if (url.pathname === '/spots') {
       const r = await env.DB.prepare("SELECT id, name, country, kind, status, sports, facing_deg, lat, lon FROM spots WHERE kind = 'spot' ORDER BY CASE status WHEN 'verified' THEN 0 WHEN 'community' THEN 1 ELSE 2 END, name LIMIT 2000").all<any>()
-      return html(spotsPage(r.results))
+      return html(spotsPage(r.results, lang))
     }
-    if (url.pathname === '/') {
+    if (url.pathname === '/' || (url.pathname.length === 3 && (LANGS as string[]).includes(url.pathname.slice(1)))) {
       const stats = await env.DB.prepare("SELECT (SELECT count(*) FROM spots WHERE kind='spot') AS spots, (SELECT count(*) FROM spots WHERE status <> 'seed') AS enriched, (SELECT count(*) FROM requests) AS forecasts, (SELECT count(DISTINCT country) FROM spots WHERE country <> '') AS countries").first<any>().catch(() => null)
-      return html(landingPage(stats ?? { spots: 0, enriched: 0, forecasts: 0, countries: 0 }))
+      const res = html(landingPage(stats ?? { spots: 0, enriched: 0, forecasts: 0, countries: 0 }, lang))
+      res.headers.set('vary', 'accept-language')
+      return res
     }
     return Response.redirect(url.origin + '/', 302)
   },
