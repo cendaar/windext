@@ -3841,5 +3841,519 @@
       "https://theplanetd.com/kitesurfing-cape-town-guide/",
       "http://en.wannakitesurf.com/spot/Africa/South_Africa/Western_Cape/Tableview/"
     ]
+  },
+  "Le Morne, Mauritius": {
+    "name": "Le Morne",
+    "aliases": [
+      "Le Morne Lagoon",
+      "The Point (Le Morne)",
+      "Kite Lagoon",
+      "Le Morne Kitebeach"
+    ],
+    "lat": -20.46675,
+    "lon": 57.30862,
+    "country": "Mauritius",
+    "water": "lagoon",
+    "facing_deg": 170,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "SE",
+        "quality": "best",
+        "note": "Reference trade wind direction. Cross to cross-onshore from the left at The Point; nearly onshore in the beginner Kite Lagoon/Bay. Le Morne Brabant and nearby mountains add roughly 5-10 kn to the trades."
+      },
+      {
+        "sector": "SSE",
+        "quality": "ok",
+        "note": "Trade-wind variant, cross-onshore across the lagoon."
+      },
+      {
+        "sector": "ESE",
+        "quality": "marginal",
+        "note": "Guides report the southern zones work less well and the wind is lighter in ESE."
+      },
+      {
+        "sector": "E",
+        "quality": "marginal",
+        "note": "Lagoon wind gets lighter and more side-off. Manawa outer reef is reported to work best in easterlies (experts only)."
+      },
+      {
+        "sector": "N",
+        "quality": "forbidden",
+        "note": "Offshore from the peninsula."
+      },
+      {
+        "sector": "NW",
+        "quality": "forbidden",
+        "note": "Offshore from the peninsula."
+      }
+    ],
+    "launch_notes": "Two main launches. The Point is the large sandy beach at the south tip of the peninsula in front of Club Mistral/the hotels. The wind is sideshore from the left, gusty on the beach, and the spot is for independent/advanced riders. The water is flat to choppy, the lagoon runs about 800 m to the reef, and it gives access to the reef breaks. Kite Lagoon/The Bay is slightly SE of the Point: an almost closed, waist-deep bay with onshore wind, used by schools and beginners. Experienced riders should stay upwind of lesson zones and give way to surfers at One Eye.",
+    "tide_notes": "The lagoon is shallow and stays waist-deep in most places. At low tide some areas get too shallow, and windsurfing is sometimes impossible there. One Eye should only be ridden at high tide, and low tide there is hazardous. Manawa is reported best at low tide. An outgoing tide combined with a big SW swell produces very strong currents out of the channels, so avoid that combination.",
+    "hazards": "Shallow, sharp coral and sea urchins: wear booties. Strong currents run in the channels below Manawa and One Eye and around the back of the reef, especially in big swell (Sep-Nov). Manawa lies about 1-1.5 km out, beyond a wide channel. Chameau and One Eye are downwind/right of the beach and are expert-only: shallow reef, fast hollow waves, cross-offshore wind, rescue very difficult. The beach has trees where kites can get tangled. Wind can turn offshore in the evening, and the lagoon gets choppy in strong wind. Rescue is paid (around EUR 20-100+). Stay ashore on red-flag days with huge waves.",
+    "rules": "",
+    "season": "May to November is the main windy season (SE trades), with the peak from June to October and August often the best month. November to April has lighter, patchier wind and cyclone risk.",
+    "sources": [
+      "https://www.sportif.travel/events/90/5/Indian_Ocean_and_SE_Asia/Mauritius_-_Le_Morne/Mauritius_Le_Morne_Spot_Guide",
+      "https://boards.co.uk/travel/world-travel/le-morne-mauritius.html",
+      "https://www.mackiteboarding.com/news/kiteboarding-travel-guide-mauritius-le-morne-destinations-ep-15-/",
+      "https://kitejungle.com/kite-places/mauritius/le-morne"
+    ]
+  },
+  "Mui Ne, Vietnam": {
+    "name": "Mui Ne",
+    "aliases": [
+      "Mui Ne Beach",
+      "Ham Tien",
+      "Mui Ne Main Beach"
+    ],
+    "lat": 10.94176,
+    "lon": 108.19473,
+    "country": "Vietnam",
+    "water": "sea",
+    "facing_deg": 160,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Main NE monsoon direction from Nov to Mar, side-shore to side-onshore. Usually 18-30 kn, sometimes up to 40 kn. The thermal effect builds it from about 10:00 to 18:00."
+      },
+      {
+        "sector": "ENE",
+        "quality": "best",
+        "note": "Cross-onshore monsoon direction, very common in high season. Chop builds through the day."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "Cross-onshore, works on the main beach. Guides give NE to SE as the usable range."
+      },
+      {
+        "sector": "ESE",
+        "quality": "ok",
+        "note": "Side-onshore to onshore, usable."
+      },
+      {
+        "sector": "SE",
+        "quality": "ok",
+        "note": "Upper limit of the NE-SE range in guides. Mostly onshore."
+      },
+      {
+        "sector": "S",
+        "quality": "marginal",
+        "note": "Low season (May-Sep) southerly winds, often only 10-14 kn. Onshore, needs big kites (about 14 m)."
+      }
+    ],
+    "launch_notes": "Main launch is the 1 km+ stretch of sand along Nguyen Dinh Chieu (Ham Tien), in front of the schools: C2Sky, VKS, Surfpoint, Jibe's. Launching gets hard at high tide because the beach is narrow. Do not launch with people or buildings directly downwind. Weigh unattended kites down with sand. Give learners extra room. Busy in high-season afternoons.",
+    "tide_notes": "Tidal spot. At high tide the beach is narrow and a heavy shore dump makes launching and landing hard, especially in strong wind. Low to mid tide is easier.",
+    "hazards": "Strong shorebreak at high tide and in strong wind, beyond beginner level. Gusty wind that builds fast in the afternoon. Crowds of kiters, windsurfers and swimmers. Rocky headland at the northern end of the peninsula. Beach erosion at the northern end of Rang Beach. Low-risk jellyfish. Rubbish at Malibu beach.",
+    "rules": "",
+    "season": "November-March, peak January-March. April and October are transition months with unreliable wind. May-September brings light southerly winds.",
+    "sources": [
+      "https://locations.thekitespot.com/locations/kitesurf-mui-ne-vietnam",
+      "https://www.iksurfmag.com/travel-guides/asia/vietnam/mui-ne",
+      "https://localvietnam.com/binh-thuan/mui-ne/kite-windsurfing-in-mui-ne/",
+      "http://en.wannakitesurf.com/spot/Asia/Vietnam/Mui_Ne/"
+    ]
+  },
+  "Boracay Bulabog, Philippines": {
+    "name": "Bulabog Beach",
+    "aliases": [
+      "Bulabog",
+      "Boracay Kite Beach",
+      "Boracay Island"
+    ],
+    "lat": 11.96368,
+    "lon": 121.9309,
+    "country": "Philippines",
+    "water": "lagoon",
+    "facing_deg": 90,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Amihan NE trade wind, side-on/onshore over the reef-sheltered bay; typically 16-25 kn, most reliable Dec-Mar."
+      },
+      {
+        "sector": "ENE",
+        "quality": "best",
+        "note": "Steady Amihan direction, cross-onshore to onshore."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "Listed as a working direction (NE and E dominant); onshore."
+      },
+      {
+        "sector": "NNE",
+        "quality": "ok",
+        "note": "Amihan described as N-NE; cross-onshore."
+      },
+      {
+        "sector": "SW",
+        "quality": "forbidden",
+        "note": "Habagat (May-Oct) SW wind is offshore at east-facing Bulabog; wind sports move to the west coast/White Beach."
+      },
+      {
+        "sector": "W",
+        "quality": "forbidden",
+        "note": "Offshore at the east-facing beach."
+      }
+    ],
+    "launch_notes": "Launch from the sand zone on the east side of the narrow neck of the island, about a 5-7 min walk from Station 1. Watch out for palm trees and power lines when setting up. Lay lines out crosswind/upwind. Space is very tight at high tide (palms, sea walls, road), so you need deep-water pack-down, self-rescue and assisted launch/land skills. Several schools are based here.",
+    "tide_notes": "Strongly tidal. Common advice: no riding from 1.5 h before to 1.5 h after low tide, when exposed reef leaves little space. Mid tide is best: fairly flat water, mostly waist-deep, enough beach. High tide leaves a very narrow beach. Sources disagree on low tide (one guide says best at low tide), so check with local schools.",
+    "hazards": "Shallow coral reef, sea urchins and seagrass, so wear booties. The outer reef sits about 500 m out and can have waves up to 2 m in stormy weather. Palm trees, power lines, sea walls and the road are close to the launch. Crowded in peak season with schools. Jet skis and motorised sports use the outer reef/deep water.",
+    "rules": "Activity zoning: the shallow inner lagoon is for kiteboarding/windsurfing instruction; the outer reef/deep water is for jet skis and motorised sports. Designated launch zones help limit crowding and reef damage.",
+    "season": "November to April (Amihan), peak January-February; also good December, March and April.",
+    "sources": [
+      "https://locations.thekitespot.com/locations/boracay-island",
+      "https://4stogo.com/blog/posts/boracay-activity-zone-maps-bulabog-puka-ariels-point",
+      "http://en.wannakitesurf.com/spot/Asia/Philippines/Visayas/Bulabog_Beach/"
+    ]
+  },
+  "Hood River, Oregon, USA": {
+    "name": "Hood River Sandbar (Event Site)",
+    "aliases": [
+      "Hood River Spit",
+      "The Spit",
+      "Kite Beach",
+      "Hood River Event Site",
+      "Hood River Waterfront"
+    ],
+    "lat": 45.716,
+    "lon": -121.513,
+    "country": "USA",
+    "water": "river",
+    "facing_deg": 0,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Main summer wind, usually 18-25 mph and often 25-35+ mph on strong days. Gusty and sideshore near the beach. The current flows against the wind, so it helps riders work upwind and less wind is needed."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Listed as a good direction for the sandbar. Gusty and shifty near shore."
+      },
+      {
+        "sector": "WNW",
+        "quality": "best",
+        "note": "Listed as a good direction for the sandbar."
+      },
+      {
+        "sector": "E",
+        "quality": "marginal",
+        "note": "Rare at Hood River. Easterlies mostly come in winter and are cold and harsh, so they are generally not suitable for riding. The sandbar is described as a west-wind-only spot."
+      }
+    ],
+    "launch_notes": "Park at the Port of Hood River Event Site, then walk with your gear along the gravel path to the sandbar, between the Event Site and the Marina. In summer, kites may be launched only from the sandbar, which is kite-only. Windsurfers use the Event Site just upwind. In pre-season, when the sandbar is under water, the Port may allow kite setup on the Event Site lawn in a marked kite box on the east side. Riders sort themselves by level: independent riders upwind, lessons and the slider park downwind. Follow strict launch etiquette. Riders who look inexperienced or unsafe may be asked to deflate their kite.",
+    "tide_notes": "No real tide, but the river level changes a lot. Depending on the Columbia's level, the sandbar can be as big as a football field or completely under water. At high water, launch space is very limited. At low water, watch for shallows and stones.",
+    "hazards": "Strong river current (over 2 knots). If you miss the downwind exit, the current can carry you toward the Hood River Bridge. Frequent barge and boat traffic in the shipping channel, and large vessels block the wind. Gusty, shifty wind with turbulence and dead zones near the beach. Stones on the beach and in the water. The launch and the water get very crowded, with kite schools, beginners and trick sessions all at once. You need to ride upwind confidently and recover your kite and board on your own before going beyond the sandbar.",
+    "rules": "Port of Hood River rules: you may launch kites, including trainer kites, only where official signs allow it. From about late June until October, kites may be launched only from the sandbar, and the Event Site beach and lawn are closed to kites. The Marina is always off-limits for pumping or launching. No kiting from other beaches in the area. The access is managed with the Columbia Gorge Kiteboarding Association. A kiteboarder has been arrested before for breaking Port rules.",
+    "season": "May to September. June to August is the peak, with daily west wind of about 15-35 knots. Winter is generally not rideable.",
+    "sources": [
+      "https://www.mackiteboarding.com/news/kiteboarding-travel-guide-hood-river-oregon-usa-destinations-ep-03/",
+      "https://portofhoodriver.specialdistrict.org/event-site-closed-to-kite-launching",
+      "https://se.kiteforum.com/kitesurf/spot/columbia_river___hood_river_sandbar",
+      "https://www.iksurfmag.com/travel-guides/americas/usa/hood-river"
+    ]
+  },
+  "Kite Beach Maui Kanaha, Hawaii, USA": {
+    "name": "Kite Beach (Kanaha), Maui",
+    "aliases": [
+      "Kite Beach Maui",
+      "Kanaha Kite Beach",
+      "Kitebeach",
+      "Lesson Beach (west end)",
+      "Kanaha Beach Park"
+    ],
+    "lat": 20.8963,
+    "lon": -156.4581,
+    "country": "USA",
+    "water": "sea",
+    "facing_deg": 10,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Reference trade-wind direction, side-onshore from the right. Usually blows from about 9am to 6pm. Gusty on the inside."
+      },
+      {
+        "sector": "ENE",
+        "quality": "best",
+        "note": "Main trade-wind direction, side/side-onshore. Consistent and often strong because the trades are funnelled between the Maui mountains."
+      },
+      {
+        "sector": "NNE",
+        "quality": "ok",
+        "note": "Listed by spot guides as a good direction. Side-onshore."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "One of the main trade-wind directions. More side-shore, so it is gustier on the inside."
+      }
+    ],
+    "launch_notes": "Launch from the sand at Kite Beach, on Amala Place downwind (west) of Kanaha Beach Park, which is the windsurf beach. Do not launch from the windsurf park. The far west end, called Lesson Beach, is used by kite schools. The beach is crowded with many pros, so get help launching, keep a tidy line set-up and do not jump over other people.",
+    "tide_notes": "Spot guides say the tide makes little difference. The water is shallow, about 8-12 ft deep for up to half a mile out, over a reef. The inside is flat or choppy, and waves break on the outer reef about 300 m out.",
+    "hazards": "Sharp reef and rocks, especially between Kanaha and Kite Beach. Outer reef break gets big in winter north swell, with high-surf warnings and rescues. Gusty wind on the inside. Crowded, with runaway kites. Rocks, shells and trees on the beach. A no-kite zone at the end of the airport runway lies upwind. Kahului Harbor is downwind.",
+    "rules": "11 o'clock rule: no kiting or windsurfing before 11:00 so swimmers and fishermen have the water to themselves. Swimmers, fishermen and outrigger canoes have right of way. Keep at least 200 ft from other water users. No kiting when kids are on the beach. Do not jump over other people. Under the FAA waiver, kites must stay below 125 ft above sea level and are banned in the 2 x 1 mile corridor at the end of Kahului Airport Runway 2, toward Spreckelsville. Kanaha swim zones A, B and C are swimming only.",
+    "season": "May to October, when the trades are most reliable. Some guides say April to August.",
+    "sources": [
+      "https://se.kiteforum.com/kitesurf/spot/maui____kanaha_park",
+      "https://se.kiteforum.com/kitesurf/spot/Maui___Lesson_Beach",
+      "https://www.law.cornell.edu/regulations/hawaii/Haw-Code-R-SS-13-256-130",
+      "https://mauinow.com/2018/12/07/three-wind-kite-surfers-rescued-at-kanaha-maui/"
+    ]
+  },
+  "Sherman Island, California, USA": {
+    "name": "Sherman Island",
+    "aliases": [
+      "Sherman Island County Park",
+      "Sherman Island Kite Launch",
+      "Sherman"
+    ],
+    "lat": 38.057,
+    "lon": -121.79212,
+    "country": "USA",
+    "water": "river",
+    "facing_deg": 0,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "W",
+        "quality": "best",
+        "note": "Prevailing summer 'Delta Breeze' (sea breeze driven by the SF–Sacramento temperature gradient), typically 16-30 kn. Gusty, with fast swings in strength."
+      },
+      {
+        "sector": "WSW",
+        "quality": "best",
+        "note": "Prevailing thermal westerly. Cross/onshore at the middle beaches, more directly onshore at Upper Kite Beach."
+      },
+      {
+        "sector": "N",
+        "quality": "marginal",
+        "note": "Blows straight onto the launch beach from the power-line tower across the river. Shifty and gusty, with sudden lulls of 5-10 mph after near-30 mph gusts."
+      }
+    ],
+    "launch_notes": "The only approved kite launches are the Sacramento County Park beaches and the Baja Road launch. No launching at the Access/Pit (California Water Management Board). Upper Kite Beach is direct onshore and the hardest; the Middle Beaches are cross/onshore; the Baja area is the safest for launching and landing. Rig on the grass, walk the bush-lined path, step over the logs. Give the head-tap landing signal and wait for a clear reply before landing.",
+    "tide_notes": "Tidal river. On the ebb, the current runs seaward against the westerly and builds steep chop (up to about waist high on big tides). If you crash, the current carries your board away. On the flood, the river runs upstream with the wind: flatter water but less apparent wind, so it suits beginners better. Water is flattest upwind toward the islands.",
+    "hazards": "Trees and thorn bushes right behind the launch: you must get upwind within about 20 ft of your waterstart. Logs at the water's edge, submerged obstacles near the launch and the islands (foilers should use short masts), shallows, a shipping channel, strong tidal currents, gusty wind, and crowds of 100+ sailors on summer days. Not for beginners without a school (lesson or boat support).",
+    "rules": "Sacramento County Regional Parks: open sunrise to sunset, parking fee required (self-pay if no attendant). Kiters must stay at least 200 ft from beaches and shore areas, with no jumping or tricks near shore. Do not launch or land when people are in the way. No launching at the Access/Pit.",
+    "season": "April to September (Delta Breeze nearly every day from May to August). Most consistent in June, July and August. Late September and October can still be strong and less crowded.",
+    "sources": [
+      "https://regionalparks.saccounty.gov/us/en/parks/sacramento-river-and-delta/sherman-island.html",
+      "https://www.mackiteboarding.com/news/-kiteboarding-travel-guide-sherman-island-california-usa-destinations-ep-15/",
+      "https://blog.tempest.earth/?p=34618",
+      "https://www.nps.gov/articles/000/surfing-the-delta-breeze-at-sacramento-san-joaquin-delta-national-heritage-area.htm"
+    ]
+  },
+  "Safaga Soma Bay, Egypt": {
+    "name": "Safaga Soma Bay",
+    "aliases": [
+      "Soma Bay",
+      "Somabay",
+      "Abu Soma",
+      "7Bft Kite House Soma Bay"
+    ],
+    "lat": 26.84758,
+    "lon": 33.99041,
+    "country": "Egypt",
+    "water": "lagoon",
+    "facing_deg": 150,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Prevailing thermal wind that builds through the morning. At the main beach it blows side-shore to cross-offshore from the right. Water stays flat. Often 2-4 kn more than forecast, and local mountain acceleration adds roughly 5 kn compared with Hurghada."
+      },
+      {
+        "sector": "NNW",
+        "quality": "best",
+        "note": "Same prevailing northerly pattern as NW. Side-shore to cross-offshore, flat water."
+      },
+      {
+        "sector": "N",
+        "quality": "ok",
+        "note": "Part of the prevailing northerly regime. Guides do not describe how it lines up with the beach."
+      },
+      {
+        "sector": "WNW",
+        "quality": "marginal",
+        "note": "Blows more offshore at the main beach. Rely on the rescue boats."
+      }
+    ],
+    "launch_notes": "Main launch is the sandy beach at the kite centre (7Bft Kite House) at the northern end of Soma Bay, next to the nautical station in front of the Kempinski. Lat/lon is the geocoded Soma Bay resort point, not the exact launch. Only experienced kiters should launch or land near the nautical station. Beach staff launch and land kites, and the beach/rescue package is compulsory. Ride west for cleaner, sideshore wind. Advanced riders must keep out of the school teaching zones. Station opens 8:00-18:30, water 8:30-17:00.",
+    "tide_notes": "The Red Sea tide range is small, but the standing-depth area dries out at low tide. At low tide you may have to walk 50-100 m across the reef flat to reach deep enough water. At high tide there is no walk and more shallow riding area.",
+    "hazards": "Wind is offshore to cross-offshore at the main beach, so drifting out to sea is a risk (boat rescue with up to 3 boats in peak season). The flat dries out and the reef bottoms out at low tide. There are coral reefs in the shallows and further out, plus mangroves and islands with reefs beyond the bay. Slight shore break in places. Crowded in peak season.",
+    "rules": "Beach/rescue package with safety boat is compulsory. Advanced riders must avoid kite school teaching zones. Riding hours follow the station's water hours (8:30-17:00).",
+    "season": "Rideable all year (80-90% wind probability). Most consistent from May/June to October/November, averaging about 22 kn and often 25-30 kn in the afternoon. From April to November no wetsuit is needed; in winter bring a shorty.",
+    "sources": [
+      "https://locations.thekitespot.com/locations/kitesurf-safaga-soma-bay-egypt",
+      "https://www.sportif.travel/destinations/108/Red_Sea/Soma_Bay",
+      "https://web.kite-and-windsurfing-guide.com/spots/kiteboarding-windsurfing-sup/7bft-kitehouse-west-shore-red-sea-egypt.html",
+      "https://www.iksurfmag.com/?p=19631"
+    ]
+  },
+  "El Gouna, Egypt": {
+    "name": "El Gouna – Mangroovy Beach",
+    "aliases": [
+      "El Gouna",
+      "Mangroovy Beach",
+      "Buzzha Beach",
+      "KBC El Gouna"
+    ],
+    "lat": 27.41572,
+    "lon": 33.67782,
+    "country": "Egypt",
+    "water": "lagoon",
+    "facing_deg": 45,
+    "sports": [
+      "kitesurf",
+      "windsurf",
+      "wingfoil"
+    ],
+    "wind": [
+      {
+        "sector": "NW",
+        "quality": "best",
+        "note": "Prevailing direction (stats ~314-351°). Coast runs NW-SE, so it blows cross/cross-on from the left."
+      },
+      {
+        "sector": "NNW",
+        "quality": "best",
+        "note": "Prevailing direction. Cross-onshore from the left, flat water in the lagoon."
+      },
+      {
+        "sector": "N",
+        "quality": "best",
+        "note": "Common thermal wind ('north-ish'), cross-onshore."
+      },
+      {
+        "sector": "WNW",
+        "quality": "marginal",
+        "note": "Becomes side-shore to side-off. Can be gusty close to shore."
+      },
+      {
+        "sector": "W",
+        "quality": "forbidden",
+        "note": "Westerlies come off the desert and blow offshore at this NE-facing beach."
+      }
+    ],
+    "launch_notes": "Launch from the wide sandy beaches run by the kite centres (Mangroovy Beach, KBC on Buzzha Beach). The beach charges an entrance or day-use fee, and you must register if you bring your own gear. At KBC the first 50 m are a launch/landing zone only. A beach assistant launches with the rider standing in the water at least one line length out. Lessons run north of the open riding area.",
+    "tide_notes": "Better at high tide. The lagoon is waist-deep, and at low tide the rideable deep-water areas shrink. Sharp shells and rock patches are exposed in the shallows.",
+    "hazards": "Coral reef about 200 m from shore. Past the reef the water is deep and choppy, with some waves. Sharp shells in the shallows, rock zones near some launch areas, and swimmer zones that are hard to stay upwind of in light wind. Rescue boats only work in deep water outside the reef, not in the shallow lagoon. Busy with schools.",
+    "rules": "Kiting is done through the centres (registration and fee). At KBC: no jumping within 50 m of the beach, keep 50 m clearance when doing tricks or overtaking, stay inside a 600 m safety radius around the station, no kiting on land, and no riding under the influence of alcohol or drugs. Swimmer zones are no-kite areas. Standard right-of-way rules apply.",
+    "season": "Wind blows all year (thermal, force 4-6). Windiest March-September. April-November is warmest (no wetsuit needed).",
+    "sources": [
+      "https://kitejungle.com/kite-places/egypt/el-gouna-mangroovy-beach",
+      "https://www.kiteboarding-club.com/en/el-gouna/safety-while-kitesurfing-at-the-kbc/",
+      "https://bytheseatofmyskirt.com/2012/09/08/kitespot-review-el-gouna-egypt/"
+    ]
+  },
+  "Vung Tau, Vietnam": {
+    "name": "Vung Tau (Back Beach / Bai Sau)",
+    "aliases": [
+      "Bãi Sau",
+      "Back Beach",
+      "Thuy Van Beach",
+      "Bãi Thùy Vân",
+      "Vũng Tàu"
+    ],
+    "lat": 10.35,
+    "lon": 107.098,
+    "country": "Vietnam",
+    "water": "sea",
+    "facing_deg": 130,
+    "sports": [
+      "kitesurf",
+      "windsurf"
+    ],
+    "wind": [
+      {
+        "sector": "NE",
+        "quality": "best",
+        "note": "Northeast monsoon from mid-Nov to Apr blows NE to E daily, about side-shore on Back Beach. Usually 12-25 kn, sometimes up to 30 kn or more."
+      },
+      {
+        "sector": "ENE",
+        "quality": "best",
+        "note": "Main dry-season direction. Side to side-on."
+      },
+      {
+        "sector": "E",
+        "quality": "ok",
+        "note": "Common in season (ESE is the most frequent direction). Side-onshore: the shore break and incoming waves take some skill."
+      },
+      {
+        "sector": "ESE",
+        "quality": "ok",
+        "note": "Side-onshore to onshore. Choppier water."
+      },
+      {
+        "sector": "SE",
+        "quality": "marginal",
+        "note": "Straight onshore: rough, messy waves. Local school advises only advanced riders go out."
+      },
+      {
+        "sector": "W",
+        "quality": "forbidden",
+        "note": "Offshore from land. Gusty, and getting back to shore is hard."
+      },
+      {
+        "sector": "NW",
+        "quality": "forbidden",
+        "note": "Offshore. Do not ride."
+      },
+      {
+        "sector": "N",
+        "quality": "forbidden",
+        "note": "Side-offshore to offshore. Gusty and dangerous."
+      }
+    ],
+    "launch_notes": "Launch from the wide, shallow sand of Back Beach (Bai Sau, along Thuy Van street), a 14 km beach. Quiet on weekdays (4-5 kiters), 10-12 kiters at weekends. A flatter, windier, less crowded area lies at the far NE end, at the river mouth facing Long Hai. You get there by dirt tracks or by riding a motorbike along the beach at low tide.",
+    "tide_notes": "Between mid-low and mid-high tide, flat water forms between the sandbanks at the far end of the beach. To reach the river-mouth spot along the beach you must go and come back at the lowest tide, or rising water can cut you off.",
+    "hazards": "Waves break gently on a shallow, gradual beach, so there is little shore break, but onshore days are choppy. At the river mouth: a 30-40 m wide channel before a large sandbank, fishing traps and fishing boats. Swimmers on the city beach, especially at weekends.",
+    "rules": "",
+    "season": "October/mid-November to April (NE monsoon), with the most reliable wind from December to March. In the summer SW monsoon the local school recommends going elsewhere.",
+    "sources": [
+      "https://kitesurfinglessonsvietnam.com/en/the-kitespot-vung-tau-vietnam",
+      "https://kitesurfinglessonsvietnam.com/en/wind-in-vietnam-wind-directions-at-kite-beach-vung-tau",
+      "https://kitesurfinglessonsvietnam.com/en/the-river-vung-tau-kitesurfing-spot",
+      "https://www.windfinder.com/spotguide/vung_tau"
+    ]
   }
 }

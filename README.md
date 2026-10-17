@@ -33,11 +33,25 @@ Then just talk about wind: *"Should I go to Ouistreham tomorrow? The beach faces
 
 Prompt `session_check` asks the full "should I go?" question the way an experienced rider would.
 
+## iOS app
+
+`ios/` holds the SwiftUI app and its widget (XcodeGen project). One question at onboarding (sport, weight, gear, level, stored on the phone only), then for each followed spot: a windext score out of 10 and a plain-language verdict for **today and tomorrow**. The small widget shows the score; the medium one the verdict and the window. An evening notification after a "go" day asks how it was, in one tap, which feeds the model scoring.
+
+```
+cd ios && xcodegen generate
+xcodebuild -scheme Windext -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build
+```
+
+The app talks to `GET /v1/verdict`, `GET /v1/spots` and `POST /v1/report`. Verdict sentences are pre-written in 7 languages (`src/core/verdict-i18n.ts`) and computed by rules (`src/core/verdict.ts`); no language model runs on the server.
+
 ## Develop
 
 ```
 npm install
-npm test            # stdio smoke test on Ouistreham
+npm test                        # unit tests (vitest)
+npx tsx scripts/sweep.ts        # worldwide health sweep, 40 spots
+npx tsx scripts/verdict-sweep.ts # ~2,900 real verdicts in 7 languages
+npx tsx bench/run.ts r2         # blind A/B bench, Claude with vs without windext
 npm run dev:worker  # local Worker on :8787
 npm run deploy      # Cloudflare Workers, route wind.oooooooo.dev
 ```
