@@ -110,3 +110,24 @@ Fichier `SKILL.md` avec la même grille de lecture que les instructions, plus de
 - [ ] Hémisphère sud : fuseau et saison corrects.
 - [ ] Charge : 100 appels en rafale sur le Worker sans erreur 429 d'Open-Meteo.
 - [ ] Taille de réponse : 7 jours sur 7 modèles sous 4 000 tokens.
+
+## 5. Connaissance des spots (zones de décollage, angles de vent qui marchent)
+
+### Sources évaluées (17 oct. 2026)
+
+| Source | Contenu | Accès | Verdict |
+|---|---|---|---|
+| Kite & Windsurfing Guide, iksurfmag, Global Kite Spots, Windfinder spots, wannakitesurf | fiches spot détaillées (orientation, décollage, dangers, saison) | propriétaire, pas d'API | pas de scraping côté serveur ; Claude Desktop peut les lire lui-même via sa recherche web |
+| OpenStreetMap (Overpass) | objets `sport=kitesurfing` / `windsurfing` | libre, ODbL | 4 objets dans 40 km autour d'Ouistreham, surtout des écoles, aucune info de vent : trop maigre seul |
+| OpenStreetMap trait de côte | géométrie `natural=coastline` | libre | permet de **calculer l'orientation de la plage** : testé, mais le point géocodé d'Ouistreham tombe sur le chenal de l'Orne (face 80°) au lieu de Riva-Bella (face ~15°). Il faut un point sur la plage et lisser sur 500 m |
+| Base Creative Commons de spots (discussion Windy 2019) | n'a jamais vu le jour | | à créer : c'est une opportunité |
+
+### Approche retenue : trois couches
+
+1. **Registre ouvert `spots/*.yaml`** dans le dépôt, licence CC BY-SA. Une fiche par spot : nom, alias, coordonnées du point de décollage, orientation de plage, directions de vent qui marchent / tolérées / interdites, type (plage, lagune, lac), marée utile, dangers, règles locales, lien vers les guides publics. Amorcé par nous sur les grands spots français et européens, puis enrichi par pull request de la communauté. `find_spot` cherche d'abord ici.
+2. **Orientation automatique** depuis le trait de côte OSM, calculée sur 500 m autour du point et proposée comme valeur par défaut quand le spot n'est pas au registre. Toujours annoncée comme estimée.
+3. **Claude lit les guides lui-même.** Les instructions serveur lui demandent, si le spot n'est pas au registre, de chercher la fiche du spot sur le web (orientation, zone de décollage, dangers), de l'utiliser pour `facing_deg`, puis de proposer à l'utilisateur d'ajouter le spot au registre. Le serveur ne scrape rien, Claude fait la lecture avec ses propres outils, comme un rider qui ouvre un guide.
+
+### Outil à ajouter
+- `spot_info` : renvoie la fiche du registre (ou l'orientation estimée par OSM), avec les directions favorables, pour que `spot_forecast` et `ride_windows` disent « NE : side-on, c'est la direction phare du spot » plutôt que seulement onshore/side/offshore.
+- `suggest_spot` : génère la fiche YAML à soumettre en pull request à partir de ce que Claude a trouvé et de ce que l'utilisateur confirme.
